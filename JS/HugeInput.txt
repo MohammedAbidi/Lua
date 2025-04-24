@@ -1,0 +1,8769 @@
+=== [gen5ubers-box] BW2 BOX 8 ===
+Emolga
+Ability: Motor Drive
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Acrobatics
+- Thunderbolt
+- Quick Attack
+- Roost
+
+Hydreigon @ Life Orb
+Ability: Levitate
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Outrage
+- Crunch
+- Earthquake
+- Roost
+
+Volcarona @ Life Orb
+Ability: Swarm
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Bug Buzz
+- Flamethrower
+- Quiver Dance
+- Roost
+
+
+=== [gen5ubers-box] BW2 BOX 7 ===
+Glalie (M) @ Icicle Plate
+Ability: Moody
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Ice Shard
+- Avalanche
+- Hail
+- Explosion
+
+Walrein (F) @ Rocky Helmet
+Ability: Thick Fat
+EVs: 252 HP / 252 Atk / 4 Spe
+Adamant Nature
+- Waterfall
+- Avalanche
+- Earthquake
+- Iron Head
+
+Excadrill (M) @ Rocky Helmet
+Ability: Mold Breaker
+Happiness: 0
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Earthquake
+- Iron Head
+- Aerial Ace
+- Swords Dance
+
+Sigilyph (M) @ Life Orb
+Ability: Magic Guard
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 3 Atk / 30 SpA / 30 SpD
+- Psychic
+- Air Slash
+- Hidden Power [Ground]
+- Roost
+
+Scrafty (M) @ Rocky Helmet
+Ability: Intimidate
+EVs: 252 HP / 252 Atk / 4 Spe
+Adamant Nature
+- High Jump Kick
+- Crunch
+- Poison Jab
+- Dragon Dance
+
+Archeops (M)
+Ability: Defeatist
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Acrobatics
+- Rock Slide
+- Earthquake
+- Hone Claws
+
+Krookodile (M) @ Rocky Helmet
+Ability: Moxie
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Earthquake
+- Crunch
+- Low Kick
+- Hone Claws
+
+Darmanitan (M) @ Life Orb
+Ability: Sheer Force
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Earthquake
+- Rock Slide
+- Yawn
+
+Crustle (M) @ Rocky Helmet
+Ability: Shell Armor
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- X-Scissor
+- Rock Slide
+- Rock Wrecker
+- Swords Dance
+
+Galvantula (M) @ Rocky Helmet
+Ability: Compound Eyes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 3 Atk / 30 SpA / 30 SpD
+- Bug Buzz
+- Volt Switch
+- Thunderbolt
+- Hidden Power [Ground]
+
+Ferrothorn (M) @ Rocky Helmet
+Ability: Iron Barbs
+EVs: 136 HP / 252 Atk / 120 SpD
+Brave Nature
+IVs: 0 Spe
+- Gyro Ball
+- Power Whip
+- Leech Seed
+- Spikes
+
+Klinklang @ Rocky Helmet
+Ability: Clear Body
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Flash Cannon
+- Volt Switch
+- Thunderbolt
+- Shift Gear
+
+Eelektross (M) @ Rocky Helmet
+Ability: Levitate
+EVs: 252 Atk / 252 SpA
+Brave Nature
+- Wild Charge
+- Volt Switch
+- Dragon Claw
+- Drain Punch
+
+Chandelure (M) @ Rocky Helmet
+Ability: Flash Fire
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Flamethrower
+- Shadow Ball
+- Energy Ball
+- Calm Mind
+
+Haxorus (M) @ Life Orb
+Ability: Mold Breaker
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Dual Chop
+- Brick Break
+- Dragon Dance
+- Earthquake
+
+Beartic (M) @ Rocky Helmet
+Ability: Swift Swim
+EVs: 252 HP / 252 Atk / 4 Spe
+Adamant Nature
+- Avalanche
+- Rock Slide
+- Aerial Ace
+- Hone Claws
+
+Druddigon (M) @ Life Orb
+Ability: Sheer Force
+EVs: 252 HP / 252 Atk / 4 Spe
+Adamant Nature
+- Outrage
+- Iron Head
+- Earthquake
+- Hone Claws
+
+Golurk @ Rocky Helmet
+Ability: No Guard
+EVs: 252 HP / 252 Atk / 4 Spe
+Adamant Nature
+- Dynamic Punch
+- Shadow Punch
+- Stone Edge
+- Earthquake
+
+Bisharp (M) @ Rocky Helmet
+Ability: Defiant
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Night Slash
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+Bouffalant (M) @ Rocky Helmet
+Ability: Sap Sipper
+EVs: 252 HP / 252 Atk / 4 Spe
+Adamant Nature
+- Revenge
+- Outrage
+- Rock Slide
+- Swords Dance
+
+Braviary (M) @ Life Orb
+Ability: Sheer Force
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Brave Bird
+- U-turn
+- Rock Slide
+- Roost
+
+Mandibuzz (F) @ Life Orb
+Ability: Overcoat
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Brave Bird
+- Feint Attack
+- U-turn
+- Roost
+
+Heatmor (M) @ Flame Plate
+Ability: Flash Fire
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Flamethrower
+- Giga Drain
+- Double Team
+- Substitute
+
+Escavalier (M) @ Leftovers
+Ability: Overcoat
+EVs: 252 HP / 252 Atk / 4 Spe
+Adamant Nature
+- Megahorn
+- Iron Head
+- Swords Dance
+- Substitute
+
+
+=== [gen5ubers-box] BW2 BOX 6 ===
+
+Seismitoad (M) @ Rocky Helmet
+Ability: Water Absorb
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 2 Atk / 30 Def
+- Surf
+- Earth Power
+- Sludge Bomb
+- Hidden Power [Ice]
+
+Gigalith (M) @ Stone Plate
+Ability: Sturdy
+EVs: 252 Atk / 252 SpD
+Adamant Nature
+- Rock Blast
+- Rock Slide
+- Explosion
+- Curse
+
+Zebstrika (M) @ Zap Plate
+Ability: Lightning Rod
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Wild Charge
+- Quick Attack
+- Volt Switch
+- Hidden Power [Ice]
+
+Throh (M) @ Flame Orb
+Ability: Guts
+EVs: 252 HP / 252 Atk / 4 Def
+Brave Nature
+IVs: 0 Spe
+- Brick Break
+- Payback
+- Poison Jab
+- Low Kick
+
+Sawk (M) @ Fist Plate
+Ability: Sturdy
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Close Combat
+- Payback
+- Poison Jab
+- Low Kick
+
+Unfezant (M) @ Life Orb
+Ability: Super Luck
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Quick Attack
+- Facade
+- Roost
+- Fly
+
+Conkeldurr (M) @ Life Orb
+Ability: Sheer Force
+EVs: 16 HP / 252 Atk / 240 SpD
+Adamant Nature
+- Mach Punch
+- Hammer Arm
+- Payback
+- Poison Jab
+
+Scolipede (M) @ Rocky Helmet
+Ability: Swarm
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- X-Scissor
+- Poison Jab
+- Swords Dance
+- Earthquake
+
+Abomasnow (M) @ Rocky Helmet
+Ability: Snow Warning
+EVs: 252 Atk / 252 SpA / 4 Spe
+- Ice Shard
+- Earthquake
+- Ice Beam
+- Giga Drain
+
+Mamoswine (M) @ Rocky Helmet
+Ability: Thick Fat
+EVs: 252 Atk / 4 Def / 252 SpD
+Brave Nature
+- Ice Shard
+- Avalanche
+- Earthquake
+- Superpower
+
+Luxray (M) @ Zap Plate
+Ability: Intimidate
+EVs: 252 Atk / 252 SpA / 4 Spe
+- Thunderbolt
+- Volt Switch
+- Quick Attack
+- Superpower
+
+Rampardos (M) @ Life Orb
+Ability: Sheer Force
+EVs: 180 HP / 252 Atk / 76 SpD
+Adamant Nature
+- Rock Slide
+- Earthquake
+- Avalanche
+- Swords Dance
+
+Bastiodon (M) @ Iron Plate
+Ability: Sturdy
+EVs: 4 Atk / 252 Def / 252 SpD
+Careful Nature
+- Rock Slide
+- Heavy Slam
+- Avalanche
+- Iron Defense
+
+Relicanth (M) @ Life Orb
+Ability: Rock Head
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- Head Smash
+- Rock Slide
+- Waterfall
+- Bounce
+
+Donphan (M) @ Rocky Helmet
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 SpD
+Brave Nature
+IVs: 0 Spe
+- Earthquake
+- Seed Bomb
+- Ice Shard
+- Gyro Ball
+
+Ursaring (M) @ Flame Orb
+Ability: Guts
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Facade
+- Aerial Ace
+- Close Combat
+- Swords Dance
+
+FIIISSHH (Qwilfish) (M) @ Life Orb
+Ability: Swift Swim
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Swords Dance
+- Taunt
+- Waterfall
+- Poison Jab
+
+Ampharos (F) @ Zap Plate
+Ability: Static
+EVs: 136 HP / 120 Def / 252 SpA
+Modest Nature
+IVs: 0 Atk
+- Volt Switch
+- Thunderbolt
+- Power Gem
+- Signal Beam
+
+Crobat (M) @ Life Orb
+Ability: Infiltrator
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Brave Bird
+- Cross Poison
+- Quick Attack
+- Roost
+
+Lanturn (F) @ Rocky Helmet
+Ability: Volt Absorb
+EVs: 112 HP / 144 Def / 252 SpA
+Modest Nature
+IVs: 0 Atk
+- Volt Switch
+- Thunderbolt
+- Surf
+- Ice Beam
+
+Aerodactyl (M) @ Life Orb
+Ability: Unnerve
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Rock Slide
+- Aerial Ace
+- Earthquake
+- Roost
+
+Kangaskhan (F) @ Life Orb
+Ability: Scrappy
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Fake Out
+- Body Slam
+- Drain Punch
+- Sucker Punch
+
+Alakazam (M) @ Life Orb
+Ability: Magic Guard
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Shadow Ball
+- Signal Beam
+- Energy Ball
+
+Gengar (M) @ Rocky Helmet
+Ability: Levitate
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Sludge Bomb
+- Shadow Ball
+- Thunderbolt
+- Destiny Bond
+
+
+=== [gen5ubers-box] BW2 BOX 5 ===
+
+Weavile (F) @ Focus Sash
+Ability: Pickpocket
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Ice Shard
+- Ice Punch
+- Night Slash
+- Taunt
+
+Gyarados (M) @ Rocky Helmet
+Ability: Moxie
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Waterfall
+- Bounce
+- Earthquake
+- Dragon Dance
+
+Charizard (M) @ Rocky Helmet
+Ability: Solar Power
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Flamethrower
+- Air Slash
+- Dragon Dance
+- Roost
+
+Blastoise (M) @ Splash Plate
+Ability: Rain Dish
+EVs: 252 HP / 4 Def / 252 SpA
+Quiet Nature
+- Surf
+- Fake Out
+- Ice Beam
+- Yawn
+
+Venusaur (F) @ Black Sludge
+Ability: Chlorophyll
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Giga Drain
+- Sludge Bomb
+- Sleep Powder
+- Synthesis
+
+Giratina @ Rocky Helmet
+Ability: Telepathy
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Outrage
+- Shadow Force
+- Shadow Sneak
+- Destiny Bond
+
+Arcanine (M) @ Life Orb
+Ability: Flash Fire
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Wild Charge
+- Extreme Speed
+- Morning Sun
+
+Magnezone @ Air Balloon
+Ability: Sturdy
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Volt Switch
+- Thunderbolt
+- Flash Cannon
+- Gravity
+
+Typhlosion (M) @ Flame Plate
+Ability: Flash Fire
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Lava Plume
+- Extrasensory
+- Hyper Beam
+- Sunny Day
+
+Meganium (F) @ Life Orb
+Ability: Leaf Guard
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Grass Knot
+- Giga Drain
+- Ancient Power
+- Toxic
+
+Feraligatr (M) @ Life Orb
+Ability: Sheer Force
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Waterfall
+- Aqua Jet
+- Ice Punch
+- Dragon Dance
+
+Infernape (M) @ Focus Sash
+Ability: Iron Fist
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Fire Punch
+- Mach Punch
+- Thunder Punch
+- Swords Dance
+
+Emboar (M) @ Life Orb
+Ability: Reckless
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Low Kick
+- Flare Blitz
+- Hammer Arm
+- Yawn
+
+Samurott (M) @ Zoom Lens
+Ability: Shell Armor
+EVs: 252 HP / 252 Atk / 4 SpD
+Brave Nature
+IVs: 0 Spe
+- Swords Dance
+- Razor Shell
+- Megahorn
+- Aqua Jet
+
+Moltres @ Life Orb
+Ability: Flame Body
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Flamethrower
+- Air Slash
+- Tailwind
+- Roost
+
+Articuno @ Life Orb
+Ability: Snow Cloak
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Blizzard
+- Air Cutter
+- Hail
+- Roost
+
+Zapdos @ Life Orb
+Ability: Lightning Rod
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+- Thunderbolt
+- Fly
+- U-turn
+- Roost
+
+Raikou @ Magnet
+Ability: Volt Absorb
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Wild Charge
+- Iron Head
+- Extreme Speed
+- Magnet Rise
+
+Entei @ Life Orb
+Ability: Flash Fire
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Iron Head
+- Stone Edge
+- Extreme Speed
+
+Suicune @ Chesto Berry
+Ability: Water Absorb
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Surf
+- Extreme Speed
+- Rest
+- Calm Mind
+
+Registeel @ Chesto Berry
+Ability: Clear Body
+EVs: 8 HP / 252 Atk / 124 Def / 124 SpD
+Brave Nature
+- Iron Head
+- Explosion
+- Rest
+- Iron Defense
+
+Regirock @ Chesto Berry
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- Rock Slide
+- Stealth Rock
+- Explosion
+- Rest
+
+Regice @ Chesto Berry
+Ability: Ice Body
+EVs: 4 HP / 252 Def / 252 SpA
+Modest Nature
+IVs: 0 Atk
+- Ice Beam
+- Thunderbolt
+- Rock Polish
+- Rest
+
+Regigigas @ Rocky Helmet
+Ability: Slow Start
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Zen Headbutt
+- Earthquake
+- Ice Punch
+- Facade
+
+
+=== [gen5ubers-box] BW2 BOX 4 ===
+
+Cresselia (F) @ Life Orb
+Ability: Levitate
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Ice Beam
+- Grass Knot
+- Moonlight
+
+Virizion @ Rocky Helmet
+Ability: Justified
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Leaf Blade
+- Close Combat
+- Synthesis
+- Swords Dance
+
+Terrakion @ Rocky Helmet
+Ability: Justified
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Close Combat
+- Rock Slide
+- Earthquake
+- Swords Dance
+
+Keldeo-Resolute @ Rocky Helmet
+Ability: Justified
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Close Combat
+- Aqua Jet
+- Aqua Tail
+- Swords Dance
+
+Keldeo @ Rocky Helmet
+Ability: Justified
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Close Combat
+- Aqua Tail
+- Aqua Jet
+- Swords Dance
+
+Landorus-Therian (M) @ Rocky Helmet
+Ability: Intimidate
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Earthquake
+- Fly
+- Hammer Arm
+- Swords Dance
+
+Tornadus (M) @ Sky Plate
+Ability: Defiant
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 3 Atk / 30 SpA / 30 SpD
+- Air Slash
+- Hidden Power [Ground]
+- Heat Wave
+- Tailwind
+
+Tornadus-Therian (M) @ Sky Plate
+Ability: Regenerator
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 3 Atk / 30 SpA / 30 SpD
+- Air Slash
+- Heat Wave
+- Hidden Power [Ground]
+- Tailwind
+
+Thundurus (M) @ Rocky Helmet
+Ability: Defiant
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Thunder Punch
+- Fly
+- U-turn
+- Hammer Arm
+
+Thundurus-Therian (M) @ Rocky Helmet
+Ability: Volt Absorb
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Thunder Punch
+- Fly
+- U-turn
+- Hammer Arm
+
+Meloetta @ Focus Sash
+Ability: Serene Grace
+EVs: 252 Atk / 4 Def / 252 SpA
+Rash Nature
+- Hyper Voice
+- Psychic
+- Quick Attack
+- Shadow Ball
+
+Celebi @ Focus Sash
+Ability: Natural Cure
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 30 HP / 2 Atk / 30 Def / 30 SpA / 30 SpD
+- Giga Drain
+- Psychic
+- Hidden Power [Flying]
+- Recover
+
+Jirachi @ Power Herb
+Ability: Serene Grace
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Doom Desire
+- Psychic
+- Energy Ball
+- Healing Wish
+
+Meloetta @ Focus Sash
+Ability: Serene Grace
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Relic Song
+- Drain Punch
+- Quick Attack
+- Shadow Claw
+
+Manaphy @ Splash Plate
+Ability: Hydration
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Tail Glow
+- Surf
+- Ice Beam
+- Energy Ball
+
+Shaymin @ Metronome
+Ability: Natural Cure
+EVs: 252 Atk / 252 SpA / 4 Spe
+Lonely Nature
+- Seed Flare
+- Earth Power
+- Quick Attack
+- Synthesis
+
+Shaymin-Sky @ Metronome
+Ability: Serene Grace
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Seed Flare
+- Air Slash
+- Earth Power
+- Synthesis
+
+Steelix (M) @ Chesto Berry
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 SpD
+Sassy Nature
+IVs: 0 Spe
+- Earthquake
+- Gyro Ball
+- Curse
+- Rest
+
+Smeargle (M) @ Focus Sash
+Ability: Moody
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Spore
+- Acrobatics
+- Destiny Bond
+- Bullet Punch
+
+Swellow (F) @ Life Orb
+Ability: Scrappy
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Brave Bird
+- Roost
+- Quick Attack
+- U-turn
+
+Latias (F) @ Soul Dew
+Ability: Levitate
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 2 Atk / 30 SpA / 30 Spe
+- Dragon Pulse
+- Psychic
+- Hidden Power [Fire]
+- Recover
+
+Latios (M) @ Soul Dew
+Ability: Levitate
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 2 Atk / 30 SpA / 30 Spe
+- Dragon Pulse
+- Psychic
+- Hidden Power [Fire]
+- Recover
+
+Rhyperior (M) @ Metronome
+Ability: Solid Rock
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- Earthquake
+- Rock Blast
+- Rock Slide
+- Ice Punch
+
+Electivire (M) @ Expert Belt
+Ability: Vital Spirit
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Wild Charge
+- Ice Punch
+- Low Kick
+- Earthquake
+
+
+=== [gen5ubers-box] BW2 BOX 3 ===
+
+Pikachu (M) @ Light Ball
+Ability: Static
+EVs: 4 Atk / 252 SpA / 252 Spe
+Naive Nature
+- Thunder
+- Volt Switch
+- Extreme Speed
+- Rain Dance
+
+Tangrowth (M) @ Meadow Plate
+Ability: Chlorophyll
+EVs: 4 HP / 252 SpA / 252 SpD
+Modest Nature
+IVs: 0 Atk
+- Giga Drain
+- Sludge Bomb
+- Sleep Powder
+- Sunny Day
+
+Magmortar (M) @ Rocky Helmet
+Ability: Vital Spirit
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Flamethrower
+- Thunderbolt
+- Psychic
+- Confuse Ray
+
+Flareon (F) @ Flame Plate
+Ability: Flash Fire
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Fire Fang
+- Bite
+- Quick Attack
+- Yawn
+
+Vaporeon (F) @ Life Orb
+Ability: Water Absorb
+EVs: 248 HP / 8 SpA / 252 SpD
+Calm Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Wish
+- Rain Dance
+
+Jolteon (F) @ Zap Plate
+Ability: Volt Absorb
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+- Volt Switch
+- Thunderbolt
+- Quick Attack
+- Yawn
+
+Espeon (F) @ Life Orb
+Ability: Magic Bounce
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Shadow Ball
+- Heal Bell
+- Wish
+
+Umbreon (F) @ Life Orb
+Ability: Synchronize
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Bite
+- Facade
+- Sucker Punch
+- Wish
+
+Golem (M) @ Life Orb
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 SpD
+Careful Nature
+- Rock Blast
+- Rock Slide
+- Earthquake
+- Explosion
+
+Rapidash (F) @ Life Orb
+Ability: Flash Fire
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Wild Charge
+- Drill Run
+- Morning Sun
+
+Farfetch’d (M) @ Stick
+Ability: Defiant
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Brave Bird
+- Leaf Blade
+- Swords Dance
+- Roost
+
+Lapras (F) @ Rocky Helmet
+Ability: Water Absorb
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Thunderbolt
+- Perish Song
+
+Tauros (M) @ Rocky Helmet
+Ability: Intimidate
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Earthquake
+- Wild Charge
+- Double-Edge
+- Giga Impact
+
+Tyranitar (M) @ Rocky Helmet
+Ability: Sand Stream
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Rock Slide
+- Crunch
+- Earthquake
+- Dragon Dance
+
+Camerupt (M) @ Leftovers
+Ability: Solid Rock
+EVs: 248 HP / 252 SpA / 8 SpD
+Modest Nature
+IVs: 0 Atk
+- Heat Wave
+- Earth Power
+- Solar Beam
+- Sunny Day
+
+Sharpedo (M) @ Rocky Helmet
+Ability: Speed Boost
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Aqua Jet
+- Waterfall
+- Crunch
+- Earthquake
+
+Altaria (F) @ Life Orb
+Ability: Natural Cure
+EVs: 252 HP / 4 SpA / 252 SpD
+Calm Nature
+- Dragon Claw
+- Cotton Guard
+- Dragon Dance
+- Roost
+
+Milotic (F) @ Life Orb
+Ability: Marvel Scale
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Surf
+- Dragon Pulse
+- Confuse Ray
+- Recover
+
+Castform (M) @ Focus Sash
+Ability: Forecast
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Thunder
+- Blizzard
+- Weather Ball
+- Ice Beam
+
+Uxie @ Lum Berry
+Ability: Levitate
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Zen Headbutt
+- Shadow Ball
+- Acrobatics
+- U-turn
+
+Mesprit @ Lum Berry
+Ability: Levitate
+EVs: 252 Atk / 252 SpA / 4 Spe
+Naughty Nature
+- Zen Headbutt
+- U-turn
+- Acrobatics
+- Shadow Ball
+
+Azelf @ Lum Berry
+Ability: Levitate
+EVs: 252 Atk / 252 SpA / 4 Spe
+Lonely Nature
+- Zen Headbutt
+- U-turn
+- Acrobatics
+- Shadow Ball
+
+Phione @ Splash Plate
+Ability: Hydration
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 3 Atk / 30 SpA / 30 SpD
+- Surf
+- Hidden Power [Ground]
+- Signal Beam
+- Rain Dance
+
+Carracosta (M) @ Rocky Helmet
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- Shell Smash
+- Rock Slide
+- Aqua Jet
+- Waterfall
+
+
+=== [gen5ubers-box] BW2 BOX 2 ===
+
+Shedinja @ Focus Sash
+Ability: Wonder Guard
+EVs: 252 Atk / 4 SpA / 252 Spe
+Naughty Nature
+- Swords Dance
+- X-Scissor
+- Shadow Sneak
+- Will-O-Wisp
+
+Gallade (M) @ Rocky Helmet
+Ability: Justified
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Zen Headbutt
+- Close Combat
+- Shadow Sneak
+- Swords Dance
+
+Ninjask (M) @ Focus Sash
+Ability: Speed Boost
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- X-Scissor
+- Aerial Ace
+- Swords Dance
+- Roost
+
+Flygon (M) @ Life Orb
+Ability: Levitate
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Outrage
+- Earthquake
+- Fire Punch
+- Roost
+
+Dragonite (M) @ Life Orb
+Ability: Multiscale
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Outrage
+- Fly
+- Extreme Speed
+- Roost
+
+Nidoking (M) @ Life Orb
+Ability: Sheer Force
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Sludge Wave
+- Earth Power
+- Ice Beam
+- Attract
+
+Nidoqueen (F) @ Life Orb
+Ability: Sheer Force
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Earth Power
+- Sludge Wave
+- Ice Beam
+- Attract
+
+Sceptile (M) @ Focus Sash
+Ability: Unburden
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Giga Drain
+- Dragon Pulse
+- Substitute
+- Leech Seed
+
+Swampert (M) @ Rocky Helmet
+Ability: Damp
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Waterfall
+- Earthquake
+- Ice Punch
+- Superpower
+
+Ho-Oh @ Life Orb
+Ability: Regenerator
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Brave Bird
+- Earthquake
+- Recover
+
+Lugia @ Leftovers
+Ability: Multiscale
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Aeroblast
+- Whirlwind
+- Tailwind
+- Recover
+
+Mew @ Focus Sash
+Ability: Synchronize
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+IVs: 3 Atk
+- Transform
+- Psychic
+- Aura Sphere
+- Roost
+
+Mewtwo @ Life Orb
+Ability: Unnerve
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Aura Sphere
+- Ice Beam
+- Recover
+
+Arceus-Fighting @ Fist Plate
+Ability: Multitype
+EVs: 252 Atk / 252 SpA / 4 Spe
+Mild Nature
+- Judgment
+- Extreme Speed
+- Rock Slide
+- Recover
+
+Giratina-Origin @ Griseous Orb
+Ability: Levitate
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Outrage
+- Shadow Force
+- Shadow Sneak
+- Destiny Bond
+
+Heatran (M) @ Air Balloon
+Ability: Flash Fire
+EVs: 248 HP / 4 Def / 252 SpA / 4 SpD
+Modest Nature
+IVs: 0 Atk
+- Flamethrower
+- Flash Cannon
+- Earth Power
+- Attract
+
+Empoleon (M) @ Leftovers
+Ability: Defiant
+EVs: 152 HP / 104 Def / 252 SpA
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Flash Cannon
+- Grass Knot
+
+Torterra (M) @ Leftovers
+Ability: Shell Armor
+EVs: 96 HP / 252 Atk / 160 SpD
+Adamant Nature
+- Earthquake
+- Wood Hammer
+- Stockpile
+- Synthesis
+
+Skarmory (M) @ Rocky Helmet
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 SpD
+Careful Nature
+- Iron Head
+- Brave Bird
+- Roost
+- Spikes
+
+Serperior (F) @ Focus Sash
+Ability: Contrary
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Leaf Storm
+- Dragon Pulse
+- Glare
+- Synthesis
+
+Cofagrigus (M) @ Rocky Helmet
+Ability: Mummy
+EVs: 248 HP / 252 SpA / 8 SpD
+Quiet Nature
+IVs: 0 Atk / 0 Spe
+- Shadow Ball
+- Psychic
+- Nasty Plot
+- Trick Room
+
+Gliscor (M) @ Toxic Orb
+Ability: Poison Heal
+EVs: 184 HP / 252 Atk / 72 Spe
+Adamant Nature
+- Earthquake
+- Acrobatics
+- Fling
+- Roost
+
+Landorus (M) @ Life Orb
+Ability: Sheer Force
+Happiness: 0
+Hidden Power: Ice
+EVs: 4 Atk / 252 SpA / 252 Spe
+Naive Nature
+- Earth Power
+- Sludge Wave
+- Rock Slide
+- Explosion
+
+Cobalion @ Shuca Berry
+Ability: Justified
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Close Combat
+- Iron Head
+- Swords Dance
+- Zen Headbutt
+
+
+=== [gen5ubers-box] BW2 BOX 1 ===
+
+Lucario (M) @ Focus Sash
+Ability: Inner Focus
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Hone Claws
+- High Jump Kick
+- Iron Tail
+- Extreme Speed
+
+Zekrom @ Life Orb
+Ability: Teravolt
+EVs: 252 Atk / 160 SpD / 96 Spe
+Adamant Nature
+- Outrage
+- Fusion Bolt
+- Rock Slide
+- Roost
+
+Reshiram @ Rocky Helmet
+Ability: Turboblaze
+EVs: 160 Def / 252 SpA / 96 Spe
+Modest Nature
+IVs: 0 Atk
+- Dragon Pulse
+- Fusion Flare
+- Earth Power
+- Roost
+
+Kyurem-Black @ Power Herb
+Ability: Teravolt
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Outrage
+- Fusion Bolt
+- Freeze Shock
+- Roost
+
+Kyurem-White @ Power Herb
+Ability: Turboblaze
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dragon Pulse
+- Fusion Flare
+- Ice Burn
+- Roost
+
+Garchomp (M) @ Rocky Helmet
+Ability: Rough Skin
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Outrage
+- Earthquake
+- Iron Head
+- Swords Dance
+
+Salamence (M) @ Life Orb
+Ability: Moxie
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Outrage
+- Fly
+- Earthquake
+- Roost
+
+Aggron (M) @ Chesto Berry
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 Def
+Impish Nature
+- Heavy Slam
+- Rock Slide
+- Earthquake
+- Rest
+
+Genesect @ Rocky Helmet
+Ability: Download
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- X-Scissor
+- Iron Head
+- Shift Gear
+- Extreme Speed
+
+Groudon @ Rocky Helmet
+Ability: Drought
+EVs: 252 Atk / 252 SpA / 4 SpD
+Brave Nature
+- Earthquake
+- Rock Slide
+- Solar Beam
+- Swords Dance
+
+Rayquaza @ Rocky Helmet
+Ability: Air Lock
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Outrage
+- Fly
+- Earthquake
+- Extreme Speed
+
+Kyogre @ Rocky Helmet
+Ability: Drizzle
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Hydro Pump
+- Ice Beam
+- Thunder
+- Calm Mind
+
+Machamp (M) @ Rocky Helmet
+Ability: No Guard
+EVs: 248 HP / 252 Atk / 8 SpD
+Adamant Nature
+- Dynamic Punch
+- Bullet Punch
+- Stone Edge
+- Thunder Punch
+
+Victini @ Focus Sash
+Ability: Victory Star
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- V-create
+- Bolt Strike
+- Zen Headbutt
+- U-turn
+
+Darkrai @ Life Orb
+Ability: Bad Dreams
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dark Pulse
+- Dark Void
+- Spacial Rend
+- Nasty Plot
+
+Metagross @ Rocky Helmet
+Ability: Clear Body
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- Iron Head
+- Bullet Punch
+- Zen Headbutt
+- Explosion
+
+Dialga @ Adamant Orb
+Ability: Telepathy
+EVs: 252 SpA / 160 SpD / 96 Spe
+Modest Nature
+IVs: 0 Atk
+- Aura Sphere
+- Power Gem
+- Flash Cannon
+- Roar of Time
+
+Palkia @ Lustrous Orb
+Ability: Telepathy
+EVs: 160 Def / 252 SpA / 96 Spe
+Modest Nature
+IVs: 0 Atk
+- Aura Sphere
+- Power Gem
+- Hydro Pump
+- Spacial Rend
+
+Cloyster (M) @ Focus Sash
+Ability: Skill Link
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Shell Smash
+- Icicle Spear
+- Rock Blast
+- Explosion
+
+Staraptor (F) @ Life Orb
+Ability: Reckless
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Double-Edge
+- Brave Bird
+- Close Combat
+- Roost
+
+Zoroark (M) @ Focus Sash
+Ability: Illusion
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Night Slash
+- Bounce
+- Sucker Punch
+- Hone Claws
+
+Rattata (M) @ Focus Sash
+Ability: Guts
+Level: 1
+EVs: 4 HP / 4 Atk / 124 Def / 124 SpD / 252 Spe
+Jolly Nature
+- Endeavor
+- Quick Attack
+- U-turn
+- Toxic
+
+Durant (M) @ Focus Sash
+Ability: Truant
+EVs: 4 HP / 4 Atk / 124 Def / 124 SpD / 252 Spe
+Jolly Nature
+- Entrainment
+- X-Scissor
+- Guillotine
+- Substitute
+
+Ditto @ Focus Sash
+Ability: Imposter
+EVs: 8 HP / 116 Atk / 8 Def / 116 SpA / 8 SpD / 252 Spe
+IVs: 30 Atk
+- Transform
+- None
+- None
+- None
+
+
+=== [gen7anythinggoes-box] gen 4 pokemon box 3 ===
+
+Rotom @ Rocky Helmet
+Ability: Levitate
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Volt Switch
+- Thunderbolt
+- Shadow Ball
+- Substitute
+
+Rotom-Fan @ Rocky Helmet
+Ability: Levitate
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Air Slash
+- Thunderbolt
+- Volt Switch
+- Substitute
+
+Rotom-Frost @ Rocky Helmet
+Ability: Levitate
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Thunderbolt
+- Volt Switch
+- Hidden Power [Ice]
+- Substitute
+
+Rotom-Heat @ Rocky Helmet
+Ability: Levitate
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Thunderbolt
+- Volt Switch
+- Hidden Power [Fire]
+- Substitute
+
+Rotom-Mow @ Rocky Helmet
+Ability: Levitate
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Thunderbolt
+- Volt Switch
+- Hidden Power [Grass]
+- Substitute
+
+Rotom-Wash @ Rocky Helmet
+Ability: Levitate
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Thunderbolt
+- Volt Switch
+- Hydro Pump
+- Substitute
+
+Uxie @ Leftovers
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Calm Mind
+
+Mesprit @ Leftovers
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Calm Mind
+
+Azelf @ Leftovers
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Calm Mind
+
+Dialga @ Adamant Orb
+Ability: Telepathy
+Shiny: Yes
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Roar of Time
+- Flash Cannon
+- Power Gem
+- Aura Sphere
+
+Palkia @ Lustrous Orb
+Ability: Telepathy
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Spacial Rend
+- Hydro Pump
+- Power Gem
+- Aura Sphere
+
+Heatran @ Leftovers
+Ability: Flash Fire
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Flamethrower
+- Flash Cannon
+- Earth Power
+- Explosion
+
+Regigigas @ Leftovers
+Ability: Slow Start
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Drain Punch
+- Ice Punch
+- Earthquake
+- Confuse Ray
+
+Giratina @ Leftovers
+Ability: Telepathy
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Shadow Force
+- Shadow Sneak
+- Dragon Claw
+- Destiny Bond
+
+Giratina-Origin @ Griseous Orb
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Claw
+- Shadow Force
+- Shadow Sneak
+- Destiny Bond
+
+Cresselia @ Leftovers
+Ability: Levitate
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Shadow Ball
+- Moonblast
+- Helping Hand
+
+Phione @ Leftovers
+Ability: Hydration
+Shiny: Yes
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Grass Knot
+- Rain Dance
+
+Manaphy @ Leftovers
+Ability: Hydration
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Tail Glow
+- Rain Dance
+
+Darkrai @ Focus Sash
+Ability: Bad Dreams
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dark Pulse
+- Dark Void
+- Spacial Rend
+- Nasty Plot
+
+Shaymin @ Life Orb
+Ability: Natural Cure
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Seed Flare
+- Earth Power
+- Dazzling Gleam
+- Leech Seed
+
+Shaymin-Sky @ Metronome
+Ability: Serene Grace
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Seed Flare
+- Air Slash
+- Earth Power
+- Leech Seed
+
+Arceus-Fighting @ Fist Plate
+Ability: Multitype
+EVs: 252 Atk / 252 SpA / 4 Spe
+Naughty Nature
+- Judgment
+- Extreme Speed
+- Iron Head
+- Recover
+
+Victini @ Focus Sash
+Ability: Victory Star
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- V-create
+- Bolt Strike
+- Zen Headbutt
+- U-turn
+
+Serperior @ Life Orb
+Ability: Contrary
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Leaf Storm
+- Dragon Pulse
+- Toxic
+- Leech Seed
+
+
+=== [gen7purehackmons-box] Box 53 ===
+
+Mewtwo-Mega-Y @ Psychium Z
+Ability: Psychic Surge
+Shiny: Yes
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+- Photon Geyser
+- Fusion Flare
+- Ice Beam
+- Recover
+
+Mewtwo-Mega-X @ Fightinium Z
+Ability: Steadfast
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpD / 252 Spe
+Adamant Nature
+- Psychic Fangs
+- High Jump Kick
+- Ice Hammer
+- Recover
+
+Lugia
+Ability: Multiscale
+Shiny: Yes
+- Oblivion Wing
+- Photon Geyser
+- Recover
+- Extreme Speed
+
+Ho-Oh @ Life Orb
+Ability: Contrary
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpD / 252 Spe
+Adamant Nature
+- V-create
+- Dragon Ascent
+- Extreme Speed
+- Recover
+
+Kyogre-Primal @ Assault Vest
+Ability: Primordial Sea
+Shiny: Yes
+- Steam Eruption
+- Ice Beam
+- Parabolic Charge
+- Extreme Speed
+
+Groudon-Primal
+Ability: Desolate Land
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Rayquaza-Mega
+Ability: Delta Stream
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Dialga
+Ability: Pressure
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Palkia
+Ability: Pressure
+- None
+- None
+- None
+- None
+
+Giratina
+Ability: Pressure
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Giratina-Origin
+Ability: Levitate
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Bug
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Dark
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Dragon
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Electric
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Fairy
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Fighting
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Fire
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Flying
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Ghost
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Grass
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Ground
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Ice
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+
+=== [gen7purehackmons-box] Box 59 ===
+
+Arceus-Poison
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Psychic
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Rock
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Steel
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Arceus-Water
+Ability: Multitype
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Reshiram
+Ability: Turboblaze
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Zekrom
+Ability: Teravolt
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Kyurem
+Ability: Pressure
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Kyurem-Black
+Ability: Teravolt
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Kyurem-White
+Ability: Turboblaze
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Xerneas
+Ability: Fairy Aura
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Yveltal
+Ability: Dark Aura
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Zygarde-10%
+Ability: Aura Break
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Zygarde
+Ability: Aura Break
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+Zygarde-Complete
+Ability: Power Construct
+Shiny: Yes
+- None
+- None
+- None
+- None
+
+
+=== [gen7purehackmons-box] to fix on ultra sun on laptop ===
+
+Rayquaza-Mega @ Assault Vest
+Ability: Psychic Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Hasty Nature
+- Core Enforcer
+- Oblivion Wing
+- Thousand Arrows
+- Extreme Speed
+
+Necrozma-Ultra @ Ultranecrozium Z
+Ability: Neuroforce
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Lonely Nature
+- Photon Geyser
+- Dragon Hammer
+- Sunsteel Strike
+- Extreme Speed
+
+Mewtwo-Mega-X @ Fightinium Z
+Ability: Psychic Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpD / 252 Spe
+Adamant Nature
+- Psychic Fangs
+- High Jump Kick
+- Ice Hammer
+- Recover
+
+Mewtwo-Mega-Y @ Psychium Z
+Ability: Psychic Surge
+Shiny: Yes
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+- Photon Geyser
+- Fusion Flare
+- Ice Beam
+- Recover
+
+Zygarde-Complete @ Assault Vest
+Ability: Huge Power
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Sassy Nature
+- Core Enforcer
+- Thousand Arrows
+- Extreme Speed
+- Recover
+
+Lugia @ Leftovers
+Ability: Multiscale
+Shiny: Yes
+- Photon Geyser
+- Oblivion Wing
+- Fusion Flare
+- Extreme Speed
+
+Hoopa-Unbound @ Wide Lens
+Ability: Magician
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Hasty Nature
+- Hyperspace Fury
+- Hyperspace Hole
+- Oblivion Wing
+- Extreme Speed
+
+Volcanion @ Wide Lens
+Ability: Water Absorb
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Lax Nature
+- Water Spout
+- Fusion Flare
+- Thousand Arrows
+- Recover
+
+Latias-Mega (F) @ Soul Dew
+Ability: Steelworker
+Shiny: Yes
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+- Photon Geyser
+- Core Enforcer
+- Flash Cannon
+- Recover
+
+Latios-Mega (M) @ Soul Dew
+Ability: Steelworker
+Shiny: Yes
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+- Photon Geyser
+- Core Enforcer
+- Flash Cannon
+- Recover
+
+Kommo-o @ Kommonium Z
+Ability: Soundproof
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Naughty Nature
+- Core Enforcer
+- High Jump Kick
+- Sunsteel Strike
+- Recover
+
+Zoroark @ Focus Sash
+Ability: Illusion
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpD / 252 Spe
+Jolly Nature
+- Darkest Lariat
+- Dragon Ascent
+- Sacred Fire
+- Extreme Speed
+
+
+=== [gen7anythinggoes-box] gen 4 pokemon box 3 ===
+
+Hippowdon @ Earth Plate
+Ability: Sand Stream
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- Thunder Fang
+- Fissure
+- Fire Fang
+- Yawn
+
+Drapion @ Rocky Helmet
+Ability: Battle Armor
+EVs: 252 HP / 4 Atk / 252 Spe
+Jolly Nature
+- Ice Fang
+- Throat Chop
+- Poison Jab
+- Toxic Spikes
+
+Toxicroak @ Assault Vest
+Ability: Poison Touch
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Fake Out
+- Bullet Punch
+- Drain Punch
+- Throat Chop
+
+Carnivine @ Meadow Plate
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Grass Knot
+- Giga Drain
+- Stockpile
+- Sleep Powder
+
+Lumineon @ Damp Rock
+Ability: Swift Swim
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Hidden Power [Ground]
+- Air Cutter
+- Rain Dance
+
+Abomasnow-Mega @ Assault Vest
+Ability: Snow Warning
+Shiny: Yes
+EVs: 4 HP / 244 Atk / 4 Def / 248 SpA / 4 SpD / 4 Spe
+- Blizzard
+- Giga Drain
+- Earthquake
+- Ice Shard
+
+Weavile @ Focus Sash
+Ability: Pickpocket
+EVs: 4 HP / 240 Atk / 160 Def / 104 Spe
+Adamant Nature
+- Fake Out
+- Icicle Crash
+- Ice Shard
+- Toxic
+
+Magnezone @ Damp Rock
+Ability: Sturdy
+Shiny: Yes
+IVs: 0 Atk
+- Thunder
+- Flash Cannon
+- Rain Dance
+- Magnet Rise
+
+Lickilicky @ Assault Vest
+Ability: Oblivious
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 4 Def / 4 SpD / 244 Spe
+Adamant Nature
+- Explosion
+- Zen Headbutt
+- Ice Punch
+- Fissure
+
+Rhyperior @ Assault Vest
+Ability: Lightning Rod
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- Earthquake
+- Rock Blast
+- Fire Punch
+- Thunder Punch
+
+Tangrowth @ Meadow Plate
+Ability: Regenerator
+Shiny: Yes
+EVs: 4 HP / 248 SpA / 252 SpD / 4 Spe
+Modest Nature
+IVs: 0 Atk
+- Grass Knot
+- Giga Drain
+- Sleep Powder
+- Sludge Bomb
+
+Electivire @ Assault Vest
+Ability: Vital Spirit
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 144 Def / 108 Spe
+Adamant Nature
+- Wild Charge
+- Ice Punch
+- Earthquake
+- Hammer Arm
+
+Magmortar @ Heat Rock
+Ability: Vital Spirit
+EVs: 16 HP / 224 Def / 252 SpA / 16 Spe
+Modest Nature
+IVs: 0 Atk
+- Incinerate
+- Heat Wave
+- Solar Beam
+- Sunny Day
+
+Togekiss @ Scope Lens
+Ability: Super Luck
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dazzling Gleam
+- Air Slash
+- Hidden Power [Ground]
+- Roost
+
+Yanmega @ Assault Vest
+Ability: Speed Boost
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Bug Buzz
+- Air Slash
+- Giga Drain
+- Quick Attack
+
+Leafeon @ Life Orb
+Ability: Leaf Guard
+Shiny: Yes
+Happiness: 0
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Leaf Blade
+- Swords Dance
+- Synthesis
+- Sunny Day
+
+Glaceon @ Icium Z
+Ability: Snow Cloak
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 30 Atk
+- Blizzard
+- Hidden Power [Ground]
+- Quick Attack
+- Hail
+
+Gliscor @ Toxic Orb
+Ability: Poison Heal
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Earthquake
+- Wing Attack
+- Swords Dance
+- Roost
+
+Mamoswine @ Rocky Helmet
+Ability: Snow Cloak
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Earthquake
+- Avalanche
+- Ice Shard
+- Hail
+
+Porygon-Z @ Normalium Z
+Ability: Analytic
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Tri Attack
+- Substitute
+- Recover
+- Psychic
+
+Gallade-Mega @ Rocky Helmet
+Ability: Inner Focus
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Psycho Cut
+- Close Combat
+- Shadow Sneak
+- Swords Dance
+
+Probopass @ Air Balloon
+Ability: Sturdy
+Shiny: Yes
+EVs: 216 HP / 40 Def / 252 SpA
+Modest Nature
+IVs: 0 Atk
+- Power Gem
+- Flash Cannon
+- Thunderbolt
+- Iron Defense
+
+Dusknoir @ Mental Herb
+Ability: Frisk
+Shiny: Yes
+EVs: 252 HP / 252 Atk
+Brave Nature
+- Shadow Punch
+- Brick Break
+- Ice Punch
+- Trick Room
+
+Froslass @ Focus Sash
+Ability: Snow Cloak
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Shadow Ball
+- Blizzard
+- Destiny Bond
+- Hail
+
+
+=== [gen7anythinggoes-box] gen 4 pokemon box 2 ===
+
+Roserade @ Heat Rock
+Ability: Natural Cure
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Solar Beam
+- Sludge Bomb
+- Sunny Day
+- Synthesis
+
+Rampardos @ Rocky Helmet
+Ability: Mold Breaker
+Shiny: Yes
+EVs: 8 HP / 252 Atk / 124 Def / 124 SpD
+Adamant Nature
+- Head Smash
+- Earthquake
+- Hammer Arm
+- Swords Dance
+
+Bastiodon @ Rocky Helmet
+Ability: Sturdy
+Shiny: Yes
+EVs: 8 HP / 252 Atk / 124 Def / 124 SpD
+Brave Nature
+- Heavy Slam
+- Stone Edge
+- Hidden Power [Flying]
+- Avalanche
+
+Mothim @ Life Orb
+Ability: Swarm
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Bug Buzz
+- Air Slash
+- Quiver Dance
+- Roost
+
+Wormadam @ Rocky Helmet
+Ability: Overcoat
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Energy Ball
+- Bug Buzz
+- Quiver Dance
+- Synthesis
+
+Wormadam-Sandy @ Rocky Helmet
+Ability: Anticipation
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Earth Power
+- Bug Buzz
+- Quiver Dance
+- Psychic
+
+Wormadam-Trash (F) @ Rocky Helmet
+Ability: Anticipation
+EVs: 8 HP / 124 Def / 252 SpA / 124 SpD
+Quiet Nature
+IVs: 0 Spe
+- Gyro Ball
+- Bug Bite
+- Thief
+- Quiver Dance
+
+Vespiquen @ Life Orb
+Ability: Unnerve
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Attack Order
+- Aerial Ace
+- Roost
+- Destiny Bond
+
+Pachirisu @ Damp Rock
+Ability: Volt Absorb
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Volt Switch
+- Thunder
+- Quick Attack
+- Rain Dance
+
+Floatzel @ Assault Vest
+Ability: Water Veil
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Aqua Tail
+- Aqua Jet
+- Dig
+- Ice Punch
+
+Cherrim @ Heat Rock
+Ability: Flower Gift
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Solar Beam
+- Grassy Terrain
+- Sunny Day
+- Synthesis
+
+Gastrodon @ Chesto Berry
+Ability: Sticky Hold
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Earth Power
+- Ice Beam
+- Rest
+
+Ambipom @ Assault Vest
+Ability: Technician
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Fake Out
+- Aerial Ace
+- Ice Punch
+- Thunder Punch
+
+Drifblim @ Flame Orb
+Ability: Flare Boost
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 80 Def / 172 Spe
+Adamant Nature
+- Phantom Force
+- Fly
+- Tailwind
+- Destiny Bond
+
+Lopunny-Mega @ Focus Sash
+Ability: Scrappy
+EVs: 4 HP / 252 Atk / 16 Def / 236 Spe
+Adamant Nature
+- Fake Out
+- Facade
+- High Jump Kick
+- Ice Punch
+
+Mismagius @ Spooky Plate
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Serious Nature
+IVs: 0 Atk
+- Shadow Ball
+- Dazzling Gleam
+- Thunderbolt
+- Destiny Bond
+
+Honchkrow @ Life Orb
+Ability: Super Luck
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Brave Bird
+- Quick Attack
+- Night Slash
+- Roost
+
+Purugly @ Assault Vest
+Ability: Own Tempo
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Quick Attack
+- Fake Out
+- Aerial Ace
+- Attract
+
+Skuntank @ Black Sludge
+Ability: Aftermath
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+IVs: 0 Atk
+- Dark Pulse
+- Sludge Bomb
+- Flamethrower
+- Defog
+
+Bronzong @ Rocky Helmet
+Ability: Heatproof
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 SpA
+Brave Nature
+IVs: 0 Spe
+- Gyro Ball
+- Zen Headbutt
+- Explosion
+- Iron Defense
+
+Chatot @ Focus Sash
+Ability: Keen Eye
+EVs: 252 HP / 4 SpA / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Encore
+- Sing
+- Heat Wave
+- Substitute
+
+Spiritomb @ Rocky Helmet
+Ability: Infiltrator
+Shiny: Yes
+EVs: 252 HP / 4 SpA / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Taunt
+- Hypnosis
+- Dream Eater
+- Destiny Bond
+
+Garchomp-Mega @ Rocky Helmet
+Ability: Rough Skin
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dual Chop
+- Earthquake
+- Iron Head
+- Swords Dance
+
+Lucario-Mega @ Focus Sash
+Ability: Adaptability
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- High Jump Kick
+- Meteor Mash
+- Extreme Speed
+- Hone Claws
+
+
+=== [gen7anythinggoes-box] half gen 3 pokemon and half gen 4 pokemon ===
+
+Relicanth @ Rocky Helmet
+Ability: Rock Head
+Shiny: Yes
+EVs: 32 HP / 192 Atk / 252 SpA / 32 SpD
+Lonely Nature
+- Head Smash
+- Aqua Tail
+- Ice Beam
+- Yawn
+
+Luvdisc @ Damp Rock
+Ability: Hydration
+Shiny: Yes
+EVs: 4 HP / 4 Def / 252 SpA / 248 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Hidden Power [Ground]
+- Rain Dance
+
+Salamence-Mega @ Life Orb
+Ability: Aerilate
+Shiny: Yes
+Happiness: 0
+EVs: 4 HP / 252 Atk / 4 SpD / 248 Spe
+Adamant Nature
+- Dragon Claw
+- Dragon Dance
+- Frustration
+- Roost
+
+Metagross-Mega @ Life Orb
+Ability: Tough Claws
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 4 SpD / 248 Spe
+Serious Nature
+- Meteor Mash
+- Zen Headbutt
+- Bullet Punch
+- Hone Claws
+
+Regirock @ Assault Vest
+Ability: Sturdy
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- Rock Slide
+- Hammer Arm
+- Explosion
+- Power-Up Punch
+
+Regice @ Icy Rock
+Ability: Clear Body
+Shiny: Yes
+EVs: 4 HP / 252 Def / 252 SpA
+Modest Nature
+- Blizzard
+- Earthquake
+- Hail
+- Hidden Power [Flying]
+
+Registeel @ Iron Plate
+Ability: Clear Body
+Shiny: Yes
+EVs: 248 HP / 252 Atk / 4 Def / 4 SpD
+Adamant Nature
+- Iron Head
+- Magnet Rise
+- Aerial Ace
+- Rock Slide
+
+Latias-Mega @ Soul Dew
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dragon Pulse
+- Psychic
+- Shadow Ball
+- Recover
+
+Latios-Mega @ Soul Dew
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dragon Pulse
+- Psychic
+- Shadow Ball
+- Recover
+
+Kyogre-Primal @ Splash Plate
+Ability: Primordial Sea
+Shiny: Yes
+EVs: 32 HP / 252 SpA / 224 Spe
+Modest Nature
+IVs: 0 Atk
+- Origin Pulse
+- Ice Beam
+- Thunder
+- Calm Mind
+
+Groudon-Primal @ Assault Vest
+Ability: Desolate Land
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 SpA
+- Lava Plume
+- Precipice Blades
+- Rock Slide
+- Solar Beam
+
+Rayquaza-Mega @ Focus Sash
+Ability: Delta Stream
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Claw
+- Dragon Ascent
+- Dragon Dance
+- Extreme Speed
+
+Jirachi @ Power Herb
+Ability: Serene Grace
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Doom Desire
+- Psychic
+- Energy Ball
+- Healing Wish
+
+Deoxys @ Focus Sash
+Ability: Pressure
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Psychic
+- Dark Pulse
+- Extreme Speed
+- Signal Beam
+
+Deoxys-Attack @ Focus Sash
+Ability: Pressure
+Shiny: Yes
+- Psychic
+- Shadow Ball
+- Signal Beam
+- Extreme Speed
+
+Deoxys-Speed @ Focus Sash
+Ability: Pressure
+Shiny: Yes
+EVs: 4 HP / 4 Def / 252 SpA / 4 SpD / 244 Spe
+Modest Nature
+- Psychic
+- Shadow Ball
+- Signal Beam
+- Extreme Speed
+
+Deoxys-Defense @ Life Orb
+Ability: Pressure
+Shiny: Yes
+EVs: 4 HP / 4 Def / 252 SpA / 4 SpD / 244 Spe
+Modest Nature
+- Psychic
+- Extreme Speed
+- Cosmic Power
+- Recover
+
+Torterra @ Life Orb
+Ability: Shell Armor
+Shiny: Yes
+EVs: 92 HP / 252 Atk / 164 SpD
+Brave Nature
+- Earthquake
+- Heavy Slam
+- Stockpile
+- Synthesis
+
+Infernape @ Rocky Helmet
+Ability: Iron Fist
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Fire Punch
+- Close Combat
+- Grass Knot
+- Swords Dance
+
+Empoleon @ Assault Vest
+Ability: Defiant
+Shiny: Yes
+EVs: 8 HP / 124 Def / 252 SpA / 124 SpD
+Modest Nature
+- Surf
+- Ice Beam
+- Earthquake
+- Flash Cannon
+
+Staraptor @ Life Orb
+Ability: Reckless
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Double-Edge
+- Brave Bird
+- Close Combat
+- Roost
+
+Bibarel @ Rocky Helmet
+Ability: Unaware
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Double-Edge
+- Aqua Tail
+- Quick Attack
+- Swords Dance
+
+Kricketune @ Insect Plate
+Ability: Swarm
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Leech Life
+- Knock Off
+- Brick Break
+- Swords Dance
+
+Luxray @ Zap Plate
+Ability: Intimidate
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Wild Charge
+- Quick Attack
+- Ice Fang
+- Electric Terrain
+
+
+=== [gen7anythinggoes-box] gen 3 pokemon box 3 ===
+
+Spinda @ Life Orb
+Ability: Own Tempo
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Substitute
+- Fire Punch
+- Fake Out
+- Wish
+
+Flygon @ Yache Berry
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Claw
+- Earthquake
+- Rock Slide
+- Roost
+
+Cacturne @ Rocky Helmet
+Ability: Sand Veil
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Giga Drain
+- Dark Pulse
+- Nasty Plot
+- Destiny Bond
+
+Altaria-Mega @ Life Orb
+Ability: Pixilate
+Shiny: Yes
+EVs: 252 Atk / 40 SpD / 216 Spe
+Adamant Nature
+- Return
+- Dragon Dance
+- Cotton Guard
+- Roost
+
+Zangoose @ Rocky Helmet
+Ability: Toxic Boost
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Close Combat
+- Focus Punch
+- Aerial Ace
+- Swords Dance
+
+Seviper @ Toxic Plate
+Ability: Infiltrator
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Sludge Bomb
+- Giga Drain
+- Dark Pulse
+- Haze
+
+Lunatone @ Rocky Helmet
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dream Eater
+- Power Gem
+- Hypnosis
+- Calm Mind
+
+Solrock @ Assault Vest
+Ability: Levitate
+Shiny: Yes
+Happiness: 0
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Rollout
+- Zen Headbutt
+- Explosion
+- Flare Blitz
+
+Whiscash @ Rocky Helmet
+Ability: Anticipation
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Dance
+- Waterfall
+- Earthquake
+- Bounce
+
+Crawdaunt @ Rocky Helmet
+Ability: Shell Armor
+Shiny: Yes
+EVs: 8 HP / 252 Atk / 240 SpD / 8 Spe
+Adamant Nature
+- Crabhammer
+- Crunch
+- Aerial Ace
+- Hone Claws
+
+Claydol @ Rocky Helmet
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Zen Headbutt
+- Hyper Beam
+- Explosion
+- Rock Polish
+
+Cradily @ Life Orb
+Ability: Suction Cups
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Giga Drain
+- Ancient Power
+- Synthesis
+- Hidden Power [Fire]
+
+Armaldo @ Rocky Helmet
+Ability: Battle Armor
+Shiny: Yes
+EVs: 252 Atk
+Serious Nature
+- Stone Edge
+- X-Scissor
+- Hidden Power [Grass]
+- Hone Claws
+
+Milotic @ Maranga Berry
+Ability: Marvel Scale
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Dragon Pulse
+- Coil
+- Recover
+
+Castform @ Damp Rock
+Ability: Forecast
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Incinerate
+- Tailwind
+- Hurricane
+- Thunder
+
+Kecleon @ Focus Sash
+Ability: Color Change
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Fake Out
+- Drain Punch
+- Ice Punch
+- Toxic
+
+Banette-Mega @ Focus Sash
+Ability: Prankster
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Shadow Claw
+- Shadow Sneak
+- Substitute
+- Destiny Bond
+
+Tropius @ Heat Rock
+Ability: Chlorophyll
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Solar Beam
+- Air Slash
+- Synthesis
+- Sunny Day
+
+Chimecho @ Focus Sash
+Ability: Levitate
+Shiny: Yes
+IVs: 0 Atk
+- Hypnosis
+- Dream Eater
+- Toxic
+- Recover
+
+Absol-Mega @ Focus Sash
+Ability: Magic Bounce
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Throat Chop
+- Play Rough
+- Megahorn
+- Hone Claws
+
+Glalie-Mega @ Life Orb
+Ability: Refrigerate
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Double-Edge
+- Freeze-Dry
+- Ice Shard
+- Explosion
+
+Walrein @ Assault Vest
+Ability: Oblivious
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Ice Fang
+- Aqua Tail
+- Earthquake
+- Hidden Power [Flying]
+
+Huntail @ Damp Rock
+Ability: Swift Swim
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Hidden Power [Ground]
+- Rain Dance
+
+Gorebyss @ Damp Rock
+Ability: Swift Swim
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Hidden Power [Ground]
+- Rain Dance
+
+
+=== [gen7anythinggoes-box] half gen 2 pokemon and half gen 3 pokemon ===
+
+Skarmory @ Rocky Helmet
+Ability: Sturdy
+Shiny: Yes
+EVs: 252 Atk / 252 Def / 4 Spe
+Serious Nature
+- Drill Peck
+- Whirlwind
+- Toxic Spikes
+- Roost
+
+Houndoom-Mega @ Focus Sash
+Ability: Solar Power
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Flamethrower
+- Dark Pulse
+- Destiny Bond
+- Nasty Plot
+
+Kingdra @ Salac Berry
+Ability: Swift Swim
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dragon Pulse
+- Surf
+- Flash Cannon
+- Dragon Dance
+
+Donphan @ Earth Plate
+Ability: Sturdy
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- Earthquake
+- Seed Bomb
+- Fire Fang
+- Rest
+
+Stantler @ Assault Vest
+Ability: Intimidate
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Jump Kick
+- Earthquake
+- Zen Headbutt
+- Wild Charge
+
+Smeargle @ Power Herb
+Ability: Moody
+Shiny: Yes
+EVs: 252 HP / 252 SpA / 4 Spe
+Modest Nature
+- Oblivion Wing
+- Extreme Speed
+- Geomancy
+- Spore
+
+Hitmontop @ Zoom Lens
+Ability: Intimidate
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- High Jump Kick
+- Bullet Punch
+- Earthquake
+- Fake Out
+
+Miltank @ Life Orb
+Ability: Scrappy
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Hammer Arm
+- Toxic
+- Heal Bell
+- Milk Drink
+
+Blissey @ Life Orb
+Ability: Natural Cure
+Shiny: Yes
+EVs: 252 HP / 4 Atk / 252 Def
+- Seismic Toss
+- Toxic
+- Aromatherapy
+- Soft-Boiled
+
+Raikou @ Assault Vest
+Ability: Pressure
+Shiny: Yes
+IVs: 0 Atk
+- Discharge
+- Thunderbolt
+- Extrasensory
+- Shadow Ball
+
+Entei @ Assault Vest
+Ability: Pressure
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Iron Head
+- Stomping Tantrum
+- Stone Edge
+
+Suicune @ Chesto Berry
+Ability: Pressure
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Calm Mind
+- Sleep Talk
+- Rest
+
+Tyranitar-Mega @ Tyranitarite
+Ability: Sand Stream
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Crunch
+- Rock Slide
+- Earthquake
+- Dragon Dance
+
+Celebi @ Life Orb
+Ability: Natural Cure
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Giga Drain
+- Psychic
+- Nasty Plot
+- Dazzling Gleam
+
+Sceptile-Mega @ Focus Sash
+Ability: Overgrow
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Giga Drain
+- Dragon Pulse
+- Substitute
+- Synthesis
+
+Blaziken-Mega @ Focus Sash
+Ability: Speed Boost
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Blaze Kick
+- High Jump Kick
+- Stone Edge
+- Hone Claws
+
+Swampert-Mega @ Assault Vest
+Ability: Swift Swim
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Waterfall
+- Earthquake
+- Superpower
+- Ice Punch
+
+Mightyena @ Wide Lens
+Ability: Moxie
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Crunch
+- Sucker Punch
+- Play Rough
+- Yawn
+
+Linoone @ Figy Berry
+Ability: Gluttony
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Play Rough
+- Extreme Speed
+- Stomping Tantrum
+- Seed Bomb
+
+Beautifly @ Life Orb
+Ability: Swarm
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Bug Buzz
+- Air Cutter
+- Roost
+- Quiver Dance
+
+Dustox @ Life Orb
+Ability: Shield Dust
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Bug Buzz
+- Sludge Bomb
+- Quiver Dance
+- Roost
+
+Ludicolo @ Damp Rock
+Ability: Swift Swim
+Shiny: Yes
+EVs: 252 HP / 252 SpA / 4 Spe
+Modest Nature
+- Giga Drain
+- Surf
+- Power-Up Punch
+- Rain Dance
+
+Shiftry @ Life Orb
+Ability: Early Bird
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Bullet Seed
+- Throat Chop
+- Rest
+- Fake Out
+
+Swellow @ Silk Scarf
+Ability: Scrappy
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Boomburst
+- Air Slash
+- Heat Wave
+- U-turn
+
+
+=== [gen7anythinggoes-box] gen 3 pokemon box 2 ===
+
+Pelipper @ Damp Rock
+Ability: Drizzle
+Shiny: Yes
+EVs: 252 SpA / 252 Spe
+Modest Nature
+- Hurricane
+- U-turn
+- Tailwind
+- Roost
+
+Gardevoir-Mega @ Focus Sash
+Ability: Pixilate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dazzling Gleam
+- Psychic
+- Shadow Ball
+- Destiny Bond
+
+Masquerain @ Rocky Helmet
+Ability: Intimidate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Bug Buzz
+- Air Slash
+- Aqua Jet
+- Roost
+
+Breloom @ Toxic Orb
+Ability: Poison Heal
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Spore
+- Leech Seed
+- Focus Punch
+- Substitute
+
+Slaking @ Assault Vest
+Ability: Truant
+Shiny: Yes
+EVs: 128 HP / 252 Atk / 128 SpD
+Adamant Nature
+- Giga Impact
+- Hammer Arm
+- Ice Punch
+- Sucker Punch
+
+Shedinja @ Focus Sash
+Ability: Wonder Guard
+Shiny: Yes
+EVs: 252 Atk / 120 SpD / 136 Spe
+Adamant Nature
+- X-Scissor
+- Shadow Sneak
+- Will-O-Wisp
+- Swords Dance
+
+Exploud @ Silk Scarf
+Ability: Scrappy
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Boomburst
+- Surf
+- Fire Blast
+- Focus Blast
+
+Hariyama @ Flame Orb
+Ability: Guts
+EVs: 8 HP / 252 Atk / 124 Def / 124 SpD
+Adamant Nature
+- Close Combat
+- Knock Off
+- Heavy Slam
+- Ice Punch
+
+Delcatty @ Rocky Helmet
+Ability: Cute Charm
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Fake Out
+- Facade
+- Toxic
+- Wish
+
+Sableye-Mega @ Life Orb
+Ability: Magic Bounce
+Shiny: Yes
+EVs: 4 HP / 248 Atk / 4 Def / 248 SpA / 4 SpD
+IVs: 0 Atk
+- Foul Play
+- Night Shade
+- Will-O-Wisp
+- Recover
+
+Mawile-Mega @ Assault Vest
+Ability: Huge Power
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Iron Head
+- Play Rough
+- Sucker Punch
+- Power-Up Punch
+
+Aggron-Mega @ Life Orb
+Ability: Sturdy
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Def
+Relaxed Nature
+- Heavy Slam
+- Earthquake
+- Rock Slide
+- Rest
+
+Medicham-Mega @ Assault Vest
+Ability: Telepathy
+Shiny: Yes
+- Zen Headbutt
+- High Jump Kick
+- Ice Punch
+- Bullet Punch
+
+Manectric-Mega @ Assault Vest
+Ability: Intimidate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Discharge
+- Flamethrower
+- Signal Beam
+- Volt Switch
+
+Plusle @ Focus Sash
+Ability: Plus
+Shiny: Yes
+EVs: 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Discharge
+- Volt Switch
+- Grass Knot
+- Wish
+
+Minun @ Focus Sash
+Ability: Minus
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Discharge
+- Volt Switch
+- Grass Knot
+- Wish
+
+Volbeat @ Insect Plate
+Ability: Swarm
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Lunge
+- Quick Attack
+- Tailwind
+- Roost
+
+Illumise @ Insect Plate
+Ability: Tinted Lens
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Bug Buzz
+- Water Pulse
+- Thunderbolt
+- Roost
+
+Swalot @ Black Sludge
+Ability: Liquid Ooze
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Sludge Bomb
+- Shadow Ball
+- Giga Drain
+- Destiny Bond
+
+Sharpedo-Mega @ Assault Vest
+Ability: Strong Jaw
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Crunch
+- Aqua Jet
+- Ice Fang
+- Psychic Fangs
+
+Wailord @ Wacan Berry
+Ability: Pressure
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Water Spout
+- Ice Beam
+- Clear Smog
+- Substitute
+
+Camerupt-Mega @ Rocky Helmet
+Ability: Sheer Force
+Shiny: Yes
+EVs: 248 HP / 8 Def / 252 SpA
+Modest Nature
+IVs: 0 Atk
+- Lava Plume
+- Earth Power
+- Flash Cannon
+- Yawn
+
+Torkoal @ Rocky Helmet
+Ability: Drought
+Shiny: Yes
+EVs: 4 HP / 252 Def / 252 SpA
+Relaxed Nature
+IVs: 0 Spe
+- Incinerate
+- Eruption
+- Shell Smash
+- Gyro Ball
+
+Grumpig @ Mind Plate
+Ability: Own Tempo
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Psychic
+- Drain Punch
+- Heal Bell
+- Substitute
+
+
+=== [gen7anythinggoes-box] gen 2 pokemon box 2 ===
+
+Politoed @ Damp Rock
+Ability: Drizzle
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Substitute
+- Toxic
+
+Jumpluff @ Heat Rock
+Ability: Chlorophyll
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Solar Beam
+- Leech Seed
+- Cotton Guard
+- Sunny Day
+
+Sunflora @ Heat Rock
+Ability: Chlorophyll
+Shiny: Yes
+IVs: 0 Atk
+- Solar Beam
+- Swords Dance
+- Leech Seed
+- Sunny Day
+
+Quagsire @ Damp Rock
+Ability: Unaware
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Wave Crash
+- Earthquake
+- Ice Punch
+- Rain Dance
+
+Espeon @ Psychium Z
+Ability: Magic Bounce
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Dazzling Gleam
+- Calm Mind
+- Morning Sun
+
+Umbreon @ Leftovers
+Ability: Synchronize
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+IVs: 0 Atk
+- Foul Play
+- Toxic
+- Wish
+- Substitute
+
+Slowking @ Assault Vest
+Ability: Regenerator
+Shiny: Yes
+EVs: 16 HP / 240 Def / 252 SpA
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Psychic
+- Ice Beam
+- Grass Knot
+
+Unown @ Assault Vest
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Hidden Power [Psychic]
+- None
+- None
+- None
+
+Wobbuffet @ Custap Berry
+Ability: Shadow Tag
+EVs: 252 HP / 128 Def / 128 SpD
+Careful Nature
+IVs: 0 Atk
+- Encore
+- Counter
+- Mirror Coat
+- Destiny Bond
+
+Girafarig @ Life Orb
+Ability: Early Bird
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Calm Mind
+- Psychic
+- Dazzling Gleam
+- Rest
+
+Forretress @ Leftovers
+Ability: Sturdy
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Def
+Relaxed Nature
+IVs: 0 Spe
+- Gyro Ball
+- Bug Bite
+- Toxic Spikes
+- Rapid Spin
+
+Dunsparce @ Rocky Helmet
+Ability: Serene Grace
+EVs: 8 HP / 252 Atk / 124 Def / 124 SpD
+Brave Nature
+IVs: 0 Spe
+- Double-Edge
+- Earthquake
+- Gyro Ball
+- Coil
+
+Steelix-Mega @ Life Orb
+Ability: Sturdy
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Def
+Impish Nature
+IVs: 0 Spe
+- Gyro Ball
+- Earthquake
+- Curse
+- Rest
+
+Granbull @ Wide Lens
+Ability: Intimidate
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Play Rough
+- Earthquake
+- Rock Slide
+- Close Combat
+
+Qwilfish @ Rocky Helmet
+Ability: Intimidate
+EVs: 4 HP / 252 Atk / 252 Spe
+Serious Nature
+- Liquidation
+- Explosion
+- Toxic Spikes
+- Destiny Bond
+
+Scizor-Mega @ Life Orb
+Ability: Technician
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Bug Bite
+- Bullet Punch
+- Swords Dance
+- Roost
+
+Shuckle @ Rocky Helmet
+Ability: Sturdy
+EVs: 4 HP / 252 Def / 252 SpD
+Brave Nature
+IVs: 0 Spe
+- Gyro Ball
+- Bug Bite
+- Rock Blast
+- Knock Off
+
+Heracross-Mega @ Rocky Helmet
+Ability: Skill Link
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Pin Missile
+- Rock Blast
+- Close Combat
+- Swords Dance
+
+Ursaring @ Rocky Helmet
+Ability: Quick Feet
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Close Combat
+- Earthquake
+- Fire Punch
+- Curse
+
+Magcargo @ Rocky Helmet
+Ability: Magma Armor
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Heat Wave
+- Incinerate
+- Ancient Power
+- Yawn
+
+Corsola @ Damp Rock
+Ability: Regenerator
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Serious Nature
+IVs: 0 Atk
+- Surf
+- Power Gem
+- Ice Beam
+- Rain Dance
+
+Octillery @ Damp Rock
+Ability: Sniper
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Water Spout
+- Ice Beam
+- Sludge Bomb
+- Rain Dance
+
+Delibird @ Icy Rock
+Ability: Vital Spirit
+EVs: 252 Atk / 252 SpA / 4 Spe
+Modest Nature
+- Freeze-Dry
+- Fly
+- Hail
+- Destiny Bond
+
+Mantine @ Rocky Helmet
+Ability: Swift Swim
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Air Slash
+- Ice Beam
+- Tailwind
+
+
+=== [gen7anythinggoes-box] half gen 1 pokemon and half gen 2 pokemon ===
+
+Aerodactyl-Mega @ Life Orb
+Ability: Tough Claws
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Wing Attack
+- Rock Slide
+- Earthquake
+- Roost
+
+Snorlax @ Snorlium Z
+Ability: Immunity
+Shiny: Yes
+EVs: 252 Atk / 252 Def / 4 SpD
+Adamant Nature
+- Facade
+- Crunch
+- Belly Drum
+- Giga Impact
+
+Snorlax @ Figy Berry
+Ability: Gluttony
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Facade
+- Crunch
+- Belly Drum
+- Recycle
+
+Articuno @ Icy Rock
+Ability: Snow Cloak
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Freeze-Dry
+- Air Cutter
+- Hail
+- Roost
+
+Zapdos @ Life Orb
+Ability: Static
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Discharge
+- Fly
+- Volt Switch
+- Roost
+
+Moltres @ Life Orb
+Ability: Flame Body
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Heat Wave
+- Air Slash
+- Tailwind
+- Roost
+
+Dragonite @ Weakness Policy
+Ability: Multiscale
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Fly
+- Extreme Speed
+- Dragon Claw
+- Dragon Dance
+
+Mewtwo-Mega-X @ Life Orb
+Ability: Steadfast
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Zen Headbutt
+- Submission
+- Ice Punch
+- Recover
+
+Mewtwo-Mega-Y @ Focus Sash
+Ability: Insomnia
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Shadow Ball
+- Ice Beam
+- Recover
+
+Mew @ Mewnium Z
+Ability: Synchronize
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Psychic
+- Dark Pulse
+- Transform
+- Roost
+
+Meganium @ Meadow Plate
+Ability: Leaf Guard
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Swords Dance
+- Seed Bomb
+- Earthquake
+- Synthesis
+
+Typhlosion @ Assault Vest
+Ability: Flash Fire
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Lava Plume
+- Extrasensory
+- Focus Blast
+- Solar Beam
+
+Feraligatr @ Rocky Helmet
+Ability: Sheer Force
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Liquidation
+- Crunch
+- Ice Punch
+- Dragon Dance
+
+Furret @ Rocky Helmet
+Ability: Keen Eye
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Coil
+- Quick Attack
+- Defense Curl
+- Thunder Punch
+
+Noctowl @ Focus Sash
+Ability: Keen Eye
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Air Slash
+- Tailwind
+- Whirlwind
+- Roost
+
+Ledian @ Focus Sash
+Ability: Swarm
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Bug Buzz
+- Air Slash
+- Tailwind
+- Roost
+
+Ariados @ Focus Sash
+Ability: Swarm
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Swords Dance
+- Poison Jab
+- Leech Life
+- Shadow Sneak
+
+Crobat @ Black Sludge
+Ability: Infiltrator
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Brave Bird
+- Cross Poison
+- Quick Attack
+- Roost
+
+Lanturn @ Damp Rock
+Ability: Water Absorb
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Thunder
+- Ice Beam
+- Rain Dance
+
+Xatu @ Rocky Helmet
+Ability: Magic Bounce
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Psychic
+- Air Slash
+- U-turn
+- Roost
+
+Ampharos-Mega @ Assault Vest
+Ability: Mold Breaker
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Volt Switch
+- Thunderbolt
+- Dragon Pulse
+- Power Gem
+
+Bellossom @ Heat Rock
+Ability: Chlorophyll
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Solar Beam
+- Giga Drain
+- Sunny Day
+- Swords Dance
+
+Azumarill @ Sitrus Berry
+Ability: Huge Power
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Belly Drum
+- Aqua Jet
+- Waterfall
+- Play Rough
+
+Sudowoodo @ Zoom Lens
+Ability: Rock Head
+Shiny: Yes
+EVs: 128 HP / 252 Atk / 128 SpD
+Brave Nature
+- Head Smash
+- Wood Hammer
+- Earthquake
+- Hammer Arm
+
+
+=== [gen7anythinggoes-box] GEN 1 pokemon box 3 ===
+
+Kingler @ Wide Lens
+Ability: Hyper Cutter
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Swords Dance
+- Crabhammer
+- Rock Slide
+- Superpower
+
+Electrode @ Assault Vest
+Ability: Aftermath
+Shiny: Yes
+EVs: 128 Atk / 128 SpA / 252 Spe
+Serious Nature
+- Thunderbolt
+- Volt Switch
+- Foul Play
+- Signal Beam
+
+Exeggutor @ Wiki Berry
+Ability: Harvest
+Shiny: Yes
+EVs: 8 HP / 124 Def / 252 SpA / 124 SpD
+Quiet Nature
+IVs: 0 Atk
+- Energy Ball
+- Psychic
+- Trick Room
+- Synthesis
+
+Exeggutor-Alola @ Wiki Berry
+Ability: Harvest
+Shiny: Yes
+EVs: 8 HP / 124 Def / 252 SpA / 124 SpD
+Quiet Nature
+IVs: 0 Atk
+- Energy Ball
+- Dragon Pulse
+- Trick Room
+- Synthesis
+
+Marowak @ Thick Club
+Ability: Rock Head
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Bonemerang
+- Double-Edge
+- Knock Off
+- Swords Dance
+
+Marowak-Alola @ Thick Club
+Ability: Rock Head
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Double-Edge
+- Shadow Bone
+- Swords Dance
+
+Hitmonlee @ White Herb
+Ability: Unburden
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Close Combat
+- Rock Slide
+- Knock Off
+- Curse
+
+Hitmonchan @ Assault Vest
+Ability: Keen Eye
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Drain Punch
+- Mach Punch
+- Thunder Punch
+- Close Combat
+
+Weezing @ Black Sludge
+Ability: Levitate
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 SpD
+Quiet Nature
+- Sludge Bomb
+- Flamethrower
+- Destiny Bond
+- Explosion
+
+Kangaskhan-Mega @ Fightinium Z
+Ability: Parental Bond
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Fake Out
+- Power-Up Punch
+- Drain Punch
+- Sucker Punch
+
+Seaking @ Damp Rock
+Ability: Lightning Rod
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Facade
+- Waterfall
+- Megahorn
+- Rain Dance
+
+Starmie @ Expert Belt
+Ability: Natural Cure
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Surf
+- Ice Beam
+- Recover
+
+Mr. Mime @ Twisted Spoon
+Ability: Filter
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Nasty Plot
+
+Jynx @ Leftovers
+Ability: Dry Skin
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Substitute
+- Nasty Plot
+- Psychic
+- Ice Beam
+
+Pinsir-Mega @ Focus Sash
+Ability: Aerilate
+Shiny: Yes
+Happiness: 0
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- X-Scissor
+- Close Combat
+- Frustration
+- Swords Dance
+
+Tauros @ Focus Sash
+Ability: Sheer Force
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Wild Charge
+- Attract
+- Iron Head
+- Earthquake
+
+Gyarados-Mega @ Rocky Helmet
+Ability: Mold Breaker
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Waterfall
+- Crunch
+- Ice Fang
+- Dragon Dance
+
+Lapras @ Leftovers
+Ability: Shell Armor
+Shiny: Yes
+EVs: 248 HP / 4 Def / 252 SpA / 4 SpD
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Freeze-Dry
+- Perish Song
+- Psychic
+
+Ditto @ Quick Powder
+Ability: Limber
+Shiny: Yes
+EVs: 252 HP / 128 Atk / 128 SpA
+Serious Nature
+- Transform
+- None
+- None
+- None
+
+Eevee @ Eevium Z
+Ability: Anticipation
+Shiny: Yes
+EVs: 252 HP / 252 Spe
+Timid Nature
+- Last Resort
+- Stored Power
+- Substitute
+- Baton Pass
+
+Vaporeon @ Splash Plate
+Ability: Water Absorb
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Heal Bell
+- Wish
+
+Jolteon @ Zap Plate
+Ability: Volt Absorb
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Discharge
+- Volt Switch
+- Signal Beam
+- Yawn
+
+Flareon @ Assault Vest
+Ability: Flash Fire
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Superpower
+- Double-Edge
+- Quick Attack
+
+Omastar @ White Herb
+Ability: Weak Armor
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Shell Smash
+- Hydro Pump
+- Ice Beam
+- Earth Power
+
+
+=== [gen7anythinggoes-box] GEN 1 pokemon box 2 ===
+
+Dugtrio @ Leftovers
+Ability: Arena Trap
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Earthquake
+- Stone Edge
+- Hone Claws
+- Substitute
+
+Dugtrio-Alola @ Leftovers
+Ability: Tangling Hair
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Earthquake
+- Rock Slide
+- Substitute
+- Iron Head
+
+Persian @ Leftovers
+Ability: Technician
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Water Pulse
+- Fake Out
+- Dark Pulse
+- Hone Claws
+
+Persian-Alola @ Dread Plate
+Ability: Fur Coat
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Nasty Plot
+- Shadow Ball
+- Dark Pulse
+- Water Pulse
+
+Golduck @ Damp Rock
+Ability: Swift Swim
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Rain Dance
+- Surf
+- Ice Beam
+- Psychic
+
+Primeape @ Fightinium Z
+Ability: Defiant
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Close Combat
+- Earthquake
+- Toxic
+- Hone Claws
+
+Arcanine @ Life Orb
+Ability: Flash Fire
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Wild Charge
+- Extreme Speed
+- Morning Sun
+
+Poliwrath @ Assault Vest
+Ability: Water Absorb
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Earthquake
+- Waterfall
+- Ice Punch
+- Circle Throw
+
+Alakazam-Mega @ Focus Sash
+Ability: Trace
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Shadow Ball
+- Dazzling Gleam
+- Substitute
+
+Machamp @ Assault Vest
+Ability: No Guard
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dynamic Punch
+- Bullet Punch
+- Earthquake
+- Ice Punch
+
+Victreebel @ Wide Lens
+Ability: Chlorophyll
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Leaf Blade
+- Poison Jab
+- Knock Off
+- Morning Sun
+
+Tentacruel @ Damp Rock
+Ability: Rain Dish
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Sludge Bomb
+- Rain Dance
+
+Golem @ Custap Berry
+Ability: Sturdy
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Def
+Brave Nature
+- Earthquake
+- Stealth Rock
+- Rock Slide
+- Explosion
+
+Golem-Alola @ Life Orb
+Ability: Galvanize
+Shiny: Yes
+- Rock Slide
+- Double-Edge
+- Stealth Rock
+- Explosion
+
+Rapidash @ Life Orb
+Ability: Flash Fire
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Wild Charge
+- High Horsepower
+- Morning Sun
+
+Slowbro-Mega @ Life Orb
+Ability: Shell Armor
+Shiny: Yes
+EVs: 4 HP / 252 Def / 252 SpA
+Bold Nature
+IVs: 0 Atk
+- Surf
+- Ice Beam
+- Toxic
+- Slack Off
+
+Farfetch’d @ Stick
+Ability: Keen Eye
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- First Impression
+- Leaf Blade
+- Brave Bird
+- Roost
+
+Dodrio @ Wide Lens
+Ability: Early Bird
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Quick Attack
+- Brave Bird
+- Jump Kick
+- Roost
+
+Dewgong @ Damp Rock
+Ability: Hydration
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Rain Dance
+- Surf
+- Perish Song
+- Rest
+
+Muk @ Assault Vest
+Ability: Poison Touch
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Gunk Shot
+- Shadow Sneak
+- Fire Punch
+- Explosion
+
+Muk-Alola @ Assault Vest
+Ability: Poison Touch
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Gunk Shot
+- Shadow Sneak
+- Fire Punch
+- Explosion
+
+Cloyster @ Focus Sash
+Ability: Skill Link
+Shiny: Yes
+EVs: 252 Atk / 252 Spe
+Adamant Nature
+- Shell Smash
+- Icicle Crash
+- Rock Blast
+- Explosion
+
+Gengar-Mega @ Assault Vest
+Ability: Shadow Tag
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Sludge Bomb
+- Shadow Ball
+- Dazzling Gleam
+- Clear Smog
+
+Hypno @ Mind Plate
+Ability: Forewarn
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Hypnosis
+- Dream Eater
+- Shadow Ball
+- Signal Beam
+
+
+=== [gen7anythinggoes-box] GEN 1 pokemon box 1 ===
+
+Venusaur-Mega @ Life Orb
+Ability: Thick Fat
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Giga Drain
+- Sludge Bomb
+- Sleep Powder
+- Synthesis
+
+Charizard-Mega-X @ Life Orb
+Ability: Tough Claws
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Dragon Claw
+- Dragon Dance
+- Roost
+
+Charizard-Mega-Y @ Life Orb
+Ability: Drought
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Heat Wave
+- Air Slash
+- Solar Beam
+- Roost
+
+Blastoise-Mega @ Assault Vest
+Ability: Mega Launcher
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Water Pulse
+- Ice Beam
+- Dragon Pulse
+- Aura Sphere
+
+Butterfree @ Rocky Helmet
+Ability: Compound Eyes
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Bug Buzz
+- Air Slash
+- Sleep Powder
+- Roost
+
+Beedrill-Mega @ Life Orb
+Ability: Adaptability
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- X-Scissor
+- Poison Jab
+- Fell Stinger
+- Roost
+
+Pidgeot-Mega @ Life Orb
+Ability: No Guard
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Hurricane
+- Heat Wave
+- Tailwind
+- Roost
+
+Raticate @ Focus Sash
+Ability: Guts
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Endeavor
+- Quick Attack
+- U-turn
+- Substitute
+
+Raticate-Alola @ Aguav Berry
+Ability: Gluttony
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Crunch
+- Zen Headbutt
+- Shadow Claw
+- Quick Attack
+
+Fearow @ Focus Sash
+Ability: Keen Eye
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Tailwind
+- Quick Attack
+- Fly
+- Roost
+
+Arbok @ Toxic Plate
+Ability: Intimidate
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Gunk Shot
+- Crunch
+- Earthquake
+- Coil
+
+Pikachu @ Pikanium Z
+Ability: Static
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Volt Tackle
+- Extreme Speed
+- Thunder Punch
+- Brick Break
+
+Pikachu @ Light Ball
+Ability: Static
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+- Thunderbolt
+- Quick Attack
+- Grass Knot
+- Nasty Plot
+
+Raichu @ Zap Plate
+Ability: Static
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Volt Tackle
+- Extreme Speed
+- Brick Break
+- Knock Off
+
+Raichu-Alola @ Aloraichium Z
+Ability: Surge Surfer
+Shiny: Yes
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+- Thunderbolt
+- Psychic
+- Surf
+- Extreme Speed
+
+Sandslash @ Earth Plate
+Ability: Sand Rush
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Earthquake
+- Rock Slide
+- Stealth Rock
+- Hone Claws
+
+Sandslash-Alola @ Rocky Helmet
+Ability: Slush Rush
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Icicle Crash
+- Icicle Spear
+- Iron Tail
+- Hone Claws
+
+Nidoqueen @ Life Orb
+Ability: Sheer Force
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Earth Power
+- Sludge Wave
+- Ice Beam
+- Attract
+
+Nidoking @ Life Orb
+Ability: Sheer Force
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Earth Power
+- Sludge Wave
+- Ice Beam
+- Attract
+
+Clefable @ Life Orb
+Ability: Unaware
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Moonblast
+- Shadow Ball
+- Thunderbolt
+- Moonlight
+
+Ninetales @ Heat Rock
+Ability: Drought
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Nasty Plot
+- Heat Wave
+- Incinerate
+- Solar Beam
+
+Ninetales-Alola @ Icy Rock
+Ability: Snow Warning
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Nasty Plot
+- Blizzard
+- Moonblast
+- Psyshock
+
+Vileplume @ Black Sludge
+Ability: Effect Spore
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Giga Drain
+- Strength Sap
+- Sludge Bomb
+- Sleep Powder
+
+Parasect @ Leftovers
+Ability: Dry Skin
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Leech Life
+- Seed Bomb
+- Hone Claws
+- Spore
+
+
+=== [gen7purehackmons] Untitled 43 ===
+
+Aggron-Mega @ Leppa Berry
+Ability: Sturdy
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpD / 252 Spe
+Careful Nature
+- Searing Sunraze Smash
+- Cosmic Power
+- Recycle
+- Recover
+
+Shedinja
+Ability: Sturdy
+Shiny: Yes
+EVs: 252 Atk / 252 Spe
+Jolly Nature
+- Spectral Thief
+- Bullet Punch
+- Destiny Bond
+- Recycle
+
+
+=== [gen7purehackmons] Untitled 59 ===
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+
+=== [gen7anythinggoes] Grass team ===
+
+Arceus-Grass @ Meadow Plate
+Ability: Multitype
+EVs: 128 Atk / 128 SpA / 252 Spe
+Naughty Nature
+- Judgment
+- Surf
+- Extreme Speed
+- Recover
+
+Shaymin-Sky @ Life Orb
+Ability: Serene Grace
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Air Slash
+- Energy Ball
+- Earth Power
+- Synthesis
+
+Breloom @ Toxic Orb
+Ability: Poison Heal
+EVs: 8 HP / 8 Atk / 120 Def / 120 SpD / 252 Spe
+Jolly Nature
+- Spore
+- Leech Seed
+- Focus Punch
+- Substitute
+
+Sceptile @ Sceptilite
+Ability: Unburden
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Energy Ball
+- Dragon Pulse
+- Substitute
+- Synthesis
+
+Serperior @ Focus Sash
+Ability: Contrary
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Leaf Storm
+- Dragon Pulse
+- Glare
+- Synthesis
+
+Torterra @ Life Orb
+Ability: Shell Armor
+EVs: 96 HP / 252 Atk / 160 SpD
+Brave Nature
+- Earthquake
+- Heavy Slam
+- Stockpile
+- Synthesis
+
+
+=== [gen7anythinggoes] test team ===
+
+Dialga @ Adamant Orb
+Ability: Pressure
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Aura Sphere
+- Power Gem
+- Roar of Time
+- Flash Cannon
+
+Darkrai @ Dread Plate
+Ability: Bad Dreams
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Spacial Rend
+- Dark Pulse
+- Dark Void
+- Nasty Plot
+
+Blaziken-Mega @ Blazikenite
+Ability: Speed Boost
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Blaze Kick
+- High Jump Kick
+- Stone Edge
+- Hone Claws
+
+Breloom @ Toxic Orb
+Ability: Poison Heal
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Spore
+- Leech Seed
+- Focus Punch
+- Substitute
+
+Greninja-Bond (M) @ Focus Sash
+Ability: Battle Bond
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Surf
+- Dark Pulse
+- Ice Beam
+- Water Shuriken
+
+Pikachu @ Light Ball
+Ability: Lightning Rod
+EVs: 8 HP / 124 Atk / 124 SpA / 252 Spe
+- Volt Tackle
+- Grass Knot
+- Encore
+- Fake Out
+
+
+=== [gen7anythinggoes] slow team ===
+
+the slow rock (Steelix) @ Rocky Helmet
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 Def
+Relaxed Nature
+IVs: 0 Spe
+- Earthquake
+- Gyro Ball
+- Curse
+- Rest
+
+the tanky bug (Escavalier) @ Rocky Helmet
+Ability: Shell Armor
+EVs: 128 HP / 252 Atk / 128 Def
+Brave Nature
+- X-Scissor
+- Iron Head
+- Knock Off
+- Substitute
+
+the super wall (Aggron-Mega) @ Aggronite
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 Def
+Relaxed Nature
+- Heavy Slam
+- Rock Slide
+- Earthquake
+- Rest
+
+the slow building (Stakataka) @ Rocky Helmet
+Ability: Beast Boost
+EVs: 252 Atk / 252 Def
+Relaxed Nature
+IVs: 0 Spe
+- Gyro Ball
+- Rock Slide
+- Earthquake
+- Rest
+
+only one weaknes (Ferrothorn) @ Rocky Helmet
+Ability: Iron Barbs
+EVs: 4 HP / 252 Atk / 252 Def
+Relaxed Nature
+IVs: 0 Spe
+- Gyro Ball
+- Seed Bomb
+- Leech Seed
+- Spikes
+
+the spiky wall (Bastiodon) @ Rocky Helmet
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 Def
+Impish Nature
+- Earthquake
+- Rock Slide
+- Heavy Slam
+- Iron Defense
+
+
+=== [gen7anythinggoes] fast team ===
+
+hyper dragon (Rayquaza) @ Rocky Helmet
+Ability: Air Lock
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Claw
+- Dragon Ascent
+- Extreme Speed
+- Earthquake
+
+fast alien (Deoxys-Speed) @ Focus Sash
+Ability: Pressure
+EVs: 252 Atk / 252 Spe
+Jolly Nature
+- Zen Headbutt
+- Drain Punch
+- Extreme Speed
+- Recover
+
+strong alien (Deoxys-Attack) @ Focus Sash
+Ability: Pressure
+EVs: 252 Atk / 4 SpA / 252 Spe
+Lonely Nature
+- Zen Headbutt
+- Drain Punch
+- Extreme Speed
+- Recover
+
+fire chicken (Blaziken) @ Focus Sash
+Ability: Speed Boost
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Blaze Kick
+- High Jump Kick
+- Stone Edge
+- Hone Claws
+
+fast bug (Ninjask) @ Focus Sash
+Ability: Speed Boost
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Leech Life
+- Aerial Ace
+- Swords Dance
+- Roost
+
+fast lightning wol (Zeraora) @ Electrium Z
+Ability: Volt Absorb
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Plasma Fists
+- Knock Off
+- Fake Out
+- Close Combat
+
+
+=== [gen7anythinggoes] bug team ===
+
+bug horse (Arceus-Bug) @ Buginium Z
+Ability: Multitype
+EVs: 4 HP / 252 Atk / 252 SpA
+Lonely Nature
+- Judgment
+- Blast Burn
+- Extreme Speed
+- Recover
+
+shooting bug (Genesect-Chill) @ Chill Drive
+Ability: Download
+EVs: 4 HP / 252 Atk / 252 SpA
+Mild Nature
+- Techno Blast
+- U-turn
+- Iron Head
+- Shadow Claw
+
+muscle bug (Buzzwole) @ Focus Sash
+Ability: Beast Boost
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Hammer Arm
+- Leech Life
+- Rock Slide
+- Roost
+
+the one weaknes (Scizor-Mega) @ Scizorite
+Ability: Technician
+EVs: 128 HP / 252 Atk / 128 Spe
+- Bug Bite
+- Bullet Punch
+- Swords Dance
+- Roost
+
+lazy bug (Durant) @ Choice Scarf
+Ability: Truant
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Entrainment
+- Substitute
+- Iron Head
+- Toxic
+
+ghost bug (Shedinja) @ Focus Sash
+Ability: Wonder Guard
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Shadow Sneak
+- X-Scissor
+- Will-O-Wisp
+- Swords Dance
+
+
+=== [gen7anythinggoes] nomal team ===
+
+normal horse (Arceus) @ Rocky Helmet
+Ability: Multitype
+EVs: 4 HP / 252 Atk / 252 SpA
+- Judgment
+- Fly
+- Extreme Speed
+- Recover
+
+brave bird (Pidgeot-Mega) @ Pidgeotite
+Ability: No Guard
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+- Brave Bird
+- Heat Wave
+- Toxic
+- Roost
+
+i copy you (Ditto) @ Quick Powder
+Ability: Limber
+EVs: 252 HP / 128 Atk / 128 SpA
+- Transform
+- None
+- None
+- None
+
+dark rat (Rattata-Alola) @ Focus Sash
+Ability: Thick Fat
+Level: 1
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Endeavor
+- Quick Attack
+- U-turn
+- Crunch
+
+crazy bird (Staraptor) @ Focus Sash
+Ability: Reckless
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Heat Wave
+- Brave Bird
+- Close Combat
+- Roost
+
+tiny brave bird (Farfetch’d) @ Stick
+Ability: Keen Eye
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Brave Bird
+- First Impression
+- Roost
+- Swords Dance
+
+
+=== [gen7anythinggoes] fairy team ===
+
+im gonna buff (Xerneas) @ Power Herb
+Ability: Fairy Aura
+EVs: 252 HP / 252 SpA
+Modest Nature
+IVs: 0 Atk
+- Geomancy
+- Flash Cannon
+- Thunderbolt
+- Dazzling Gleam
+
+fairy horse (Arceus-Fairy) @ Pixie Plate
+Ability: Multitype
+EVs: 4 HP / 252 Atk / 252 SpA
+Mild Nature
+- Judgment
+- Flamethrower
+- Extreme Speed
+- Recover
+
+she has GEMS (Diancie) @ Diancite
+Ability: Clear Body
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Dazzling Gleam
+- Diamond Storm
+- Earth Power
+- Calm Mind
+
+MORE THUNDER (Tapu Koko) @ Tapunium Z
+Ability: Electric Surge
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Dazzling Gleam
+- Thunderbolt
+- Nature's Madness
+- Roost
+
+MORE PHYCHIC (Tapu Lele) @ Assault Vest
+Ability: Psychic Surge
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Dazzling Gleam
+- Psychic
+- Nature's Madness
+- Shadow Ball
+
+MORE WATER (Tapu Fini) @ Assault Vest
+Ability: Misty Surge
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Dazzling Gleam
+- Hydro Pump
+- Nature's Madness
+- Ice Beam
+
+
+=== [gen7anythinggoes] water team ===
+
+ancient whale (Kyogre-Primal) @ Blue Orb
+Ability: Primordial Sea
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Origin Pulse
+- Ice Beam
+- Thunder
+- Calm Mind
+
+space control (Palkia) @ Lustrous Orb
+Ability: Telepathy
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Aura Sphere
+- Hydro Pump
+- Spacial Rend
+- Power Gem
+
+he has MUCLES (Swampert) @ Swampertite
+Ability: Damp
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Waterfall
+- Earthquake
+- Superpower
+- Ice Punch
+
+THE RAIN (Pelipper) @ Damp Rock
+Ability: Drizzle
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+- Surf
+- Hurricane
+- U-turn
+- Roost
+
+the pipe guy (Volcanion)
+Ability: Water Absorb
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Steam Eruption
+- Heat Wave
+- Earth Power
+- Sludge Bomb
+
+MORE WATER (Tapu Fini) @ Tapunium Z
+Ability: Misty Surge
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Dazzling Gleam
+- Surf
+- Ice Beam
+- Nature's Madness
+
+
+=== [gen7anythinggoes] flying team ===
+
+hyper dragon (Rayquaza) @ Rocky Helmet
+Ability: Air Lock
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Claw
+- Dragon Ascent
+- Extreme Speed
+- Earthquake
+
+im boosting (Lugia) @ Rocky Helmet
+Ability: Multiscale
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Aeroblast
+- Whirlwind
+- Tailwind
+- Roost
+
+crazy bird (Staraptor) @ Focus Sash
+Ability: Reckless
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Double-Edge
+- Brave Bird
+- Close Combat
+- Roost
+
+the grass is flyes (Shaymin-Sky) @ Rocky Helmet
+Ability: Serene Grace
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Air Slash
+- Energy Ball
+- Earth Power
+- Synthesis
+
+tiny brave bird (Farfetch’d) @ Stick
+Ability: Defiant
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Brave Bird
+- Swords Dance
+- Roost
+- First Impression
+
+the goat (Skarmory) @ Rocky Helmet
+Ability: Sturdy
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Brave Bird
+- Iron Head
+- Spikes
+- Roost
+
+
+=== [gen7anythinggoes] dragon team ===
+
+hyper dragon (Rayquaza) @ Rocky Helmet
+Ability: Air Lock
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Claw
+- Dragon Ascent
+- Extreme Speed
+- Earthquake
+
+the one shot ice (Kyurem-White) @ Power Herb
+Ability: Turboblaze
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Dragon Pulse
+- Fusion Flare
+- Ice Burn
+- Roost
+
+no guns (Kommo-o) @ Kommonium Z
+Ability: Bulletproof
+EVs: 252 Atk / 252 SpA / 4 Spe
+- Clanging Scales
+- Close Combat
+- Flash Cannon
+- Flamethrower
+
+spit out of my as (Naganadel) @ Assault Vest
+Ability: Beast Boost
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Dragon Pulse
+- Sludge Bomb
+- Flamethrower
+- Thunderbolt
+
+i kill fairys (Garchomp) @ Lum Berry
+Ability: Rough Skin
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Dragon Claw
+- Earthquake
+- Iron Head
+- Swords Dance
+
+cute dragon (Flygon) @ Assault Vest
+Ability: Levitate
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Dragon Claw
+- Earthquake
+- Rock Slide
+- Fly
+
+
+=== [gen7anythinggoes] ghost team ===
+
+dragon?? (Giratina-Origin) @ Griseous Orb
+Ability: Levitate
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Shadow Force
+- Shadow Sneak
+- Outrage
+- Destiny Bond
+
+the only sword guy (Aegislash) @ Focus Sash
+Ability: Stance Change
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Shadow Sneak
+- Iron Head
+- Swords Dance
+- Destiny Bond
+
+mr devil six arms (Hoopa-Unbound) @ Focus Sash
+Ability: Magician
+EVs: 252 Atk / 252 SpA / 4 Spe
+Adamant Nature
+- Hyperspace Fury
+- Hyperspace Hole
+- Fire Punch
+- Destiny Bond
+
+sneaky (Marshadow) @ Marshadium Z
+Ability: Technician
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Spectral Thief
+- Shadow Sneak
+- Close Combat
+- Rock Slide
+
+THE MOON (Lunala) @ Lunalium Z
+Ability: Shadow Shield
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Moongeist Beam
+- Moonblast
+- Moonlight
+
+trolled :] (Shedinja) @ Focus Sash
+Ability: Wonder Guard
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- X-Scissor
+- Phantom Force
+- Shadow Sneak
+- Will-O-Wisp
+
+
+=== [gen7anythinggoes] fire team ===
+
+IM VERY HOT (Groudon-Primal) @ Red Orb
+Ability: Desolate Land
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Lava Plume
+- Precipice Blades
+- Rock Slide
+- Solar Beam
+
+the flying fire (Reshiram) @ Firium Z
+Ability: Turboblaze
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Dragon Pulse
+- Fusion Flare
+- Earth Power
+- Roost
+
+victory rat (Victini) @ Focus Sash
+Ability: Victory Star
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- V-create
+- Zen Headbutt
+- Fusion Bolt
+- Sunny Day
+
+THE SUN (Charizard-Mega-Y) @ Charizardite Y
+Ability: Blaze
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Blast Burn
+- Air Slash
+- Solar Beam
+- Roost
+
+fire chicken (Blaziken) @ Focus Sash
+Ability: Speed Boost
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Blaze Kick
+- High Jump Kick
+- Stone Edge
+- Hone Claws
+
+i love fire (Heatran) @ Air Balloon
+Ability: Flash Fire
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Fire Blast
+- Flash Cannon
+- Earth Power
+- Stealth Rock
+
+
+=== [gen7anythinggoes] psychic team ===
+
+the punching guy (Mewtwo-Mega-X) @ Mewtwonite X
+Ability: Steadfast
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Psycho Cut
+- Power-Up Punch
+- Ice Punch
+- Recover
+
+im gonna blow (Necrozma-Dusk-Mane) @ Ultranecrozium Z
+Ability: Prism Armor
+EVs: 252 Atk / 252 SpA / 4 Spe
+Lonely Nature
+- Outrage
+- Photon Geyser
+- Sunsteel Strike
+- Swords Dance
+
+i learn from discs (Mew) @ Mewnium Z
+Ability: Synchronize
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Calm Mind
+- Signal Beam
+- Roost
+
+steel (Metagross) @ Metagrossite
+Ability: Clear Body
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Meteor Mash
+- Bullet Punch
+- Zen Headbutt
+- Hone Claws
+
+the slicer (Gallade) (M) @ Galladite
+Ability: Steadfast
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Zen Headbutt
+- Close Combat
+- Shadow Sneak
+- Swords Dance
+
+the dark killer (Tapu Lele) @ Tapunium Z
+Ability: Psychic Surge
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Dazzling Gleam
+- Psychic
+- Shadow Ball
+- Nature's Madness
+
+
+=== [gen7anythinggoes] poison team ===
+
+poison horse (Arceus-Poison) @ Toxic Plate
+Ability: Multitype
+EVs: 4 HP / 252 Atk / 252 SpA
+Modest Nature
+- Judgment
+- Hydro Cannon
+- Extreme Speed
+- Recover
+
+Sleepy time (Amoonguss) @ Black Sludge
+Ability: Effect Spore
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Spore
+- Giga Drain
+- Clear Smog
+- Substitute
+
+poisones bee (Beedrill-Mega) @ Beedrillite
+Ability: Sniper
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Poison Jab
+- Drill Run
+- U-turn
+- Roost
+
+dragon?? (Naganadel)
+Ability: Beast Boost
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Dragon Pulse
+- Sludge Bomb
+- Signal Beam
+- Nasty Plot
+
+I LOVE YOU (Nidoqueen) (F) @ Life Orb
+Ability: Sheer Force
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Earth Power
+- Sludge Bomb
+- Ice Beam
+- Attract
+
+I LOVE YOU (Nidoking) (M) @ Life Orb
+Ability: Sheer Force
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Earth Power
+- Sludge Bomb
+- Ice Beam
+- Attract
+
+
+=== [gen7anythinggoes] ice team ===
+
+the one shot ice (Kyurem-White) @ Power Herb
+Ability: Turboblaze
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Dragon Pulse
+- Fusion Flare
+- Ice Burn
+- Roost
+
+the slow poke (Avalugg) @ Rocky Helmet
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 Def
+Relaxed Nature
+IVs: 0 Spe
+- Ice Fang
+- Gyro Ball
+- Earthquake
+- Recover
+
+the fast poke (Weavile) @ Assault Vest
+Ability: Pressure
+EVs: 252 HP / 252 Atk / 4 Spe
+Adamant Nature
+- Icicle Crash
+- Fake Out
+- Ice Shard
+- Knock Off
+
+spammer (Cloyster) @ Rocky Helmet
+Ability: Shell Armor
+EVs: 252 Def
+- Icicle Crash
+- Icicle Spear
+- Liquidation
+- Shell Smash
+
+no crits (Lapras) @ Assault Vest
+Ability: Shell Armor
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Ice Beam
+- Hydro Pump
+- Dragon Pulse
+- Thunderbolt
+
+Arceus-Ice @ Icicle Plate
+Ability: Multitype
+EVs: 4 HP / 252 Atk / 252 SpA
+Mild Nature
+- Judgment
+- Hydro Cannon
+- Extreme Speed
+- Recover
+
+
+=== [gen7anythinggoes] rock team ===
+
+rock horse (Arceus-Rock) @ Stone Plate
+Ability: Multitype
+EVs: 4 HP / 252 Atk / 252 SpA
+Modest Nature
+- Judgment
+- Flamethrower
+- Extreme Speed
+- Recover
+
+she has GEMS (Diancie-Mega) @ Diancite
+Ability: Magic Bounce
+EVs: 252 Atk / 252 SpA / 4 Spe
+Rash Nature
+- Dazzling Gleam
+- Diamond Storm
+- Rock Polish
+- Heal Bell
+
+the slow eye poke (Stakataka) @ Rockium Z
+Ability: Beast Boost
+EVs: 252 Atk / 252 Def / 4 SpD
+Relaxed Nature
+IVs: 0 Spe
+- Earthquake
+- Gyro Ball
+- Stone Edge
+- Trick Room
+
+the WALL (Aggron) @ Aggronite
+Ability: Sturdy
+EVs: 252 Atk / 252 Def
+Relaxed Nature
+- Heavy Slam
+- Earthquake
+- Rock Slide
+- Rest
+
+dragon (Tyrantrum) @ Rocky Helmet
+Ability: Rock Head
+EVs: 4 HP / 252 Atk / 252 Def
+Adamant Nature
+- Head Smash
+- Outrage
+- Earthquake
+- Rest
+
+IM GONNA BLOW (Golem-Alola)
+Ability: Sturdy
+EVs: 4 HP / 252 Atk / 252 Def
+Adamant Nature
+- Stone Edge
+- Wild Charge
+- Explosion
+- Curse
+
+
+=== [gen7anythinggoes] Ground team ===
+
+IM VERY HOT (Groudon) @ Red Orb
+Ability: Drought
+EVs: 252 Atk / 252 SpA / 4 Spe
+Adamant Nature
+- Lava Plume
+- Precipice Blades
+- Rock Slide
+- Solar Beam
+
+the flying killer (Zygarde) @ Focus Sash
+Ability: Power Construct
+EVs: 4 HP / 252 Atk / 4 Def / 4 SpD / 244 Spe
+Adamant Nature
+- Core Enforcer
+- Thousand Arrows
+- Extreme Speed
+- Dragon Dance
+
+the slow gem poke (Steelix-Mega) @ Steelixite
+Ability: Sand Force
+EVs: 252 Atk / 252 Def
+Relaxed Nature
+IVs: 0 Spe
+- Gyro Ball
+- Earthquake
+- Curse
+- Rest
+
+the punch guy (Rhyperior) @ Assault Vest
+Ability: Lightning Rod
+EVs: 128 HP / 252 Atk / 128 Spe
+Adamant Nature
+- Earthquake
+- Rock Wrecker
+- Rock Slide
+- Ice Punch
+
+I LOVE YOU (Nidoqueen) (F) @ Life Orb
+Ability: Sheer Force
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+- Earthquake
+- Sludge Bomb
+- Ice Punch
+- Attract
+
+I LOVE YOU (Nidoking) (M) @ Life Orb
+Ability: Sheer Force
+EVs: 128 HP / 252 SpA / 128 Spe
+Modest Nature
+IVs: 0 Atk
+- Earth Power
+- Sludge Bomb
+- Ice Beam
+- Attract
+
+
+=== [gen7anythinggoes] Dark team ===
+
+the healer spam (Yveltal) @ Big Root
+Ability: Dark Aura
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Oblivion Wing
+- Dark Pulse
+- Heat Wave
+- Roost
+
+the super sleep (Darkrai) @ Life Orb
+Ability: Bad Dreams
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dark Void
+- Dark Pulse
+- Spacial Rend
+- Nasty Plot
+
+ash (Greninja-Bond) (M) @ Assault Vest
+Ability: Battle Bond
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Surf
+- Dark Pulse
+- Ice Beam
+- Water Shuriken
+
+the troll (Zoroark) @ Focus Sash
+Ability: Illusion
+EVs: 252 SpA / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Dark Pulse
+- Flamethrower
+- Extrasensory
+- Nasty Plot
+
+the sandstorm (Tyranitar-Mega) @ Tyranitarite
+Ability: Sand Stream
+EVs: 252 Atk / 128 Def / 128 SpD
+Adamant Nature
+- Rock Slide
+- Crunch
+- Earthquake
+- Dragon Dance
+
+BOXING (Incineroar) @ Incinium Z
+Ability: Intimidate
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Darkest Lariat
+- Flare Blitz
+- Fake Out
+- U-turn
+
+
+=== [gen7purehackmons] kyogres ===
+
+pr (Kyogre) @ Blue Orb
+Ability: Misty Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Parabolic Charge
+- Steam Eruption
+- Extreme Speed
+- Extreme Evoboost
+
+pr (Kyogre) @ Blue Orb
+Ability: Misty Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Parabolic Charge
+- Steam Eruption
+- Extreme Speed
+- Extreme Evoboost
+
+pr (Kyogre) @ Blue Orb
+Ability: Misty Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Parabolic Charge
+- Steam Eruption
+- Extreme Speed
+- Extreme Evoboost
+
+pr (Kyogre) @ Blue Orb
+Ability: Misty Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Parabolic Charge
+- Steam Eruption
+- Extreme Speed
+- Extreme Evoboost
+
+pr (Kyogre) @ Blue Orb
+Ability: Misty Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Parabolic Charge
+- Steam Eruption
+- Extreme Speed
+- Extreme Evoboost
+
+pr (Kyogre) @ Blue Orb
+Ability: Misty Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Parabolic Charge
+- Steam Eruption
+- Extreme Speed
+- Extreme Evoboost
+
+
+=== [gen7anythinggoes] cool team ===
+
+Cool Chicken (Blaziken) (M) @ Blazikenite
+Ability: Speed Boost
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Blaze Kick
+- High Jump Kick
+- Brave Bird
+- Hone Claws
+
+Sword Shield Man (Aegislash) @ Focus Sash
+Ability: Stance Change
+Shiny: Yes
+EVs: 80 HP / 252 Atk / 176 Spe
+Adamant Nature
+IVs: 0 Spe
+- Shadow Sneak
+- Destiny Bond
+- Gyro Ball
+- Swords Dance
+
+Ash (Greninja-Bond) @ Focus Sash
+Ability: Battle Bond
+EVs: 124 HP / 252 Atk / 132 SpA
+Brave Nature
+- Water Shuriken
+- Surf
+- Dark Pulse
+- Ice Punch
+
+Cool Rat (Victini) @ Assault Vest
+Ability: Victory Star
+EVs: 96 Atk / 160 SpA / 252 Spe
+Jolly Nature
+- V-create
+- Bolt Strike
+- Zen Headbutt
+- U-turn
+
+Cool Construct guy (Zygarde) @ Focus Sash
+Ability: Power Construct
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Core Enforcer
+- Thousand Arrows
+- Extreme Speed
+- Dragon Dance
+
+Cool lion (Solgaleo) @ Solganium Z
+Ability: Full Metal Body
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Sunsteel Strike
+- Flare Blitz
+- Earthquake
+- Morning Sun
+
+
+=== [gen7anythinggoes] fighting team ===
+
+sneaky (Marshadow) @ Marshadium Z
+Ability: Technician
+EVs: 252 Atk / 4 Def / 236 Spe
+Adamant Nature
+- Spectral Thief
+- Shadow Sneak
+- Close Combat
+- Rock Tomb
+
+cool chicken (Blaziken) @ Focus Sash
+Ability: Speed Boost
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Blaze Kick
+- High Jump Kick
+- Stone Edge
+- Hone Claws
+
+dragon?? (Kommo-o) @ Kommonium Z
+Ability: Bulletproof
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Clanging Scales
+- Close Combat
+- Flamethrower
+- Flash Cannon
+
+mr four arms (Machamp) @ Assault Vest
+Ability: No Guard
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dynamic Punch
+- Stone Edge
+- Ice Punch
+- Bullet Punch
+
+hes buggin (Buzzwole) @ Wide Lens
+Ability: Beast Boost
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Hammer Arm
+- Leech Life
+- Rock Slide
+- Roost
+
+Mewtwo @ Mewtwonite X
+Ability: Pressure
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Zen Headbutt
+- Submission
+- Ice Punch
+- Recover
+
+
+=== [gen7anythinggoes] steel Team ===
+
+the only sword guy (Aegislash) (M) @ Focus Sash
+Ability: Stance Change
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 SpD
+Quiet Nature
+IVs: 0 Spe
+- Shadow Sneak
+- Destiny Bond
+- Swords Dance
+- Gyro Ball
+
+the one weakness (Scizor) @ Scizorite
+Ability: Swarm
+Shiny: Yes
+EVs: 252 HP / 252 Atk
+Adamant Nature
+- Bullet Punch
+- Bug Bite
+- Swords Dance
+- Roost
+
+dont let him power (Lucario) @ Lucarionite
+Ability: Steadfast
+Shiny: Yes
+EVs: 252 HP / 252 SpA
+Modest Nature
+- Aura Sphere
+- Flash Cannon
+- Nasty Plot
+- Extreme Speed
+
+the robot (Metagross) @ Metagrossite
+Ability: Clear Body
+Shiny: Yes
+EVs: 252 Atk / 252 Spe
+Adamant Nature
+- Zen Headbutt
+- Meteor Mash
+- Hone Claws
+- Thunder Punch
+
+i love fire (Heatran) (M) @ Air Balloon
+Ability: Flash Fire
+Level: 50
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Flash Cannon
+- Earth Power
+- Flamethrower
+- Stealth Rock
+
+i kill fairys (Dialga) @ Adamant Orb
+Ability: Telepathy
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Aura Sphere
+- Power Gem
+- Flash Cannon
+- Roar of Time
+
+
+=== [gen7anythinggoes] pro Team ===
+
+hyper dragon (Rayquaza) @ Rocky Helmet
+Ability: Air Lock
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Ascent
+- Dragon Claw
+- Earthquake
+- Extreme Speed
+
+always attaks (Deoxys-Attack) @ Rocky Helmet
+Ability: Pressure
+Shiny: Yes
+EVs: 252 HP / 4 Atk / 252 SpA
+Quiet Nature
+- Zen Headbutt
+- Extreme Speed
+- Recover
+- Fire Punch
+
+Ash (Greninja-Bond) @ Focus Sash
+Ability: Battle Bond
+EVs: 124 HP / 252 Atk / 132 SpA
+Brave Nature
+- Water Shuriken
+- Hydro Pump
+- Dark Pulse
+- Ice Punch
+
+Sceamer (Kommo-o) @ Kommonium Z
+Ability: Bulletproof
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+- Clanging Scales
+- Close Combat
+- Swords Dance
+- Iron Head
+
+im crazy boy (Staraptor) @ Rocky Helmet
+Ability: Intimidate
+Shiny: Yes
+EVs: 248 HP / 248 Atk / 4 Def / 4 SpD / 4 Spe
+Adamant Nature
+- Brave Bird
+- Close Combat
+- Heat Wave
+- Quick Attack
+
+spiky (Chesnaught) @ Rocky Helmet
+Ability: Overgrow
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Brave Nature
+- Hammer Arm
+- Spiky Shield
+- Synthesis
+- Wood Hammer
+
+
+=== [gen7anythinggoes] Legendary ===
+
+Rayquaza @ Lum Berry
+Ability: Air Lock
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Hasty Nature
+- Dragon Ascent
+- Dragon Claw
+- Extreme Speed
+- Dragon Dance
+
+Groudon @ Red Orb
+Ability: Drought
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 SpD
+Adamant Nature
+- Precipice Blades
+- Lava Plume
+- Solar Beam
+- Swords Dance
+
+Kyogre @ Blue Orb
+Ability: Drizzle
+Shiny: Yes
+EVs: 252 Def / 252 SpA / 4 SpD
+Modest Nature
+IVs: 0 Atk
+- Origin Pulse
+- Thunder
+- Calm Mind
+- Ice Beam
+
+Necrozma-Dusk-Mane @ Ultranecrozium Z
+Ability: Prism Armor
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Mild Nature
+- Sunsteel Strike
+- Dragon Pulse
+- Photon Geyser
+- Morning Sun
+
+Xerneas @ Power Herb
+Ability: Fairy Aura
+Shiny: Yes
+EVs: 132 Def / 252 SpA / 124 SpD
+Modest Nature
+IVs: 0 Atk
+- Geomancy
+- Moonblast
+- Thunderbolt
+- Flash Cannon
+
+Zygarde @ Focus Sash
+Ability: Power Construct
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Quiet Nature
+- Draco Meteor
+- Dragon Dance
+- Thousand Arrows
+- Extreme Speed
+
+
+=== [gen7anythinggoes] Legendary 2 ===
+
+Zygarde @ Focus Sash
+Ability: Power Construct
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Core Enforcer
+- Thousand Arrows
+- Extreme Speed
+- Dragon Dance
+
+Yveltal @ Big Root
+Ability: Dark Aura
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 4 SpD / 248 Spe
+Modest Nature
+IVs: 0 Atk
+- Oblivion Wing
+- Heat Wave
+- Roost
+- Dark Pulse
+
+Xerneas @ Power Herb
+Ability: Fairy Aura
+Shiny: Yes
+EVs: 252 Def / 252 SpA / 4 Spe
+Modest Nature
+IVs: 0 Atk
+- Moonblast
+- Thunderbolt
+- Flash Cannon
+- Geomancy
+
+Kyurem-White @ Power Herb
+Ability: Turboblaze
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+- Dragon Pulse
+- Fusion Flare
+- Ice Burn
+- Roost
+
+Rayquaza @ Rocky Helmet
+Ability: Air Lock
+Shiny: Yes
+EVs: 252 HP / 252 Atk
+Naughty Nature
+- Dragon Ascent
+- Hyper Beam
+- Extreme Speed
+- Dragon Claw
+
+Necrozma-Dusk-Mane @ Ultranecrozium Z
+Ability: Prism Armor
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Photon Geyser
+- Sunsteel Strike
+- Outrage
+- Morning Sun
+
+
+=== [gen7purehackmons] rats ===
+
+super rattata (Rattata-Alola) @ Focus Sash
+Ability: Beast Boost
+Level: 1
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Hasty Nature
+- Extreme Speed
+- Endeavor
+- Black Hole Eclipse
+- Bullet Punch
+
+super rattata (Rattata-Alola) @ Focus Sash
+Ability: Beast Boost
+Level: 1
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Hasty Nature
+- Extreme Speed
+- Endeavor
+- Black Hole Eclipse
+- Bullet Punch
+
+super rattata (Rattata-Alola) @ Focus Sash
+Ability: Beast Boost
+Level: 1
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Hasty Nature
+- Extreme Speed
+- Endeavor
+- Black Hole Eclipse
+- Bullet Punch
+
+super rattata (Rattata-Alola) @ Focus Sash
+Ability: Beast Boost
+Level: 1
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Hasty Nature
+- Extreme Speed
+- Endeavor
+- Black Hole Eclipse
+- Bullet Punch
+
+super rattata (Rattata-Alola) @ Focus Sash
+Ability: Beast Boost
+Level: 1
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Hasty Nature
+- Extreme Speed
+- Endeavor
+- Black Hole Eclipse
+- Bullet Punch
+
+super rattata (Rattata-Alola) @ Focus Sash
+Ability: Beast Boost
+Level: 1
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Hasty Nature
+- Extreme Speed
+- Endeavor
+- Black Hole Eclipse
+- Bullet Punch
+
+
+=== [gen7purehackmons] DEOXYSES ===
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+the one shot dude (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Fissure
+- Sheer Cold
+- Dynamic Punch
+- Zap Cannon
+
+Kangaskhan (F) @ Kangaskhanite
+Ability: Intimidate
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Jolly Nature
+- Extreme Speed
+- Dragon Ascent
+- High Jump Kick
+- Power-Up Punch
+
+
+=== [gen7purehackmons] groudons ===
+
+Groudon @ Red Orb
+Ability: Electric Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Thousand Arrows
+- Fusion Bolt
+- Extreme Speed
+
+Groudon @ Red Orb
+Ability: Electric Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Thousand Arrows
+- Fusion Bolt
+- Extreme Speed
+
+Groudon @ Red Orb
+Ability: Electric Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Thousand Arrows
+- Fusion Bolt
+- Extreme Speed
+
+Groudon @ Red Orb
+Ability: Electric Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Thousand Arrows
+- Fusion Bolt
+- Extreme Speed
+
+Groudon @ Red Orb
+Ability: Electric Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Thousand Arrows
+- Fusion Bolt
+- Extreme Speed
+
+Groudon @ Red Orb
+Ability: Electric Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Thousand Arrows
+- Fusion Bolt
+- Extreme Speed
+
+
+=== [gen7purehackmons] rayquazas ===
+
+I DONT CARE (Rayquaza-Mega) @ Leppa Berry
+Ability: Desolate Land
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Searing Sunraze Smash
+- Recycle
+- Light That Burns the Sky
+- Extreme Speed
+
+hyper rayquaza (Rayquaza-Mega) @ Leppa Berry
+Ability: Mold Breaker
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Mild Nature
+- Extreme Speed
+- Oblivion Wing
+- Recycle
+- Clangorous Soulblaze
+
+never misses (Rayquaza-Mega) @ Assault Vest
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+- Sheer Cold
+- Fissure
+- Inferno
+- Dynamic Punch
+
+hyper rat (Rayquaza-Mega) @ Focus Sash
+Ability: Sturdy
+Level: 1
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Jolly Nature
+- Leech Seed
+- Substitute
+- Extreme Speed
+- Endeavor
+
+you shall miss (Rayquaza-Mega) @ Leppa Berry
+Ability: Mold Breaker
+Shiny: Yes
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Clangorous Soulblaze
+- Recycle
+- Substitute
+- Minimize
+
+i shall not miss (Rayquaza-Mega) @ Leppa Berry
+Ability: Mold Breaker
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Hasty Nature
+- 10,000,000 Volt Thunderbolt
+- Clangorous Soulblaze
+- Recycle
+- Fake Out
+
+
+=== [gen7anythinggoes] lightning ===
+
+Zekrom @ Electrium Z
+Ability: Teravolt
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Dragon Claw
+- Fusion Bolt
+- Shadow Claw
+- Roost
+
+Zeraora @ Focus Sash
+Ability: Volt Absorb
+EVs: 252 Atk / 4 SpA / 252 Spe
+Naughty Nature
+- Plasma Fists
+- Close Combat
+- Knock Off
+- Fake Out
+
+Electivire @ Assault Vest
+Ability: Motor Drive
+Shiny: Yes
+EVs: 252 HP / 252 Atk
+Adamant Nature
+- Wild Charge
+- Ice Punch
+- Fire Punch
+- Earthquake
+
+Thundurus-Therian @ Rocky Helmet
+Ability: Volt Absorb
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Thunderbolt
+- Grass Knot
+- Nasty Plot
+- Flash Cannon
+
+Magnezone @ Assault Vest
+Ability: Sturdy
+Shiny: Yes
+EVs: 248 HP / 252 SpA / 8 SpD
+Modest Nature
+IVs: 0 Atk
+- Thunderbolt
+- Flash Cannon
+- Hidden Power [Water]
+- Volt Switch
+
+Xurkitree @ Focus Sash
+Ability: Beast Boost
+Shiny: Yes
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+IVs: 0 Atk
+- Thunderbolt
+- Energy Ball
+- Tail Glow
+- Signal Beam
+
+
+=== [gen7anythinggoes] tanky ===
+
+Aggron (M) @ Aggronite
+Ability: Heavy Metal
+Shiny: Yes
+EVs: 252 Atk / 252 SpD
+Careful Nature
+- Heavy Slam
+- Rock Slide
+- Earthquake
+- Rest
+
+Tyranitar (M) @ Rocky Helmet
+Ability: Sand Stream
+EVs: 252 Atk / 252 Def
+Adamant Nature
+- Aerial Ace
+- Crunch
+- Stone Edge
+- Hone Claws
+
+Cobalion @ Rocky Helmet
+Ability: Justified
+Shiny: Yes
+EVs: 252 Atk / 252 Def
+Adamant Nature
+- Iron Head
+- Close Combat
+- Hone Claws
+- Zen Headbutt
+
+Groudon @ Red Orb
+Ability: Drought
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 SpD
+Brave Nature
+- Lava Plume
+- Precipice Blades
+- Rock Slide
+- Solar Beam
+
+Volcanion @ Assault Vest
+Ability: Water Absorb
+EVs: 252 HP / 20 SpA / 236 SpD
+Modest Nature
+- Steam Eruption
+- Heat Wave
+- Earth Power
+- Sludge Wave
+
+Avalugg (M) @ Assault Vest
+Ability: Own Tempo
+Shiny: Yes
+EVs: 8 HP / 252 Atk / 248 SpD
+Brave Nature
+IVs: 0 Spe
+- Ice Fang
+- Earthquake
+- Gyro Ball
+- Rock Slide
+
+
+=== [gen7anythinggoes] rat team ===
+
+Rat God (Mewtwo) @ Mewtwonite Y
+Ability: Pressure
+Shiny: Yes
+EVs: 252 HP / 252 SpA
+Modest Nature
+IVs: 0 Atk
+- Psystrike
+- Ice Beam
+- Shadow Ball
+- Recover
+
+Rat Zeus (Arceus) @ Flyinium Z
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Modest Nature
+- Extreme Speed
+- Judgment
+- Fly
+- Recover
+
+magic rat (Mew) @ Mewnium Z
+Ability: Synchronize
+Shiny: Yes
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+IVs: 0 Atk
+- Psychic
+- Flamethrower
+- Dazzling Gleam
+- Roost
+
+thunder rat (Raichu-Alola)
+Ability: Surge Surfer
+Level: 10
+EVs: 196 Spe
+Hasty Nature
+- Endeavor
+- Thunderbolt
+- Psychic
+- Quick Attack
+
+Rattata-Alola @ Focus Sash
+Ability: Gluttony
+Level: 1
+EVs: 228 Atk / 100 Spe
+Jolly Nature
+- Crunch
+- Endeavor
+- Quick Attack
+- U-turn
+
+rat king (Nidoking) @ Focus Sash
+Ability: Poison Point
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Poison Jab
+- Attract
+- Earthquake
+- Rock Slide
+
+
+=== [gen7anythinggoes-box] Megas ===
+
+Venusaur (F) @ Venusaurite
+Ability: Chlorophyll
+Level: 50
+EVs: 252 HP / 4 Def / 252 SpA
+Modest Nature
+- Giga Drain
+- Sludge Bomb
+- Sleep Powder
+- Synthesis
+
+Charizard (M) @ Charizardite X
+Ability: Solar Power
+Level: 50
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Flare Blitz
+- Dragon Claw
+- Dragon Dance
+- Roost
+
+Charizard (M) @ Charizardite Y
+Ability: Solar Power
+Level: 50
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+- Heat Wave
+- Air Slash
+- Solar Beam
+- Roost
+
+Blastoise (M) @ Blastoisinite
+Ability: Rain Dish
+Level: 50
+EVs: 244 HP / 12 Def / 252 SpA
+Modest Nature
+- Water Pulse
+- Dragon Pulse
+- Aura Sphere
+- Dark Pulse
+
+Beedrill (M) @ Beedrillite
+Ability: Sniper
+Level: 50
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Poison Jab
+- Drill Run
+- U-turn
+- Roost
+
+Pidgeot (F) @ Pidgeotite
+Ability: Big Pecks
+Level: 50
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Hurricane
+- Heat Wave
+- U-turn
+- Roost
+
+Alakazam (M) @ Alakazite
+Ability: Magic Guard
+Level: 50
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Psyshock
+- Shadow Ball
+- Dazzling Gleam
+- Recover
+
+Slowbro (M) @ Slowbronite
+Ability: Regenerator
+Level: 50
+Shiny: Yes
+EVs: 244 HP / 12 Def / 252 SpD
+Bold Nature
+- Scald
+- Ice Beam
+- Toxic
+- Slack Off
+
+Gengar (M) @ Gengarite
+Ability: Cursed Body
+Level: 50
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+- Sludge Wave
+- Shadow Ball
+- Dazzling Gleam
+- Thunderbolt
+
+Kangaskhan @ Kangaskhanite
+Ability: Scrappy
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Fake Out
+- Body Slam
+- Power-Up Punch
+- Sucker Punch
+
+Pinsir (M) @ Pinsirite
+Ability: Moxie
+Level: 50
+Shiny: Yes
+Happiness: 0
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- X-Scissor
+- Close Combat
+- Frustration
+- Swords Dance
+
+Gyarados (M) @ Gyaradosite
+Ability: Intimidate
+Level: 50
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Waterfall
+- Crunch
+- Ice Fang
+- Dragon Dance
+
+Aerodactyl (M) @ Aerodactylite
+Ability: Unnerve
+Level: 50
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Aerial Ace
+- Rock Slide
+- Earthquake
+- Roost
+
+Ampharos (F) @ Ampharosite
+Ability: Static
+Level: 50
+EVs: 252 HP / 4 Def / 252 SpA
+Quiet Nature
+IVs: 0 Spe
+- Discharge
+- Dragon Pulse
+- Power Gem
+- Signal Beam
+
+Steelix (M) @ Steelixite
+Ability: Sturdy
+Level: 50
+Shiny: Yes
+EVs: 244 HP / 12 Atk / 252 SpD
+Sassy Nature
+IVs: 0 Spe
+- Gyro Ball
+- Earthquake
+- Curse
+- Rest
+
+Scizor (M) @ Scizorite
+Ability: Technician
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Bug Bite
+- Bullet Punch
+- Swords Dance
+- Roost
+
+Heracross (M) @ Heracronite
+Ability: Guts
+Level: 50
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Pin Missile
+- Rock Blast
+- Close Combat
+- Swords Dance
+
+Houndoom (M) @ Houndoominite
+Ability: Flash Fire
+Level: 50
+Shiny: Yes
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Flamethrower
+- Dark Pulse
+- Sludge Bomb
+- Nasty Plot
+
+Tyranitar (M) @ Tyranitarite
+Ability: Sand Stream
+Level: 55
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Crunch
+- Rock Slide
+- Earthquake
+- Dragon Dance
+
+Sceptile (M) @ Sceptilite
+Ability: Unburden
+Level: 50
+Shiny: Yes
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Giga Drain
+- Dragon Pulse
+- Substitute
+- Synthesis
+
+Blaziken (M) @ Blazikenite
+Ability: Speed Boost
+Level: 50
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Blaze Kick
+- High Jump Kick
+- Brave Bird
+- Hone Claws
+
+Swampert (M) @ Swampertite
+Ability: Damp
+Level: 50
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Waterfall
+- Earthquake
+- Ice Punch
+- Power-Up Punch
+
+Gardevoir (F) @ Gardevoirite
+Ability: Trace
+Level: 50
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Dazzling Gleam
+- Psyshock
+- Shadow Ball
+- Energy Ball
+
+Gallade @ Galladite
+Ability: Justified
+Level: 50
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Psycho Cut
+- Close Combat
+- Swords Dance
+- Shadow Sneak
+
+Sableye (M) @ Sablenite
+Ability: Prankster
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 252 Def / 4 SpD
+Impish Nature
+- Foul Play
+- Night Shade
+- Will-O-Wisp
+- Recover
+
+Mawile (F) @ Mawilite
+Ability: Intimidate
+Level: 50
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Iron Head
+- Play Rough
+- Sucker Punch
+- Power-Up Punch
+
+Aggron (M) @ Aggronite
+Ability: Sturdy
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 4 Atk / 252 SpD
+Careful Nature
+- Heavy Slam
+- Rock Slide
+- Earthquake
+- Rest
+
+Medicham (F) @ Medichamite
+Ability: Telepathy
+Level: 50
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Psycho Cut
+- High Jump Kick
+- Ice Punch
+- Bullet Punch
+
+Manectric (M) @ Manectite
+Ability: Minus
+Level: 50
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+- Discharge
+- Flamethrower
+- Signal Beam
+- Volt Switch
+
+Aron (M) @ Shell Bell
+Ability: Sturdy
+Level: 1
+Shiny: Yes
+Adamant Nature
+- Endeavor
+- Metal Burst
+- Sandstorm
+- Protect
+
+
+=== [gen7anythinggoes-box] Megas 2 ===
+
+Sharpedo (M) @ Sharpedonite
+Ability: Rough Skin
+Level: 50
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Crunch
+- Aqua Jet
+- Ice Fang
+- Psychic Fangs
+
+Camerupt (M) @ Cameruptite
+Ability: Solid Rock
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 4 Def / 252 SpA
+Quiet Nature
+IVs: 0 Spe
+- Lava Plume
+- Earth Power
+- Flash Cannon
+- Yawn
+
+Altaria (F) @ Altarianite
+Ability: Cloud Nine
+Level: 50
+Shiny: Yes
+EVs: 244 HP / 12 Def / 252 SpD
+Careful Nature
+- Return
+- Dragon Dance
+- Cotton Guard
+- Roost
+
+Banette (F) @ Banettite
+Ability: Cursed Body
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 4 Spe
+Adamant Nature
+- Shadow Claw
+- Gunk Shot
+- Substitute
+- Destiny Bond
+
+Absol (F) @ Absolite
+Ability: Justified
+Level: 50
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Sucker Punch
+- Play Rough
+- Megahorn
+- Hone Claws
+
+Glalie (M) @ Glalitite
+Ability: Inner Focus
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Naughty Nature
+- Double-Edge
+- Freeze-Dry
+- Ice Shard
+- Explosion
+
+Salamence (M) @ Salamencite
+Ability: Intimidate
+Level: 50
+Shiny: Yes
+Happiness: 0
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Dragon Dance
+- Dragon Claw
+- Frustration
+- Roost
+
+Metagross @ Metagrossite
+Ability: Clear Body
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Hone Claws
+- Meteor Mash
+- Zen Headbutt
+- Thunder Punch
+
+Lopunny (F) @ Lopunnite
+Ability: Cute Charm
+Level: 50
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Fake Out
+- Facade
+- High Jump Kick
+- Ice Punch
+
+Garchomp (M) @ Garchompite
+Ability: Rough Skin
+Level: 50
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Swords Dance
+- Iron Head
+- Earthquake
+- Dragon Claw
+
+Lucario (M) @ Lucarionite
+Ability: Justified
+Level: 50
+Shiny: Yes
+EVs: 4 Atk / 252 SpA / 252 Spe
+Naive Nature
+- Aura Sphere
+- Flash Cannon
+- Extreme Speed
+- Nasty Plot
+
+Abomasnow (M) @ Abomasite
+Ability: Snow Warning
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 4 Def / 252 SpA
+Quiet Nature
+IVs: 0 Spe
+- Blizzard
+- Giga Drain
+- Earthquake
+- Ice Shard
+
+Audino (F) @ Audinite
+Ability: Healer
+Level: 50
+Shiny: Yes
+EVs: 244 HP / 136 Def / 128 SpD
+Calm Nature
+- Dazzling Gleam
+- Heal Pulse
+- Heal Bell
+- Wish
+
+Greninja (M) @ Focus Sash
+Ability: Battle Bond
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Water Shuriken
+- Surf
+- Dark Pulse
+- Ice Beam
+
+Latias @ Latiasite
+Ability: Levitate
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 4 SpA / 252 Spe
+Timid Nature
+- Stored Power
+- Thunderbolt
+- Calm Mind
+- Recover
+
+Latios @ Latiosite
+Ability: Levitate
+Level: 50
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Luster Purge
+- Dragon Pulse
+- Shadow Ball
+- Recover
+
+Diancie @ Diancite
+Ability: Clear Body
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 4 Atk / 252 Spe
+Hasty Nature
+- Diamond Storm
+- Dazzling Gleam
+- Earth Power
+- Rock Polish
+
+Mewtwo @ Mewtwonite X
+Ability: Pressure
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Jolly Nature
+- Psycho Cut
+- Power-Up Punch
+- Ice Punch
+- Recover
+
+Mewtwo @ Mewtwonite Y
+Ability: Pressure
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Psystrike
+- Shadow Ball
+- Ice Beam
+- Recover
+
+Groudon @ Red Orb
+Ability: Drought
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD
+Brave Nature
+- Lava Plume
+- Precipice Blades
+- Rock Slide
+- Solar Beam
+
+Kyogre @ Blue Orb
+Ability: Drizzle
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD
+Modest Nature
+- Origin Pulse
+- Ice Beam
+- Thunder
+- Ancient Power
+
+Rayquaza @ Lum Berry
+Ability: Air Lock
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Jolly Nature
+- Dragon Dance
+- Dragon Claw
+- Dragon Ascent
+- Extreme Speed
+
+
+=== [gen7anythinggoes-box] Mythical ===
+
+Moltres @ Life Orb
+Ability: Flame Body
+Level: 70
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Heat Wave
+- Air Slash
+- U-turn
+- Roost
+
+Zapdos @ Choice Band
+Ability: Static
+Level: 70
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Discharge
+- Heat Wave
+- U-turn
+- Roost
+
+Articuno @ Leftovers
+Ability: Snow Cloak
+Level: 70
+Shiny: Yes
+EVs: 60 HP / 196 Def / 252 Spe
+Timid Nature
+- Freeze-Dry
+- Mind Reader
+- Sheer Cold
+- Roost
+
+Raikou @ Assault Vest
+Ability: Pressure
+Shiny: Yes
+EVs: 252 SpA / 4 SpD / 252 Spe
+Modest Nature
+- Discharge
+- Thunder
+- Extrasensory
+- Shadow Ball
+
+Entei @ Assault Vest
+Ability: Pressure
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Iron Head
+- Stomping Tantrum
+- Stone Edge
+
+Suicune @ Chesto Berry
+Ability: Pressure
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 252 Def / 4 SpD
+Bold Nature
+- Scald
+- Calm Mind
+- Sleep Talk
+- Rest
+
+Registeel @ Chesto Berry
+Ability: Clear Body
+Level: 50
+EVs: 252 HP / 4 Atk / 252 SpD
+Careful Nature
+- Iron Head
+- Curse
+- Sleep Talk
+- Rest
+
+Regirock @ Heat Rock
+Ability: Sturdy
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Rock Slide
+- Stealth Rock
+- Sunny Day
+- Explosion
+
+Regice @ Wiki Berry
+Ability: Ice Body
+Level: 50
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Ice Beam
+- Thunderbolt
+- Flash Cannon
+- Rock Polish
+
+Regigigas @ Leftovers
+Ability: Slow Start
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+- Return
+- Knock Off
+- Zen Headbutt
+- Drain Punch
+
+Heatran (M) @ Air Balloon
+Ability: Flash Fire
+Level: 50
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Flash Cannon
+- Earth Power
+- Flamethrower
+- Stealth Rock
+
+Cresselia @ Mental Herb
+Ability: Levitate
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 252 Def / 4 SpA
+Relaxed Nature
+IVs: 0 Spe
+- Ice Beam
+- Helping Hand
+- Trick Room
+- Moonlight
+
+Cobalion @ Shuca Berry
+Ability: Justified
+Level: 50
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Sacred Sword
+- Iron Head
+- Zen Headbutt
+- Swords Dance
+
+Virizion @ Lum Berry
+Ability: Justified
+Level: 50
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Sacred Sword
+- Leaf Blade
+- Synthesis
+- Swords Dance
+
+Terrakion @ Figy Berry
+Ability: Justified
+Level: 50
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Sacred Sword
+- Rock Slide
+- Earthquake
+- Swords Dance
+
+Keldeo-Resolute @ Leftovers
+Ability: Justified
+Level: 50
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Secret Sword
+- Scald
+- Substitute
+- Calm Mind
+
+Landorus @ Life Orb
+Ability: Sheer Force
+Level: 50
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Naive Nature
+- Earth Power
+- Rock Slide
+- Sludge Wave
+- Knock Off
+
+Mew @ Mewnium Z
+Ability: Synchronize
+Level: 50
+Shiny: Yes
+EVs: 252 HP / 252 SpA / 4 Spe
+Modest Nature
+- Psychic
+- Aura Sphere
+- Transform
+- Roost
+
+Celebi @ Life Orb
+Ability: Natural Cure
+Level: 50
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Giga Drain
+- Psychic
+- Dazzling Gleam
+- Nasty Plot
+
+Jirachi @ Power Herb
+Ability: Serene Grace
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Doom Desire
+- Psyshock
+- Energy Ball
+- Healing Wish
+
+Manaphy @ Leftovers
+Ability: Hydration
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+- Tail Glow
+- Surf
+- Ice Beam
+- Energy Ball
+
+Shaymin-Sky @ Metronome
+Ability: Serene Grace
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 252 Spe
+Modest Nature
+- Seed Flare
+- Air Slash
+- Earth Power
+- Synthesis
+
+Victini @ Assault Vest
+Ability: Victory Star
+Shiny: Yes
+EVs: 96 Atk / 160 SpA / 252 Spe
+Jolly Nature
+- V-create
+- Bolt Strike
+- Zen Headbutt
+- U-turn
+
+Hoopa-Unbound @ Focus Sash
+Ability: Magician
+Level: 50
+Shiny: Yes
+EVs: 192 Atk / 140 SpA / 176 Spe
+Hasty Nature
+- Hyperspace Fury
+- Hyperspace Hole
+- Drain Punch
+- Phantom Force
+
+Darkrai @ Life Orb
+Ability: Bad Dreams
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Dark Void
+- Dark Pulse
+- Spacial Rend
+- Nasty Plot
+
+Volcanion @ Assault Vest
+Ability: Water Absorb
+Shiny: Yes
+EVs: 252 HP / 20 SpA / 236 SpD
+Modest Nature
+- Steam Eruption
+- Heat Wave
+- Earth Power
+- Sludge Wave
+
+Deoxys-Attack @ Focus Sash
+Ability: Pressure
+Level: 80
+Shiny: Yes
+EVs: 4 Atk / 252 SpA / 252 Spe
+Naive Nature
+- Psycho Boost
+- Shadow Ball
+- Thunderbolt
+- Extreme Speed
+
+Deoxys-Speed @ Mago Berry
+Ability: Pressure
+Level: 80
+Shiny: Yes
+EVs: 252 HP / 4 Def / 252 Spe
+Timid Nature
+- Extreme Speed
+- Psyshock
+- Shadow Ball
+- Recover
+
+Deoxys-Defense @ Leftovers
+Ability: Pressure
+Level: 80
+Shiny: Yes
+EVs: 252 HP / 4 Def / 252 SpA
+Modest Nature
+- Psychic
+- Charge Beam
+- Cosmic Power
+- Recover
+
+
+=== [gen7anythinggoes-box] Legendaries ===
+
+Lugia @ Weakness Policy
+Ability: Multiscale
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Aeroblast
+- Whirlwind
+- Tailwind
+- Roost
+
+Ho-Oh @ Life Orb
+Ability: Regenerator
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Brave Bird
+- Earthquake
+- Roost
+
+Dialga @ Adamant Orb
+Ability: Telepathy
+Shiny: Yes
+EVs: 252 HP / 252 SpA / 4 SpD
+Modest Nature
+- Aura Sphere
+- Power Gem
+- Flash Cannon
+- Roar of Time
+
+Palkia @ Lustrous Orb
+Ability: Telepathy
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+- Aura Sphere
+- Power Gem
+- Hydro Pump
+- Spacial Rend
+
+Giratina-Origin @ Griseous Orb
+Ability: Levitate
+Shiny: Yes
+EVs: 252 Atk / 128 Def / 128 SpD
+Adamant Nature
+- Shadow Sneak
+- Earthquake
+- Outrage
+- Shadow Force
+
+Reshiram @ Firium Z
+Ability: Turboblaze
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+- Dragon Pulse
+- Fusion Flare
+- Earth Power
+- Roost
+
+Zekrom @ Electrium Z
+Ability: Teravolt
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Dragon Claw
+- Fusion Bolt
+- Shadow Claw
+- Roost
+
+Kyurem @ Lum Berry
+Ability: Pressure
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+- Dragon Pulse
+- Glaciate
+- Earth Power
+- Roost
+
+Kyurem-Black @ Power Herb
+Ability: Teravolt
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Dragon Claw
+- Fusion Bolt
+- Freeze Shock
+- Roost
+
+Kyurem-White @ Power Herb
+Ability: Turboblaze
+Shiny: Yes
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+- Dragon Pulse
+- Fusion Flare
+- Ice Burn
+- Roost
+
+Xerneas @ Power Herb
+Ability: Fairy Aura
+Shiny: Yes
+EVs: 252 Def / 252 SpA / 4 Spe
+Modest Nature
+- Dazzling Gleam
+- Thunderbolt
+- Flash Cannon
+- Geomancy
+
+Yveltal @ Big Root
+Ability: Dark Aura
+Shiny: Yes
+EVs: 128 Def / 252 SpA / 128 SpD / 252 Spe
+Modest Nature
+- Dark Pulse
+- Oblivion Wing
+- Heat Wave
+- Roost
+
+Zygarde @ Chesto Berry
+Ability: Power Construct
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Adamant Nature
+- Dragon Dance
+- Thousand Arrows
+- Extreme Speed
+- Rest
+
+Arceus-Fire @ Flame Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Energy Ball
+- Extreme Speed
+- Recover
+
+Arceus-Water @ Splash Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Flamethrower
+- Extreme Speed
+- Recover
+
+Arceus-Electric @ Zap Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Ice Beam
+- Extreme Speed
+- Recover
+
+Arceus-Grass @ Meadow Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Flamethrower
+- Extreme Speed
+- Recover
+
+Arceus-Ice @ Icicle Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Surf
+- Extreme Speed
+- Recover
+
+Arceus-Fighting @ Fist Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Thunderbolt
+- Extreme Speed
+- Recover
+
+Arceus-Poison @ Toxic Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Energy Ball
+- Extreme Speed
+- Recover
+
+Arceus-Ground @ Earth Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Flamethrower
+- Extreme Speed
+- Recover
+
+Arceus-Flying @ Sky Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Earth Power
+- Extreme Speed
+- Recover
+
+Arceus-Psychic @ Mind Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Flamethrower
+- Extreme Speed
+- Recover
+
+Arceus-Bug @ Insect Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Surf
+- Extreme Speed
+- Recover
+
+Arceus-Rock @ Stone Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Flamethrower
+- Extreme Speed
+- Recover
+
+Arceus-Ghost @ Spooky Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Signal Beam
+- Extreme Speed
+- Recover
+
+Arceus-Dragon @ Draco Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Flash Cannon
+- Extreme Speed
+- Recover
+
+Arceus-Dark @ Dread Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Flash Cannon
+- Extreme Speed
+- Recover
+
+Arceus-Steel @ Iron Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Earth Power
+- Extreme Speed
+- Recover
+
+Arceus-Fairy @ Pixie Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 Atk / 252 SpA / 4 Spe
+Serious Nature
+- Judgment
+- Earth Power
+- Extreme Speed
+- Recover
+
+
+=== [gen7anythinggoes-box] SunMoon ===
+
+Tapu Koko @ Terrain Extender
+Ability: Electric Surge
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Discharge
+- Dazzling Gleam
+- Grass Knot
+- Roost
+
+Tapu Lele @ Tapunium Z
+Ability: Psychic Surge
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Psyshock
+- Dazzling Gleam
+- Shadow Ball
+- Nature's Madness
+
+Tapu Bulu @ Terrain Extender
+Ability: Grassy Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 4 SpD
+Adamant Nature
+- Wood Hammer
+- Rock Slide
+- Superpower
+- Synthesis
+
+Tapu Fini @ Wiki Berry
+Ability: Misty Surge
+Shiny: Yes
+EVs: 252 HP / 128 Def / 128 SpD
+Calm Nature
+- Dazzling Gleam
+- Surf
+- Ice Beam
+- Heal Pulse
+
+Solgaleo @ Solganium Z
+Ability: Full Metal Body
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 Spe
+Jolly Nature
+- Sunsteel Strike
+- Flare Blitz
+- Earthquake
+- Morning Sun
+
+Lunala @ Lunalium Z
+Ability: Shadow Shield
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+- Moongeist Beam
+- Psyshock
+- Moonblast
+- Moonlight
+
+Nihilego @ Black Sludge
+Ability: Beast Boost
+EVs: 4 Def / 252 SpA / 252 Spe
+Timid Nature
+- Sludge Wave
+- Power Gem
+- Thunderbolt
+- Toxic Spikes
+
+Buzzwole @ Wide Lens
+Ability: Beast Boost
+Shiny: Yes
+EVs: 4 HP / 252 Atk / 252 SpD
+Adamant Nature
+- Hammer Arm
+- Leech Life
+- Rock Slide
+- Roost
+
+Pheromosa @ Life Orb
+Ability: Beast Boost
+Shiny: Yes
+EVs: 252 Atk / 4 SpA / 252 Spe
+Naughty Nature
+- U-turn
+- High Jump Kick
+- Ice Beam
+- Me First
+
+Xurkitree @ Focus Sash
+Ability: Beast Boost
+Shiny: Yes
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Discharge
+- Dazzling Gleam
+- Energy Ball
+- Tail Glow
+
+Celesteela @ Leftovers
+Ability: Beast Boost
+Shiny: Yes
+EVs: 252 HP / 4 Atk / 252 Def
+Impish Nature
+- Heavy Slam
+- Toxic
+- Leech Seed
+- Protect
+
+Kartana @ Grassium Z
+Ability: Beast Boost
+Shiny: Yes
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Leaf Blade
+- Sacred Sword
+- Smart Strike
+- Swords Dance
+
+Guzzlord @ Assault Vest
+Ability: Beast Boost
+Shiny: Yes
+EVs: 252 Def / 252 SpA / 4 SpD
+Quiet Nature
+IVs: 0 Spe
+- Dragon Pulse
+- Dark Pulse
+- Sludge Bomb
+- Flamethrower
+
+Necrozma @ Psychium Z
+Ability: Prism Armor
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Photon Geyser
+- Heat Wave
+- Prismatic Laser
+- Moonlight
+
+Magearna @ Iapapa Berry
+Ability: Soul-Heart
+Shiny: Yes
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Fleur Cannon
+- Flash Cannon
+- Thunderbolt
+- Shift Gear
+
+Marshadow @ Marshadium Z
+Ability: Technician
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Spectral Thief
+- Close Combat
+- Rock Tomb
+- Shadow Sneak
+
+Poipole
+Ability: Beast Boost
+Shiny: Yes
+Timid Nature
+- Charm
+- Venom Drench
+- Nasty Plot
+- Poison Jab
+
+Naganadel @ Poisonium Z
+Ability: Beast Boost
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Sludge Wave
+- Dragon Pulse
+- Flamethrower
+- Nasty Plot
+
+Stakataka @ Rockium Z
+Ability: Beast Boost
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 4 SpD
+Lonely Nature
+IVs: 15 Def / 0 Spe
+- Trick Room
+- Gyro Ball
+- Stone Edge
+- Earthquake
+
+Blacephalon @ Life Orb
+Ability: Beast Boost
+Shiny: Yes
+EVs: 4 Atk / 252 SpA / 252 Spe
+Naive Nature
+- Mind Blown
+- Shadow Ball
+- Psyshock
+- Explosion
+
+Zeraora @ Focus Sash
+Ability: Volt Absorb
+Shiny: Yes
+EVs: 252 Atk / 4 SpA / 252 Spe
+Naughty Nature
+- Plasma Fists
+- Close Combat
+- Knock Off
+- Fake Out
+
+Necrozma-Dusk-Mane @ Ultranecrozium Z
+Ability: Prism Armor
+EVs: 4 HP / 252 Atk / 252 Spe
+Adamant Nature
+- Photon Geyser
+- Sunsteel Strike
+- Outrage
+- Morning Sun
+
+Necrozma-Dawn-Wings @ Ultranecrozium Z
+Ability: Prism Armor
+EVs: 4 HP / 252 SpA / 252 Spe
+Modest Nature
+- Photon Geyser
+- Moongeist Beam
+- Dragon Pulse
+- Moonlight
+
+
+=== [gen7purehackmons] black and white ===
+
+Hyper Reshiram (Rayquaza-Mega) @ Leppa Berry
+Ability: Desolate Land
+Shiny: Yes
+EVs: 252 HP / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+IVs: 0 Atk
+- Fusion Flare
+- Clangorous Soulblaze
+- Recycle
+- Extreme Evoboost
+
+Hyper Zekrom (Rayquaza-Mega) @ Electrium Z
+Ability: Electric Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpD / 252 Spe
+Adamant Nature
+- Fusion Bolt
+- Dragon Hammer
+- Extreme Speed
+- Extreme Evoboost
+
+
+=== [gen7purehackmons-box] Hacked ===
+
+Rayquaza @ Focus Sash
+Ability: Grassy Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+- Clanging Scales
+- Oblivion Wing
+- Tail Glow
+- Dragon Ascent
+
+pr (Kyogre) @ Blue Orb
+Ability: Misty Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Parabolic Charge
+- Steam Eruption
+- Extreme Speed
+- Extreme Evoboost
+
+Groudon @ Red Orb
+Ability: Electric Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Sacred Fire
+- Thousand Arrows
+- Fusion Bolt
+- Extreme Speed
+
+Mewtwo-Mega-X @ Psychium Z
+Ability: Psychic Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Jolly Nature
+- Psychic Fangs
+- Fire Punch
+- Ice Punch
+- Recover
+
+Mewtwo-Mega-Y @ Psychium Z
+Ability: Psychic Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+- Psystrike
+- Flamethrower
+- Ice Beam
+- Recover
+
+Necrozma-Ultra @ Ultranecrozium Z
+Ability: Psychic Surge
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Mild Nature
+- Photon Geyser
+- Dragon Pulse
+- Sunsteel Strike
+- Extreme Speed
+
+Zygarde-Complete @ Figy Berry
+Ability: Huge Power
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Dragon Claw
+- Thousand Arrows
+- Precipice Blades
+- Extreme Speed
+
+Deoxys-Attack @ Focus Sash
+Ability: Pure Power
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Naughty Nature
+- Shift Gear
+- Psychic Fangs
+- Thousand Arrows
+- Extreme Speed
+
+Instakill (Deoxys-Speed) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Sheer Cold
+- Fissure
+- Sing
+- Extreme Speed
+
+Volcanion @ Wide Lens
+Ability: Water Absorb
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Quiet Nature
+- Steam Eruption
+- Flare Blitz
+- Thousand Arrows
+- Recover
+
+Marshadow @ Marshadium Z
+Ability: Technician
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Drain Punch
+- Spectral Thief
+- Plasma Fists
+- Sunsteel Strike
+
+Zeraora @ Focus Sash
+Ability: Volt Absorb
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Plasma Fists
+- Ice Punch
+- Extreme Speed
+- Recover
+
+Latios-Mega (M) @ Soul Dew
+Ability: Steelworker
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+- Psystrike
+- Dragon Pulse
+- Flash Cannon
+- Recover
+
+Latias-Mega (F) @ Soul Dew
+Ability: Steelworker
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+- Psystrike
+- Dragon Pulse
+- Flash Cannon
+- Recover
+
+Salamence-Mega (M) @ Focus Sash
+Ability: Aerilate
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Naughty Nature
+- Dragon Hammer
+- Hyper Beam
+- Explosion
+- Roost
+
+Dialga @ Adamant Orb
+Ability: Pure Power
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Modest Nature
+- Roar of Time
+- Zap Cannon
+- Dragon Ascent
+- Roost
+
+Scizor-Mega (M) @ Lum Berry
+Ability: Primordial Sea
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Careful Nature
+- Megahorn
+- Sunsteel Strike
+- Coil
+- Roost
+
+Zoroark (M) @ Focus Sash
+Ability: Illusion
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Hasty Nature
+- Night Daze
+- Aeroblast
+- Fusion Flare
+- Sunsteel Strike
+
+Pidgeot-Mega (F) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Boomburst
+- Oblivion Wing
+- Sheer Cold
+- Fissure
+
+Kangaskhan (F) @ Kangaskhanite
+Ability: Intimidate
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Jolly Nature
+- Extreme Speed
+- Dragon Ascent
+- High Jump Kick
+- Power-Up Punch
+
+Aggron-Mega (M) @ Leftovers
+Ability: Unaware
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Careful Nature
+- Sunsteel Strike
+- Extreme Speed
+- Cosmic Power
+- Recover
+
+Kommo-o (M) @ Kommonium Z
+Ability: Soundproof
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Mild Nature
+- Clanging Scales
+- High Jump Kick
+- Sunsteel Strike
+- Recover
+
+Machamp (M) @ Focus Sash
+Ability: No Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Brave Nature
+- Dynamic Punch
+- Zap Cannon
+- Fissure
+- Sheer Cold
+
+Shedinja @ Lum Berry
+Ability: Wonder Guard
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Spectral Thief
+- Recover
+- Recycle
+- Shell Smash
+
+
+=== [gen7purehackmons-box] Left overs ===
+
+Shedinja @ Lum Berry
+Ability: Sturdy
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Adamant Nature
+- Close Combat
+- Spectral Thief
+- Shell Smash
+- Recycle
+
+Lugia @ Power Herb
+Ability: Multiscale
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Timid Nature
+- Oblivion Wing
+- Psystrike
+- Ice Burn
+- Extreme Speed
+
+Arceus-Dragon @ Draco Plate
+Ability: Multitype
+Shiny: Yes
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Mild Nature
+- Judgment
+- Sunsteel Strike
+- Extreme Speed
+- Recover
+
+Blaziken-Mega (M) @ Focus Sash
+Ability: Speed Boost
+Shiny: Yes
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Hone Claws
+- Sacred Fire
+- High Jump Kick
+- Ice Hammer

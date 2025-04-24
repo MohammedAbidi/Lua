@@ -1,0 +1,5137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showdown Compresser</title>
+</head>
+
+
+<body>
+    <h1 id="header">Pokemon Showdown Compresser</h1>
+
+    <p><textarea id="input" wrap="off" rows="8" cols="41"></textarea></p>
+    <button id="encodeButton" onclick="encodeButton()">Pack &#x2193 (Encode)</button>
+    <button id="decodeButton" onclick="decodeButton()">Unpack &#x2191 (Decode)</button>
+    <p><textarea id="output" wrap="off" rows="1" cols="41"></textarea></p>
+
+    <p><a href="https://pokemonshowdown.com/" target="_blank" rel="external">Showdown</a></p>
+</body>
+</html>
+
+
+<style>
+    textarea { /* https://stackoverflow.com/questions/657795/how-to-remove-word-wrap-from-textarea */
+        overflow-wrap: normal; /* (was word-wrap in older browsers) is needed in case some parent has changed that setting; it can cause wrapping even if pre is set. */
+        white-space: pre; /* white-space: nowrap also works if you don't care about whitespace, but of course you don't want that if you're working with input data (or indented paragraphs or any content where there might deliberately be multiple spaces) */
+    }
+
+    button {
+        width: 10rem;
+        height: 2.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        text-align: center;
+        border: 2px solid black;
+        border-color: gray;
+        border-radius: 10px;
+        box-shadow: 0 4px darkgray;
+        transform: translateY(-4px);
+    }
+
+    button:active {
+        box-shadow: 0 0;
+        transform: translateY(0px);
+    }
+</style>
+
+
+<script>
+// Note (https://symbl.cc/en/21C5)  &#x21c5 ⇅
+
+  //////////////
+ // Cosmetic //
+//////////////
+// Set Dark/Light mode on page loads when the color scheme changes
+function detectAndSetDarkMode() {
+    let background = "white";
+    let foreground = "black";
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        let temp = background;
+        background = foreground;
+        foreground = temp;
+    }
+
+    // document.body.style.backgroundColor = background;
+    // document.body.style.color = foreground;
+    // For textareas too
+    for (const element of document.getElementsByTagName("*")) {
+        if (element.constructor == HTMLAnchorElement) continue // Ignore Hyperlink
+        element.style.backgroundColor = background;
+        element.style.color = foreground;
+    }
+}
+detectAndSetDarkMode();
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', detectAndSetDarkMode);
+
+
+  ///////////////
+ // Constants //
+///////////////
+const PLACEHOLDER = 
+`EXAMPLE (Rayquaza) @ Life Orb
+Ability: Air Lock
+EVs: 252 Atk / 4 Def / 252 Spe
+Adamant Nature
+- Dragon Dance
+- Dragon Ascent
+- Extreme Speed
+- V-create`
+
+const PLACEHOLDER_OUT = `GcqBqkJfum2Cyn|EXAMPLE`
+
+
+  //////////
+ // Data //
+//////////
+// Skip to line 4000 for source code
+const STATS = ["HP", "Atk", "Def", "SpA", "SpD", "Spe"] // Hard coded
+
+// Types (20)
+const TYPES = [
+"None", // Made up
+"Normal",
+"Bug",
+"Dark",
+"Dragon",
+"Electric",
+"Fairy",
+"Fighting",
+"Fire",
+"Flying",
+"Ghost",
+"Grass",
+"Ground",
+"Ice",
+"Poison",
+"Psychic",
+"Rock",
+"Steel",
+"Water",
+"Stellar"
+]
+
+// Natures (26)
+const NATURES = [
+"None", // Made up
+"Adamant",
+"Bashful",
+"Bold",
+"Brave",
+"Calm",
+"Careful",
+"Docile",
+"Gentle",
+"Hardy",
+"Hasty",
+"Impish",
+"Jolly",
+"Lax",
+"Lonely",
+"Mild",
+"Modest",
+"Naive",
+"Naughty",
+"Quiet",
+"Quirky",
+"Rash",
+"Relaxed",
+"Sassy",
+"Serious",
+"Timid"
+]
+
+// Items (538)
+const ITEMS = [
+"None", // Made Up
+"Ability Shield",
+"Abomasite",
+"Absolite",
+"Absorb Bulb",
+"Adamant Crystal",
+"Adamant Orb",
+"Adrenaline Orb",
+"Aerodactylite",
+"Aggronite",
+"Aguav Berry",
+"Air Balloon",
+"Alakazite",
+"Aloraichium Z",
+"Altarianite",
+"Ampharosite",
+"Apicot Berry",
+"Armor Fossil",
+"Aspear Berry",
+"Assault Vest",
+"Audinite",
+"Auspicious Armor",
+"Babiri Berry",
+"Banettite",
+"Beast Ball",
+"Beedrillite",
+"Belue Berry",
+"Berry Juice",
+"Berry Sweet",
+"Big Nugget",
+"Big Root",
+"Binding Band",
+"Black Belt",
+"Black Glasses",
+"Black Sludge",
+"Blastoisinite",
+"Blazikenite",
+"Blue Orb",
+"Bluk Berry",
+"Blunder Policy",
+"Booster Energy",
+"Bottle Cap",
+"Bright Powder",
+"Bug Gem",
+"Bug Memory",
+"Buginium Z",
+"Burn Drive",
+"Cameruptite",
+"Cell Battery",
+"Charcoal",
+"Charizardite X",
+"Charizardite Y",
+"Charti Berry",
+"Cheri Berry",
+"Cherish Ball",
+"Chesto Berry",
+"Chilan Berry",
+"Chill Drive",
+"Chipped Pot",
+"Choice Band",
+"Choice Scarf",
+"Choice Specs",
+"Chople Berry",
+"Claw Fossil",
+"Clear Amulet",
+"Clover Sweet",
+"Coba Berry",
+"Colbur Berry",
+"Cornerstone Mask",
+"Cornn Berry",
+"Cover Fossil",
+"Covert Cloak",
+"Cracked Pot",
+"Custap Berry",
+"Damp Rock",
+"Dark Gem",
+"Dark Memory",
+"Darkinium Z",
+"Dawn Stone",
+"Decidium Z",
+"Deep Sea Scale",
+"Deep Sea Tooth",
+"Destiny Knot",
+"Diancite",
+"Dive Ball",
+"Dome Fossil",
+"Douse Drive",
+"Draco Plate",
+"Dragon Fang",
+"Dragon Gem",
+"Dragon Memory",
+"Dragon Scale",
+"Dragonium Z",
+"Dread Plate",
+"Dream Ball",
+"Dubious Disc",
+"Durin Berry",
+"Dusk Ball",
+"Dusk Stone",
+"Earth Plate",
+"Eevium Z",
+"Eject Button",
+"Eject Pack",
+"Electirizer",
+"Electric Gem",
+"Electric Memory",
+"Electric Seed",
+"Electrium Z",
+"Enigma Berry",
+"Eviolite",
+"Expert Belt",
+"Fairium Z",
+"Fairy Feather",
+"Fairy Gem",
+"Fairy Memory",
+"Fast Ball",
+"Fighting Gem",
+"Fighting Memory",
+"Fightinium Z",
+"Figy Berry",
+"Fire Gem",
+"Fire Memory",
+"Fire Stone",
+"Firium Z",
+"Fist Plate",
+"Flame Orb",
+"Flame Plate",
+"Float Stone",
+"Flower Sweet",
+"Flying Gem",
+"Flying Memory",
+"Flyinium Z",
+"Focus Band",
+"Focus Sash",
+"Fossilized Bird",
+"Fossilized Dino",
+"Fossilized Drake",
+"Fossilized Fish",
+"Friend Ball",
+"Full Incense",
+"Galarica Cuff",
+"Galarica Wreath",
+"Galladite",
+"Ganlon Berry",
+"Garchompite",
+"Gardevoirite",
+"Gengarite",
+"Ghost Gem",
+"Ghost Memory",
+"Ghostium Z",
+"Glalitite",
+"Gold Bottle Cap",
+"Grass Gem",
+"Grass Memory",
+"Grassium Z",
+"Grassy Seed",
+"Great Ball",
+"Grepa Berry",
+"Grip Claw",
+"Griseous Core",
+"Griseous Orb",
+"Ground Gem",
+"Ground Memory",
+"Groundium Z",
+"Gyaradosite",
+"Haban Berry",
+"Hard Stone",
+"Heal Ball",
+"Hearthflame Mask",
+"Heat Rock",
+"Heavy Ball",
+"Heavy-Duty Boots",
+"Helix Fossil",
+"Heracronite",
+"Hondew Berry",
+"Houndoominite",
+"Iapapa Berry",
+"Ice Gem",
+"Ice Memory",
+"Ice Stone",
+"Icicle Plate",
+"Icium Z",
+"Icy Rock",
+"Incinium Z",
+"Insect Plate",
+"Iron Ball",
+"Iron Plate",
+"Jaboca Berry",
+"Jaw Fossil",
+"Kasib Berry",
+"Kebia Berry",
+"Kee Berry",
+"Kelpsy Berry",
+"Kangaskhanite",
+"King's Rock",
+"Kommonium Z",
+"Lagging Tail",
+"Lansat Berry",
+"Latiasite",
+"Latiosite",
+"Lax Incense",
+"Leaf Stone",
+"Leek",
+"Leftovers",
+"Leppa Berry",
+"Level Ball",
+"Liechi Berry",
+"Life Orb",
+"Light Ball",
+"Light Clay",
+"Loaded Dice",
+"Lopunnite",
+"Love Ball",
+"Love Sweet",
+"Lucarionite",
+"Lucky Punch",
+"Lum Berry",
+"Luminous Moss",
+"Lunalium Z",
+"Lure Ball",
+"Lustrous Globe",
+"Lustrous Orb",
+"Luxury Ball",
+"Lycanium Z",
+"Macho Brace",
+"Magmarizer",
+"Magnet",
+"Mago Berry",
+"Magost Berry",
+"Mail",
+"Malicious Armor",
+"Manectite",
+"Maranga Berry",
+"Marshadium Z",
+"Master Ball",
+"Masterpiece Teacup",
+"Mawilite",
+"Meadow Plate",
+"Medichamite",
+"Mental Herb",
+"Metagrossite",
+"Metal Alloy",
+"Metal Coat",
+"Metal Powder",
+"Metronome",
+"Mewnium Z",
+"Mewtwonite X",
+"Mewtwonite Y",
+"Micle Berry",
+"Mimikium Z",
+"Mind Plate",
+"Miracle Seed",
+"Mirror Herb",
+"Misty Seed",
+"Moon Ball",
+"Moon Stone",
+"Muscle Band",
+"Mystic Water",
+"Nanab Berry",
+"Nest Ball",
+"Net Ball",
+"Never-Melt Ice",
+"Nomel Berry",
+"Normal Gem",
+"Normalium Z",
+"Occa Berry",
+"Odd Incense",
+"Old Amber",
+"Oran Berry",
+"Oval Stone",
+"Pamtre Berry",
+"Park Ball",
+"Passho Berry",
+"Payapa Berry",
+"Pecha Berry",
+"Persim Berry",
+"Petaya Berry",
+"Pidgeotite",
+"Pikanium Z",
+"Pikashunium Z",
+"Pinap Berry",
+"Pinsirite",
+"Pixie Plate",
+"Plume Fossil",
+"Poison Barb",
+"Poison Gem",
+"Poison Memory",
+"Poisonium Z",
+"Poke Ball",
+"Pomeg Berry",
+"Power Anklet",
+"Power Band",
+"Power Belt",
+"Power Bracer",
+"Power Herb",
+"Power Lens",
+"Power Weight",
+"Premier Ball",
+"Primarium Z",
+"Prism Scale",
+"Protective Pads",
+"Protector",
+"Psychic Gem",
+"Psychic Memory",
+"Psychic Seed",
+"Psychium Z",
+"Punching Glove",
+"Qualot Berry",
+"Quick Ball",
+"Quick Claw",
+"Quick Powder",
+"Rabuta Berry",
+"Rare Bone",
+"Rawst Berry",
+"Razor Claw",
+"Razor Fang",
+"Razz Berry",
+"Reaper Cloth",
+"Red Card",
+"Red Orb",
+"Repeat Ball",
+"Ribbon Sweet",
+"Rindo Berry",
+"Ring Target",
+"Rock Gem",
+"Rock Incense",
+"Rock Memory",
+"Rockium Z",
+"Rocky Helmet",
+"Room Service",
+"Root Fossil",
+"Rose Incense",
+"Roseli Berry",
+"Rowap Berry",
+"Rusted Shield",
+"Rusted Sword",
+"Sablenite",
+"Sachet",
+"Safari Ball",
+"Safety Goggles",
+"Sail Fossil",
+"Salac Berry",
+"Salamencite",
+"Sceptilite",
+"Scizorite",
+"Scope Lens",
+"Sea Incense",
+"Sharp Beak",
+"Sharpedonite",
+"Shed Shell",
+"Shell Bell",
+"Shiny Stone",
+"Shock Drive",
+"Shuca Berry",
+"Silk Scarf",
+"Silver Powder",
+"Sitrus Berry",
+"Skull Fossil",
+"Sky Plate",
+"Slowbronite",
+"Smooth Rock",
+"Snorlium Z",
+"Snowball",
+"Soft Sand",
+"Solganium Z",
+"Soul Dew",
+"Spell Tag",
+"Spelon Berry",
+"Splash Plate",
+"Spooky Plate",
+"Sport Ball",
+"Starf Berry",
+"Star Sweet",
+"Steelixite",
+"Steel Gem",
+"Steel Memory",
+"Steelium Z",
+"Stick",
+"Sticky Barb",
+"Stone Plate",
+"Strange Ball",
+"Strawberry Sweet",
+"Sun Stone",
+"Swampertite",
+"Sweet Apple",
+"Syrupy Apple",
+"Tamato Berry",
+"Tanga Berry",
+"Tapunium Z",
+"Tart Apple",
+"Terrain Extender",
+"Thick Club",
+"Throat Spray",
+"Thunder Stone",
+"Timer Ball",
+"Toxic Orb",
+"Toxic Plate",
+"TR00",
+"TR01",
+"TR02",
+"TR03",
+"TR04",
+"TR05",
+"TR06",
+"TR07",
+"TR08",
+"TR09",
+"TR10",
+"TR11",
+"TR12",
+"TR13",
+"TR14",
+"TR15",
+"TR16",
+"TR17",
+"TR18",
+"TR19",
+"TR20",
+"TR21",
+"TR22",
+"TR23",
+"TR24",
+"TR25",
+"TR26",
+"TR27",
+"TR28",
+"TR29",
+"TR30",
+"TR31",
+"TR32",
+"TR33",
+"TR34",
+"TR35",
+"TR36",
+"TR37",
+"TR38",
+"TR39",
+"TR40",
+"TR41",
+"TR42",
+"TR43",
+"TR44",
+"TR45",
+"TR46",
+"TR47",
+"TR48",
+"TR49",
+"TR50",
+"TR51",
+"TR52",
+"TR53",
+"TR54",
+"TR55",
+"TR56",
+"TR57",
+"TR58",
+"TR59",
+"TR60",
+"TR61",
+"TR62",
+"TR63",
+"TR64",
+"TR65",
+"TR66",
+"TR67",
+"TR68",
+"TR69",
+"TR70",
+"TR71",
+"TR72",
+"TR73",
+"TR74",
+"TR75",
+"TR76",
+"TR77",
+"TR78",
+"TR79",
+"TR80",
+"TR81",
+"TR82",
+"TR83",
+"TR84",
+"TR85",
+"TR86",
+"TR87",
+"TR88",
+"TR89",
+"TR90",
+"TR91",
+"TR92",
+"TR93",
+"TR94",
+"TR95",
+"TR96",
+"TR97",
+"TR98",
+"TR99",
+"Twisted Spoon",
+"Tyranitarite",
+"Ultra Ball",
+"Ultranecrozium Z",
+"Unremarkable Teacup",
+"Up-Grade",
+"Utility Umbrella",
+"Venusaurite",
+"Wacan Berry",
+"Water Gem",
+"Water Memory",
+"Water Stone",
+"Waterium Z",
+"Watmel Berry",
+"Wave Incense",
+"Weakness Policy",
+"Wellspring Mask",
+"Wepear Berry",
+"Whipped Dream",
+"White Herb",
+"Wide Lens",
+"Wiki Berry",
+"Wise Glasses",
+"Yache Berry",
+"Zap Plate",
+"Zoom Lens",
+"Berserk Gene",
+"Berry",
+"Bitter Berry",
+"Burnt Berry",
+"Gold Berry",
+"Ice Berry",
+"Mint Berry",
+"Miracle Berry",
+"Mystery Berry",
+"Pink Bow",
+"Polkadot Bow",
+"PRZ Cure Berry",
+"PSN Cure Berry",
+"Crucibellite",
+"Vile Vial"
+]
+
+// Moves (953)
+const MOVES = [
+"None", // Made up
+"10,000,000 Volt Thunderbolt",
+"Absorb",
+"Accelerock",
+"Acid",
+"Acid Armor",
+"Acid Downpour",
+"Acid Spray",
+"Acrobatics",
+"Acupressure",
+"Aerial Ace",
+"Aeroblast",
+"After You",
+"Agility",
+"Air Cutter",
+"Air Slash",
+"All-Out Pummeling",
+"Alluring Voice",
+"Ally Switch",
+"Amnesia",
+"Anchor Shot",
+"Ancient Power",
+"Apple Acid",
+"Aqua Cutter",
+"Aqua Jet",
+"Aqua Ring",
+"Aqua Step",
+"Aqua Tail",
+"Armor Cannon",
+"Arm Thrust",
+"Aromatherapy",
+"Aromatic Mist",
+"Assist",
+"Assurance",
+"Astonish",
+"Astral Barrage",
+"Attack Order",
+"Attract",
+"Aura Sphere",
+"Aura Wheel",
+"Aurora Beam",
+"Aurora Veil",
+"Autotomize",
+"Avalanche",
+"Axe Kick",
+"Baby-Doll Eyes",
+"Baddy Bad",
+"Baneful Bunker",
+"Barb Barrage",
+"Barrage",
+"Barrier",
+"Baton Pass",
+"Beak Blast",
+"Beat Up",
+"Behemoth Bash",
+"Behemoth Blade",
+"Belch",
+"Belly Drum",
+"Bestow",
+"Bide",
+"Bind",
+"Bite",
+"Bitter Blade",
+"Bitter Malice",
+"Black Hole Eclipse",
+"Blast Burn",
+"Blaze Kick",
+"Blazing Torque",
+"Bleakwind Storm",
+"Blizzard",
+"Block",
+"Blood Moon",
+"Bloom Doom",
+"Blue Flare",
+"Body Press",
+"Body Slam",
+"Bolt Beak",
+"Bolt Strike",
+"Bone Club",
+"Bonemerang",
+"Bone Rush",
+"Boomburst",
+"Bounce",
+"Bouncy Bubble",
+"Branch Poke",
+"Brave Bird",
+"Breaking Swipe",
+"Breakneck Blitz",
+"Brick Break",
+"Brine",
+"Brutal Swing",
+"Bubble",
+"Bubble Beam",
+"Bug Bite",
+"Bug Buzz",
+"Bulk Up",
+"Bulldoze",
+"Bullet Punch",
+"Bullet Seed",
+"Burning Bulwark",
+"Burning Jealousy",
+"Burn Up",
+"Buzzy Buzz",
+"Calm Mind",
+"Camouflage",
+"Captivate",
+"Catastropika",
+"Ceaseless Edge",
+"Celebrate",
+"Charge",
+"Charge Beam",
+"Charm",
+"Chatter",
+"Chilling Water",
+"Chilly Reception",
+"Chip Away",
+"Chloroblast",
+"Circle Throw",
+"Clamp",
+"Clanging Scales",
+"Clangorous Soul",
+"Clangorous Soulblaze",
+"Clear Smog",
+"Close Combat",
+"Coaching",
+"Coil",
+"Collision Course",
+"Combat Torque",
+"Comet Punch",
+"Comeuppance",
+"Confide",
+"Confuse Ray",
+"Confusion",
+"Constrict",
+"Continental Crush",
+"Conversion",
+"Conversion 2",
+"Copycat",
+"Core Enforcer",
+"Corkscrew Crash",
+"Corrosive Gas",
+"Cosmic Power",
+"Cotton Guard",
+"Cotton Spore",
+"Counter",
+"Court Change",
+"Covet",
+"Crabhammer",
+"Crafty Shield",
+"Cross Chop",
+"Cross Poison",
+"Crunch",
+"Crush Claw",
+"Crush Grip",
+"Curse",
+"Cut",
+"Darkest Lariat",
+"Dark Pulse",
+"Dark Void",
+"Dazzling Gleam",
+"Decorate",
+"Defend Order",
+"Defense Curl",
+"Defog",
+"Destiny Bond",
+"Detect",
+"Devastating Drake",
+"Diamond Storm",
+"Dig",
+"Disable",
+"Disarming Voice",
+"Discharge",
+"Dire Claw",
+"Dive",
+"Dizzy Punch",
+"Doodle",
+"Doom Desire",
+"Double-Edge",
+"Double Hit",
+"Double Iron Bash",
+"Double Kick",
+"Double Shock",
+"Double Slap",
+"Double Team",
+"Draco Meteor",
+"Dragon Ascent",
+"Dragon Breath",
+"Dragon Cheer",
+"Dragon Claw",
+"Dragon Dance",
+"Dragon Darts",
+"Dragon Energy",
+"Dragon Hammer",
+"Dragon Pulse",
+"Dragon Rage",
+"Dragon Rush",
+"Dragon Tail",
+"Draining Kiss",
+"Drain Punch",
+"Dream Eater",
+"Drill Peck",
+"Drill Run",
+"Drum Beating",
+"Dual Chop",
+"Dual Wingbeat",
+"Dynamax Cannon",
+"Dynamic Punch",
+"Earth Power",
+"Earthquake",
+"Echoed Voice",
+"Eerie Impulse",
+"Eerie Spell",
+"Egg Bomb",
+"Electric Terrain",
+"Electrify",
+"Electro Ball",
+"Electro Drift",
+"Electro Shot",
+"Electroweb",
+"Embargo",
+"Ember",
+"Encore",
+"Endeavor",
+"Endure",
+"Energy Ball",
+"Entrainment",
+"Eruption",
+"Esper Wing",
+"Eternabeam",
+"Expanding Force",
+"Explosion",
+"Extrasensory",
+"Extreme Evoboost",
+"Extreme Speed",
+"Facade",
+"Fairy Lock",
+"Fairy Wind",
+"Fake Out",
+"Fake Tears",
+"False Surrender",
+"False Swipe",
+"Feather Dance",
+"Feint",
+"Feint Attack",
+"Fell Stinger",
+"Fickle Beam",
+"Fiery Dance",
+"Fiery Wrath",
+"Fillet Away",
+"Final Gambit",
+"Fire Blast",
+"Fire Fang",
+"Fire Lash",
+"Fire Pledge",
+"Fire Punch",
+"Fire Spin",
+"First Impression",
+"Fishious Rend",
+"Fissure",
+"Flail",
+"Flame Burst",
+"Flame Charge",
+"Flame Wheel",
+"Flamethrower",
+"Flare Blitz",
+"Flash",
+"Flash Cannon",
+"Flatter",
+"Fleur Cannon",
+"Fling",
+"Flip Turn",
+"Floaty Fall",
+"Floral Healing",
+"Flower Shield",
+"Flower Trick",
+"Fly",
+"Flying Press",
+"Focus Blast",
+"Focus Energy",
+"Focus Punch",
+"Follow Me",
+"Force Palm",
+"Foresight",
+"Forest's Curse",
+"Foul Play",
+"Freeze-Dry",
+"Freeze Shock",
+"Freezing Glare",
+"Freezy Frost",
+"Frenzy Plant",
+"Frost Breath",
+"Frustration",
+"Fury Attack",
+"Fury Cutter",
+"Fury Swipes",
+"Fusion Bolt",
+"Fusion Flare",
+"Future Sight",
+"Gastro Acid",
+"Gear Grind",
+"Gear Up",
+"Genesis Supernova",
+"Geomancy",
+"Giga Drain",
+"Giga Impact",
+"Gigaton Hammer",
+"Gigavolt Havoc",
+"Glacial Lance",
+"Glaciate",
+"Glaive Rush",
+"Glare",
+"Glitzy Glow",
+"G-Max Befuddle",
+"G-Max Cannonade",
+"G-Max Centiferno",
+"G-Max Chi Strike",
+"G-Max Cuddle",
+"G-Max Depletion",
+"G-Max Drum Solo",
+"G-Max Finale",
+"G-Max Fireball",
+"G-Max Foam Burst",
+"G-Max Gold Rush",
+"G-Max Gravitas",
+"G-Max Hydrosnipe",
+"G-Max Malodor",
+"G-Max Meltdown",
+"G-Max One Blow",
+"G-Max Rapid Flow",
+"G-Max Replenish",
+"G-Max Resonance",
+"G-Max Sandblast",
+"G-Max Smite",
+"G-Max Snooze",
+"G-Max Steelsurge",
+"G-Max Stonesurge",
+"G-Max Stun Shock",
+"G-Max Sweetness",
+"G-Max Tartness",
+"G-Max Terror",
+"G-Max Vine Lash",
+"G-Max Volcalith",
+"G-Max Volt Crash",
+"G-Max Wildfire",
+"G-Max Wind Rage",
+"Grass Knot",
+"Grass Pledge",
+"Grass Whistle",
+"Grassy Glide",
+"Grassy Terrain",
+"Grav Apple",
+"Gravity",
+"Growl",
+"Growth",
+"Grudge",
+"Guardian of Alola",
+"Guard Split",
+"Guard Swap",
+"Guillotine",
+"Gunk Shot",
+"Gust",
+"Gyro Ball",
+"Hail",
+"Hammer Arm",
+"Happy Hour",
+"Harden",
+"Hard Press",
+"Haze",
+"Headbutt",
+"Head Charge",
+"Headlong Rush",
+"Head Smash",
+"Heal Bell",
+"Heal Block",
+"Healing Wish",
+"Heal Order",
+"Heal Pulse",
+"Heart Stamp",
+"Heart Swap",
+"Heat Crash",
+"Heat Wave",
+"Heavy Slam",
+"Helping Hand",
+"Hex",
+"Hidden Power",
+"Hidden Power [Bug]",
+"Hidden Power [Dark]",
+"Hidden Power [Dragon]",
+"Hidden Power [Electric]",
+"Hidden Power [Fighting]",
+"Hidden Power [Fire]",
+"Hidden Power [Flying]",
+"Hidden Power [Ghost]",
+"Hidden Power [Grass]",
+"Hidden Power [Ground]",
+"Hidden Power [Ice]",
+"Hidden Power [Poison]",
+"Hidden Power [Psychic]",
+"Hidden Power [Rock]",
+"Hidden Power [Steel]",
+"Hidden Power [Water]",
+"High Horsepower",
+"High Jump Kick",
+"Hold Back",
+"Hold Hands",
+"Hone Claws",
+"Horn Attack",
+"Horn Drill",
+"Horn Leech",
+"Howl",
+"Hurricane",
+"Hydro Cannon",
+"Hydro Pump",
+"Hydro Steam",
+"Hydro Vortex",
+"Hyper Beam",
+"Hyper Drill",
+"Hyper Fang",
+"Hyperspace Fury",
+"Hyperspace Hole",
+"Hyper Voice",
+"Hypnosis",
+"Ice Ball",
+"Ice Beam",
+"Ice Burn",
+"Ice Fang",
+"Ice Hammer",
+"Ice Punch",
+"Ice Shard",
+"Ice Spinner",
+"Icicle Crash",
+"Icicle Spear",
+"Icy Wind",
+"Imprison",
+"Incinerate",
+"Infernal Parade",
+"Inferno",
+"Inferno Overdrive",
+"Infestation",
+"Ingrain",
+"Instruct",
+"Ion Deluge",
+"Iron Defense",
+"Iron Head",
+"Iron Tail",
+"Ivy Cudgel",
+"Jaw Lock",
+"Jet Punch",
+"Judgment",
+"Jump Kick",
+"Jungle Healing",
+"Karate Chop",
+"Kinesis",
+"King's Shield",
+"Knock Off",
+"Kowtow Cleave",
+"Land's Wrath",
+"Laser Focus",
+"Lash Out",
+"Last Resort",
+"Last Respects",
+"Lava Plume",
+"Leafage",
+"Leaf Blade",
+"Leaf Storm",
+"Leaf Tornado",
+"Leech Life",
+"Leech Seed",
+"Leer",
+"Let's Snuggle Forever",
+"Lick",
+"Life Dew",
+"Light of Ruin",
+"Light Screen",
+"Light That Burns the Sky",
+"Liquidation",
+"Lock-On",
+"Lovely Kiss",
+"Low Kick",
+"Low Sweep",
+"Lucky Chant",
+"Lumina Crash",
+"Lunar Blessing",
+"Lunar Dance",
+"Lunge",
+"Luster Purge",
+"Mach Punch",
+"Magical Leaf",
+"Magical Torque",
+"Magic Coat",
+"Magic Powder",
+"Magic Room",
+"Magma Storm",
+"Magnet Bomb",
+"Magnetic Flux",
+"Magnet Rise",
+"Magnitude",
+"Make It Rain",
+"Malicious Moonsault",
+"Malignant Chain",
+"Mat Block",
+"Matcha Gotcha",
+"Max Airstream",
+"Max Darkness",
+"Max Flare",
+"Max Flutterby",
+"Max Geyser",
+"Max Guard",
+"Max Hailstorm",
+"Max Knuckle",
+"Max Lightning",
+"Max Mindstorm",
+"Max Ooze",
+"Max Overgrowth",
+"Max Phantasm",
+"Max Quake",
+"Max Rockfall",
+"Max Starfall",
+"Max Steelspike",
+"Max Strike",
+"Max Wyrmwind",
+"Mean Look",
+"Meditate",
+"Me First",
+"Mega Drain",
+"Megahorn",
+"Mega Kick",
+"Mega Punch",
+"Memento",
+"Menacing Moonraze Maelstrom",
+"Metal Burst",
+"Metal Claw",
+"Metal Sound",
+"Meteor Assault",
+"Meteor Beam",
+"Meteor Mash",
+"Metronome",
+"Mighty Cleave",
+"Milk Drink",
+"Mimic",
+"Mind Blown",
+"Mind Reader",
+"Minimize",
+"Miracle Eye",
+"Mirror Coat",
+"Mirror Move",
+"Mirror Shot",
+"Mist",
+"Mist Ball",
+"Misty Explosion",
+"Misty Terrain",
+"Moonblast",
+"Moongeist Beam",
+"Moonlight",
+"Morning Sun",
+"Mortal Spin",
+"Mountain Gale",
+"Mud Bomb",
+"Mud Shot",
+"Mud-Slap",
+"Mud Sport",
+"Muddy Water",
+"Multi-Attack",
+"Mystical Fire",
+"Mystical Power",
+"Nasty Plot",
+"Natural Gift",
+"Nature Power",
+"Nature's Madness",
+"Needle Arm",
+"Never-Ending Nightmare",
+"Night Daze",
+"Nightmare",
+"Night Shade",
+"Night Slash",
+"Noble Roar",
+"No Retreat",
+"Noxious Torque",
+"Nuzzle",
+"Oblivion Wing",
+"Obstruct",
+"Oceanic Operetta",
+"Octazooka",
+"Octolock",
+"Odor Sleuth",
+"Ominous Wind",
+"Order Up",
+"Origin Pulse",
+"Outrage",
+"Overdrive",
+"Overheat",
+"Pain Split",
+"Parabolic Charge",
+"Parting Shot",
+"Payback",
+"Pay Day",
+"Peck",
+"Perish Song",
+"Petal Blizzard",
+"Petal Dance",
+"Phantom Force",
+"Photon Geyser",
+"Pika Papow",
+"Pin Missile",
+"Plasma Fists",
+"Play Nice",
+"Play Rough",
+"Pluck",
+"Poison Fang",
+"Poison Gas",
+"Poison Jab",
+"Poison Powder",
+"Poison Sting",
+"Poison Tail",
+"Pollen Puff",
+"Poltergeist",
+"Population Bomb",
+"Pounce",
+"Pound",
+"Powder",
+"Powder Snow",
+"Power Gem",
+"Power Shift",
+"Power Split",
+"Power Swap",
+"Power Trick",
+"Power Trip",
+"Power-Up Punch",
+"Power Whip",
+"Precipice Blades",
+"Present",
+"Prismatic Laser",
+"Protect",
+"Psybeam",
+"Psyblade",
+"Psych Up",
+"Psychic",
+"Psychic Fangs",
+"Psychic Noise",
+"Psychic Terrain",
+"Psycho Boost",
+"Psycho Cut",
+"Psycho Shift",
+"Psyshield Bash",
+"Psyshock",
+"Psystrike",
+"Psywave",
+"Pulverizing Pancake",
+"Punishment",
+"Purify",
+"Pursuit",
+"Pyro Ball",
+"Quash",
+"Quick Attack",
+"Quick Guard",
+"Quiver Dance",
+"Rage",
+"Rage Fist",
+"Rage Powder",
+"Raging Bull",
+"Raging Fury",
+"Rain Dance",
+"Rapid Spin",
+"Razor Leaf",
+"Razor Shell",
+"Razor Wind",
+"Recover",
+"Recycle",
+"Reflect",
+"Reflect Type",
+"Refresh",
+"Relic Song",
+"Rest",
+"Retaliate",
+"Return",
+"Revelation Dance",
+"Revenge",
+"Reversal",
+"Revival Blessing",
+"Rising Voltage",
+"Roar",
+"Roar of Time",
+"Rock Blast",
+"Rock Climb",
+"Rock Polish",
+"Rock Slide",
+"Rock Smash",
+"Rock Throw",
+"Rock Tomb",
+"Rock Wrecker",
+"Role Play",
+"Rolling Kick",
+"Rollout",
+"Roost",
+"Rototiller",
+"Round",
+"Ruination",
+"Sacred Fire",
+"Sacred Sword",
+"Safeguard",
+"Salt Cure",
+"Sand Attack",
+"Sandsear Storm",
+"Sandstorm",
+"Sand Tomb",
+"Sappy Seed",
+"Savage Spin-Out",
+"Scald",
+"Scale Shot",
+"Scary Face",
+"Scorching Sands",
+"Scratch",
+"Screech",
+"Searing Shot",
+"Searing Sunraze Smash",
+"Secret Power",
+"Secret Sword",
+"Seed Bomb",
+"Seed Flare",
+"Seismic Toss",
+"Self-Destruct",
+"Shadow Ball",
+"Shadow Bone",
+"Shadow Claw",
+"Shadow Force",
+"Shadow Punch",
+"Shadow Sneak",
+"Sharpen",
+"Shattered Psyche",
+"Shed Tail",
+"Sheer Cold",
+"Shell Side Arm",
+"Shell Smash",
+"Shell Trap",
+"Shelter",
+"Shift Gear",
+"Shock Wave",
+"Shore Up",
+"Signal Beam",
+"Silk Trap",
+"Silver Wind",
+"Simple Beam",
+"Sing",
+"Sinister Arrow Raid",
+"Sizzly Slide",
+"Sketch",
+"Skill Swap",
+"Skitter Smack",
+"Skull Bash",
+"Sky Attack",
+"Sky Drop",
+"Sky Uppercut",
+"Slack Off",
+"Slam",
+"Slash",
+"Sleep Powder",
+"Sleep Talk",
+"Sludge",
+"Sludge Bomb",
+"Sludge Wave",
+"Smack Down",
+"Smart Strike",
+"Smelling Salts",
+"Smog",
+"Smokescreen",
+"Snap Trap",
+"Snarl",
+"Snatch",
+"Snipe Shot",
+"Snore",
+"Snowscape",
+"Soak",
+"Soft-Boiled",
+"Solar Beam",
+"Solar Blade",
+"Sonic Boom",
+"Soul-Stealing 7-Star Strike",
+"Spacial Rend",
+"Spark",
+"Sparkling Aria",
+"Sparkly Swirl",
+"Spectral Thief",
+"Speed Swap",
+"Spicy Extract",
+"Spider Web",
+"Spike Cannon",
+"Spikes",
+"Spiky Shield",
+"Spin Out",
+"Spirit Break",
+"Spirit Shackle",
+"Spit Up",
+"Spite",
+"Splash",
+"Splintered Stormshards",
+"Splishy Splash",
+"Spore",
+"Spotlight",
+"Springtide Storm",
+"Stealth Rock",
+"Steam Eruption",
+"Steamroller",
+"Steel Beam",
+"Steel Roller",
+"Steel Wing",
+"Sticky Web",
+"Stockpile",
+"Stoked Sparksurfer",
+"Stomp",
+"Stomping Tantrum",
+"Stone Axe",
+"Stone Edge",
+"Stored Power",
+"Storm Throw",
+"Strange Steam",
+"Strength",
+"Strength Sap",
+"String Shot",
+"Struggle",
+"Struggle Bug",
+"Stuff Cheeks",
+"Stun Spore",
+"Submission",
+"Substitute",
+"Subzero Slammer",
+"Sucker Punch",
+"Sunny Day",
+"Sunsteel Strike",
+"Supercell Slam",
+"Super Fang",
+"Superpower",
+"Supersonic",
+"Supersonic Skystrike",
+"Surf",
+"Surging Strikes",
+"Swagger",
+"Swallow",
+"Sweet Kiss",
+"Sweet Scent",
+"Swift",
+"Switcheroo",
+"Swords Dance",
+"Synchronoise",
+"Synthesis",
+"Syrup Bomb",
+"Tachyon Cutter",
+"Tackle",
+"Tail Glow",
+"Tail Slap",
+"Tail Whip",
+"Tailwind",
+"Take Down",
+"Take Heart",
+"Tar Shot",
+"Taunt",
+"Tearful Look",
+"Teatime",
+"Techno Blast",
+"Tectonic Rage",
+"Teeter Dance",
+"Telekinesis",
+"Teleport",
+"Temper Flare",
+"Tera Blast",
+"Tera Starstorm",
+"Terrain Pulse",
+"Thief",
+"Thousand Arrows",
+"Thousand Waves",
+"Thrash",
+"Throat Chop",
+"Thunder",
+"Thunderbolt",
+"Thunder Cage",
+"Thunderclap",
+"Thunder Fang",
+"Thunderous Kick",
+"Thunder Punch",
+"Thunder Shock",
+"Thunder Wave",
+"Tickle",
+"Tidy Up",
+"Topsy-Turvy",
+"Torch Song",
+"Torment",
+"Toxic",
+"Toxic Spikes",
+"Toxic Thread",
+"Trailblaze",
+"Transform",
+"Tri Attack",
+"Trick",
+"Trick-or-Treat",
+"Trick Room",
+"Triple Arrows",
+"Triple Axel",
+"Triple Dive",
+"Triple Kick",
+"Trop Kick",
+"Trump Card",
+"Twin Beam",
+"Twineedle",
+"Twinkle Tackle",
+"Twister",
+"U-turn",
+"Upper Hand",
+"Uproar",
+"Vacuum Wave",
+"V-create",
+"Veevee Volley",
+"Venom Drench",
+"Venoshock",
+"Victory Dance",
+"Vine Whip",
+"Vise Grip",
+"Vital Throw",
+"Volt Switch",
+"Volt Tackle",
+"Wake-Up Slap",
+"Waterfall",
+"Water Gun",
+"Water Pledge",
+"Water Pulse",
+"Water Shuriken",
+"Water Sport",
+"Water Spout",
+"Wave Crash",
+"Weather Ball",
+"Whirlpool",
+"Whirlwind",
+"Wicked Blow",
+"Wicked Torque",
+"Wide Guard",
+"Wildbolt Storm",
+"Wild Charge",
+"Will-O-Wisp",
+"Wing Attack",
+"Wish",
+"Withdraw",
+"Wonder Room",
+"Wood Hammer",
+"Work Up",
+"Worry Seed",
+"Wrap",
+"Wring Out",
+"X-Scissor",
+"Yawn",
+"Zap Cannon",
+"Zen Headbutt",
+"Zing Zap",
+"Zippy Zap",
+"Paleo Wave",
+"Shadow Strike"
+]
+
+// Abilities (314)
+const ABILITIES = [
+"No Ability",
+"Adaptability",
+"Aerilate",
+"Aftermath",
+"Air Lock",
+"Analytic",
+"Anger Point",
+"Anger Shell",
+"Anticipation",
+"Arena Trap",
+"Armor Tail",
+"Aroma Veil",
+"As One (Glastrier)",
+"As One (Spectrier)",
+"Aura Break",
+"Bad Dreams",
+"Ball Fetch",
+"Battery",
+"Battle Armor",
+"Battle Bond",
+"Beads of Ruin",
+"Beast Boost",
+"Berserk",
+"Big Pecks",
+"Blaze",
+"Bulletproof",
+"Cheek Pouch",
+"Chilling Neigh",
+"Chlorophyll",
+"Clear Body",
+"Cloud Nine",
+"Color Change",
+"Comatose",
+"Commander",
+"Competitive",
+"Compound Eyes",
+"Contrary",
+"Corrosion",
+"Costar",
+"Cotton Down",
+"Cud Chew",
+"Curious Medicine",
+"Cursed Body",
+"Cute Charm",
+"Damp",
+"Dancer",
+"Dark Aura",
+"Dauntless Shield",
+"Dazzling",
+"Defeatist",
+"Defiant",
+"Delta Stream",
+"Desolate Land",
+"Disguise",
+"Download",
+"Dragon's Maw",
+"Drizzle",
+"Drought",
+"Dry Skin",
+"Early Bird",
+"Earth Eater",
+"Effect Spore",
+"Electric Surge",
+"Electromorphosis",
+"Embody Aspect (Cornerstone)",
+"Embody Aspect (Hearthflame)",
+"Embody Aspect (Teal)",
+"Embody Aspect (Wellspring)",
+"Emergency Exit",
+"Fairy Aura",
+"Filter",
+"Flame Body",
+"Flare Boost",
+"Flash Fire",
+"Flower Gift",
+"Flower Veil",
+"Fluffy",
+"Forecast",
+"Forewarn",
+"Friend Guard",
+"Frisk",
+"Full Metal Body",
+"Fur Coat",
+"Gale Wings",
+"Galvanize",
+"Gluttony",
+"Good as Gold",
+"Gooey",
+"Gorilla Tactics",
+"Grass Pelt",
+"Grassy Surge",
+"Grim Neigh",
+"Guard Dog",
+"Gulp Missile",
+"Guts",
+"Hadron Engine",
+"Harvest",
+"Healer",
+"Heatproof",
+"Heavy Metal",
+"Honey Gather",
+"Hospitality",
+"Huge Power",
+"Hunger Switch",
+"Hustle",
+"Hydration",
+"Hyper Cutter",
+"Ice Body",
+"Ice Face",
+"Ice Scales",
+"Illuminate",
+"Illusion",
+"Immunity",
+"Imposter",
+"Infiltrator",
+"Innards Out",
+"Inner Focus",
+"Insomnia",
+"Intimidate",
+"Intrepid Sword",
+"Iron Barbs",
+"Iron Fist",
+"Justified",
+"Keen Eye",
+"Klutz",
+"Leaf Guard",
+"Levitate",
+"Libero",
+"Light Metal",
+"Lightning Rod",
+"Limber",
+"Lingering Aroma",
+"Liquid Ooze",
+"Liquid Voice",
+"Long Reach",
+"Magic Bounce",
+"Magic Guard",
+"Magician",
+"Magma Armor",
+"Magnet Pull",
+"Marvel Scale",
+"Mega Launcher",
+"Merciless",
+"Mimicry",
+"Mind's Eye",
+"Minus",
+"Mirror Armor",
+"Misty Surge",
+"Mold Breaker",
+"Moody",
+"Motor Drive",
+"Moxie",
+"Multiscale",
+"Multitype",
+"Mummy",
+"Mycelium Might",
+"Natural Cure",
+"Neuroforce",
+"Neutralizing Gas",
+"No Guard",
+"Normalize",
+"Oblivious",
+"Opportunist",
+"Orichalcum Pulse",
+"Overcoat",
+"Overgrow",
+"Own Tempo",
+"Parental Bond",
+"Pastel Veil",
+"Perish Body",
+"Pickpocket",
+"Pickup",
+"Pixilate",
+"Plus",
+"Poison Heal",
+"Poison Point",
+"Poison Puppeteer",
+"Poison Touch",
+"Power Construct",
+"Power of Alchemy",
+"Power Spot",
+"Prankster",
+"Pressure",
+"Primordial Sea",
+"Prism Armor",
+"Propeller Tail",
+"Protean",
+"Protosynthesis",
+"Psychic Surge",
+"Punk Rock",
+"Pure Power",
+"Purifying Salt",
+"Quark Drive",
+"Queenly Majesty",
+"Quick Draw",
+"Quick Feet",
+"Rain Dish",
+"Rattled",
+"Receiver",
+"Reckless",
+"Refrigerate",
+"Regenerator",
+"Ripen",
+"Rivalry",
+"RKS System",
+"Rock Head",
+"Rocky Payload",
+"Rough Skin",
+"Run Away",
+"Sand Force",
+"Sand Rush",
+"Sand Spit",
+"Sand Stream",
+"Sand Veil",
+"Sap Sipper",
+"Schooling",
+"Scrappy",
+"Screen Cleaner",
+"Seed Sower",
+"Serene Grace",
+"Shadow Shield",
+"Shadow Tag",
+"Sharpness",
+"Shed Skin",
+"Sheer Force",
+"Shell Armor",
+"Shield Dust",
+"Shields Down",
+"Simple",
+"Skill Link",
+"Slow Start",
+"Slush Rush",
+"Sniper",
+"Snow Cloak",
+"Snow Warning",
+"Solar Power",
+"Solid Rock",
+"Soul-Heart",
+"Soundproof",
+"Speed Boost",
+"Stakeout",
+"Stall",
+"Stalwart",
+"Stamina",
+"Stance Change",
+"Static",
+"Steadfast",
+"Steam Engine",
+"Steelworker",
+"Steely Spirit",
+"Stench",
+"Sticky Hold",
+"Storm Drain",
+"Strong Jaw",
+"Sturdy",
+"Suction Cups",
+"Super Luck",
+"Supersweet Syrup",
+"Supreme Overlord",
+"Surge Surfer",
+"Swarm",
+"Sweet Veil",
+"Swift Swim",
+"Symbiosis",
+"Synchronize",
+"Sword of Ruin",
+"Tablets of Ruin",
+"Tangled Feet",
+"Tangling Hair",
+"Technician",
+"Telepathy",
+"Teraform Zero",
+"Tera Shell",
+"Tera Shift",
+"Teravolt",
+"Thermal Exchange",
+"Thick Fat",
+"Tinted Lens",
+"Torrent",
+"Tough Claws",
+"Toxic Boost",
+"Toxic Chain",
+"Toxic Debris",
+"Trace",
+"Transistor",
+"Triage",
+"Truant",
+"Turboblaze",
+"Unaware",
+"Unburden",
+"Unnerve",
+"Unseen Fist",
+"Vessel of Ruin",
+"Victory Star",
+"Vital Spirit",
+"Volt Absorb",
+"Wandering Spirit",
+"Water Absorb",
+"Water Bubble",
+"Water Compaction",
+"Water Veil",
+"Weak Armor",
+"Well-Baked Body",
+"White Smoke",
+"Wimp Out",
+"Wind Power",
+"Wind Rider",
+"Wonder Guard",
+"Wonder Skin",
+"Zen Mode",
+"Zero to Hero",
+"Mountaineer",
+"Rebound",
+"Persistent"
+]
+
+// Species+Form w/ Abilities (1529): id = [name, ability1, ability2, hiddenAbility, specialAbility]
+const SPECIES = [
+["MissingNo."],
+["Bulbasaur",165,0,28],
+["Ivysaur",165,0,28],
+["Venusaur",165,0,28],
+["Venusaur-Mega",276],
+["Venusaur-Gmax",165,0,28],
+["Charmander",24,0,235],
+["Charmeleon",24,0,235],
+["Charizard",24,0,235],
+["Charizard-Mega-X",279],
+["Charizard-Mega-Y",57],
+["Charizard-Gmax",24,0,235],
+["Squirtle",278,0,196],
+["Wartortle",278,0,196],
+["Blastoise",278,0,196],
+["Blastoise-Mega",141],
+["Blastoise-Gmax",278,0,196],
+["Caterpie",226,0,208],
+["Metapod",223],
+["Butterfree",35,0,277],
+["Butterfree-Gmax",35,0,277],
+["Weedle",226,0,208],
+["Kakuna",223],
+["Beedrill",260,0,232],
+["Beedrill-Mega",1],
+["Pidgey",123,267,23],
+["Pidgeotto",123,267,23],
+["Pidgeot",123,267,23],
+["Pidgeot-Mega",159],
+["Rattata",208,94,104],
+["Rattata-Alola",85,104,276],
+["Raticate",208,94,104],
+["Raticate-Alola",85,104,276],
+["Raticate-Alola-Totem",276],
+["Spearow",123,0,232],
+["Fearow",123,0,232],
+["Ekans",118,223,290],
+["Arbok",118,223,290],
+["Pikachu",245,0,129],
+["Pikachu-Cosplay",129],
+["Pikachu-Rock-Star",129],
+["Pikachu-Belle",129],
+["Pikachu-Pop-Star",129],
+["Pikachu-PhD",129],
+["Pikachu-Libre",129],
+["Pikachu-Original",245,0,129],
+["Pikachu-Hoenn",245,0,129],
+["Pikachu-Sinnoh",245,0,129],
+["Pikachu-Unova",245,0,129],
+["Pikachu-Kalos",245,0,129],
+["Pikachu-Alola",245,0,129],
+["Pikachu-Partner",245,0,129],
+["Pikachu-Starter",245,0,129],
+["Pikachu-Gmax",245,0,129],
+["Pikachu-World",245,0,129],
+["Raichu",245,0,129],
+["Raichu-Alola",259],
+["Sandshrew",213,0,210],
+["Sandshrew-Alola",233,0,231],
+["Sandslash",213,0,210],
+["Sandslash-Alola",233,0,231],
+["Nidoran-F",175,203,104],
+["Nidorina",175,203,104],
+["Nidoqueen",175,203,224],
+["Nidoran-M",175,203,104],
+["Nidorino",175,203,104],
+["Nidoking",175,203,224],
+["Clefairy",43,136,79],
+["Clefable",43,136,288],
+["Vulpix",73,0,57],
+["Vulpix-Alola",233,0,234],
+["Ninetales",73,0,57],
+["Ninetales-Alola",233,0,234],
+["Jigglypuff",43,34,79],
+["Wigglytuff",43,34,80],
+["Zubat",116,0,114],
+["Golbat",116,0,114],
+["Oddish",28,0,208],
+["Gloom",28,0,250],
+["Vileplume",28,0,61],
+["Paras",61,58,44],
+["Parasect",61,58,44],
+["Venonat",35,277,208],
+["Venomoth",226,277,308],
+["Diglett",213,9,209],
+["Diglett-Alola",213,268,209],
+["Dugtrio",213,9,209],
+["Dugtrio-Alola",213,268,209],
+["Meowth",171,269,290],
+["Meowth-Alola",171,269,197],
+["Meowth-Galar",171,279,290],
+["Meowth-Gmax",171,269,290],
+["Persian",130,269,290],
+["Persian-Alola",82,269,197],
+["Psyduck",44,30,262],
+["Golduck",44,30,262],
+["Mankey",294,6,50],
+["Primeape",294,6,50],
+["Growlithe",118,73,122],
+["Growlithe-Hisui",118,73,205],
+["Arcanine",118,73,122],
+["Arcanine-Hisui",118,73,205],
+["Poliwag",297,44,262],
+["Poliwhirl",297,44,262],
+["Poliwrath",297,44,262],
+["Abra",264,116,136],
+["Kadabra",264,116,136],
+["Alakazam",264,116,136],
+["Alakazam-Mega",283],
+["Machop",94,159,246],
+["Machoke",94,159,246],
+["Machamp",94,159,246],
+["Machamp-Gmax",94,159,246],
+["Bellsprout",28,0,85],
+["Weepinbell",28,0,85],
+["Victreebel",28,0,85],
+["Tentacool",29,132,196],
+["Tentacruel",29,132,196],
+["Geodude",205,254,213],
+["Geodude-Alola",139,254,84],
+["Graveler",205,254,213],
+["Graveler-Alola",139,254,84],
+["Golem",205,254,213],
+["Golem-Alola",139,254,84],
+["Ponyta",208,73,71],
+["Ponyta-Galar",208,168,8],
+["Rapidash",208,73,71],
+["Rapidash-Galar",208,168,8],
+["Slowpoke",161,166,201],
+["Slowpoke-Galar",85,166,201],
+["Slowbro",161,166,201],
+["Slowbro-Mega",225],
+["Slowbro-Galar",194,166,201],
+["Magnemite",139,254,5],
+["Magneton",139,254,5],
+["Farfetch’d",123,116,50],
+["Farfetch’d-Galar",246,0,216],
+["Doduo",208,59,267],
+["Dodrio",208,59,267],
+["Seel",276,105,107],
+["Dewgong",276,105,107],
+["Grimer",250,251,177],
+["Grimer-Alola",177,85,179],
+["Muk",250,251,177],
+["Muk-Alola",177,85,179],
+["Shellder",225,229,164],
+["Cloyster",225,229,164],
+["Gastly",126],
+["Haunter",126],
+["Gengar",42],
+["Gengar-Mega",221],
+["Gengar-Gmax",42],
+["Onix",205,254,301],
+["Drowzee",117,78,116],
+["Hypno",117,78,116],
+["Krabby",106,225,224],
+["Kingler",106,225,224],
+["Kingler-Gmax",106,225,224],
+["Voltorb",238,245,3],
+["Voltorb-Hisui",238,245,3],
+["Electrode",238,245,3],
+["Electrode-Hisui",238,245,3],
+["Exeggcute",28,0,96],
+["Exeggutor",28,0,96],
+["Exeggutor-Alola",80,0,96],
+["Cubone",205,129,18],
+["Marowak",205,129,18],
+["Marowak-Alola",42,129,205],
+["Marowak-Alola-Totem",205],
+["Hitmonlee",130,199,289],
+["Hitmonchan",123,121,116],
+["Lickitung",166,161,30],
+["Koffing",126,158,250],
+["Weezing",126,158,250],
+["Weezing-Galar",126,158,147],
+["Rhyhorn",129,205,199],
+["Rhydon",129,205,199],
+["Chansey",156,219,97],
+["Tangela",28,125,201],
+["Kangaskhan",59,216,116],
+["Kangaskhan-Mega",167],
+["Horsea",262,232,44],
+["Seadra",175,232,44],
+["Goldeen",262,300,129],
+["Seaking",262,300,129],
+["Staryu",110,156,5],
+["Starmie",110,156,5],
+["Mr. Mime",238,70,269],
+["Mr. Mime-Galar",294,217,107],
+["Scyther",260,269,246],
+["Jynx",161,78,58],
+["Electabuzz",245,0,294],
+["Magmar",71,0,294],
+["Pinsir",106,148,151],
+["Pinsir-Mega",2],
+["Tauros",118,6,224],
+["Tauros-Paldea-Combat",118,6,40],
+["Tauros-Paldea-Blaze",118,6,40],
+["Tauros-Paldea-Aqua",118,6,40],
+["Magikarp",262,0,197],
+["Gyarados",118,0,151],
+["Gyarados-Mega",148],
+["Lapras",297,225,105],
+["Lapras-Gmax",297,225,105],
+["Ditto",130,0,113],
+["Eevee",208,1,8],
+["Eevee-Starter",208,1,8],
+["Eevee-Gmax",208,1,8],
+["Vaporeon",297,0,105],
+["Jolteon",295,0,195],
+["Flareon",73,0,94],
+["Porygon",283,54,5],
+["Omanyte",262,225,301],
+["Omastar",262,225,301],
+["Kabuto",262,18,301],
+["Kabutops",262,18,301],
+["Aerodactyl",205,182,290],
+["Aerodactyl-Mega",279],
+["Snorlax",112,276,85],
+["Snorlax-Gmax",112,276,85],
+["Articuno",182,0,233],
+["Articuno-Galar",34],
+["Zapdos",182,0,245],
+["Zapdos-Galar",50],
+["Moltres",182,0,71],
+["Moltres-Galar",22],
+["Dratini",223,0,140],
+["Dragonair",223,0,140],
+["Dragonite",116,0,152],
+["Mewtwo",182,0,290],
+["Mewtwo-Mega-X",246],
+["Mewtwo-Mega-Y",117],
+["Mew",264],
+["Chikorita",165,0,125],
+["Bayleef",165,0,125],
+["Meganium",165,0,125],
+["Cyndaquil",24,0,73],
+["Quilava",24,0,73],
+["Typhlosion",24,0,73],
+["Typhlosion-Hisui",24,0,80],
+["Totodile",278,0,224],
+["Croconaw",278,0,224],
+["Feraligatr",278,0,224],
+["Sentret",208,123,80],
+["Furret",208,123,80],
+["Hoothoot",117,123,277],
+["Noctowl",117,123,277],
+["Ledyba",260,59,197],
+["Ledian",260,59,121],
+["Spinarak",260,117,232],
+["Ariados",260,117,232],
+["Crobat",116,0,114],
+["Chinchou",295,110,297],
+["Lanturn",295,110,297],
+["Pichu",245,0,129],
+["Pichu-Spiky-eared",245],
+["Cleffa",43,136,79],
+["Igglybuff",43,34,79],
+["Togepi",104,219,256],
+["Togetic",104,219,256],
+["Natu",264,59,135],
+["Xatu",264,59,135],
+["Mareep",245,0,173],
+["Flaaffy",245,0,173],
+["Ampharos",245,0,173],
+["Ampharos-Mega",148],
+["Bellossom",28,0,97],
+["Marill",276,102,214],
+["Azumarill",276,102,214],
+["Sudowoodo",254,205,197],
+["Politoed",297,44,56],
+["Hoppip",28,125,114],
+["Skiploom",28,125,114],
+["Jumpluff",28,125,114],
+["Aipom",208,171,229],
+["Sunkern",28,235,59],
+["Sunflora",28,235,59],
+["Yanma",239,35,80],
+["Wooper",44,297,288],
+["Wooper-Paldea",175,297,288],
+["Quagsire",44,297,288],
+["Espeon",264,0,135],
+["Umbreon",264,0,116],
+["Murkrow",117,256,181],
+["Slowking",161,166,201],
+["Slowking-Galar",41,166,201],
+["Misdreavus",126],
+["Unown",126],
+["Unown-B",126],
+["Unown-C",126],
+["Unown-D",126],
+["Unown-E",126],
+["Unown-F",126],
+["Unown-G",126],
+["Unown-H",126],
+["Unown-I",126],
+["Unown-J",126],
+["Unown-K",126],
+["Unown-L",126],
+["Unown-M",126],
+["Unown-N",126],
+["Unown-O",126],
+["Unown-P",126],
+["Unown-Q",126],
+["Unown-R",126],
+["Unown-S",126],
+["Unown-T",126],
+["Unown-U",126],
+["Unown-V",126],
+["Unown-W",126],
+["Unown-X",126],
+["Unown-Y",126],
+["Unown-Z",126],
+["Unown-Exclamation",126],
+["Unown-Question",126],
+["Wobbuffet",221,0,270],
+["Girafarig",116,59,214],
+["Pineco",254,0,164],
+["Forretress",254,0,164],
+["Dunsparce",219,208,197],
+["Gligar",106,213,112],
+["Steelix",205,254,224],
+["Steelix-Mega",209],
+["Snubbull",118,208,197],
+["Granbull",118,195,197],
+["Qwilfish",175,262,118],
+["Qwilfish-Hisui",175,262,118],
+["Scizor",260,269,128],
+["Scizor-Mega",269],
+["Shuckle",254,85,36],
+["Heracross",260,94,151],
+["Heracross-Mega",229],
+["Sneasel",116,123,170],
+["Sneasel-Hisui",116,123,170],
+["Teddiursa",171,195,100],
+["Ursaring",94,195,290],
+["Slugma",138,71,301],
+["Magcargo",138,71,301],
+["Swinub",161,233,276],
+["Piloswine",161,233,276],
+["Corsola",104,156,201],
+["Corsola-Galar",301,0,42],
+["Remoraid",104,232,149],
+["Octillery",255,232,149],
+["Delibird",294,104,117],
+["Mantine",262,297,300],
+["Skarmory",123,254,301],
+["Houndour",59,73,290],
+["Houndoom",59,73,290],
+["Houndoom-Mega",235],
+["Kingdra",262,232,44],
+["Phanpy",171,0,213],
+["Donphan",254,0,213],
+["Porygon2",283,54,5],
+["Stantler",118,80,214],
+["Smeargle",166,269,149],
+["Tyrogue",94,246,294],
+["Hitmontop",118,269,246],
+["Smoochum",161,78,105],
+["Elekid",245,0,294],
+["Magby",71,0,294],
+["Miltank",276,216,214],
+["Blissey",156,219,97],
+["Raikou",182,0,116],
+["Entei",182,0,116],
+["Suicune",182,0,116],
+["Larvitar",94,0,213],
+["Pupitar",223],
+["Tyranitar",212,0,290],
+["Tyranitar-Mega",212],
+["Lugia",182,0,152],
+["Ho-Oh",182,0,201],
+["Celebi",156],
+["Treecko",165,0,289],
+["Grovyle",165,0,289],
+["Sceptile",165,0,289],
+["Sceptile-Mega",129],
+["Torchic",24,0,239],
+["Combusken",24,0,239],
+["Blaziken",24,0,239],
+["Blaziken-Mega",239],
+["Mudkip",278,0,44],
+["Marshtomp",278,0,44],
+["Swampert",278,0,44],
+["Swampert-Mega",262],
+["Poochyena",208,195,197],
+["Mightyena",118,195,151],
+["Zigzagoon",171,85,195],
+["Zigzagoon-Galar",171,85,195],
+["Linoone",171,85,195],
+["Linoone-Galar",171,85,195],
+["Wurmple",226,0,208],
+["Silcoon",223],
+["Beautifly",260,0,203],
+["Cascoon",223],
+["Dustox",226,0,35],
+["Lotad",262,196,166],
+["Lombre",262,196,166],
+["Ludicolo",262,196,166],
+["Seedot",28,59,170],
+["Nuzleaf",28,59,170],
+["Shiftry",28,306,170],
+["Taillow",94,0,216],
+["Swellow",94,0,216],
+["Wingull",123,105,196],
+["Pelipper",123,56,196],
+["Ralts",264,283,270],
+["Kirlia",264,283,270],
+["Gardevoir",264,283,270],
+["Gardevoir-Mega",172],
+["Surskit",262,0,196],
+["Masquerain",118,0,290],
+["Shroomish",61,174,195],
+["Breloom",61,174,269],
+["Slakoth",286],
+["Vigoroth",294],
+["Slaking",286],
+["Nincada",35,0,208],
+["Ninjask",239,0,114],
+["Shedinja",307],
+["Whismur",238,0,197],
+["Loudred",238,0,216],
+["Exploud",238,0,216],
+["Makuhita",276,94,224],
+["Hariyama",276,94,224],
+["Azurill",276,102,214],
+["Nosepass",254,139,209],
+["Skitty",43,160,308],
+["Delcatty",43,160,308],
+["Sableye",123,241,181],
+["Sableye-Mega",135],
+["Mawile",106,118,224],
+["Mawile-Mega",102],
+["Aron",254,205,99],
+["Lairon",254,205,99],
+["Aggron",254,205,99],
+["Aggron-Mega",70],
+["Meditite",190,0,270],
+["Medicham",190,0,270],
+["Medicham-Mega",190],
+["Electrike",245,129,145],
+["Manectric",245,129,145],
+["Manectric-Mega",118],
+["Plusle",173,0,129],
+["Minun",145,0,295],
+["Volbeat",110,260,181],
+["Illumise",161,277,181],
+["Roselia",156,175,125],
+["Gulpin",132,251,85],
+["Swalot",132,251,85],
+["Carvanha",207,0,239],
+["Sharpedo",207,0,239],
+["Sharpedo-Mega",253],
+["Wailmer",300,161,182],
+["Wailord",300,161,182],
+["Numel",161,228,166],
+["Camerupt",138,236,6],
+["Camerupt-Mega",224],
+["Torkoal",303,57,225],
+["Spoink",276,166,85],
+["Grumpig",276,166,85],
+["Spinda",166,267,36],
+["Trapinch",106,9,224],
+["Vibrava",126],
+["Flygon",126],
+["Cacnea",213,0,297],
+["Cacturne",213,0,297],
+["Swablu",156,0,30],
+["Altaria",156,0,30],
+["Altaria-Mega",172],
+["Zangoose",112,0,280],
+["Seviper",223,0,114],
+["Lunatone",126],
+["Solrock",126],
+["Barboach",161,8,105],
+["Whiscash",161,8,105],
+["Corphish",106,225,1],
+["Crawdaunt",106,225,1],
+["Baltoy",126],
+["Claydol",126],
+["Lileep",255,0,252],
+["Cradily",255,0,252],
+["Anorith",18,0,262],
+["Armaldo",18,0,262],
+["Feebas",262,161,1],
+["Milotic",140,34,43],
+["Castform",77],
+["Castform-Sunny",77],
+["Castform-Rainy",77],
+["Castform-Snowy",77],
+["Kecleon",31,0,186],
+["Shuppet",117,80,42],
+["Banette",117,80,42],
+["Banette-Mega",181],
+["Duskull",126,0,80],
+["Dusclops",182,0,80],
+["Tropius",28,235,96],
+["Chimecho",126],
+["Absol",182,256,122],
+["Absol-Mega",135],
+["Wynaut",221,0,270],
+["Snorunt",116,107,149],
+["Glalie",116,107,149],
+["Glalie-Mega",200],
+["Spheal",276,107,161],
+["Sealeo",276,107,161],
+["Walrein",276,107,161],
+["Clamperl",225,0,197],
+["Huntail",262,0,300],
+["Gorebyss",262,0,105],
+["Relicanth",262,205,254],
+["Luvdisc",262,0,105],
+["Bagon",205,0,224],
+["Shelgon",205,0,164],
+["Salamence",118,0,151],
+["Salamence-Mega",2],
+["Beldum",29,0,128],
+["Metang",29,0,128],
+["Metagross",29,0,128],
+["Metagross-Mega",279],
+["Regirock",29,0,254],
+["Regice",29,0,107],
+["Registeel",29,0,128],
+["Latias",126],
+["Latias-Mega",126],
+["Latios",126],
+["Latios-Mega",126],
+["Kyogre",56],
+["Kyogre-Primal",183],
+["Groudon",57],
+["Groudon-Primal",52],
+["Rayquaza",4],
+["Rayquaza-Mega",51],
+["Jirachi",219],
+["Deoxys",182],
+["Deoxys-Attack",182],
+["Deoxys-Defense",182],
+["Deoxys-Speed",182],
+["Turtwig",165,0,225],
+["Grotle",165,0,225],
+["Torterra",165,0,225],
+["Chimchar",24,0,121],
+["Monferno",24,0,121],
+["Infernape",24,0,121],
+["Piplup",278,0,34],
+["Prinplup",278,0,34],
+["Empoleon",278,0,34],
+["Starly",123,0,199],
+["Staravia",118,0,199],
+["Staraptor",118,0,199],
+["Bidoof",228,288,149],
+["Bibarel",228,288,149],
+["Kricketot",223,0,208],
+["Kricketune",260,0,269],
+["Shinx",203,118,94],
+["Luxio",203,118,94],
+["Luxray",203,118,94],
+["Budew",156,175,125],
+["Roserade",156,175,269],
+["Cranidos",148,0,224],
+["Rampardos",148,0,224],
+["Shieldon",254,0,238],
+["Bastiodon",254,0,238],
+["Burmy",223,0,164],
+["Burmy-Sandy",223,0,164],
+["Burmy-Trash",223,0,164],
+["Wormadam",8,0,164],
+["Wormadam-Sandy",8,0,164],
+["Wormadam-Trash",8,0,164],
+["Mothim",260,0,277],
+["Combee",100,0,104],
+["Vespiquen",182,0,290],
+["Pachirisu",208,171,295],
+["Buizel",262,0,300],
+["Floatzel",262,0,300],
+["Cherubi",28],
+["Cherrim",74],
+["Cherrim-Sunshine",74],
+["Shellos",251,252,209],
+["Shellos-East",251,252,209],
+["Gastrodon",251,252,209],
+["Gastrodon-East",251,252,209],
+["Ambipom",269,171,229],
+["Drifloon",3,289,72],
+["Drifblim",3,289,72],
+["Buneary",208,124,130],
+["Lopunny",43,124,130],
+["Lopunny-Mega",216],
+["Mismagius",126],
+["Honchkrow",117,256,151],
+["Glameow",130,166,123],
+["Purugly",276,166,50],
+["Chingling",126],
+["Stunky",250,3,123],
+["Skuntank",250,3,123],
+["Bronzor",126,98,99],
+["Bronzong",126,98,99],
+["Bonsly",254,205,197],
+["Mime Jr.",238,70,269],
+["Happiny",156,219,79],
+["Chatot",123,267,23],
+["Spiritomb",182,0,114],
+["Gible",213,0,207],
+["Gabite",213,0,207],
+["Garchomp",213,0,207],
+["Garchomp-Mega",209],
+["Munchlax",171,276,85],
+["Riolu",246,116,181],
+["Lucario",246,116,122],
+["Lucario-Mega",1],
+["Hippopotas",212,0,209],
+["Hippowdon",212,0,209],
+["Skorupi",18,232,123],
+["Drapion",18,232,123],
+["Croagunk",8,58,177],
+["Toxicroak",8,58,177],
+["Carnivine",126],
+["Finneon",262,252,300],
+["Lumineon",262,252,300],
+["Mantyke",262,297,300],
+["Snover",234,0,238],
+["Abomasnow",234,0,238],
+["Abomasnow-Mega",234],
+["Weavile",182,0,170],
+["Magnezone",139,254,5],
+["Lickilicky",166,161,30],
+["Rhyperior",129,236,199],
+["Tangrowth",28,125,201],
+["Electivire",150,0,294],
+["Magmortar",71,0,294],
+["Togekiss",104,219,256],
+["Yanmega",239,277,80],
+["Leafeon",125,0,28],
+["Glaceon",233,0,107],
+["Gliscor",106,213,174],
+["Mamoswine",161,233,276],
+["Porygon-Z",1,54,5],
+["Gallade",246,222,122],
+["Gallade-Mega",116],
+["Probopass",254,139,209],
+["Dusknoir",182,0,80],
+["Froslass",233,0,42],
+["Rotom",126],
+["Rotom-Heat",126],
+["Rotom-Wash",126],
+["Rotom-Frost",126],
+["Rotom-Fan",126],
+["Rotom-Mow",126],
+["Uxie",126],
+["Mesprit",126],
+["Azelf",126],
+["Dialga",182,0,270],
+["Dialga-Origin",182,0,270],
+["Palkia",182,0,270],
+["Palkia-Origin",182,0,270],
+["Heatran",73,0,71],
+["Regigigas",230],
+["Giratina",182,0,270],
+["Giratina-Origin",126],
+["Cresselia",126],
+["Phione",105],
+["Manaphy",105],
+["Darkrai",15],
+["Shaymin",156],
+["Shaymin-Sky",219],
+["Arceus",153],
+["Arceus-Bug",153],
+["Arceus-Dark",153],
+["Arceus-Dragon",153],
+["Arceus-Electric",153],
+["Arceus-Fairy",153],
+["Arceus-Fighting",153],
+["Arceus-Fire",153],
+["Arceus-Flying",153],
+["Arceus-Ghost",153],
+["Arceus-Grass",153],
+["Arceus-Ground",153],
+["Arceus-Ice",153],
+["Arceus-Poison",153],
+["Arceus-Psychic",153],
+["Arceus-Rock",153],
+["Arceus-Steel",153],
+["Arceus-Water",153],
+["Victini",293],
+["Snivy",165,0,36],
+["Servine",165,0,36],
+["Serperior",165,0,36],
+["Tepig",24,0,276],
+["Pignite",24,0,276],
+["Emboar",24,0,199],
+["Oshawott",278,0,225],
+["Dewott",278,0,225],
+["Samurott",278,0,225],
+["Samurott-Hisui",278,0,222],
+["Patrat",208,123,5],
+["Watchog",110,123,5],
+["Lillipup",294,171,208],
+["Herdier",118,210,216],
+["Stoutland",118,210,216],
+["Purrloin",130,289,181],
+["Liepard",130,289,181],
+["Pansage",85,0,165],
+["Simisage",85,0,165],
+["Pansear",85,0,24],
+["Simisear",85,0,24],
+["Panpour",85,0,278],
+["Simipour",85,0,278],
+["Munna",78,264,270],
+["Musharna",78,264,270],
+["Pidove",23,256,203],
+["Tranquill",23,256,203],
+["Unfezant",23,256,203],
+["Blitzle",129,150,214],
+["Zebstrika",129,150,214],
+["Roggenrola",254,301,209],
+["Boldore",254,301,209],
+["Gigalith",254,212,209],
+["Woobat",288,124,228],
+["Swoobat",288,124,228],
+["Drilbur",210,209,148],
+["Excadrill",210,209,148],
+["Audino",97,201,124],
+["Audino-Mega",97],
+["Timburr",94,224,121],
+["Gurdurr",94,224,121],
+["Conkeldurr",94,224,121],
+["Tympole",262,105,297],
+["Palpitoad",262,105,297],
+["Seismitoad",262,177,297],
+["Throh",94,116,148],
+["Sawk",254,116,148],
+["Sewaddle",260,28,164],
+["Swadloon",125,28,164],
+["Leavanny",260,28,164],
+["Venipede",175,260,239],
+["Whirlipede",175,260,239],
+["Scolipede",175,260,239],
+["Cottonee",181,114,28],
+["Whimsicott",181,114,28],
+["Petilil",28,166,125],
+["Lilligant",28,166,125],
+["Lilligant-Hisui",28,104,125],
+["Basculin",199,1,148],
+["Basculin-Blue-Striped",205,1,148],
+["Basculin-White-Striped",197,1,148],
+["Sandile",118,151,6],
+["Krokorok",118,151,6],
+["Krookodile",118,151,6],
+["Darumaka",104,0,116],
+["Darumaka-Galar",104,0,116],
+["Darmanitan",224,0,309],
+["Darmanitan-Zen",309],
+["Darmanitan-Galar",88,0,309],
+["Darmanitan-Galar-Zen",309],
+["Maractus",297,28,252],
+["Dwebble",254,225,301],
+["Crustle",254,225,301],
+["Scraggy",223,151,118],
+["Scrafty",223,151,118],
+["Sigilyph",308,136,277],
+["Yamask",154],
+["Yamask-Galar",296],
+["Cofagrigus",154],
+["Tirtouga",236,254,262],
+["Carracosta",236,254,262],
+["Archen",49],
+["Archeops",49],
+["Trubbish",250,251,3],
+["Garbodor",250,301,3],
+["Garbodor-Gmax",250,301,3],
+["Zorua",111],
+["Zorua-Hisui",111],
+["Zoroark",111],
+["Zoroark-Hisui",111],
+["Minccino",43,269,229],
+["Cinccino",43,269,229],
+["Gothita",80,34,221],
+["Gothorita",80,34,221],
+["Gothitelle",80,34,221],
+["Solosis",164,136,201],
+["Duosion",164,136,201],
+["Reuniclus",164,136,201],
+["Ducklett",123,23,105],
+["Swanna",123,23,105],
+["Vanillite",107,233,301],
+["Vanillish",107,233,301],
+["Vanilluxe",107,234,301],
+["Deerling",28,214,219],
+["Deerling-Summer",28,214,219],
+["Deerling-Autumn",28,214,219],
+["Deerling-Winter",28,214,219],
+["Sawsbuck",28,214,219],
+["Sawsbuck-Summer",28,214,219],
+["Sawsbuck-Autumn",28,214,219],
+["Sawsbuck-Winter",28,214,219],
+["Emolga",245,0,150],
+["Karrablast",260,223,159],
+["Escavalier",260,225,164],
+["Foongus",61,0,201],
+["Amoonguss",61,0,201],
+["Frillish",297,42,44],
+["Jellicent",297,42,44],
+["Alomomola",97,105,201],
+["Joltik",35,290,260],
+["Galvantula",35,290,260],
+["Ferroseed",120],
+["Ferrothorn",120,0,8],
+["Klink",173,145,29],
+["Klang",173,145,29],
+["Klinklang",173,145,29],
+["Tynamo",126],
+["Eelektrik",126],
+["Eelektross",126],
+["Elgyem",270,264,5],
+["Beheeyem",270,264,5],
+["Litwick",73,71,114],
+["Lampent",73,71,114],
+["Chandelure",73,71,114],
+["Axew",203,148,290],
+["Fraxure",203,148,290],
+["Haxorus",203,148,290],
+["Cubchoo",233,231,197],
+["Beartic",233,231,262],
+["Cryogonal",126],
+["Shelmet",105,225,164],
+["Accelgor",105,251,289],
+["Stunfisk",245,130,213],
+["Stunfisk-Galar",143],
+["Mienfoo",116,201,199],
+["Mienshao",116,201,199],
+["Druddigon",207,224,148],
+["Golett",121,124,159],
+["Golurk",121,124,159],
+["Pawniard",50,116,182],
+["Bisharp",50,116,182],
+["Bouffalant",199,214,238],
+["Rufflet",123,224,104],
+["Braviary",123,224,50],
+["Braviary-Hisui",123,224,277],
+["Vullaby",23,164,301],
+["Mandibuzz",23,164,301],
+["Heatmor",85,73,303],
+["Durant",260,104,286],
+["Deino",104],
+["Zweilous",104],
+["Hydreigon",126],
+["Larvesta",71,0,260],
+["Volcarona",71,0,260],
+["Cobalion",122],
+["Terrakion",122],
+["Virizion",122],
+["Tornadus",181,0,50],
+["Tornadus-Therian",201],
+["Thundurus",181,0,50],
+["Thundurus-Therian",295],
+["Reshiram",287],
+["Zekrom",274],
+["Landorus",209,0,224],
+["Landorus-Therian",118],
+["Kyurem",182],
+["Kyurem-Black",274],
+["Kyurem-White",287],
+["Keldeo",122],
+["Keldeo-Resolute",122],
+["Meloetta",219],
+["Meloetta-Pirouette",219],
+["Genesect",54],
+["Genesect-Douse",54],
+["Genesect-Shock",54],
+["Genesect-Burn",54],
+["Genesect-Chill",54],
+["Chespin",165,0,25],
+["Quilladin",165,0,25],
+["Chesnaught",165,0,25],
+["Fennekin",24,0,137],
+["Braixen",24,0,137],
+["Delphox",24,0,137],
+["Froakie",278,0,186],
+["Frogadier",278,0,186],
+["Greninja",278,0,186,19],
+["Greninja-Bond",19],
+["Greninja-Ash",19],
+["Bunnelby",171,26,102],
+["Diggersby",171,26,102],
+["Fletchling",23,0,83],
+["Fletchinder",71,0,83],
+["Talonflame",71,0,83],
+["Scatterbug",226,35,79],
+["Spewpa",223,0,79],
+["Vivillon",226,35,79],
+["Vivillon-Archipelago",226,35,79],
+["Vivillon-Continental",226,35,79],
+["Vivillon-Elegant",226,35,79],
+["Vivillon-Garden",226,35,79],
+["Vivillon-High Plains",226,35,79],
+["Vivillon-Icy Snow",226,35,79],
+["Vivillon-Jungle",226,35,79],
+["Vivillon-Marine",226,35,79],
+["Vivillon-Modern",226,35,79],
+["Vivillon-Monsoon",226,35,79],
+["Vivillon-Ocean",226,35,79],
+["Vivillon-Polar",226,35,79],
+["Vivillon-River",226,35,79],
+["Vivillon-Sandstorm",226,35,79],
+["Vivillon-Savanna",226,35,79],
+["Vivillon-Sun",226,35,79],
+["Vivillon-Tundra",226,35,79],
+["Vivillon-Fancy",226,35,79],
+["Vivillon-Pokeball",226,35,79],
+["Litleo",203,290,151],
+["Pyroar",203,290,151],
+["Flabébé",75,0,263],
+["Flabébé-Blue",75,0,263],
+["Flabébé-Orange",75,0,263],
+["Flabébé-White",75,0,263],
+["Flabébé-Yellow",75,0,263],
+["Floette",75,0,263],
+["Floette-Blue",75,0,263],
+["Floette-Orange",75,0,263],
+["Floette-White",75,0,263],
+["Floette-Yellow",75,0,263],
+["Floette-Eternal",75],
+["Florges",75,0,263],
+["Florges-Blue",75,0,263],
+["Florges-Orange",75,0,263],
+["Florges-White",75,0,263],
+["Florges-Yellow",75,0,263],
+["Skiddo",214,0,89],
+["Gogoat",214,0,89],
+["Pancham",121,148,216],
+["Pangoro",121,148,216],
+["Furfrou",82],
+["Furfrou-Dandy",82],
+["Furfrou-Debutante",82],
+["Furfrou-Diamond",82],
+["Furfrou-Heart",82],
+["Furfrou-Kabuki",82],
+["Furfrou-La Reine",82],
+["Furfrou-Matron",82],
+["Furfrou-Pharaoh",82],
+["Furfrou-Star",82],
+["Espurr",123,114,166],
+["Meowstic",123,114,181],
+["Meowstic-F",123,114,34],
+["Honedge",159],
+["Doublade",159],
+["Aegislash",244],
+["Aegislash-Blade",244],
+["Spritzee",97,0,11],
+["Aromatisse",97,0,11],
+["Swirlix",261,0,289],
+["Slurpuff",261,0,289],
+["Inkay",36,255,114],
+["Malamar",36,255,114],
+["Binacle",279,232,170],
+["Barbaracle",279,232,170],
+["Skrelp",175,177,1],
+["Dragalge",175,177,1],
+["Clauncher",141],
+["Clawitzer",141],
+["Helioptile",58,213,235],
+["Heliolisk",58,213,235],
+["Tyrunt",253,0,254],
+["Tyrantrum",253,0,205],
+["Amaura",200,0,234],
+["Aurorus",200,0,234],
+["Sylveon",43,0,172],
+["Hawlucha",130,289,148],
+["Dedenne",26,171,173],
+["Carbink",29,0,254],
+["Goomy",214,105,87],
+["Sliggoo",214,105,87],
+["Sliggoo-Hisui",214,225,87],
+["Goodra",214,105,87],
+["Goodra-Hisui",214,225,87],
+["Klefki",181,0,137],
+["Phantump",156,80,96],
+["Trevenant",156,80,96],
+["Pumpkaboo",171,80,117],
+["Pumpkaboo-Small",171,80,117],
+["Pumpkaboo-Large",171,80,117],
+["Pumpkaboo-Super",171,80,117],
+["Gourgeist",171,80,117],
+["Gourgeist-Small",171,80,117],
+["Gourgeist-Large",171,80,117],
+["Gourgeist-Super",171,80,117],
+["Bergmite",166,107,254],
+["Avalugg",166,107,254],
+["Avalugg-Hisui",253,107,254],
+["Noibat",80,114,270],
+["Noivern",80,114,270],
+["Xerneas",69],
+["Xerneas-Neutral",69],
+["Yveltal",46],
+["Zygarde",14,0,0,178],
+["Zygarde-10%",14,0,0,178],
+["Zygarde-Complete",178],
+["Diancie",29],
+["Diancie-Mega",135],
+["Hoopa",137],
+["Hoopa-Unbound",137],
+["Volcanion",297],
+["Rowlet",165,0,134],
+["Dartrix",165,0,134],
+["Decidueye",165,0,134],
+["Decidueye-Hisui",165,0,216],
+["Litten",24,0,118],
+["Torracat",24,0,118],
+["Incineroar",24,0,118],
+["Popplio",278,0,133],
+["Brionne",278,0,133],
+["Primarina",278,0,133],
+["Pikipek",123,229,171],
+["Trumbeak",123,229,171],
+["Toucannon",123,229,224],
+["Yungoos",240,253,1],
+["Gumshoos",240,253,1],
+["Gumshoos-Totem",1],
+["Grubbin",260],
+["Charjabug",17],
+["Vikavolt",126],
+["Vikavolt-Totem",126],
+["Crabrawler",106,121,6],
+["Crabominable",106,121,6],
+["Oricorio",45],
+["Oricorio-Pom-Pom",45],
+["Oricorio-Pa'u",45],
+["Oricorio-Sensu",45],
+["Cutiefly",100,226,261],
+["Ribombee",100,226,261],
+["Ribombee-Totem",261],
+["Rockruff",123,294,246,166],
+["Lycanroc",123,210,246],
+["Lycanroc-Midnight",123,294,159],
+["Lycanroc-Dusk",279],
+["Wishiwashi",215],
+["Wishiwashi-School",215],
+["Mareanie",142,130,201],
+["Toxapex",142,130,201],
+["Mudbray",166,243,116],
+["Mudsdale",166,243,116],
+["Dewpider",298,0,297],
+["Araquanid",298,0,297],
+["Araquanid-Totem",298],
+["Fomantis",125,0,36],
+["Lurantis",125,0,36],
+["Lurantis-Totem",125],
+["Morelull",110,61,196],
+["Shiinotic",110,61,196],
+["Salandit",37,0,161],
+["Salazzle",37,0,161],
+["Salazzle-Totem",37],
+["Stufful",76,124,43],
+["Bewear",76,124,290],
+["Bounsweet",125,161,261],
+["Steenee",125,161,261],
+["Tsareena",125,193,261],
+["Comfey",75,285,156],
+["Oranguru",116,270,263],
+["Passimian",198,0,50],
+["Wimpod",304],
+["Golisopod",68],
+["Sandygast",299,0,213],
+["Palossand",299,0,213],
+["Pyukumuku",115,0,288],
+["Type: Null",18],
+["Silvally",204],
+["Silvally-Bug",204],
+["Silvally-Dark",204],
+["Silvally-Dragon",204],
+["Silvally-Electric",204],
+["Silvally-Fairy",204],
+["Silvally-Fighting",204],
+["Silvally-Fire",204],
+["Silvally-Flying",204],
+["Silvally-Ghost",204],
+["Silvally-Grass",204],
+["Silvally-Ground",204],
+["Silvally-Ice",204],
+["Silvally-Poison",204],
+["Silvally-Psychic",204],
+["Silvally-Rock",204],
+["Silvally-Steel",204],
+["Silvally-Water",204],
+["Minior",227],
+["Minior-Orange",227],
+["Minior-Yellow",227],
+["Minior-Green",227],
+["Minior-Blue",227],
+["Minior-Indigo",227],
+["Minior-Violet",227],
+["Minior-Meteor",227],
+["Komala",32],
+["Turtonator",225],
+["Togedemaru",120,129,254],
+["Togedemaru-Totem",254],
+["Mimikyu",53],
+["Mimikyu-Busted",53],
+["Mimikyu-Totem",53],
+["Mimikyu-Busted-Totem",53],
+["Bruxish",48,253,308],
+["Drampa",22,214,30],
+["Dhelmise",248],
+["Jangmo-o",25,238,164],
+["Hakamo-o",25,238,164],
+["Kommo-o",25,238,164],
+["Kommo-o-Totem",164],
+["Tapu Koko",62,0,270],
+["Tapu Lele",188,0,270],
+["Tapu Bulu",90,0,270],
+["Tapu Fini",147,0,270],
+["Cosmog",288],
+["Cosmoem",254],
+["Solgaleo",81],
+["Lunala",220],
+["Nihilego",21],
+["Buzzwole",21],
+["Pheromosa",21],
+["Xurkitree",21],
+["Celesteela",21],
+["Kartana",21],
+["Guzzlord",21],
+["Necrozma",184],
+["Necrozma-Dusk-Mane",184],
+["Necrozma-Dawn-Wings",184],
+["Necrozma-Ultra",157],
+["Magearna",237],
+["Magearna-Original",237],
+["Marshadow",269],
+["Poipole",21],
+["Naganadel",21],
+["Stakataka",21],
+["Blacephalon",21],
+["Zeraora",295],
+["Meltan",139],
+["Melmetal",121],
+["Melmetal-Gmax",121],
+["Grookey",165,0,90],
+["Thwackey",165,0,90],
+["Rillaboom",165,0,90],
+["Rillaboom-Gmax",165,0,90],
+["Scorbunny",24,0,127],
+["Raboot",24,0,127],
+["Cinderace",24,0,127],
+["Cinderace-Gmax",24,0,127],
+["Sobble",278,0,232],
+["Drizzile",278,0,232],
+["Inteleon",278,0,232],
+["Inteleon-Gmax",278,0,232],
+["Skwovet",26,0,85],
+["Greedent",26,0,85],
+["Rookidee",123,290,23],
+["Corvisquire",123,290,23],
+["Corviknight",182,290,146],
+["Corviknight-Gmax",182,290,146],
+["Blipbug",260,35,270],
+["Dottler",260,35,270],
+["Orbeetle",260,80,270],
+["Orbeetle-Gmax",260,80,270],
+["Nickit",208,289,240],
+["Thievul",208,289,240],
+["Gossifleur",39,201,61],
+["Eldegoss",39,201,61],
+["Wooloo",76,208,25],
+["Dubwool",76,246,25],
+["Chewtle",253,225,262],
+["Drednaw",253,225,262],
+["Drednaw-Gmax",253,225,262],
+["Yamper",16,0,197],
+["Boltund",253,0,34],
+["Rolycoly",247,98,73],
+["Carkol",247,71,73],
+["Coalossal",247,71,73],
+["Coalossal-Gmax",247,71,73],
+["Applin",202,85,25],
+["Flapple",202,85,104],
+["Flapple-Gmax",202,85,104],
+["Appletun",202,85,276],
+["Appletun-Gmax",202,85,276],
+["Silicobra",211,223,213],
+["Sandaconda",211,223,213],
+["Sandaconda-Gmax",211,223,213],
+["Cramorant",93],
+["Cramorant-Gulping",93],
+["Cramorant-Gorging",93],
+["Arrokuda",262,0,185],
+["Barraskewda",262,0,185],
+["Toxel",197,245,124],
+["Toxtricity",189,173,269],
+["Toxtricity-Low-Key",189,145,269],
+["Toxtricity-Gmax",189,173,269],
+["Toxtricity-Low-Key-Gmax",189,145,269],
+["Sizzlipede",73,303,71],
+["Centiskorch",73,303,71],
+["Centiskorch-Gmax",73,303,71],
+["Clobbopus",130,0,269],
+["Grapploct",130,0,269],
+["Sinistea",301,0,42],
+["Sinistea-Antique",301,0,42],
+["Polteageist",301,0,42],
+["Polteageist-Antique",301,0,42],
+["Hatenna",97,8,135],
+["Hattrem",97,8,135],
+["Hatterene",97,8,135],
+["Hatterene-Gmax",97,8,135],
+["Impidimp",181,80,170],
+["Morgrem",181,80,170],
+["Grimmsnarl",181,80,170],
+["Grimmsnarl-Gmax",181,80,170],
+["Obstagoon",199,94,50],
+["Perrserker",18,279,249],
+["Cursola",301,0,169],
+["Sirfetch’d",246,0,216],
+["Mr. Rime",267,217,107],
+["Runerigus",296],
+["Milcery",261,0,11],
+["Alcremie",261,0,11],
+["Alcremie-Ruby-Cream",261,0,11],
+["Alcremie-Matcha-Cream",261,0,11],
+["Alcremie-Mint-Cream",261,0,11],
+["Alcremie-Lemon-Cream",261,0,11],
+["Alcremie-Salted-Cream",261,0,11],
+["Alcremie-Ruby-Swirl",261,0,11],
+["Alcremie-Caramel-Swirl",261,0,11],
+["Alcremie-Rainbow-Swirl",261,0,11],
+["Alcremie-Gmax",261,0,11],
+["Falinks",18,0,50],
+["Pincurchin",129,0,62],
+["Snom",226,0,109],
+["Frosmoth",226,0,109],
+["Stonjourner",180],
+["Eiscue",108],
+["Eiscue-Noice",108],
+["Indeedee",116,264,188],
+["Indeedee-F",166,264,188],
+["Morpeko",103],
+["Morpeko-Hangry",103],
+["Cufant",224,0,99],
+["Copperajah",224,0,99],
+["Copperajah-Gmax",224,0,99],
+["Dracozolt",295,104,210],
+["Arctozolt",295,245,231],
+["Dracovish",297,253,210],
+["Arctovish",297,107,231],
+["Duraludon",128,99,242],
+["Duraludon-Gmax",128,99,242],
+["Dreepy",29,114,42],
+["Drakloak",29,114,42],
+["Dragapult",29,114,42],
+["Zacian",119],
+["Zacian-Crowned",119],
+["Zamazenta",47],
+["Zamazenta-Crowned",47],
+["Eternatus",182],
+["Eternatus-Eternamax",182],
+["Kubfu",116],
+["Urshifu",291],
+["Urshifu-Rapid-Strike",291],
+["Urshifu-Gmax",291],
+["Urshifu-Rapid-Strike-Gmax",291],
+["Zarude",125],
+["Zarude-Dada",125],
+["Regieleki",284],
+["Regidrago",55],
+["Glastrier",27],
+["Spectrier",91],
+["Calyrex",290],
+["Calyrex-Ice",12],
+["Calyrex-Shadow",13],
+["Wyrdeer",118,80,214],
+["Kleavor",260,224,222],
+["Ursaluna",94,25,290],
+["Ursaluna-Bloodmoon",144],
+["Basculegion",262,1,148],
+["Basculegion-F",262,1,148],
+["Sneasler",182,289,177],
+["Overqwil",175,262,118],
+["Enamorus",43,0,36],
+["Enamorus-Therian",164],
+["Sprigatito",165,0,186],
+["Floragato",165,0,186],
+["Meowscarada",165,0,186],
+["Fuecoco",24,0,288],
+["Crocalor",24,0,288],
+["Skeledirge",24,0,288],
+["Quaxly",278,0,151],
+["Quaxwell",278,0,151],
+["Quaquaval",278,0,151],
+["Lechonk",11,85,276],
+["Oinkologne",131,85,276],
+["Oinkologne-F",11,85,276],
+["Tarountula",117,0,240],
+["Spidops",117,0,240],
+["Nymble",260,0,277],
+["Lokix",260,0,277],
+["Pawmi",245,156,121],
+["Pawmo",295,156,121],
+["Pawmot",295,156,121],
+["Tandemaus",208,171,166],
+["Maushold",79,26,269],
+["Maushold-Four",79,26,269],
+["Fidough",166,0,124],
+["Dachsbun",302,0,11],
+["Smoliv",59,0,96],
+["Dolliv",59,0,96],
+["Arboliva",218,0,96],
+["Squawkabilly",118,104,94],
+["Squawkabilly-Blue",118,104,94],
+["Squawkabilly-Yellow",118,104,224],
+["Squawkabilly-White",118,104,224],
+["Nacli",191,254,29],
+["Naclstack",191,254,29],
+["Garganacl",191,254,29],
+["Charcadet",73,0,71],
+["Armarouge",73,0,301],
+["Ceruledge",73,0,301],
+["Tadbulb",166,245,44],
+["Bellibolt",63,245,44],
+["Wattrel",305,295,34],
+["Kilowattrel",305,295,34],
+["Maschiff",118,208,240],
+["Mabosstiff",118,92,240],
+["Shroodle",289,170,181],
+["Grafaiai",289,177,181],
+["Bramblin",306,0,114],
+["Brambleghast",306,0,114],
+["Toedscool",155],
+["Toedscruel",155],
+["Klawf",7,225,201],
+["Capsakid",28,117,124],
+["Scovillain",28,117,149],
+["Rellor",35,0,223],
+["Rabsca",264,0,270],
+["Flittle",8,80,239],
+["Espathra",162,80,239],
+["Tinkatink",148,166,170],
+["Tinkatuff",148,166,170],
+["Tinkaton",148,166,170],
+["Wiglett",87,197,213],
+["Wugtrio",87,197,213],
+["Bombirdier",23,123,206],
+["Finizen",300],
+["Palafin",310],
+["Palafin-Hero",310],
+["Varoom",164,0,230],
+["Revavroom",164,0,70],
+["Cyclizar",223,0,201],
+["Orthworm",60,0,213],
+["Glimmet",282,0,37],
+["Glimmora",282,0,37],
+["Greavard",171,0,76],
+["Houndstone",210,0,76],
+["Flamigo",216,267,38],
+["Cetoddle",276,233,224],
+["Cetitan",276,231,224],
+["Veluza",148,0,222],
+["Dondozo",288,161,300],
+["Tatsugiri",33,0,252],
+["Tatsugiri-Droopy",33,0,252],
+["Tatsugiri-Stretchy",33,0,252],
+["Annihilape",294,116,50],
+["Clodsire",175,297,288],
+["Farigiraf",40,10,214],
+["Dudunsparce",219,208,197],
+["Dudunsparce-Three-Segment",219,208,197],
+["Kingambit",50,258,182],
+["Great Tusk",187],
+["Scream Tail",187],
+["Brute Bonnet",187],
+["Flutter Mane",187],
+["Slither Wing",187],
+["Sandy Shocks",187],
+["Iron Treads",192],
+["Iron Bundle",192],
+["Iron Hands",192],
+["Iron Jugulis",192],
+["Iron Moth",192],
+["Iron Thorns",192],
+["Frigibax",275,0,107],
+["Arctibax",275,0,107],
+["Baxcalibur",275,0,107],
+["Gimmighoul",197],
+["Gimmighoul-Roaming",208],
+["Gholdengo",86],
+["Wo-Chien",266],
+["Chien-Pao",265],
+["Ting-Lu",292],
+["Chi-Yu",20],
+["Roaring Moon",187],
+["Iron Valiant",192],
+["Koraidon",163],
+["Miraidon",95],
+["Walking Wake",187],
+["Iron Leaves",192],
+["Dipplin",257,85,251],
+["Poltchageist",101,0,98],
+["Poltchageist-Artisan",101,0,98],
+["Sinistcha",101,0,98],
+["Sinistcha-Masterpiece",101,0,98],
+["Okidogi",281,0,92],
+["Munkidori",281,0,80],
+["Fezandipiti",281,0,269],
+["Ogerpon",50],
+["Ogerpon-Wellspring",297],
+["Ogerpon-Hearthflame",148],
+["Ogerpon-Cornerstone",254],
+["Ogerpon-Teal-Tera",66],
+["Ogerpon-Wellspring-Tera",67],
+["Ogerpon-Hearthflame-Tera",65],
+["Ogerpon-Cornerstone-Tera",64],
+["Archaludon",243,254,242],
+["Hydrapple",257,201,251],
+["Gouging Fire",187],
+["Raging Bolt",187],
+["Iron Boulder",192],
+["Iron Crown",192],
+["Terapagos",273],
+["Terapagos-Terastal",272],
+["Terapagos-Stellar",271],
+["Pecharunt",176],
+["Syclar",35,233,107],
+["Syclant",35,311,107],
+["Revenankh",4,285,223],
+["Embirch",199,125,28],
+["Flarelm",205,18,303],
+["Pyroak",205,18,36],
+["Breezi",289,166,80],
+["Fidgit",313,294,80],
+["Rebble",126,236,232],
+["Tactite",126,269,232],
+["Stratagem",126,269,232],
+["Privatyke",288,0,269],
+["Arghonaut",288,0,269],
+["Kitsunoh",80,130,283],
+["Cyclohm",226,245,44],
+["Colossoil",312,94,290],
+["Krilowatt",283,136,145],
+["Voodoll",295,129,42],
+["Voodoom",295,129,42],
+["Scratchet",216,181,294],
+["Tomohawk",118,181,122],
+["Necturine",8,0,270],
+["Necturna",78,0,270],
+["Mollux",58,0,110],
+["Cupra",226,123,136],
+["Argalis",223,35,164],
+["Aurumoth",301,159,128],
+["Brattler",96,114,197],
+["Malaconda",96,114,57],
+["Cawdet",123,295,23],
+["Cawmodore",118,295,23],
+["Volkritter",8,114,290],
+["Volkraken",5,114,182],
+["Snugglow",252,294,270],
+["Plasmanta",252,294,270],
+["Floatoy",300,98,262],
+["Caimanoe",300,98,128],
+["Naviathan",94,98,128],
+["Crucibelle",201,148,132],
+["Crucibelle-Mega",136],
+["Pluffle",156,11,79],
+["Kerfluffle",156,11,79],
+["Pajantom",32],
+["Mumbao",283,164,235],
+["Jumbao",283,164,57],
+["Fawnifer",165,0,129],
+["Electrelk",165,0,84],
+["Caribolt",165,0,84],
+["Smogecko",24,0,269],
+["Smoguana",24,0,269],
+["Smokomodo",24,0,269],
+["Swirlpool",278,0,174],
+["Coribalis",278,0,174],
+["Snaelstrom",278,0,174],
+["Justyke",126,25,122],
+["Equilibra",126,25,122],
+["Solotl",201,294,137],
+["Astrolotl",201,294,137],
+["Miasmite",158,106,35],
+["Miasmaw",158,106,35],
+["Chromera",31],
+["Nohface",80,130,290],
+["Monohm",226,245,44],
+["Duohm",226,245,44],
+["Dorsoil",161,94,290],
+["Protowatt",283,136,145],
+["Venomicon",243,0,179],
+["Venomicon-Epilogue",277],
+["Saharascal",297,170,211],
+["Saharaja",297,219,211],
+["Ababo",172,197,166],
+["Scattervein",172,118,166],
+["Hemogoblin",172,118,166],
+["Cresceidon",152,207,300],
+["Chuggalong",10,303,230],
+["Shox",63,251],
+["Pokestar Smeargle",166,269,149],
+["Pokestar UFO",126],
+["Pokestar UFO-PropU1",126],
+["Pokestar UFO-2",126],
+["Pokestar Brycen-Man",126],
+["Pokestar Brycen-Man-Prop",126],
+["Pokestar MT",5],
+["Pokestar MT-Prop",5],
+["Pokestar MT2",73],
+["Pokestar MT2-Prop",73],
+["Pokestar Transport",150],
+["Pokestar Transport-Prop",150],
+["Pokestar Giant",102],
+["Pokestar Giant-2",102],
+["Pokestar Giant-PropO1",102],
+["Pokestar Giant-PropO2",102],
+["Pokestar Humanoid",117],
+["Pokestar Humanoid-Prop",117],
+["Pokestar Monster",182],
+["Pokestar Monster-Prop",182],
+["Pokestar F-00",295],
+["Pokestar F-00-Prop",295],
+["Pokestar F-002",199],
+["Pokestar F-002-Prop",199],
+["Pokestar Spirit",307],
+["Pokestar Spirit-Prop",307],
+["Pokestar Black Door",59],
+["Pokestar Black Door-Prop",59],
+["Pokestar White Door",24],
+["Pokestar White Door-Prop",24],
+["Pokestar Black Belt",102],
+["Pokestar Black Belt-Prop",102],
+["Pokestar UFO-PropU2",126]
+]
+
+// Pokeballs (28)
+const POKEBALLS = [
+"Beast Ball",
+"Cherish Ball",
+"Dive Ball",
+"Dream Ball",
+"Dusk Ball",
+"Fast Ball",
+"Friend Ball",
+"Great Ball",
+"Heal Ball",
+"Heavy Ball",
+"Level Ball",
+"Love Ball",
+"Lure Ball",
+"Luxury Ball",
+"Master Ball",
+"Moon Ball",
+"Nest Ball",
+"Net Ball",
+"Park Ball",
+"Poke Ball",
+"Premier Ball",
+"Quick Ball",
+"Repeat Ball",
+"Safari Ball",
+"Sport Ball",
+"Strange Ball",
+"Timer Ball",
+"Ultra Ball"
+]
+
+// Formats (226) // Ripped from showdown as of 12/21/2024
+const FORMATS = [
+// Misc
+"none", // Made up
+"gen1",
+"gen2",
+"gen3",
+"gen4",
+"gen5",
+"gen6",
+"gen7",
+"gen8",
+"gen9",
+
+// S/V Singles
+"gen9ou",                         // OU
+"gen9ubers",                      // Ubers
+"gen9uu",                         // UU
+"gen9ru",                         // RU
+"gen9nu",                         // NU
+"gen9pu",                         // PU
+"gen9lc",                         // LC
+"gen9monotype",                   // Monotype
+"gen9cap",                        // CAP
+"gen9bssregg",                    // BSS Reg G
+"gen9bssregh",                    // BSS Reg H
+
+// S/V Doubles
+"gen9doublesou",                  // Doubles OU
+"gen9doublesubers",               // Doubles Ubers
+"gen9doublesuu",                  // Doubles UU
+"gen9doubleslc",                  // Doubles LC
+"gen9vgc2023regd",                // VGC 2023 Reg D
+"gen9vgc2024regh",                // VGC 2024 Reg H
+"gen9vgc2025regg",                // VGC 2025 Reg G
+
+// Unofficial Metagames
+"gen91v1",                        // 1v1
+"gen92v2doubles",                 // 2v2 Doubles
+"gen9anythinggoes",               // Anything Goes
+"gen9ubersuu",                    // Ubers UU
+"gen9zu",                         // ZU
+"gen9free-for-all",               // Free-For-All
+"gen9lcuu",                       // LC UU
+"gen9nfe",                        // NFE
+
+// Pet Mods
+"gen9littlecolosseumlc",          // Little Colosseum LC
+"gen2gscdoubles",                 // [Gen 2] GSC Doubles
+
+// Draft
+"gen9draft",                      // Draft
+"gen96v6doublesdraft",            // 6v6 Doubles Draft
+"gen94v4doublesdraft",            // 4v4 Doubles Draft
+"gen9natdexdraft",                // NatDex Draft
+"gen9natdex6v6doublesdraft",      // NatDex 6v6 Doubles Draft
+"gen9natdexlcdraft",              // NatDex LC Draft
+"gen8galardexdraft",              // [Gen 8] Galar Dex Draft
+"gen8natdexdraft",                // [Gen 8] NatDex Draft
+"gen8natdex4v4doublesdraft",      // [Gen 8] NatDex 4v4 Doubles Draft
+"gen7draft",                      // [Gen 7] Draft
+"gen6draft",                      // [Gen 6] Draft
+"gen4draft",                      // [Gen 4] Draft
+"gen3draft",                      // [Gen 3] Draft
+
+// OM of the Month
+"gen9twisteddimension",           // Twisted Dimension
+"gen9mixandmegadoubles",          // Mix and Mega Doubles
+"gen9godlygift",                  // Godly Gift
+
+// Other Metagames
+"gen9almostanyability",           // Almost Any Ability
+"gen9balancedhackmons",           // Balanced Hackmons
+"gen9inheritance",                // Inheritance
+"gen9mixandmega",                 // Mix and Mega
+"gen9partnersincrime",            // Partners in Crime
+"gen9sharedpower",                // Shared Power
+"gen9stabmons",                   // STABmons
+"gen7purehackmons",               // [Gen 7] Pure Hackmons
+
+// Challengeable OMs
+"gen9350cup",                     // 350 Cup
+"gen9camomons",                   // Camomons
+"gen9categoryswap",               // Category Swap
+"gen9convergence",                // Convergence
+"gen9crossevolution",             // Cross Evolution
+"gen9ferventimpersonation",       // Fervent Impersonation
+"gen9foresighters",               // Foresighters
+"gen9fortemons",                  // Fortemons
+"gen9franticfusions",             // Frantic Fusions
+"gen9fullpotential",              // Full Potential
+"gen9inverse",                    // Inverse
+"gen9passiveaggressive",          // Passive Aggressive
+"gen9pokebilities",               // Pokebilities
+"gen9pokemoves",                  // Pokemoves
+"gen9purehackmons",               // Pure Hackmons
+"gen9revelationmons",             // Revelationmons
+"gen9sharingiscaring",            // Sharing is Caring
+"gen9teradonation",               // Tera Donation
+"gen9thecardgame",                // The Card Game
+"gen9thelosersgame",              // The Loser's Game
+"gen9trademarked",                // Trademarked
+"gen9triples",                    // Triples
+"gen9typesplit",                  // Type Split
+"gen6purehackmons",               // [Gen 6] Pure Hackmons
+
+// National Dex
+"gen9nationaldex",                // National Dex
+"gen8nationaldex",                // [Gen 8] National Dex
+
+// National Dex Other Tiers
+"gen9nationaldex35pokes",         // National Dex 35 Pokes
+"gen9nationaldexubers",           // National Dex Ubers
+"gen9nationaldexuu",              // National Dex UU
+"gen9nationaldexru",              // National Dex RU
+"gen9nationaldexlc",              // National Dex LC
+"gen9nationaldexmonotype",        // National Dex Monotype
+"gen9nationaldexdoubles",         // National Dex Doubles
+"gen9nationaldexdoublesubers",    // National Dex Doubles Ubers
+"gen9nationaldexubersuu",         // National Dex Ubers UU
+"gen9nationaldexag",              // National Dex AG
+"gen9nationaldexbh",              // National Dex BH
+"gen9nationaldexstabmons",        // National Dex STABmons
+"gen8nationaldexuu",              // [Gen 8] National Dex UU
+"gen8nationaldexmonotype",        // [Gen 8] National Dex Monotype
+
+// Randomized Metas
+"gen9metronomebattle",            // Metronome Battle
+
+// RoA Spotlight
+"gen5ubers",                      // [Gen 5] Ubers
+"gen3zu",                         // [Gen 3] ZU
+"gen6ru",                         // [Gen 6] RU
+
+// Past Gens OU
+"gen8ou",                         // [Gen 8] OU
+"gen7ou",                         // [Gen 7] OU
+"gen6ou",                         // [Gen 6] OU
+"gen5ou",                         // [Gen 5] OU
+"gen4ou",                         // [Gen 4] OU
+"gen3ou",                         // [Gen 3] OU
+"gen2ou",                         // [Gen 2] OU
+"gen1ou",                         // [Gen 1] OU
+
+// Past Gens Doubles OU
+"gen8doublesou",                  // [Gen 8] Doubles OU
+"gen7doublesou",                  // [Gen 7] Doubles OU
+"gen6doublesou",                  // [Gen 6] Doubles OU
+"gen5doublesou",                  // [Gen 5] Doubles OU
+"gen4doublesou",                  // [Gen 4] Doubles OU
+"gen3doublesou",                  // [Gen 3] Doubles OU
+
+// Sw/Sh Singles
+"gen8ubers",                      // [Gen 8] Ubers
+"gen8uu",                         // [Gen 8] UU
+"gen8ru",                         // [Gen 8] RU
+"gen8nu",                         // [Gen 8] NU
+"gen8pu",                         // [Gen 8] PU
+"gen8lc",                         // [Gen 8] LC
+"gen8monotype",                   // [Gen 8] Monotype
+"gen81v1",                        // [Gen 8] 1v1
+"gen8anythinggoes",               // [Gen 8] Anything Goes
+"gen8zu",                         // [Gen 8] ZU
+"gen8cap",                        // [Gen 8] CAP
+"gen8battlestadiumsingles",       // [Gen 8] Battle Stadium Singles
+"gen8bdspou",                     // [BDSP] OU
+"gen8bdspubers",                  // [BDSP] Ubers
+
+// Sw/Sh Doubles
+"gen8doublesubers",               // [Gen 8] Doubles Ubers
+"gen8doublesuu",                  // [Gen 8] Doubles UU
+"gen8vgc2022",                    // [Gen 8] VGC 2022
+"gen8vgc2021",                    // [Gen 8] VGC 2021
+"gen8vgc2020",                    // [Gen 8] VGC 2020
+"gen8bdspdoublesou",              // [BDSP] Doubles OU
+"gen8bdspbattlefestivaldoubles",  // [BDSP] Battle Festival Doubles
+
+// US/UM Singles
+"gen7ubers",                      // [Gen 7] Ubers
+"gen7uu",                         // [Gen 7] UU
+"gen7ru",                         // [Gen 7] RU
+"gen7nu",                         // [Gen 7] NU
+"gen7pu",                         // [Gen 7] PU
+"gen7lc",                         // [Gen 7] LC
+"gen7monotype",                   // [Gen 7] Monotype
+"gen71v1",                        // [Gen 7] 1v1
+"gen7anythinggoes",               // [Gen 7] Anything Goes
+"gen7zu",                         // [Gen 7] ZU
+"gen7cap",                        // [Gen 7] CAP
+"gen7battlespotsingles",          // [Gen 7] Battle Spot Singles
+"gen7letsgoou",                   // [Let's Go] OU
+
+// US/UM Doubles
+"gen7doublesuu",                  // [Gen 7] Doubles UU
+"gen7vgc2019",                    // [Gen 7] VGC 2019
+"gen7vgc2018",                    // [Gen 7] VGC 2018
+"gen7vgc2017",                    // [Gen 7] VGC 2017
+"gen7battlespotdoubles",          // [Gen 7] Battle Spot Doubles
+"gen7letsgodoublesou",            // [Let's Go] Doubles OU
+
+// OR/AS Singles
+"gen6ubers",                      // [Gen 6] Ubers
+"gen6uu",                         // [Gen 6] UU
+"gen6nu",                         // [Gen 6] NU
+"gen6pu",                         // [Gen 6] PU
+"gen6lc",                         // [Gen 6] LC
+"gen6monotype",                   // [Gen 6] Monotype
+"gen61v1",                        // [Gen 6] 1v1
+"gen6anythinggoes",               // [Gen 6] Anything Goes
+"gen6zu",                         // [Gen 6] ZU
+"gen6cap",                        // [Gen 6] CAP
+"gen6battlespotsingles",          // [Gen 6] Battle Spot Singles
+
+// OR/AS Doubles/Triples
+"gen6vgc2016",                    // [Gen 6] VGC 2016
+"gen6vgc2015",                    // [Gen 6] VGC 2015
+"gen6vgc2014",                    // [Gen 6] VGC 2014
+"gen6battlespotdoubles",          // [Gen 6] Battle Spot Doubles
+"gen6battlespottriples",          // [Gen 6] Battle Spot Triples
+
+// B2/W2 Singles
+"gen5uu",                         // [Gen 5] UU
+"gen5ru",                         // [Gen 5] RU
+"gen5nu",                         // [Gen 5] NU
+"gen5pu",                         // [Gen 5] PU
+"gen5lc",                         // [Gen 5] LC
+"gen5monotype",                   // [Gen 5] Monotype
+"gen51v1",                        // [Gen 5] 1v1
+"gen5zu",                         // [Gen 5] ZU
+"gen5cap",                        // [Gen 5] CAP
+"gen5bw1ou",                      // [Gen 5] BW1 OU
+"gen5gbusingles",                 // [Gen 5] GBU Singles
+
+// B2/W2 Doubles
+"gen5vgc2013",                    // [Gen 5] VGC 2013
+"gen5vgc2012",                    // [Gen 5] VGC 2012
+"gen5vgc2011",                    // [Gen 5] VGC 2011
+
+// DPP Singles
+"gen4ubers",                      // [Gen 4] Ubers
+"gen4uu",                         // [Gen 4] UU
+"gen4nu",                         // [Gen 4] NU
+"gen4pu",                         // [Gen 4] PU
+"gen4lc",                         // [Gen 4] LC
+"gen4anythinggoes",               // [Gen 4] Anything Goes
+"gen41v1",                        // [Gen 4] 1v1
+"gen4cap",                        // [Gen 4] CAP
+"gen4zu",                         // [Gen 4] ZU
+
+// DPP Doubles
+"gen4vgc2010",                    // [Gen 4] VGC 2010
+"gen4vgc2009",                    // [Gen 4] VGC 2009
+
+// Past Generations
+"gen3ubers",                      // [Gen 3] Ubers
+"gen3uu",                         // [Gen 3] UU
+"gen3ru",                         // [Gen 3] RU
+"gen3nu",                         // [Gen 3] NU
+"gen3pu",                         // [Gen 3] PU
+"gen3lc",                         // [Gen 3] LC
+"gen31v1",                        // [Gen 3] 1v1
+"gen2ubers",                      // [Gen 2] Ubers
+"gen2uu",                         // [Gen 2] UU
+"gen2nu",                         // [Gen 2] NU
+"gen2pu",                         // [Gen 2] PU
+"gen21v1",                        // [Gen 2] 1v1
+"gen2zu",                         // [Gen 2] ZU
+"gen2nc2000",                     // [Gen 2] NC 2000
+"gen2stadiumou",                  // [Gen 2] Stadium OU
+"gen1ubers",                      // [Gen 1] Ubers
+"gen1uu",                         // [Gen 1] UU
+"gen1nu",                         // [Gen 1] NU
+"gen1pu",                         // [Gen 1] PU
+"gen11v1",                        // [Gen 1] 1v1
+"gen1zu",                         // [Gen 1] ZU
+"gen1japaneseou",                 // [Gen 1] Japanese OU
+"gen1stadiumou",                  // [Gen 1] Stadium OU
+"gen1tradebacksou",               // [Gen 1] Tradebacks OU
+"gen1nc1997",                     // [Gen 1] NC 1997
+]
+
+// Cashe Lookups
+function createLookup(input, index=null) {
+    output = {}
+    if (index === null)
+        for (let i = 0; i < input.length; i++)
+            output[input[i]] = i;
+    else
+        for (let i = 0; i < input.length; i++)
+            output[input[i][index]] = i;
+
+    return output
+}
+const STATS_LOOKUP     = createLookup(STATS)
+const TYPES_LOOKUP     = createLookup(TYPES)
+const NATURES_LOOKUP   = createLookup(NATURES)
+const ITEMS_LOOKUP     = createLookup(ITEMS)
+const MOVES_LOOKUP     = createLookup(MOVES)
+const ABILITIES_LOOKUP = createLookup(ABILITIES)
+const SPECIES_LOOKUP   = createLookup(SPECIES, 0)
+const POKEBALLS_LOOKUP = createLookup(POKEBALLS)
+const FORMATS_LOOKUP   = createLookup(FORMATS)
+
+
+  ////////////
+ // Base64 //
+////////////
+// ASCII PRINTABLES 33 to 126
+// ALL_CHARACTERS = '!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz{|}~' // 94
+// // JSON CHARACTERS: https://www.json.org/json-en.html
+// const JSON_RESERVED = ',:[]{}'        // 6
+// const JSON_UNSAFE = '"\\'             // 2
+// const URL_SAFE = "$-_.+!*'(),"        // 11
+// const URL_RESERVED = ';/?:@=&'        // 7
+// const URL_UNSAFE = '"<>#%{}|\\^[]` '  // 14
+// const XML_UNSAFE = `"'<>&`            // 5
+// !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+// SAFE(72): 0-9, a-z, A-Z, !$()*+-._~
+// UNSAFE(22): "#%&',/:;<=>?@[\]^`{|}
+// Gonna use @ and # as they are unsafe in URLs, but not JSON
+const BASE64 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#" // !$()*+-._~
+
+let BASE64_LOOKUP = {}
+for (let i = 0; i < BASE64.length; i++)
+    BASE64_LOOKUP[BASE64[i]] = i;
+
+
+// Integer (Max: 9,007,199,254,740,991) // Bitshifts only go up to 30-ish bits
+function encodeInteger(integer, n=null) {
+    let result = '';
+    while (integer > 0) {
+        result = BASE64[integer % 64] + result;
+        integer = Math.floor(integer / 64);
+    }
+    return n ? result.padStart(n, BASE64[0]) : result; // Padding up to n if n given
+}
+function decodeInteger(hex) {
+    let result = 0;
+    for (let i = 0; i < hex.length; i++)
+        result = (result*64) + BASE64_LOOKUP[hex[i]];
+    return result;
+}
+
+// Big Integer (as big as memory, but slower)
+function encodeBigInt(bigInt) {
+    let result = '';
+    while (bigInt > 0n) {
+        result = BASE64[bigInt % 64n] + result;
+        bigInt = bigInt >> 6n; // bigInt / 64n;
+    }
+    return result;
+}
+function decodeBigInt(hex) {
+    let result = BigInt(0);
+    for (let i = 0; i < hex.length; i++)
+        result = (result << 6n) | BigInt(BASE64_LOOKUP[hex[i]]); // (result*64n)
+    return result;
+}
+
+// 6 Booleans (grows toward the right)
+function encodeBools(bools, n) {
+    let result = "";
+    const N = n ? n : Math.ceil(bools.length/6);
+    for (let x = 0, i = 0; x < N; x++) {
+        let int6 = 0;
+        for (let y = 0; y < 6; y++, i++)
+            int6 = (int6 << 1) | (bools[i] ? 1 : 0);
+        result += BASE64[int6];
+    }
+    return result;
+}
+function decodeBools(hex) {
+    let bools = [];
+    for (let x = 0, i = 5; x < hex.length; x++, i+=12) {
+        let c = BASE64_LOOKUP[hex[x]];
+        for (let y = 0; y < 6; y++, i--) {
+            bools[i] = c%2;
+            c = c >> 1; // Math.floor(c/2);
+        }
+    }
+    return bools;
+}
+
+// Packed Integers (bases can be array or all the same as one number)
+function encodeMultiple(numbers, bases=64) {
+    const B = bases.constructor === Number ? bases : undefined // If bases is number or array
+    let sum = BigInt(0);
+    for (let i = 0; i < numbers.length; i++)
+        sum = (sum * BigInt(B || bases[i])) + BigInt(numbers[i]);
+    return encodeBigInt(sum)
+}
+function decodeMultiple(string, bases=64) {
+    const B = bases.constructor === Number ? bases : undefined // If bases is number or array
+    let i = B ? undefined : bases.length-1;
+    let sum = decodeBigInt(string)
+    let results = [];
+    while (sum > 0n) {
+        const base = BigInt(B || bases[i--]);
+        results.push(Number(sum % base));
+        sum = sum / base;
+    }
+    return results.reverse();
+}
+
+
+
+  //////////
+ // Main //
+//////////
+/*
+https://github.com/smogon/pokemon-showdown/blob/master/sim/TEAMS.md
+NICKNAME|SPECIES|ITEM|ABILITY|MOVES|NATURE|EVS|GENDER|IVS|SHINY|LEVEL|HAPPINESS,POKEBALL,HIDDENPOWERTYPE,GIGANTAMAX,DYNAMAXLEVEL,TERATYPE
+
+Articuno||leftovers|pressure|icebeam,hurricane,substitute,roost|Modest|252,,,252,4,||,,,30,30,|||]
+Ludicolo||lifeorb|swiftswim|surf,gigadrain,icebeam,raindance|Modest|4,,,252,,252|||||]
+Volbeat||damprock|prankster|tailglow,batonpass,encore,raindance|Bold|248,,252,,8,|M||||]
+Seismitoad||lifeorb|swiftswim|hydropump,earthpower,stealthrock,raindance|Modest|,,,252,4,252|||||]
+Alomomola||damprock|regenerator|wish,protect,toxic,raindance|Bold|252,,252,,4,|||||]
+Armaldo||leftovers|swiftswim|xscissor,stoneedge,aquatail,rapidspin|Adamant|128,252,4,,,124|||||
+
+SPECIES is left blank if it's identical to NICKNAME
+ABILITY is 0, 1, or H if it's the ability from the corresponding slot for the Pokémon. It can also be an ability string, for Hackmons etc.
+MOVES is a comma-separated list of move IDs.
+NATURE left blank means Serious, except in Gen 1-2, where it means no Nature.
+EVS and IVS are comma-separated in standard order: HP, Atk, Def, SpA, SpD, Spe. EVs left blank are 0, IVs left blank are 31. If all EVs or IVs are blank, the commas can all be left off.
+EVS represent AVs in Pokémon Let's Go.
+IVS represent DVs in Gen 1-2. The IV will be divided by 2 and rounded down, to become DVs (so the default of 31 IVs is converted to 15 DVs).
+IVS is post-hyper-training: pre-hyper-training IVs are represented in HIDDENPOWERTYPE
+SHINY is S for shiny, and blank for non-shiny.
+LEVEL is left blank for level 100.
+HAPPINESS is left blank for 255.
+POKEBALL is left blank if it's a regular Poké Ball.
+HIDDENPOWERTYPE is left blank if the Pokémon is not Hyper Trained, if Hyper Training doesn't affect IVs, or if it's represented by a move in the moves list.
+GIGANTAMAX is G for Gmax, blank for non-Gmax.
+DYNAMAXLEVEL is left blank for 10.
+TERATYPE if left blank will default to the Pokémon's first type.
+If POKEBALL, HIDDENPOWERTYPE, GIGANTAMAX, DYNAMAXLEVEL and TERATYPE are all blank, the commas will be left off.
+
+// Source: https://github.com/smogon/pokemon-showdown/blob/master/sim/teams.ts#L448
+// NICKNAME|SPECIES|GENDER|ITEM|
+// ABILITY|NATURE|
+// EVS|IVS|MOVES|LEVEL|SHINY|
+// HAPPINESS,POKEBALL,HIDDENPOWERTYPE,GIGANTAMAX,DYNAMAXLEVEL,TERATYPE
+curSet = {
+    nickname: '', species_form: '', gender: '', item: '',
+    ability: '', nature: '',
+    evs: {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0},
+    ivs: {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31},
+    moves: [],
+//    level: 100,
+//    shiny: false,
+//    happiness: 255,
+//    pokeball: '',
+//    hpType: '',
+//    gigantamax: false,
+//    dynamaxlevel: 10,
+//    teraType: '', // default is same type as pokemon's primary type?
+};
+*/
+function parsePokemons(buffer) {
+    // Parse into array of lines
+    const lines = buffer.split("\n");
+    while (lines.length && !lines[0]) lines.shift();
+    while (lines.length && !lines[lines.length - 1]) lines.pop();
+    const sets = []; // Array of dictionaries
+
+    // Read lines and build
+    let set = null; // Pokemon data dictionary
+    for (let line of lines) {
+        line = line.trim(); // Substrings of this line are not trimmed on purpose.
+
+        // Whitespace / ignore
+        if (line === '' || line === '---') {
+            set = null;
+            continue;
+        }
+
+        // Team backup format
+        if (line.startsWith('===')) {
+            sets.push(line)
+            continue;
+        }
+
+        // Finally, Data
+        if (!set) {
+            // First Line: Nickname, Species+Form, Gender, Item
+            // NICKNAME (Charizard-Mega-X) (F) @ Aspear Berry
+            set = {moves:[]};
+            sets.push(set);
+
+            // Item
+            let item;
+            [line, item] = line.split(' @ ');
+            if (item)
+                set.item = item;
+
+            // Gender
+            if (line.endsWith(' (M)')) {
+                set.gender = 'M';
+                line = line.slice(0, -4);
+            } else if (line.endsWith(' (F)')) {
+                set.gender = 'F';
+                line = line.slice(0, -4);
+            }
+
+            // Species (w/ optional Nickname)
+            if (line.endsWith(')') && line.includes('(')) {
+                const [nickname, species] = line.slice(0, -1).split('(');
+                set.species = species
+                set.nickname = nickname.trim(); // Nickname
+            } else {
+                set.species = line.trim();
+            }
+
+        } else { // Other data lines
+            /* Copy/Pasted right from gen7 pure hackmons
+            MAX_SIZE_NICKNAME! (Charizard-Mega-X) (F) @ Aspear Berry  
+            Ability: Static  
+            Level: 19  
+            Shiny: Yes  
+            Happiness: 212  
+            Hidden Power: Fire  
+            EVs: 120 HP / 60 Atk / 78 Def / 210 SpA / 34 SpD / 8 Spe  
+            Hasty Nature  
+            IVs: 18 HP / 3 Atk / 11 Def / 15 SpA / 14 SpD / 19 Spe  
+            - Charge  
+            - Return  
+            - Screech  
+            - Sonic Boom
+            */
+            // Ability
+            if (line.startsWith('Trait: ')) {
+                line = line.slice(7);
+                set.ability = line;
+            } else if (line.startsWith('Ability: ')) {
+                line = line.slice(9);
+                set.ability = line;
+            }
+
+            // Shiny
+            else if (line === 'Shiny: Yes') {
+                set.shiny = true;
+            }
+
+            // Level
+            else if (line.startsWith('Level: ')) {
+                line = line.slice(7);
+                const value = +line; // toInt
+                if (!isNaN(value)) set.level = value;
+            }
+
+            // Happiness
+            else if (line.startsWith('Happiness: ')) {
+                line = line.slice(11);
+                const value = +line; // toInt
+                if (!isNaN(value)) set.happiness = value;
+            }
+
+            // Pokeball
+            else if (line.startsWith('Pokeball: ')) {
+                line = line.slice(10);
+                set.pokeball = line;
+            }
+
+            // Hidden Power
+            else if (line.startsWith('Hidden Power: ')) {
+                line = line.slice(14);
+                set.hpType = line;
+            }
+
+            // Dynamax Level
+            else if (line.startsWith('Dynamax Level: ')) {
+                line = line.slice(15);
+                const value = +line; // toInt
+                if (!isNaN(value)) set.dynamaxLevel = value;
+            }
+
+            // Gigantamax
+            else if (line === 'Gigantamax: Yes') {
+                set.gigantamax = true;
+            }
+
+            // Tera Type
+            else if (line.startsWith('Tera Type: ')) {
+                line = line.slice(11);
+                set.teraType = line; // line.replace(/[^a-zA-Z0-9]/g;
+            }
+
+            // EVs
+            else if (line.startsWith('EVs: ')) {
+                line = line.slice(5);
+                const evLines = line.split('/');
+                set.evs = [0,0,0,0,0,0]; // [HP: 0, Atk: 0, Def: 0, SpA: 0, SpD: 0, Spe: 0]
+                for (const evLine of evLines) {
+                    const [statValue, statName] = evLine.trim().split(' ');
+                    if (statName === undefined || !(statName in STATS_LOOKUP)) continue;
+                    const value = parseInt(statValue);
+                    if (!isNaN(value)) set.evs[STATS_LOOKUP[statName]] = value;
+                }
+            }
+
+            // IVs
+            else if (line.startsWith('IVs: ')) {
+                line = line.slice(5);
+                const ivLines = line.split('/');
+                set.ivs = [31,31,31,31,31,31]; // [HP: 31, Atk: 31, Def: 31, SpA: 31, SpD: 31, Spe: 31];
+                for (const ivLine of ivLines) {
+                    const [statValue, statName] = ivLine.trim().split(' ');
+                    if (statName === undefined || !(statName in STATS_LOOKUP)) continue;
+                    const value = parseInt(statValue);
+                    if (!isNaN(value)) set.ivs[STATS_LOOKUP[statName]] = value;
+                }
+            }
+
+            // Moves
+            else if (line.startsWith('-') || line.startsWith('~')) {
+                line = line.slice(line.charAt(1) === ' ' ? 2 : 1);
+                set.moves.push(line);
+            }
+
+            // Nature
+            else if (line.endsWith(' Nature'))
+                set.nature = line.split(' ')[0];
+            //else if (/^[A-Za-z]+ (N|n)ature/.test(line)) {
+            //    let natureIndex = line.indexOf(' Nature');
+            //    if (natureIndex === -1) natureIndex = line.indexOf(' nature');
+            //    if (natureIndex === -1) continue; // Unknown nature
+            //    line = line.substr(0, natureIndex);
+            //    set.nature = line;
+            //}
+        }
+    }
+
+    return sets; // return sets.length == 1 ? sets[0] : sets;
+}
+
+// This is the official order (kinda funky imo)
+function unparsePokemon(set) {
+    let out = "";
+
+    // Nickname + Species
+    if (set.nickname && set.nickname !== set.species)
+        out += `${set.nickname} (${set.species})`;
+    else
+        out += set.species;
+
+    // Gender
+    if      (set.gender === 'M') out += ` (M)`;
+    else if (set.gender === 'F') out += ` (F)`;
+
+    // Item
+    if (set.item) out += ` @ ${set.item}`;
+
+    out += '\n';
+
+
+    // Ability
+    if (set.ability) out += `Ability: ${set.ability}\n`;
+
+    // Level
+    if (set.level && set.level !== 100) out += `Level: ${set.level}\n`;
+
+    // Shiny
+    if (set.shiny) out += `Shiny: Yes\n`;
+
+    // Happiness
+    if (typeof set.happiness === 'number' && set.happiness !== 255 && !isNaN(set.happiness))
+        out += `Happiness: ${set.happiness}\n`;
+
+    // Pokeball?
+    if (set.pokeball) out += `Pokeball: ${set.pokeball}\n`;
+
+    // Hidden Power Type
+    if (set.hpType) out += `Hidden Power: ${set.hpType}\n`;
+
+    // Dynamax Level
+    if (typeof set.dynamaxLevel === 'number' && set.dynamaxLevel !== 10 && !isNaN(set.dynamaxLevel))
+        out += `Dynamax Level: ${set.dynamaxLevel}\n`;
+
+    // Gigantamax
+    if (set.gigantamax) out += `Gigantamax: Yes\n`;
+
+    // Tera Type
+    if (set.teraType) out += `Tera Type: ${set.teraType}\n`;
+
+    // EVs
+    if (set.evs) {
+        let statStrings = [];
+        for (let i = 0; i < set.evs.length; i++) {
+            let statValue = set.evs[i];
+            if (statValue && statValue > 0)
+                statStrings.push(`${statValue} ${STATS[i]}`); // "252 SpA"
+        }
+
+        if (statStrings.length)
+            out += `EVs: ${statStrings.join(" / ")}\n`;
+    }
+
+    // Nature (They put nature in the middle like this even though I think it looks ugly)
+    if (set.nature) out += `${set.nature} Nature\n`;
+
+    // IVs
+    if (set.ivs) {
+        let statStrings = [];
+        for (let i = 0; i < set.ivs.length; i++) {
+            let statValue = set.ivs[i] || 0;
+            if (statValue !== 31)
+                statStrings.push(`${statValue} ${STATS[i]}`); // "0 SpA"
+        }
+
+        if (statStrings.length)
+            out += `IVs: ${statStrings.join(" / ")}\n`;
+    }
+
+    // Moves
+    for (let move of set.moves) out += `- ${move}\n`;
+
+    return out;
+}
+function unparsePokemons(sets) {
+    let output = '';
+    for (const set of sets)
+        if (set.constructor === String)
+            output += '\n' + set + '\n\n'; // "=== [format] Name ==="
+        else
+            output += unparsePokemon(set) + '\n'; // Pokemon...
+    return output.trim();
+}
+
+
+
+  /////////////////////////////
+ // Super Packing (Made up) //
+/////////////////////////////
+// Hard-coded for [0,3,5,6,9,10,12,17,18,20,24,33,34,36,40,48]
+ENCODED_EVS = new Int8Array(49); // Hard-coded (1<<(n-1)) + (1<<(n-2)) + 1
+DECODED_EVS = new Array(16); // Hard-coded ((n*(n-1)) >> 1) + 1  (i.e. array_size + 1 = Math.floor((n*(n-1))/2) + 1)
+ENCODED_EVS[0] = 0; // [(a^2 + b^2)=ab: 1-15]
+DECODED_EVS[0] = [0,0]; // [1-15: [a,b]]
+for (let i=1, x=1, xx=2; xx < 64; xx *= 2, x++) { // matrix_size = Math.pow(2,n) or (1 << n)
+    for (let  y=0, yy=1; yy < xx; yy *= 2, y++, i++) {
+        ENCODED_EVS[xx+yy] = i
+        DECODED_EVS[i] = [x,y]
+    }
+}
+
+function encodeEVs(evs) {
+    if (!evs) return BASE64[0]; // Default: all stats 0
+
+    // Behold this mess I've written
+    let simpleEVs = true
+    let allMax = true
+    let allZero = true
+    let noAtk = true
+    let noSpe = true
+    let max1 = -1; // 252
+    let max2 = -1; // 252
+    let outlier = -1; // 4
+    for (let i = 0; i < STATS.length; i++) {
+        let value = evs[i] || 0;
+        if (value >= 252) { // 252
+            allZero = false;
+            if (noAtk && i === 1) noAtk = false;
+            if (noSpe && i === 5) noSpe = false;
+
+            if (max1 === -1) {
+                max1 = i;
+            } else if (max2 === -1) {
+                max2 = i;
+            } else {
+                if (allMax || allZero || noAtk || noSpe) {
+                    continue; // Keep looking to double-check those special cases
+                } else {
+                    simpleEVs = false; // Nah, its over
+                    break;
+                }
+            }
+        } else {
+            allMax = false;
+            if (value < 4) { // Zero
+                if (noAtk && i !== 1) noAtk = false;
+                if (noSpe && i !== 5) noSpe = false;
+                continue; // Keep searching
+            } else {
+                allZero = false;
+                noAtk = false;
+                noSpe = false;
+                if (value < 8) { // 4
+                    if (outlier === -1) {
+                        outlier = i;
+                    } else {
+                        simpleEVs = false; // Lol theres atleast 2 stats with just 4 EVs
+                        break;
+                    }
+                } else { // A number other than 0, 4, or 252
+                    simpleEVs = false;
+                    break;
+                }
+            }
+        }
+    }
+
+    // Quick Checks
+    if (allZero)
+        return BASE64[0]; // '0' // All stats are 0
+    else if (allMax)
+        return BASE64[1]; // '1' // All stats are 252
+    else if (noAtk)
+        return BASE64[2]; // '2' // All stats are 252 except Atk
+    else if (noSpe) {
+        return BASE64[3]; // '3' // Same, 0 Spe
+    } else if (max2 === -1 || outlier === -1) // !max1 || !max2 || !outlier
+        simpleEVs = false; // 1 or less are 252 or no outlier: dont have enough bytes to store it :(
+
+    // Final Check
+    if (simpleEVs) {
+        // Confirmed simple, calculate its "simple" EV id for efficient packing
+        let ev = ENCODED_EVS[(1 << max1) + (1 << max2)] // Math.pow(2, max1) + Math.pow(2, max2)
+        let o = 0; // I'm sure there's a better way to do this
+        for (let i = 0; i < outlier; i++)
+            if (i !== max1 && i !== max2)
+                o++
+
+        return BASE64[(ev<<2)+o]; // encodeMultiple([ev,o], [16,4])
+    }
+
+    // Not simple, return packed 000000
+    let hex = ""
+    for (let i = 0; i < STATS.length; i++)
+        hex += BASE64[Math.min(Math.max((evs[i]||0)>>2, 0), 63)]; // Divided by 4 rounded down clamped 0 < x < 63
+    return hex
+}
+function decodeEVs(hex) {
+    // Check if not simple (unpack individually)
+    if (hex.length !== 1) {
+        let evs = new Uint8Array(6); // Hard-coded
+        for (let i = 0; i < 6; i++)
+            evs[i] = BASE64_LOOKUP[hex[i]] << 2; // 63 * 4 = 252
+        return evs;
+    }
+
+    // Special Cases
+    if (hex === BASE64[0])
+        return [0,0,0,0,0,0]; // '0' // All stats are 0
+    else if (hex === BASE64[1])
+        return [252,252,252,252,252,252]; // '1' // All stats are 1
+    else if (hex === BASE64[2])
+        return [252,0,252,252,252,252]; // '2' // 0 Atk
+    else if (hex === BASE64[3])
+        return [252,252,252,252,252,0]; // '3' // 0 Spe
+
+    // let [m2m1, outlier] = decodeMultiple(hex, [16,4])
+    let outlier = BASE64_LOOKUP[hex];
+    const [max2, max1] = DECODED_EVS[outlier >> 2];
+    outlier = outlier % 4; // Again, there's gotta be a better way to do this
+    for (let i = 0; i <= outlier; i++)
+        if (i === max1 || i === max2)
+            outlier++;
+
+    // Set and return
+    let evs = [0,0,0,0,0,0];
+    evs[max1] = 252;
+    evs[max2] = 252;
+    evs[outlier] = 4;
+    return evs
+}
+
+//-1*- Complex[6]: If all 31 (#), then complex[1+5] (#12345)
+// 0 - Simple[1] (0 or 31 IVs)
+// 1 - All 31[0]
+// 2 - 0 Atk [0]
+// 3 - 0 Spe [0]
+function getIVType(ivs) {
+    if (!ivs) return 1 // Default: all stats 31
+
+    let allMax = true // To check if all are 31 and ...
+    let noAtk = true // only Atk is 0
+    let noSpe = true // only Spe is 0
+    for (let i = 0; i < STATS.length; i++) {
+        let value = ivs[i] || 0; // 31?
+        if (value >= 31) { // 31
+            if (noAtk && i === 1) noAtk = false;
+            if (noSpe && i === 5) noSpe = false;
+        } else if (value <= 0) { // Zero
+            allMax = false
+            if (noAtk && i !== 1) noAtk = false;
+            if (noSpe && i !== 5) noSpe = false;
+        } else {
+            return -1 // Not Simple (0 < value < 31)
+        }
+    }
+
+    if (allMax) return 1
+    if (noAtk)  return 2
+    if (noSpe)  return 3
+    return 0 // If here then confirmed simple, treated as 6 booleans (0|31)
+}
+
+// This is called assuming IVs are complex,
+// Otherwise if simple use encodeBools(ivs) // treated as 6 booleans (0|31)
+function encodeIVs(ivs) {
+    if (!ivs) return BASE64[63].repeat(5); // Default: all stats 31 (should never happen, setup should be keeping track of this)
+
+    let sum = 0; // Values are not all 0s or 31s, return packed[5] (#####)
+    for (i = 0; i < ivs.length; i++)
+        sum = (sum << 5) + Math.min(Math.max(ivs[i] || 0, 0), 31); // (sum * 32) // Clamped by 0 < x < 31
+    return encodeInteger(sum, 5);
+}
+// This is called assuming IVs are simple or complex
+function decodeIVs(hex) {
+    // Check if simple
+    if (hex.length === 1) {
+        let ivs = decodeBools(hex);
+        for (let i = 0; i < ivs.length; i++)
+            ivs[i] = ivs[i] ? 31 : 0;
+        return ivs;
+    }
+
+    // Not simple (unpack individually)
+    let ivs = new Uint8Array(6); // Hard-coded
+    let sum = decodeInteger(hex)
+    for (let i = 5; i >= 0; i--) {
+        ivs[i] = sum % 32; // 0-31
+        sum = sum >> 5; // sum / 32;
+    }
+    return ivs;
+}
+
+/*
+const tests = [
+    [0,0,0,0,0,0],
+    [252,252,252,252,252,252],
+    [252,0,252,252,252,252],
+    [252,252,252,0,252,252],
+    [252,252,4,0,0,0],
+    [252,0,4,0,252,0],
+    [0,0,0,4,252,252],
+]
+function equalArray(a, b) {
+    if (a.length !== b.length)
+        return false;
+    for (let i = 0; i < a.length; i++)
+        if (a[i] !== b[i])
+            return false;
+    return true;
+}
+for (let x of tests) {
+    let y = encodeEVs(x);
+    let z = decodeEVs(y);
+    console.log(x,y,z, equalArray(x,z) ? "Correct" : "Incorrect");
+}
+*/
+
+
+/*
+Team Label
+## - format[11] + isBox[1]
+|Name
+-or-
+00|gen9team|Name
+
+
+Setup Notes: (6 bits) {
+[1]   - isNormal (normal abilities, lvl 100)
+[2]   - simpleEVs {508 EVs: 2(252) + 1(4)}
+[3+4] - simpleIVs[2]: 
+    0 - Simple[1] (0 or 31 IVs). If all 31 (#), then complex[1+5] (#12345)
+    1 - All 31[0]
+    2 - 0 Atk [0]
+    3 - 0 Spe [0]
+[5+6] - extraData[2]:
+    0 - No extra data (also when happiness is 255, 0 w/ Frustration, etc...)
+    1 - Happiness + HiddenPower   // Gen 3-7
+    2 - DynamaxLevel + GigantaMax // Gen 8
+    3 - TeraType                  // Gen 9
+}
+
+
+Basic (11-12):
+[1] #  - setup (6 bits)
+[2] ## - species_form[11] + shiny[1]
+[7] ####### - moves[10:10:10:10]=[40]
+            + gender[2]
+[1] # - nature[5] + hasPokeball[1]  // Future-proof idk
+(1) # - . pokeball[5] // 28           // 1 unused byte
+
+
+Normal/IVs/EVs (3-16):
+[2] ## - item[10] + ability[2]
+[1] #  - EVs[4] + outlier[2]
+[0]    - IVs[6]
+Else: // Worse Case Scenario (notNormal, complexIVs/EVs)
+[2] ##     - .. item[10]                 // 2 unused bytes
+[3] ###    - .. ability[9] + level[7]    // 2 unused bytes
+[6] ###### - EVs[6]{6} // 0-63 (*4)
+[5] ###### - IVs[5]{6} // 0-31
+
+
+Extra Data (0-3): <Mutually Exclusive (gens 3-7, 8, 9)>
+[1] #  - HiddenPower[5]
+       + hasHappiness[1]
+(2) ## + .... Happiness[8]    // 4 unused bytes
+
+[1] # - .. DynamaxLevel[3]  // 0-10  // 2 unused bytes
+      + GigantaMax[1]    // t/f
+
+[1] # - . TeraType[5]      // 20    // 1 unused byte
+
+
+Optional: // only if a '|' exists
+|NICKNAME[?] + ('|' or '\n') // starts with '|' and ends with '|' (or '\n) because showdown uses it (and blocks it accordingly)
+
+
+Binary.bin (WIP)
+
+
+Examples:
+Single
+####|Name
+
+
+Multiple
+A###B###|Name|C###D###|Name
+-or-
+A###
+B###|Name
+C###
+D###|Name
+
+
+All
+[##Team1]A###B###|Name|C###[##Team2][##Team3]D###[##Team4]E###F###G###H###I###J###|Name[##Team5]
+-or-
+##|Team1|A###B###|Name|C###
+##|Team2
+##|Team3|D###
+##|Team4|E###F###G###H###I###J###|Name
+##|Team5
+-or-
+##|Team1
+A###
+B###|Name
+C###
+
+##|Team2
+
+##|Team3
+D###
+
+##|Team
+E###
+F###
+G###
+H###
+I###
+J###|Name
+
+##|Team5
+
+##|Team
+
+##|Team
+
+##|Team
+*/
+function encodePokemon(set) {
+    // Setup
+    const speciesID = SPECIES_LOOKUP[set.species];
+    if (speciesID == undefined) return '!Error! Unknown Pokemon "' + set.species + '"';
+
+    // isNormal (and Ability)
+    let isNormal = true;
+    let abilityID = 0; // only used if normal
+    if (set.level && set.level != 100)
+        isNormal = false;
+    else { // Check if abilities match any of the species abilities
+        let SPECIES_DATA = SPECIES[speciesID];
+        if (set.ability) {
+            isNormal = false; // Not found yet...
+            for (let i = 1; i < SPECIES_DATA.length; i++) {
+                let id = SPECIES_DATA[i];
+                if (set.ability == ABILITIES[id]) {
+                    isNormal = true; // Found
+                    abilityID = i-1; // Save
+                    break;
+                }
+            }
+        } else { // No ability (default)
+            abilityID = ABILITIES_LOOKUP[set.ability || SPECIES_DATA[1]] || 0; // If unknown, default to pokemon's basic ability...
+        }
+    }
+
+    // Item
+    const itemID = ITEMS_LOOKUP[set.item] || 0 // If unknown, fail silently...
+
+    // EVs
+    const evHex = encodeEVs(set.evs);
+
+    // IVs
+    let ivFlag = getIVType(set.ivs)
+    let ivHex = "" // All full (1) / noAtk (2) / noSpe (3)
+    if (ivFlag === 0) { // Simple
+        ivHex = encodeBools(set.ivs) // Treated as 6 booleans (0|31)
+    } else if (ivFlag === -1) { // Complex
+        ivHex = BASE64[63] + encodeIVs(set.ivs) // full[1] + packed[5] (punish user for weird IVs lol)
+        ivFlag = 0 // for encoding
+    }
+
+    // Extra Data
+    let hasHappiness = false;
+    let extraDataFlag = 0; // No extra data
+    if (set.hpType || (set.happiness != undefined && set.happiness != 255)) {
+        extraDataFlag = 1; // HiddenPower + Happiness // Gens 3-7
+        hasHappiness = true;
+        if (set.happiness == 0 && set.moves) {
+            for (const move of set.moves) {
+                if (move == "Frustration") {
+                    hasHappiness = false // false alarm
+                    if (!set.hpType) extraDataFlag = 0; // No actual extra data
+                    break;
+                }
+            }
+        }
+    } else if (set.gigantamax || (set.dynamaxLevel && set.dynamaxLevel != 10)) {
+        extraDataFlag = 2; // DynamaxLevel + GigantaMax // Gen 8
+    } else if (set.teraType) {
+        extraDataFlag = 3; // TeraType // Gen 9
+    }
+
+    // # - Finish Setup
+    const setupHex = encodeBools([
+        isNormal,
+        evHex.length === 1, // simpleEVs
+        ivFlag >> 1,        // simpleIVs
+        ivFlag & 1,
+        extraDataFlag >> 1,
+        extraDataFlag & 1,
+    ]);
+
+    // Shiny
+    const isShiny = set.shiny ? 1 : 0
+
+    // Moves
+    let moveIDs = [0,0,0,0]  // Hard-coded 4 moves
+    if (set.moves)
+        for (let i = 0; i < 4; i++)
+            moveIDs[i] = MOVES_LOOKUP[set.moves[i]] || 0 // none/unknown move, fail silently...
+
+    // Gender
+    let genderID = 0
+    if (set.gender)
+        if (set.gender == 'M')
+            genderID = 1; // (M)
+        else if (set.gender == 'F')
+            genderID = 2; // (F)
+        else
+            genderID = 3; // Idk
+
+    // Nature
+    const natureID = NATURES_LOOKUP[set.nature] || 0 // If unknown nature, fail silently...?
+
+    // Optional: Pokeball // Future-proof idk
+    const hasPokeball = set.pokeball ? 1 : 0;
+    const pokeballID = POKEBALLS_LOOKUP[set.pokeball] || 0 // If unknown nature, fail silently...?
+
+    // IVs/EVs already checked and made
+    // #|###### - EVs[4]+outlier[2] | EVs[6]{6}
+    // #? ##### - IVs[6]            | IVs[5]{6}
+
+    // |NICKNAME (Optional)
+    const nicknameHex = set.nickname ? ('|' + set.nickname) : ""
+
+
+    // Finally, combine and return
+    // ## - species_form[11] + shiny[1]
+    const speciesHex = encodeInteger((speciesID << 1) | isShiny, 2);
+
+    // ####### - moves[10:10:10:10]=[40]
+    //         + gender[2]
+    let movesID = 0;
+    for (let i = 0; i < 4; i++) // Hard-coded
+        movesID = movesID*1024 + moveIDs[i]; // none/unknown move, fail silently...
+    const movesHex = encodeInteger(movesID*4 + genderID, 7); // Hard-coded
+
+    // #  - nature[5] + hasPokeball[1]
+    const natureHex = encodeInteger((natureID << 1) | (hasPokeball), 1);
+
+    // #? - pokeball[5] // 28  // 1 unused byte
+    const pokeballHex = hasPokeball ? encodeInteger(pokeballID, 1) : "";
+
+    // Item and Ability
+    let itemAbilityHex = "";
+    if (isNormal)
+        // ##  - item[10] + ability[2]
+        itemAbilityHex = encodeInteger((itemID << 2) | abilityID, 2); // ability already set from above
+    else
+        // ##  - item[10]               // 2 unused bytes
+        // ### - ability[9] + level[7]  // 2 unused bytes
+        itemAbilityHex = encodeInteger(itemID, 2) + encodeInteger(((ABILITIES_LOOKUP[set.ability] || 0) << 7) | (set.level || 100), 3) // If unknown, fail silently...
+
+    // Extra Data: Mutually Exclusive (gens 3-7, 8, 9)
+    let extraHex = "";
+    switch (extraDataFlag) {
+        case 1:
+            // #  - HiddenPower[5] + hasHappiness[1]
+            // ## + Happiness[8]    // 4 unused bytes
+            extraHex = encodeInteger(((TYPES_LOOKUP[set.hpType] || 0) << 1) | hasHappiness, 1)
+                    + (hasHappiness ? encodeInteger(set.happiness, 2) : "")
+            break;
+
+        case 2:
+            // # - DynamaxLevel[3]  // 0-10  // 2 unused bytes
+            //   + GigantaMax[1]    // t/f
+            extraHex = encodeInteger(((set.dynamaxLevel || 10) << 1) | (set.gigantamax ? 1 : 0), 1);
+            break;
+
+        case 3:
+            // # - TeraType[5]      // 20    // 1 unused byte
+            extraHex = encodeInteger(TYPES_LOOKUP[set.teraType], 1);
+            break;
+    }
+
+    // Return
+    return speciesHex
+         + setupHex
+         + movesHex
+         + natureHex
+         + pokeballHex
+         + itemAbilityHex
+         + evHex
+         + ivHex
+         + extraHex
+         + nicknameHex
+}
+function encodePokemons(sets, pkmnSpace = 1, teamSpace = 2) {
+    let output = '';
+    for (const set of sets)
+        if (set.constructor === String) {
+            // "=== [format] Name ===" --> "##|Name" or "[##Name]"
+            let [format, name] = set.trim().slice(5,-3).split(']') // if (set.endsWith(']') && set.includes('['))
+            name = name.trim();
+            let isBox = false;
+            if (format.endsWith("-box")) {
+                isBox = true;
+                format = format.slice(0,-4);
+            }
+
+            const formatBytes = FORMATS_LOOKUP[format] || 0;
+            if (formatBytes === 0) // If unknown, write it in literally, i.e. lots of extra space :(
+                name = format + '|' + name;
+
+            const formatHex = encodeInteger(((formatBytes) << 1) | isBox, 2)
+            if (teamSpace > 0)
+                output += '\n'.repeat(teamSpace) + formatHex + '|' + name // + (true ? '\n' : '|') // TODO
+            else
+                output += '[' + formatHex + name + ']';
+        } else {
+            if (pkmnSpace) {
+                output += '\n' + encodePokemon(set) // + (pkmnSpace ? '\n'.repeat(pkmnSpace) : (set.nickname ? '|' : ''));
+            }
+        }
+    return output.trim();
+}
+
+function skipWhitespace(buffer, i) {
+    while (i < buffer.length) {
+        const c = buffer[i]
+        if (c && c !== ' ' && c !== '\n' && c !== '\t' && c !== '\r' && c !== '\f' && c !== '\v') // Not whitespace
+            return i // Found
+        i++
+    }
+    return -1 // EOF
+}
+function parseEncodedName(buffer, i) {
+    const x = buffer.indexOf('|',i)
+    const n = buffer.indexOf('\n',i)
+    if (x === -1)
+        if (n === -1)
+            return buffer.slice(i).trim() // EOF
+        else
+            return buffer.slice(i,n) // '\n'
+    else
+        if (n === -1)
+            return buffer.slice(i,x) // '|'
+        else // Use whichever is earliest
+            if (x < n)
+                return buffer.slice(i,x) // '|'
+            else
+                return buffer.slice(i,n) // '\n'
+}
+function decodePokemons(buffer) {
+    // Parse as we read the string character by character
+    let sets = []; // Array of dictionaries
+    let i = 0;
+    const I = buffer.length;
+    while (i < I) {
+        let c = buffer[i]
+        if (c === ' ' || c === '\n' || c === '\t' || c === '\r' || c === '\f' || c === '\v') { // Is whitespace
+            i = skipWhitespace(buffer, i)
+            if (i === -1) break // EOF
+            c = buffer[i]
+        }
+
+        // Team (Format Label)
+        let format = ''
+        let name = ''
+        if (c === '[') { // [##Team]
+            format = buffer.slice(i+1,i+3)
+            i += 3
+            let n = buffer.indexOf(']',i)
+            if (n === -1) {
+                console.error("Invalid Team Format Label: missing a ']'")
+                break
+            }
+            name = buffer.slice(i,n)
+        } else if (buffer[i+2] === '|') { // ##|Team or  ##|Team| // Assuming that the format label is always 2 characters long and '|' appears earlier than the shortest name
+            format = buffer.slice(i,i+2)
+            i += 3
+            name = parseEncodedName(buffer, i)
+        }
+
+        // ## - Format[11] + isBox[1]
+        if (format) {
+            let formatID = decodeInteger(format);
+            const isBox = formatID & 0x01;
+            formatID = formatID >> 1;
+            i += name.length
+
+            let formatName = null
+            if (formatID === 0) {
+                // name is actually format name, format name is afterwards
+                // 00|exampleformat|Team Name   instead of   ##|Team Name
+                formatName = name
+                name = parseEncodedName(buffer, ++i)
+                i += name.length
+            } else {
+                formatName = FORMATS[formatID]
+            }
+
+            const label = `=== [${formatName + (isBox ? "-box" : "")}] ${name} ===`
+            sets.push(label)
+            i++
+            continue
+        }
+
+        // Else, process data
+        let set = {}
+        sets.push(set)
+
+        // ## - Species-Form[11] + Shiny[1]
+        const sfsID = decodeInteger(buffer.slice(i,i+2))
+        const SPECIES_DATA = SPECIES[sfsID >> 1] || SPECIES[0] // If unknown, default to MissingNo.
+        set.shiny = sfsID & 0x01
+        set.species = SPECIES_DATA[0];
+        i+=2
+
+        // # - Set up
+        const [isNormal, simpleEVs, ivFlag1, ivFlag2, extraDataFlag1, extraDataFlag2] = decodeBools(buffer[i])
+        const extraDataFlag = (extraDataFlag1 << 1) | extraDataFlag2
+        const ivFlag = (ivFlag1 << 1) | ivFlag2
+        i++
+
+        // ####### - Moves[10:10:10:10]=[40] + Gender[2]
+        let movesID = decodeInteger(buffer.slice(i,i+7))
+
+        // Gender
+        const genderID = movesID % 4
+        if      (genderID == 1) set.gender = 'M'
+        else if (genderID == 2) set.gender = 'F'
+
+        // Moves
+        movesID = (movesID - genderID) / 4
+        let moves = []
+        for (let x = 3; x >= 0; x--) { // Hard-Coded
+            const moveID = movesID % 1024
+            movesID = ((movesID - moveID) / 1024)
+            moves[x] = MOVES[moveID] || MOVES[0] // none/unknown move, fail silently with "None"...
+        }
+        set.moves = moves
+        i+=7
+
+        // #  - Nature[5] + hasPokeball[1]  // Future-proof idk
+        let natureID = decodeInteger(buffer[i++])
+        const isPokeball = natureID & 0x01
+        natureID = natureID >> 1
+        if (natureID) set.nature = NATURES[natureID]
+
+        // #? - pokeball[5] // 28           // 1 unused byte
+        if (isPokeball)
+            set.pokeball = POKEBALLS[decodeInteger(buffer[i++])]
+
+        // ##|##### - Item + Ability + Level?
+        if (isNormal) {
+            // ## - item[10] + ability[2]
+            let itemID = decodeInteger(buffer.slice(i,i+2))
+            set.ability = ABILITIES[SPECIES_DATA[(itemID & 0x03)+1]]
+            itemID = itemID >> 2
+            if (itemID) set.item = ITEMS[itemID]
+            i+=2
+        } else {
+            // ##     - item[10]                 // 2 unused bytes
+            const itemID = decodeInteger(buffer.slice(i,i+2))
+            if (itemID) set.item = ITEMS[itemID]
+
+            // ###    - ability[9] + level[7]    // 2 unused bytes
+            let abilityID = decodeInteger(buffer.slice(i+2,i+5))
+            set.level = abilityID % 128
+            abilityID = abilityID >> 7
+            if (abilityID) set.ability = ABILITIES[abilityID]
+            i+=5
+        }
+
+        // #|###### - EVs
+        const evHex = simpleEVs ? buffer[i] : buffer.slice(i,i+6)
+        set.evs = decodeEVs(evHex)
+        i += evHex.length
+
+        // _|#|###### - IVs
+        switch (ivFlag) {
+            case 0: // Simple[1] (0 or 31 IVs)
+                let ivHex = buffer[i++] // #
+                if (ivHex == BASE64[63]) { // Complex[6]: If all 31 (#), then complex[1+5] (#12345)
+                    ivHex = buffer.slice(i, i+5) // # + #####
+                    i += 5
+                }
+                set.ivs = decodeIVs(ivHex) // # -or- #####
+                break;
+
+            case 1: // All 31[0]
+                set.ivs = [31,31,31,31,31,31]
+                break;
+            case 2: // 0 Atk [0]
+                set.ivs = [31,0,31,31,31,31]
+                break;
+            case 3: // 0 Spe [0]
+                set.ivs = [31,31,31,31,31,0]
+                break;
+        }
+
+        // Extra Data: Mutually Exclusive (gens 3-7, 8, 9)
+        switch (extraDataFlag) {
+            case 0:
+                // Possible hidden happiness
+                for (const move of moves) {
+                    if (move === "Frustration") {
+                        set.happiness = 0
+                        break
+                    }
+                }
+                break
+
+            case 1:
+                // # - HiddenPower[5] + hasHappiness[1]
+                let hpID = decodeInteger(buffer[i++])
+                const hasHappiness = hpID & 0x01
+                hpID = hpID >> 1
+                if (hpID) set.hpType = TYPES[hpID]
+
+                // ## + Happiness[8]  // 4 unused bytes
+                if (hasHappiness) {
+                    set.happiness = decodeInteger(buffer.slice(i,i+2))
+                    // console.log(sets.length-1, buffer.slice(i,i+2), set.happiness)
+                    i+=2
+                }
+                break;
+
+            case 2:
+                // # - DynamaxLevel[3]  // 0-10  // 2 unused bytes
+                //   + GigantaMax[1]    // t/f
+                const dgID = decodeInteger(buffer[i++])
+                if (dgID & 0x01) set.gigantamax = true
+                set.dynamaxLevel = (dgID >> 1)
+                break;
+
+            case 3:
+                // # - TeraType[5]      // 20    // 1 unused byte
+                const teraType = decodeInteger(buffer[i++])
+                if (teraType) set.teraType = TYPES[teraType]
+                break;
+        }
+
+        // |Nickname
+        if (buffer[i] == '|') {
+            const nickname = parseEncodedName(buffer, ++i)
+            set.nickname = nickname
+            i += nickname.length
+        }
+    }
+
+    return sets;
+}
+
+
+  ///////////
+ // INPUT //
+///////////
+const inputTextArea = document.getElementById("input");
+const outputTextArea = document.getElementById("output");
+inputTextArea.textContent = PLACEHOLDER
+inputTextArea.placeholder = PLACEHOLDER
+outputTextArea.placeholder = PLACEHOLDER_OUT
+function resizeAndOutput(textArea, output, maxResize = 7) { // Max resize of 7 (arbitrary limit)
+    const lineCount = output.split('\n').length; // I'm sure theres a better way to do this
+    textArea.rows = lineCount > maxResize ? maxResize : lineCount;
+    textArea.value = output; // JSON.stringify(output, null, 2);
+}
+function copyToClipboard() { // Planning to add this soon
+    outputTextArea.select();
+    outputTextArea.setSelectionRange(0, 9999999); // For mobile devices
+    if (document.execCommand("Copy"))
+        // alert("Copied the text: " + outputTextArea.value);
+        console.log("Copied the text");
+    else
+        console.log("Could not copy text"); // Or if document.execCommand() is not supported in IE9 and earlier.
+
+    // navigator.clipboard.writeText(outputTextArea.value) // Needs permission
+    // .then(function() {
+    //     alert("Text copied to clipboard!");
+    // }).catch(function(error) {
+    //     alert("Failed to copy text: " + error);
+    // });
+
+    window.getSelection().removeAllRanges();
+    outputTextArea.blur(); // lose focus
+}
+function encodeButton() {
+    const parsed = parsePokemons(inputTextArea.value); // Parse
+    const encoded = encodePokemons(parsed);           // Encode
+    resizeAndOutput(outputTextArea, encoded, 14)      // Output
+
+    /* Test */
+    const unparsed = decodePokemons(encoded);
+    for (let i = 0; i < parsed.length; i++) {
+        let noMatch = false
+        const before = parsed[i]
+        const after = unparsed[i]
+        for (const key in before) {
+            if (before[key].constructor === Array) {
+                let notEqual = false;
+                const b = before[key];
+                const a = after[key];
+                for (let x = 0; x < a.length; x++) {
+                    if (a[x] !== b[x]) {
+                        if (Math.floor(a[x]/4) !== Math.floor(b[x]/4)) { // check if not false alarm
+                            noMatch = true
+                            notEqual = true
+                            break
+                        }
+                    }
+                }
+                if (notEqual)
+                    console.log(i, key, before[key], after[key])
+            } else if (before[key] != after[key]) {
+                noMatch = true
+                console.log(i, key, before[key], after[key])
+            }
+        }
+        if (noMatch)
+            console.log(i, before, after)
+    }
+    const decoded = unparsePokemons(unparsed);
+    // console.log(decoded.slice(0, 700) + "\n...")
+    //*/
+
+    // copyToClipboard() // (extra)
+}
+function decodeButton() {
+    const decoded = decodePokemons(outputTextArea.value); // Decode
+    const unparsed = unparsePokemons(decoded);           // Parse
+    resizeAndOutput(inputTextArea, unparsed, 20)        // Output
+    // copyToClipboard() // (extra)
+}
+
+
+  ////////////////////
+ // Simple Testing //
+////////////////////
+const INSANE_PKMN = `
+MAX_SIZE_NICKNAME! (Charizard) (F) @ Aspear Berry  
+Ability: Static  
+Level: 19  
+Shiny: Yes  
+Happiness: 212  
+Pokeball: Master Ball  
+Hidden Power: Fire  
+Dynamax Level: 9  
+Gigantamax: Yes  
+Tera Type: Fire  
+EVs: 120 HP / 60 Atk / 78 Def / 210 SpA / 34 SpD / 8 Spe  
+Hasty Nature  
+IVs: 18 HP / 3 Atk / 11 Def / 15 SpA / 14 SpD / 19 Spe  
+- Charge  
+- Return  
+- Hidden Power [Water]  
+- Hidden Power
+`
+
+// inputTextArea.textContent = INSANE_PKMN
+// outputTextArea.textContent = encodePokemon(parsePokemons(PLACEHOLDER)[0])
+//encodeButton()
+</script>
