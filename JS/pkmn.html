@@ -1,76 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showdown Compresser</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Showdown Compresser</title>
 </head>
 
 
 <body>
-    <h1 id="header">Pokemon Showdown Compresser</h1>
+	<h1 id="header">Pokemon Showdown Compresser</h1>
 
-    <p><textarea id="input" wrap="off" rows="8" cols="41"></textarea></p>
-    <button id="encodeButton" onclick="encodeButton()">Pack &#x2193 (Encode)</button>
-    <button id="decodeButton" onclick="decodeButton()">Unpack &#x2191 (Decode)</button>
-    <p><textarea id="output" wrap="off" rows="1" cols="41"></textarea></p>
+	<p><textarea id="input" wrap="off" rows="19" cols="41"></textarea></p>
+	<button id="encodeButton" onclick="encodeButton()">Pack &#x2193 (Encode)</button>
+	<button id="decodeButton" onclick="decodeButton()">Unpack &#x2191 (Decode)</button>
+	<p><textarea id="output" wrap="off" rows="3" cols="41"></textarea></p>
 
-    <p><a href="https://pokemonshowdown.com/" target="_blank" rel="external">Showdown</a></p>
+	<p><a href="https://pokemonshowdown.com/" target="_blank" rel="external">Showdown</a></p>
 </body>
 </html>
 
 
 <style>
-    textarea { /* https://stackoverflow.com/questions/657795/how-to-remove-word-wrap-from-textarea */
-        overflow-wrap: normal; /* (was word-wrap in older browsers) is needed in case some parent has changed that setting; it can cause wrapping even if pre is set. */
-        white-space: pre; /* white-space: nowrap also works if you don't care about whitespace, but of course you don't want that if you're working with input data (or indented paragraphs or any content where there might deliberately be multiple spaces) */
-    }
+	textarea {
+		overflow-wrap: normal;
+		white-space: pre;
+	}
 
-    button {
-        width: 10rem;
-        height: 2.5rem;
-        font-size: 1rem;
-        cursor: pointer;
-        text-align: center;
-        border: 2px solid black;
-        border-color: gray;
-        border-radius: 10px;
-        box-shadow: 0 4px darkgray;
-        transform: translateY(-4px);
-    }
+	button {
+		width: 10rem;
+		height: 2.5rem;
+		font-size: 1rem;
+		cursor: pointer;
+		text-align: center;
+		border: 2px solid black;
+		border-color: gray;
+		border-radius: 10px;
+		box-shadow: 0 4px darkgray;
+		transform: translateY(-4px);
+	}
 
-    button:active {
-        box-shadow: 0 0;
-        transform: translateY(0px);
-    }
+	button:active {
+		box-shadow: 0 0;
+		transform: translateY(0px);
+	}
 </style>
 
 
 <script>
-// Note (https://symbl.cc/en/21C5)  &#x21c5 ⇅
-
   //////////////
  // Cosmetic //
 //////////////
 // Set Dark/Light mode on page loads when the color scheme changes
 function detectAndSetDarkMode() {
-    let background = "white";
-    let foreground = "black";
+	let background = "white";
+	let foreground = "black";
 
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        let temp = background;
-        background = foreground;
-        foreground = temp;
-    }
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		let temp = background;
+		background = foreground;
+		foreground = temp;
+	}
 
-    // document.body.style.backgroundColor = background;
-    // document.body.style.color = foreground;
-    // For textareas too
-    for (const element of document.getElementsByTagName("*")) {
-        if (element.constructor == HTMLAnchorElement) continue // Ignore Hyperlink
-        element.style.backgroundColor = background;
-        element.style.color = foreground;
-    }
+	// document.body.style.backgroundColor = background;
+	// document.body.style.color = foreground;
+	// For textareas too
+	for (const element of document.getElementsByTagName("*")) {
+		if (element.constructor == HTMLAnchorElement) continue // Ignore Hyperlink
+		element.style.backgroundColor = background;
+		element.style.color = foreground;
+	}
 }
 detectAndSetDarkMode();
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', detectAndSetDarkMode);
@@ -79,8 +77,19 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', det
   ///////////////
  // Constants //
 ///////////////
-const PLACEHOLDER = 
-`EXAMPLE (Rayquaza) @ Life Orb
+const PLACEHOLDER =
+`=== [gen7anythinggoes] Example ===
+
+Pikachu @ Light Ball
+Ability: Static
+Shiny: Yes
+EVs: 4 HP / 252 SpA / 252 Spe
+- Thunderbolt
+- Grass Knot
+- Nasty Plot
+- Fake Out
+
+EXAMPLE (Rayquaza) @ Life Orb
 Ability: Air Lock
 EVs: 252 Atk / 4 Def / 252 Spe
 Adamant Nature
@@ -89,7 +98,10 @@ Adamant Nature
 - Extreme Speed
 - V-create`
 
-const PLACEHOLDER_OUT = `GcqBqkJfum2Cyn|EXAMPLE`
+const PLACEHOLDER_OUT =
+`4g|Example
+1DqsXMOrEq0D0u
+GcqBqkJfum2Cyn|EXAMPLE`
 
 
   //////////
@@ -3817,15 +3829,15 @@ const FORMATS = [
 
 // Cashe Lookups
 function createLookup(input, index=null) {
-    output = {}
-    if (index === null)
-        for (let i = 0; i < input.length; i++)
-            output[input[i]] = i;
-    else
-        for (let i = 0; i < input.length; i++)
-            output[input[i][index]] = i;
+	output = {}
+	if (index === null)
+		for (let i = 0; i < input.length; i++)
+			output[input[i]] = i;
+	else
+		for (let i = 0; i < input.length; i++)
+			output[input[i][index]] = i;
 
-    return output
+	return output
 }
 const STATS_LOOKUP     = createLookup(STATS)
 const TYPES_LOOKUP     = createLookup(TYPES)
@@ -3858,84 +3870,84 @@ const BASE64 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#
 
 let BASE64_LOOKUP = {}
 for (let i = 0; i < BASE64.length; i++)
-    BASE64_LOOKUP[BASE64[i]] = i;
+	BASE64_LOOKUP[BASE64[i]] = i;
 
 
 // Integer (Max: 9,007,199,254,740,991) // Bitshifts only go up to 30-ish bits
 function encodeInteger(integer, n=null) {
-    let result = '';
-    while (integer > 0) {
-        result = BASE64[integer % 64] + result;
-        integer = Math.floor(integer / 64);
-    }
-    return n ? result.padStart(n, BASE64[0]) : result; // Padding up to n if n given
+	let result = '';
+	while (integer > 0) {
+		result = BASE64[integer % 64] + result;
+		integer = Math.floor(integer / 64);
+	}
+	return n ? result.padStart(n, BASE64[0]) : result; // Padding up to n if n given
 }
 function decodeInteger(hex) {
-    let result = 0;
-    for (let i = 0; i < hex.length; i++)
-        result = (result*64) + BASE64_LOOKUP[hex[i]];
-    return result;
+	let result = 0;
+	for (let i = 0; i < hex.length; i++)
+		result = (result*64) + BASE64_LOOKUP[hex[i]];
+	return result;
 }
 
 // Big Integer (as big as memory, but slower)
 function encodeBigInt(bigInt) {
-    let result = '';
-    while (bigInt > 0n) {
-        result = BASE64[bigInt % 64n] + result;
-        bigInt = bigInt >> 6n; // bigInt / 64n;
-    }
-    return result;
+	let result = '';
+	while (bigInt > 0n) {
+		result = BASE64[bigInt % 64n] + result;
+		bigInt = bigInt >> 6n; // bigInt / 64n;
+	}
+	return result;
 }
 function decodeBigInt(hex) {
-    let result = BigInt(0);
-    for (let i = 0; i < hex.length; i++)
-        result = (result << 6n) | BigInt(BASE64_LOOKUP[hex[i]]); // (result*64n)
-    return result;
+	let result = BigInt(0);
+	for (let i = 0; i < hex.length; i++)
+		result = (result << 6n) | BigInt(BASE64_LOOKUP[hex[i]]); // (result*64n)
+	return result;
 }
 
 // 6 Booleans (grows toward the right)
 function encodeBools(bools, n) {
-    let result = "";
-    const N = n ? n : Math.ceil(bools.length/6);
-    for (let x = 0, i = 0; x < N; x++) {
-        let int6 = 0;
-        for (let y = 0; y < 6; y++, i++)
-            int6 = (int6 << 1) | (bools[i] ? 1 : 0);
-        result += BASE64[int6];
-    }
-    return result;
+	let result = "";
+	const N = n ? n : Math.ceil(bools.length/6);
+	for (let x = 0, i = 0; x < N; x++) {
+		let int6 = 0;
+		for (let y = 0; y < 6; y++, i++)
+			int6 = (int6 << 1) | (bools[i] ? 1 : 0);
+		result += BASE64[int6];
+	}
+	return result;
 }
 function decodeBools(hex) {
-    let bools = [];
-    for (let x = 0, i = 5; x < hex.length; x++, i+=12) {
-        let c = BASE64_LOOKUP[hex[x]];
-        for (let y = 0; y < 6; y++, i--) {
-            bools[i] = c%2;
-            c = c >> 1; // Math.floor(c/2);
-        }
-    }
-    return bools;
+	let bools = [];
+	for (let x = 0, i = 5; x < hex.length; x++, i+=12) {
+		let c = BASE64_LOOKUP[hex[x]];
+		for (let y = 0; y < 6; y++, i--) {
+			bools[i] = c%2;
+			c = c >> 1; // Math.floor(c/2);
+		}
+	}
+	return bools;
 }
 
 // Packed Integers (bases can be array or all the same as one number)
 function encodeMultiple(numbers, bases=64) {
-    const B = bases.constructor === Number ? bases : undefined // If bases is number or array
-    let sum = BigInt(0);
-    for (let i = 0; i < numbers.length; i++)
-        sum = (sum * BigInt(B || bases[i])) + BigInt(numbers[i]);
-    return encodeBigInt(sum)
+	const B = bases.constructor === Number ? bases : undefined // If bases is number or array
+	let sum = BigInt(0);
+	for (let i = 0; i < numbers.length; i++)
+		sum = (sum * BigInt(B || bases[i])) + BigInt(numbers[i]);
+	return encodeBigInt(sum)
 }
 function decodeMultiple(string, bases=64) {
-    const B = bases.constructor === Number ? bases : undefined // If bases is number or array
-    let i = B ? undefined : bases.length-1;
-    let sum = decodeBigInt(string)
-    let results = [];
-    while (sum > 0n) {
-        const base = BigInt(B || bases[i--]);
-        results.push(Number(sum % base));
-        sum = sum / base;
-    }
-    return results.reverse();
+	const B = bases.constructor === Number ? bases : undefined // If bases is number or array
+	let i = B ? undefined : bases.length-1;
+	let sum = decodeBigInt(string)
+	let results = [];
+	while (sum > 0n) {
+		const base = BigInt(B || bases[i--]);
+		results.push(Number(sum % base));
+		sum = sum / base;
+	}
+	return results.reverse();
 }
 
 
@@ -3978,11 +3990,11 @@ If POKEBALL, HIDDENPOWERTYPE, GIGANTAMAX, DYNAMAXLEVEL and TERATYPE are all blan
 // EVS|IVS|MOVES|LEVEL|SHINY|
 // HAPPINESS,POKEBALL,HIDDENPOWERTYPE,GIGANTAMAX,DYNAMAXLEVEL,TERATYPE
 curSet = {
-    nickname: '', species_form: '', gender: '', item: '',
-    ability: '', nature: '',
-    evs: {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0},
-    ivs: {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31},
-    moves: [],
+	nickname: '', species_form: '', gender: '', item: '',
+	ability: '', nature: '',
+	evs: {hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0},
+	ivs: {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31},
+	moves: [],
 //    level: 100,
 //    shiny: false,
 //    happiness: 255,
@@ -3994,273 +4006,275 @@ curSet = {
 };
 */
 function parsePokemons(buffer) {
-    // Parse into array of lines
-    const lines = buffer.split("\n");
-    while (lines.length && !lines[0]) lines.shift();
-    while (lines.length && !lines[lines.length - 1]) lines.pop();
-    const sets = []; // Array of dictionaries
+	// Parse into array of lines
+	const lines = buffer.split("\n");
+	while (lines.length && !lines[0]) lines.shift();
+	while (lines.length && !lines[lines.length - 1]) lines.pop();
+	const sets = []; // Array of dictionaries
 
-    // Read lines and build
-    let set = null; // Pokemon data dictionary
-    for (let line of lines) {
-        line = line.trim(); // Substrings of this line are not trimmed on purpose.
+	// Read lines and build
+	let set = null; // Pokemon data dictionary
+	for (let line of lines) {
+		line = line.trim(); // Substrings of this line are not trimmed on purpose.
 
-        // Whitespace / ignore
-        if (line === '' || line === '---') {
-            set = null;
-            continue;
-        }
+		// Whitespace / ignore
+		if (line === '' || line === '---') {
+			set = null;
+			continue;
+		}
 
-        // Team backup format
-        if (line.startsWith('===')) {
-            sets.push(line)
-            continue;
-        }
+		// Team backup format
+		if (line.startsWith('===')) {
+			sets.push(line)
+			continue;
+		}
 
-        // Finally, Data
-        if (!set) {
-            // First Line: Nickname, Species+Form, Gender, Item
-            // NICKNAME (Charizard-Mega-X) (F) @ Aspear Berry
-            set = {moves:[]};
-            sets.push(set);
+		// Finally, Data
+		if (!set) {
+			// First Line: Nickname, Species+Form, Gender, Item
+			// NICKNAME (Charizard-Mega-X) (F) @ Aspear Berry
+			set = {moves:[]};
+			sets.push(set);
 
-            // Item
-            let item;
-            [line, item] = line.split(' @ ');
-            if (item)
-                set.item = item;
+			// Item
+			let item;
+			[line, item] = line.split(' @ ');
+			if (item)
+				set.item = item;
 
-            // Gender
-            if (line.endsWith(' (M)')) {
-                set.gender = 'M';
-                line = line.slice(0, -4);
-            } else if (line.endsWith(' (F)')) {
-                set.gender = 'F';
-                line = line.slice(0, -4);
-            }
+			// Gender
+			if (line.endsWith(' (M)')) {
+				set.gender = 'M';
+				line = line.slice(0, -4);
+			} else if (line.endsWith(' (F)')) {
+				set.gender = 'F';
+				line = line.slice(0, -4);
+			}
 
-            // Species (w/ optional Nickname)
-            if (line.endsWith(')') && line.includes('(')) {
-                const [nickname, species] = line.slice(0, -1).split('(');
-                set.species = species
-                set.nickname = nickname.trim(); // Nickname
-            } else {
-                set.species = line.trim();
-            }
+			// Species (w/ optional Nickname)
+			if (line.endsWith(')') && line.includes('(')) {
+				const [nickname, species] = line.slice(0, -1).split('(');
+				set.species = species
+				set.nickname = nickname.trim(); // Nickname
+			} else {
+				set.species = line.trim();
+			}
 
-        } else { // Other data lines
-            /* Copy/Pasted right from gen7 pure hackmons
-            MAX_SIZE_NICKNAME! (Charizard-Mega-X) (F) @ Aspear Berry  
-            Ability: Static  
-            Level: 19  
-            Shiny: Yes  
-            Happiness: 212  
-            Hidden Power: Fire  
-            EVs: 120 HP / 60 Atk / 78 Def / 210 SpA / 34 SpD / 8 Spe  
-            Hasty Nature  
-            IVs: 18 HP / 3 Atk / 11 Def / 15 SpA / 14 SpD / 19 Spe  
-            - Charge  
-            - Return  
-            - Screech  
-            - Sonic Boom
-            */
-            // Ability
-            if (line.startsWith('Trait: ')) {
-                line = line.slice(7);
-                set.ability = line;
-            } else if (line.startsWith('Ability: ')) {
-                line = line.slice(9);
-                set.ability = line;
-            }
+		} else { // Other data lines
+			/* Copy/Pasted right from gen7 pure hackmons
+			MAX_SIZE_NICKNAME! (Charizard-Mega-X) (F) @ Aspear Berry  
+			Ability: Static  
+			Level: 19  
+			Shiny: Yes  
+			Happiness: 212  
+			Hidden Power: Fire  
+			EVs: 120 HP / 60 Atk / 78 Def / 210 SpA / 34 SpD / 8 Spe  
+			Hasty Nature  
+			IVs: 18 HP / 3 Atk / 11 Def / 15 SpA / 14 SpD / 19 Spe  
+			- Charge  
+			- Return  
+			- Screech  
+			- Sonic Boom
+			*/
+			// Ability
+			if (line.startsWith('Trait: ')) {
+				line = line.slice(7);
+				set.ability = line;
+			} else if (line.startsWith('Ability: ')) {
+				line = line.slice(9);
+				set.ability = line;
+			}
 
-            // Shiny
-            else if (line === 'Shiny: Yes') {
-                set.shiny = true;
-            }
+			// Shiny
+			else if (line === 'Shiny: Yes') {
+				set.shiny = true;
+			}
 
-            // Level
-            else if (line.startsWith('Level: ')) {
-                line = line.slice(7);
-                const value = +line; // toInt
-                if (!isNaN(value)) set.level = value;
-            }
+			// Level
+			else if (line.startsWith('Level: ')) {
+				line = line.slice(7);
+				const value = +line; // toInt
+				if (!isNaN(value)) set.level = value;
+			}
 
-            // Happiness
-            else if (line.startsWith('Happiness: ')) {
-                line = line.slice(11);
-                const value = +line; // toInt
-                if (!isNaN(value)) set.happiness = value;
-            }
+			// Happiness
+			else if (line.startsWith('Happiness: ')) {
+				line = line.slice(11);
+				const value = +line; // toInt
+				if (!isNaN(value)) set.happiness = value;
+			}
 
-            // Pokeball
-            else if (line.startsWith('Pokeball: ')) {
-                line = line.slice(10);
-                set.pokeball = line;
-            }
+			// Pokeball
+			else if (line.startsWith('Pokeball: ')) {
+				line = line.slice(10);
+				set.pokeball = line;
+			}
 
-            // Hidden Power
-            else if (line.startsWith('Hidden Power: ')) {
-                line = line.slice(14);
-                set.hpType = line;
-            }
+			// Hidden Power
+			else if (line.startsWith('Hidden Power: ')) {
+				line = line.slice(14);
+				set.hpType = line;
+			}
 
-            // Dynamax Level
-            else if (line.startsWith('Dynamax Level: ')) {
-                line = line.slice(15);
-                const value = +line; // toInt
-                if (!isNaN(value)) set.dynamaxLevel = value;
-            }
+			// Dynamax Level
+			else if (line.startsWith('Dynamax Level: ')) {
+				line = line.slice(15);
+				const value = +line; // toInt
+				if (!isNaN(value)) set.dynamaxLevel = value;
+			}
 
-            // Gigantamax
-            else if (line === 'Gigantamax: Yes') {
-                set.gigantamax = true;
-            }
+			// Gigantamax
+			else if (line === 'Gigantamax: Yes') {
+				set.gigantamax = true;
+			}
 
-            // Tera Type
-            else if (line.startsWith('Tera Type: ')) {
-                line = line.slice(11);
-                set.teraType = line; // line.replace(/[^a-zA-Z0-9]/g;
-            }
+			// Tera Type
+			else if (line.startsWith('Tera Type: ')) {
+				line = line.slice(11);
+				set.teraType = line; // line.replace(/[^a-zA-Z0-9]/g;
+			}
 
-            // EVs
-            else if (line.startsWith('EVs: ')) {
-                line = line.slice(5);
-                const evLines = line.split('/');
-                set.evs = [0,0,0,0,0,0]; // [HP: 0, Atk: 0, Def: 0, SpA: 0, SpD: 0, Spe: 0]
-                for (const evLine of evLines) {
-                    const [statValue, statName] = evLine.trim().split(' ');
-                    if (statName === undefined || !(statName in STATS_LOOKUP)) continue;
-                    const value = parseInt(statValue);
-                    if (!isNaN(value)) set.evs[STATS_LOOKUP[statName]] = value;
-                }
-            }
+			// EVs
+			else if (line.startsWith('EVs: ')) {
+				line = line.slice(5);
+				const evLines = line.split('/');
+				set.evs = [0,0,0,0,0,0]; // [HP: 0, Atk: 0, Def: 0, SpA: 0, SpD: 0, Spe: 0]
+				for (const evLine of evLines) {
+					const [statValue, statName] = evLine.trim().split(' ');
+					if (statName === undefined || !(statName in STATS_LOOKUP)) continue;
+					const value = parseInt(statValue);
+					if (!isNaN(value)) set.evs[STATS_LOOKUP[statName]] = value;
+				}
+			}
 
-            // IVs
-            else if (line.startsWith('IVs: ')) {
-                line = line.slice(5);
-                const ivLines = line.split('/');
-                set.ivs = [31,31,31,31,31,31]; // [HP: 31, Atk: 31, Def: 31, SpA: 31, SpD: 31, Spe: 31];
-                for (const ivLine of ivLines) {
-                    const [statValue, statName] = ivLine.trim().split(' ');
-                    if (statName === undefined || !(statName in STATS_LOOKUP)) continue;
-                    const value = parseInt(statValue);
-                    if (!isNaN(value)) set.ivs[STATS_LOOKUP[statName]] = value;
-                }
-            }
+			// IVs
+			else if (line.startsWith('IVs: ')) {
+				line = line.slice(5);
+				const ivLines = line.split('/');
+				set.ivs = [31,31,31,31,31,31]; // [HP: 31, Atk: 31, Def: 31, SpA: 31, SpD: 31, Spe: 31];
+				for (const ivLine of ivLines) {
+					const [statValue, statName] = ivLine.trim().split(' ');
+					if (statName === undefined || !(statName in STATS_LOOKUP)) continue;
+					const value = parseInt(statValue);
+					if (!isNaN(value)) set.ivs[STATS_LOOKUP[statName]] = value;
+				}
+			}
 
-            // Moves
-            else if (line.startsWith('-') || line.startsWith('~')) {
-                line = line.slice(line.charAt(1) === ' ' ? 2 : 1);
-                set.moves.push(line);
-            }
+			// Moves
+			else if (line.startsWith('-') || line.startsWith('~')) {
+				line = line.slice(line.charAt(1) === ' ' ? 2 : 1);
+				set.moves.push(line);
+			}
 
-            // Nature
-            else if (line.endsWith(' Nature'))
-                set.nature = line.split(' ')[0];
-            //else if (/^[A-Za-z]+ (N|n)ature/.test(line)) {
-            //    let natureIndex = line.indexOf(' Nature');
-            //    if (natureIndex === -1) natureIndex = line.indexOf(' nature');
-            //    if (natureIndex === -1) continue; // Unknown nature
-            //    line = line.substr(0, natureIndex);
-            //    set.nature = line;
-            //}
-        }
-    }
+			// Nature
+			else if (line.endsWith(' Nature'))
+				set.nature = line.split(' ')[0];
+			//else if (/^[A-Za-z]+ (N|n)ature/.test(line)) {
+			//    let natureIndex = line.indexOf(' Nature');
+			//    if (natureIndex === -1) natureIndex = line.indexOf(' nature');
+			//    if (natureIndex === -1) continue; // Unknown nature
+			//    line = line.substr(0, natureIndex);
+			//    set.nature = line;
+			//}
+		}
+	}
 
-    return sets; // return sets.length == 1 ? sets[0] : sets;
+	return sets; // return sets.length == 1 ? sets[0] : sets;
 }
 
 // This is the official order (kinda funky imo)
 function unparsePokemon(set) {
-    let out = "";
+	let out = "";
 
-    // Nickname + Species
-    if (set.nickname && set.nickname !== set.species)
-        out += `${set.nickname} (${set.species})`;
-    else
-        out += set.species;
+	// Nickname + Species
+	if (set.nickname && set.nickname !== set.species)
+		out += `${set.nickname} (${set.species})`;
+	else
+		out += set.species;
 
-    // Gender
-    if      (set.gender === 'M') out += ` (M)`;
-    else if (set.gender === 'F') out += ` (F)`;
+	// Gender
+	if      (set.gender === 'M') out += ` (M)`;
+	else if (set.gender === 'F') out += ` (F)`;
 
-    // Item
-    if (set.item) out += ` @ ${set.item}`;
+	// Item
+	if (set.item) out += ` @ ${set.item}`;
 
-    out += '\n';
+	out += '\n';
 
 
-    // Ability
-    if (set.ability) out += `Ability: ${set.ability}\n`;
+	// Ability
+	if (set.ability) out += `Ability: ${set.ability}\n`;
 
-    // Level
-    if (set.level && set.level !== 100) out += `Level: ${set.level}\n`;
+	// Level
+	if (set.level && set.level !== 100) out += `Level: ${set.level}\n`;
 
-    // Shiny
-    if (set.shiny) out += `Shiny: Yes\n`;
+	// Shiny
+	if (set.shiny) out += `Shiny: Yes\n`;
 
-    // Happiness
-    if (typeof set.happiness === 'number' && set.happiness !== 255 && !isNaN(set.happiness))
-        out += `Happiness: ${set.happiness}\n`;
+	// Happiness
+	if (typeof set.happiness === 'number' && set.happiness !== 255 && !isNaN(set.happiness))
+		out += `Happiness: ${set.happiness}\n`;
 
-    // Pokeball?
-    if (set.pokeball) out += `Pokeball: ${set.pokeball}\n`;
+	// Pokeball?
+	if (set.pokeball) out += `Pokeball: ${set.pokeball}\n`;
 
-    // Hidden Power Type
-    if (set.hpType) out += `Hidden Power: ${set.hpType}\n`;
+	// Hidden Power Type
+	if (set.hpType) out += `Hidden Power: ${set.hpType}\n`;
 
-    // Dynamax Level
-    if (typeof set.dynamaxLevel === 'number' && set.dynamaxLevel !== 10 && !isNaN(set.dynamaxLevel))
-        out += `Dynamax Level: ${set.dynamaxLevel}\n`;
+	// Dynamax Level
+	if (typeof set.dynamaxLevel === 'number' && set.dynamaxLevel !== 10 && !isNaN(set.dynamaxLevel))
+		out += `Dynamax Level: ${set.dynamaxLevel}\n`;
 
-    // Gigantamax
-    if (set.gigantamax) out += `Gigantamax: Yes\n`;
+	// Gigantamax
+	if (set.gigantamax) out += `Gigantamax: Yes\n`;
 
-    // Tera Type
-    if (set.teraType) out += `Tera Type: ${set.teraType}\n`;
+	// Tera Type
+	if (set.teraType) out += `Tera Type: ${set.teraType}\n`;
 
-    // EVs
-    if (set.evs) {
-        let statStrings = [];
-        for (let i = 0; i < set.evs.length; i++) {
-            let statValue = set.evs[i];
-            if (statValue && statValue > 0)
-                statStrings.push(`${statValue} ${STATS[i]}`); // "252 SpA"
-        }
+	// EVs
+	if (set.evs) {
+		let statStrings = [];
+		for (let i = 0; i < set.evs.length; i++) {
+			let statValue = set.evs[i];
+			if (statValue && statValue > 0)
+				statStrings.push(`${statValue} ${STATS[i]}`); // "252 SpA"
+		}
 
-        if (statStrings.length)
-            out += `EVs: ${statStrings.join(" / ")}\n`;
-    }
+		if (statStrings.length)
+			out += `EVs: ${statStrings.join(" / ")}\n`;
+	}
 
-    // Nature (They put nature in the middle like this even though I think it looks ugly)
-    if (set.nature) out += `${set.nature} Nature\n`;
+	// Nature (They put nature in the middle like this even though I think it looks ugly)
+	if (set.nature) out += `${set.nature} Nature\n`;
 
-    // IVs
-    if (set.ivs) {
-        let statStrings = [];
-        for (let i = 0; i < set.ivs.length; i++) {
-            let statValue = set.ivs[i] || 0;
-            if (statValue !== 31)
-                statStrings.push(`${statValue} ${STATS[i]}`); // "0 SpA"
-        }
+	// IVs
+	if (set.ivs) {
+		let statStrings = [];
+		for (let i = 0; i < set.ivs.length; i++) {
+			let statValue = set.ivs[i] || 0;
+			if (statValue !== 31)
+				statStrings.push(`${statValue} ${STATS[i]}`); // "0 SpA"
+		}
 
-        if (statStrings.length)
-            out += `IVs: ${statStrings.join(" / ")}\n`;
-    }
+		if (statStrings.length)
+			out += `IVs: ${statStrings.join(" / ")}\n`;
+	}
 
-    // Moves
-    for (let move of set.moves) out += `- ${move}\n`;
+	// Moves
+	for (let move of set.moves)
+		if (move)
+			out += `- ${move}\n`;
 
-    return out;
+	return out;
 }
 function unparsePokemons(sets) {
-    let output = '';
-    for (const set of sets)
-        if (set.constructor === String)
-            output += '\n' + set + '\n\n'; // "=== [format] Name ==="
-        else
-            output += unparsePokemon(set) + '\n'; // Pokemon...
-    return output.trim();
+	let output = '';
+	for (const set of sets)
+		if (set.constructor === String)
+			output += '\n' + set + '\n\n'; // "=== [format] Name ==="
+		else
+			output += unparsePokemon(set) + '\n'; // Pokemon...
+	return output.trim();
 }
 
 
@@ -4274,131 +4288,131 @@ DECODED_EVS = new Array(16); // Hard-coded ((n*(n-1)) >> 1) + 1  (i.e. array_siz
 ENCODED_EVS[0] = 0; // [(a^2 + b^2)=ab: 1-15]
 DECODED_EVS[0] = [0,0]; // [1-15: [a,b]]
 for (let i=1, x=1, xx=2; xx < 64; xx *= 2, x++) { // matrix_size = Math.pow(2,n) or (1 << n)
-    for (let  y=0, yy=1; yy < xx; yy *= 2, y++, i++) {
-        ENCODED_EVS[xx+yy] = i
-        DECODED_EVS[i] = [x,y]
-    }
+	for (let  y=0, yy=1; yy < xx; yy *= 2, y++, i++) {
+		ENCODED_EVS[xx+yy] = i
+		DECODED_EVS[i] = [x,y]
+	}
 }
 
 function encodeEVs(evs) {
-    if (!evs) return BASE64[0]; // Default: all stats 0
+	if (!evs) return BASE64[0]; // Default: all stats 0
 
-    // Behold this mess I've written
-    let simpleEVs = true
-    let allMax = true
-    let allZero = true
-    let noAtk = true
-    let noSpe = true
-    let max1 = -1; // 252
-    let max2 = -1; // 252
-    let outlier = -1; // 4
-    for (let i = 0; i < STATS.length; i++) {
-        let value = evs[i] || 0;
-        if (value >= 252) { // 252
-            allZero = false;
-            if (noAtk && i === 1) noAtk = false;
-            if (noSpe && i === 5) noSpe = false;
+	// Behold this mess I've written
+	let simpleEVs = true
+	let allMax = true
+	let allZero = true
+	let noAtk = true
+	let noSpe = true
+	let max1 = -1; // 252
+	let max2 = -1; // 252
+	let outlier = -1; // 4
+	for (let i = 0; i < STATS.length; i++) {
+		let value = evs[i] || 0;
+		if (value >= 252) { // 252
+			allZero = false;
+			if (noAtk && i === 1) noAtk = false;
+			if (noSpe && i === 5) noSpe = false;
 
-            if (max1 === -1) {
-                max1 = i;
-            } else if (max2 === -1) {
-                max2 = i;
-            } else {
-                if (allMax || allZero || noAtk || noSpe) {
-                    continue; // Keep looking to double-check those special cases
-                } else {
-                    simpleEVs = false; // Nah, its over
-                    break;
-                }
-            }
-        } else {
-            allMax = false;
-            if (value < 4) { // Zero
-                if (noAtk && i !== 1) noAtk = false;
-                if (noSpe && i !== 5) noSpe = false;
-                continue; // Keep searching
-            } else {
-                allZero = false;
-                noAtk = false;
-                noSpe = false;
-                if (value < 8) { // 4
-                    if (outlier === -1) {
-                        outlier = i;
-                    } else {
-                        simpleEVs = false; // Lol theres atleast 2 stats with just 4 EVs
-                        break;
-                    }
-                } else { // A number other than 0, 4, or 252
-                    simpleEVs = false;
-                    break;
-                }
-            }
-        }
-    }
+			if (max1 === -1) {
+				max1 = i;
+			} else if (max2 === -1) {
+				max2 = i;
+			} else {
+				if (allMax || allZero || noAtk || noSpe) {
+					continue; // Keep looking to double-check those special cases
+				} else {
+					simpleEVs = false; // Nah, its over
+					break;
+				}
+			}
+		} else {
+			allMax = false;
+			if (value < 4) { // Zero
+				if (noAtk && i !== 1) noAtk = false;
+				if (noSpe && i !== 5) noSpe = false;
+				continue; // Keep searching
+			} else {
+				allZero = false;
+				noAtk = false;
+				noSpe = false;
+				if (value < 8) { // 4
+					if (outlier === -1) {
+						outlier = i;
+					} else {
+						simpleEVs = false; // Lol theres atleast 2 stats with just 4 EVs
+						break;
+					}
+				} else { // A number other than 0, 4, or 252
+					simpleEVs = false;
+					break;
+				}
+			}
+		}
+	}
 
-    // Quick Checks
-    if (allZero)
-        return BASE64[0]; // '0' // All stats are 0
-    else if (allMax)
-        return BASE64[1]; // '1' // All stats are 252
-    else if (noAtk)
-        return BASE64[2]; // '2' // All stats are 252 except Atk
-    else if (noSpe) {
-        return BASE64[3]; // '3' // Same, 0 Spe
-    } else if (max2 === -1 || outlier === -1) // !max1 || !max2 || !outlier
-        simpleEVs = false; // 1 or less are 252 or no outlier: dont have enough bytes to store it :(
+	// Quick Checks
+	if (allZero)
+		return BASE64[0]; // '0' // All stats are 0
+	else if (allMax)
+		return BASE64[1]; // '1' // All stats are 252
+	else if (noAtk)
+		return BASE64[2]; // '2' // All stats are 252 except Atk
+	else if (noSpe) {
+		return BASE64[3]; // '3' // Same, 0 Spe
+	} else if (max2 === -1 || outlier === -1) // !max1 || !max2 || !outlier
+		simpleEVs = false; // 1 or less are 252 or no outlier: dont have enough bytes to store it :(
 
-    // Final Check
-    if (simpleEVs) {
-        // Confirmed simple, calculate its "simple" EV id for efficient packing
-        let ev = ENCODED_EVS[(1 << max1) + (1 << max2)] // Math.pow(2, max1) + Math.pow(2, max2)
-        let o = 0; // I'm sure there's a better way to do this
-        for (let i = 0; i < outlier; i++)
-            if (i !== max1 && i !== max2)
-                o++
+	// Final Check
+	if (simpleEVs) {
+		// Confirmed simple, calculate its "simple" EV id for efficient packing
+		let ev = ENCODED_EVS[(1 << max1) + (1 << max2)] // Math.pow(2, max1) + Math.pow(2, max2)
+		let o = 0; // I'm sure there's a better way to do this
+		for (let i = 0; i < outlier; i++)
+			if (i !== max1 && i !== max2)
+				o++
 
-        return BASE64[(ev<<2)+o]; // encodeMultiple([ev,o], [16,4])
-    }
+		return BASE64[(ev<<2)+o]; // encodeMultiple([ev,o], [16,4])
+	}
 
-    // Not simple, return packed 000000
-    let hex = ""
-    for (let i = 0; i < STATS.length; i++)
-        hex += BASE64[Math.min(Math.max((evs[i]||0)>>2, 0), 63)]; // Divided by 4 rounded down clamped 0 < x < 63
-    return hex
+	// Not simple, return packed 000000
+	let hex = ""
+	for (let i = 0; i < STATS.length; i++)
+		hex += BASE64[Math.min(Math.max((evs[i]||0)>>2, 0), 63)]; // Divided by 4 rounded down clamped 0 < x < 63
+	return hex
 }
 function decodeEVs(hex) {
-    // Check if not simple (unpack individually)
-    if (hex.length !== 1) {
-        let evs = new Uint8Array(6); // Hard-coded
-        for (let i = 0; i < 6; i++)
-            evs[i] = BASE64_LOOKUP[hex[i]] << 2; // 63 * 4 = 252
-        return evs;
-    }
+	// Check if not simple (unpack individually)
+	if (hex.length !== 1) {
+		let evs = new Uint8Array(6); // Hard-coded
+		for (let i = 0; i < 6; i++)
+			evs[i] = BASE64_LOOKUP[hex[i]] << 2; // 63 * 4 = 252
+		return evs;
+	}
 
-    // Special Cases
-    if (hex === BASE64[0])
-        return [0,0,0,0,0,0]; // '0' // All stats are 0
-    else if (hex === BASE64[1])
-        return [252,252,252,252,252,252]; // '1' // All stats are 1
-    else if (hex === BASE64[2])
-        return [252,0,252,252,252,252]; // '2' // 0 Atk
-    else if (hex === BASE64[3])
-        return [252,252,252,252,252,0]; // '3' // 0 Spe
+	// Special Cases
+	if (hex === BASE64[0])
+		return [0,0,0,0,0,0]; // '0' // All stats are 0
+	else if (hex === BASE64[1])
+		return [252,252,252,252,252,252]; // '1' // All stats are 1
+	else if (hex === BASE64[2])
+		return [252,0,252,252,252,252]; // '2' // 0 Atk
+	else if (hex === BASE64[3])
+		return [252,252,252,252,252,0]; // '3' // 0 Spe
 
-    // let [m2m1, outlier] = decodeMultiple(hex, [16,4])
-    let outlier = BASE64_LOOKUP[hex];
-    const [max2, max1] = DECODED_EVS[outlier >> 2];
-    outlier = outlier % 4; // Again, there's gotta be a better way to do this
-    for (let i = 0; i <= outlier; i++)
-        if (i === max1 || i === max2)
-            outlier++;
+	// let [m2m1, outlier] = decodeMultiple(hex, [16,4])
+	let outlier = BASE64_LOOKUP[hex];
+	const [max2, max1] = DECODED_EVS[outlier >> 2];
+	outlier = outlier % 4; // Again, there's gotta be a better way to do this
+	for (let i = 0; i <= outlier; i++)
+		if (i === max1 || i === max2)
+			outlier++;
 
-    // Set and return
-    let evs = [0,0,0,0,0,0];
-    evs[max1] = 252;
-    evs[max2] = 252;
-    evs[outlier] = 4;
-    return evs
+	// Set and return
+	let evs = [0,0,0,0,0,0];
+	evs[max1] = 252;
+	evs[max2] = 252;
+	evs[outlier] = 4;
+	return evs
 }
 
 //-1*- Complex[6]: If all 31 (#), then complex[1+5] (#12345)
@@ -4407,83 +4421,83 @@ function decodeEVs(hex) {
 // 2 - 0 Atk [0]
 // 3 - 0 Spe [0]
 function getIVType(ivs) {
-    if (!ivs) return 1 // Default: all stats 31
+	if (!ivs) return 1 // Default: all stats 31
 
-    let allMax = true // To check if all are 31 and ...
-    let noAtk = true // only Atk is 0
-    let noSpe = true // only Spe is 0
-    for (let i = 0; i < STATS.length; i++) {
-        let value = ivs[i] || 0; // 31?
-        if (value >= 31) { // 31
-            if (noAtk && i === 1) noAtk = false;
-            if (noSpe && i === 5) noSpe = false;
-        } else if (value <= 0) { // Zero
-            allMax = false
-            if (noAtk && i !== 1) noAtk = false;
-            if (noSpe && i !== 5) noSpe = false;
-        } else {
-            return -1 // Not Simple (0 < value < 31)
-        }
-    }
+	let allMax = true // To check if all are 31 and ...
+	let noAtk = true // only Atk is 0
+	let noSpe = true // only Spe is 0
+	for (let i = 0; i < STATS.length; i++) {
+		let value = ivs[i] || 0; // 31?
+		if (value >= 31) { // 31
+			if (noAtk && i === 1) noAtk = false;
+			if (noSpe && i === 5) noSpe = false;
+		} else if (value <= 0) { // Zero
+			allMax = false
+			if (noAtk && i !== 1) noAtk = false;
+			if (noSpe && i !== 5) noSpe = false;
+		} else {
+			return -1 // Not Simple (0 < value < 31)
+		}
+	}
 
-    if (allMax) return 1
-    if (noAtk)  return 2
-    if (noSpe)  return 3
-    return 0 // If here then confirmed simple, treated as 6 booleans (0|31)
+	if (allMax) return 1
+	if (noAtk)  return 2
+	if (noSpe)  return 3
+	return 0 // If here then confirmed simple, treated as 6 booleans (0|31)
 }
 
 // This is called assuming IVs are complex,
 // Otherwise if simple use encodeBools(ivs) // treated as 6 booleans (0|31)
 function encodeIVs(ivs) {
-    if (!ivs) return BASE64[63].repeat(5); // Default: all stats 31 (should never happen, setup should be keeping track of this)
+	if (!ivs) return BASE64[63].repeat(5); // Default: all stats 31 (should never happen, setup should be keeping track of this)
 
-    let sum = 0; // Values are not all 0s or 31s, return packed[5] (#####)
-    for (i = 0; i < ivs.length; i++)
-        sum = (sum << 5) + Math.min(Math.max(ivs[i] || 0, 0), 31); // (sum * 32) // Clamped by 0 < x < 31
-    return encodeInteger(sum, 5);
+	let sum = 0; // Values are not all 0s or 31s, return packed[5] (#####)
+	for (i = 0; i < ivs.length; i++)
+		sum = (sum << 5) + Math.min(Math.max(ivs[i] || 0, 0), 31); // (sum * 32) // Clamped by 0 < x < 31
+	return encodeInteger(sum, 5);
 }
 // This is called assuming IVs are simple or complex
 function decodeIVs(hex) {
-    // Check if simple
-    if (hex.length === 1) {
-        let ivs = decodeBools(hex);
-        for (let i = 0; i < ivs.length; i++)
-            ivs[i] = ivs[i] ? 31 : 0;
-        return ivs;
-    }
+	// Check if simple
+	if (hex.length === 1) {
+		let ivs = decodeBools(hex);
+		for (let i = 0; i < ivs.length; i++)
+			ivs[i] = ivs[i] ? 31 : 0;
+		return ivs;
+	}
 
-    // Not simple (unpack individually)
-    let ivs = new Uint8Array(6); // Hard-coded
-    let sum = decodeInteger(hex)
-    for (let i = 5; i >= 0; i--) {
-        ivs[i] = sum % 32; // 0-31
-        sum = sum >> 5; // sum / 32;
-    }
-    return ivs;
+	// Not simple (unpack individually)
+	let ivs = new Uint8Array(6); // Hard-coded
+	let sum = decodeInteger(hex)
+	for (let i = 5; i >= 0; i--) {
+		ivs[i] = sum % 32; // 0-31
+		sum = sum >> 5; // sum / 32;
+	}
+	return ivs;
 }
 
 /*
 const tests = [
-    [0,0,0,0,0,0],
-    [252,252,252,252,252,252],
-    [252,0,252,252,252,252],
-    [252,252,252,0,252,252],
-    [252,252,4,0,0,0],
-    [252,0,4,0,252,0],
-    [0,0,0,4,252,252],
+	[0,0,0,0,0,0],
+	[252,252,252,252,252,252],
+	[252,0,252,252,252,252],
+	[252,252,252,0,252,252],
+	[252,252,4,0,0,0],
+	[252,0,4,0,252,0],
+	[0,0,0,4,252,252],
 ]
 function equalArray(a, b) {
-    if (a.length !== b.length)
-        return false;
-    for (let i = 0; i < a.length; i++)
-        if (a[i] !== b[i])
-            return false;
-    return true;
+	if (a.length !== b.length)
+		return false;
+	for (let i = 0; i < a.length; i++)
+		if (a[i] !== b[i])
+			return false;
+	return true;
 }
 for (let x of tests) {
-    let y = encodeEVs(x);
-    let z = decodeEVs(y);
-    console.log(x,y,z, equalArray(x,z) ? "Correct" : "Incorrect");
+	let y = encodeEVs(x);
+	let z = decodeEVs(y);
+	console.log(x,y,z, equalArray(x,z) ? "Correct" : "Incorrect");
 }
 */
 
@@ -4499,16 +4513,16 @@ Team Label
 Setup Notes: (6 bits) {
 [1]   - isNormal (normal abilities, lvl 100)
 [2]   - simpleEVs {508 EVs: 2(252) + 1(4)}
-[3+4] - simpleIVs[2]: 
-    0 - Simple[1] (0 or 31 IVs). If all 31 (#), then complex[1+5] (#12345)
-    1 - All 31[0]
-    2 - 0 Atk [0]
-    3 - 0 Spe [0]
+[3+4] - simpleIVs[2]:
+	0 - Simple[1] (0 or 31 IVs). If all 31 (#), then complex[1+5] (#12345)
+	1 - All 31[0]
+	2 - 0 Atk [0]
+	3 - 0 Spe [0]
 [5+6] - extraData[2]:
-    0 - No extra data (also when happiness is 255, 0 w/ Frustration, etc...)
-    1 - Happiness + HiddenPower   // Gen 3-7
-    2 - DynamaxLevel + GigantaMax // Gen 8
-    3 - TeraType                  // Gen 9
+	0 - No extra data (also when happiness is 255, 0 w/ Frustration, etc...)
+	1 - Happiness + HiddenPower   // Gen 3-7
+	2 - DynamaxLevel + GigantaMax // Gen 8
+	3 - TeraType                  // Gen 9
 }
 
 
@@ -4516,7 +4530,7 @@ Basic (11-12):
 [1] #  - setup (6 bits)
 [2] ## - species_form[11] + shiny[1]
 [7] ####### - moves[10:10:10:10]=[40]
-            + gender[2]
+			+ gender[2]
 [1] # - nature[5] + hasPokeball[1]  // Future-proof idk
 (1) # - . pokeball[5] // 28           // 1 unused byte
 
@@ -4534,11 +4548,11 @@ Else: // Worse Case Scenario (notNormal, complexIVs/EVs)
 
 Extra Data (0-3): <Mutually Exclusive (gens 3-7, 8, 9)>
 [1] #  - HiddenPower[5]
-       + hasHappiness[1]
+	   + hasHappiness[1]
 (2) ## + .... Happiness[8]    // 4 unused bytes
 
 [1] # - .. DynamaxLevel[3]  // 0-10  // 2 unused bytes
-      + GigantaMax[1]    // t/f
+	  + GigantaMax[1]    // t/f
 
 [1] # - . TeraType[5]      // 20    // 1 unused byte
 
@@ -4600,430 +4614,430 @@ J###|Name
 ##|Team
 */
 function encodePokemon(set) {
-    // Setup
-    const speciesID = SPECIES_LOOKUP[set.species];
-    if (speciesID == undefined) return '!Error! Unknown Pokemon "' + set.species + '"';
+	// Setup
+	const speciesID = SPECIES_LOOKUP[set.species];
+	if (speciesID == undefined) return '!Error! Unknown Pokemon "' + set.species + '"';
 
-    // isNormal (and Ability)
-    let isNormal = true;
-    let abilityID = 0; // only used if normal
-    if (set.level && set.level != 100)
-        isNormal = false;
-    else { // Check if abilities match any of the species abilities
-        let SPECIES_DATA = SPECIES[speciesID];
-        if (set.ability) {
-            isNormal = false; // Not found yet...
-            for (let i = 1; i < SPECIES_DATA.length; i++) {
-                let id = SPECIES_DATA[i];
-                if (set.ability == ABILITIES[id]) {
-                    isNormal = true; // Found
-                    abilityID = i-1; // Save
-                    break;
-                }
-            }
-        } else { // No ability (default)
-            abilityID = ABILITIES_LOOKUP[set.ability || SPECIES_DATA[1]] || 0; // If unknown, default to pokemon's basic ability...
-        }
-    }
+	// isNormal (and Ability)
+	let isNormal = true;
+	let abilityID = 0; // only used if normal
+	if (set.level && set.level != 100)
+		isNormal = false;
+	else { // Check if abilities match any of the species abilities
+		let SPECIES_DATA = SPECIES[speciesID];
+		if (set.ability) {
+			isNormal = false; // Not found yet...
+			for (let i = 1; i < SPECIES_DATA.length; i++) {
+				let id = SPECIES_DATA[i];
+				if (set.ability == ABILITIES[id]) {
+					isNormal = true; // Found
+					abilityID = i-1; // Save
+					break;
+				}
+			}
+		} else { // No ability (default)
+			abilityID = ABILITIES_LOOKUP[set.ability || SPECIES_DATA[1]] || 0; // If unknown, default to pokemon's basic ability...
+		}
+	}
 
-    // Item
-    const itemID = ITEMS_LOOKUP[set.item] || 0 // If unknown, fail silently...
+	// Item
+	const itemID = ITEMS_LOOKUP[set.item] || 0 // If unknown, fail silently...
 
-    // EVs
-    const evHex = encodeEVs(set.evs);
+	// EVs
+	const evHex = encodeEVs(set.evs);
 
-    // IVs
-    let ivFlag = getIVType(set.ivs)
-    let ivHex = "" // All full (1) / noAtk (2) / noSpe (3)
-    if (ivFlag === 0) { // Simple
-        ivHex = encodeBools(set.ivs) // Treated as 6 booleans (0|31)
-    } else if (ivFlag === -1) { // Complex
-        ivHex = BASE64[63] + encodeIVs(set.ivs) // full[1] + packed[5] (punish user for weird IVs lol)
-        ivFlag = 0 // for encoding
-    }
+	// IVs
+	let ivFlag = getIVType(set.ivs)
+	let ivHex = "" // All full (1) / noAtk (2) / noSpe (3)
+	if (ivFlag === 0) { // Simple
+		ivHex = encodeBools(set.ivs) // Treated as 6 booleans (0|31)
+	} else if (ivFlag === -1) { // Complex
+		ivHex = BASE64[63] + encodeIVs(set.ivs) // full[1] + packed[5] (punish user for weird IVs lol)
+		ivFlag = 0 // for encoding
+	}
 
-    // Extra Data
-    let hasHappiness = false;
-    let extraDataFlag = 0; // No extra data
-    if (set.hpType || (set.happiness != undefined && set.happiness != 255)) {
-        extraDataFlag = 1; // HiddenPower + Happiness // Gens 3-7
-        hasHappiness = true;
-        if (set.happiness == 0 && set.moves) {
-            for (const move of set.moves) {
-                if (move == "Frustration") {
-                    hasHappiness = false // false alarm
-                    if (!set.hpType) extraDataFlag = 0; // No actual extra data
-                    break;
-                }
-            }
-        }
-    } else if (set.gigantamax || (set.dynamaxLevel && set.dynamaxLevel != 10)) {
-        extraDataFlag = 2; // DynamaxLevel + GigantaMax // Gen 8
-    } else if (set.teraType) {
-        extraDataFlag = 3; // TeraType // Gen 9
-    }
+	// Extra Data
+	let hasHappiness = false;
+	let extraDataFlag = 0; // No extra data
+	if (set.hpType || (set.happiness != undefined && set.happiness != 255)) {
+		extraDataFlag = 1; // HiddenPower + Happiness // Gens 3-7
+		hasHappiness = true;
+		if (set.happiness == 0 && set.moves) {
+			for (const move of set.moves) {
+				if (move == "Frustration") {
+					hasHappiness = false // false alarm
+					if (!set.hpType) extraDataFlag = 0; // No actual extra data
+					break;
+				}
+			}
+		}
+	} else if (set.gigantamax || (set.dynamaxLevel && set.dynamaxLevel != 10)) {
+		extraDataFlag = 2; // DynamaxLevel + GigantaMax // Gen 8
+	} else if (set.teraType) {
+		extraDataFlag = 3; // TeraType // Gen 9
+	}
 
-    // # - Finish Setup
-    const setupHex = encodeBools([
-        isNormal,
-        evHex.length === 1, // simpleEVs
-        ivFlag >> 1,        // simpleIVs
-        ivFlag & 1,
-        extraDataFlag >> 1,
-        extraDataFlag & 1,
-    ]);
+	// # - Finish Setup
+	const setupHex = encodeBools([
+		isNormal,
+		evHex.length === 1, // simpleEVs
+		ivFlag >> 1,        // simpleIVs
+		ivFlag & 1,
+		extraDataFlag >> 1,
+		extraDataFlag & 1,
+	]);
 
-    // Shiny
-    const isShiny = set.shiny ? 1 : 0
+	// Shiny
+	const isShiny = set.shiny ? 1 : 0
 
-    // Moves
-    let moveIDs = [0,0,0,0]  // Hard-coded 4 moves
-    if (set.moves)
-        for (let i = 0; i < 4; i++)
-            moveIDs[i] = MOVES_LOOKUP[set.moves[i]] || 0 // none/unknown move, fail silently...
+	// Moves
+	let moveIDs = [0,0,0,0]  // Hard-coded 4 moves
+	if (set.moves)
+		for (let i = 0; i < 4; i++)
+			moveIDs[i] = MOVES_LOOKUP[set.moves[i]] || 0 // none/unknown move, fail silently...
 
-    // Gender
-    let genderID = 0
-    if (set.gender)
-        if (set.gender == 'M')
-            genderID = 1; // (M)
-        else if (set.gender == 'F')
-            genderID = 2; // (F)
-        else
-            genderID = 3; // Idk
+	// Gender
+	let genderID = 0
+	if (set.gender)
+		if (set.gender == 'M')
+			genderID = 1; // (M)
+		else if (set.gender == 'F')
+			genderID = 2; // (F)
+		else
+			genderID = 3; // Idk
 
-    // Nature
-    const natureID = NATURES_LOOKUP[set.nature] || 0 // If unknown nature, fail silently...?
+	// Nature
+	const natureID = NATURES_LOOKUP[set.nature] || 0 // If unknown nature, fail silently...?
 
-    // Optional: Pokeball // Future-proof idk
-    const hasPokeball = set.pokeball ? 1 : 0;
-    const pokeballID = POKEBALLS_LOOKUP[set.pokeball] || 0 // If unknown nature, fail silently...?
+	// Optional: Pokeball // Future-proof idk
+	const hasPokeball = set.pokeball ? 1 : 0;
+	const pokeballID = POKEBALLS_LOOKUP[set.pokeball] || 0 // If unknown nature, fail silently...?
 
-    // IVs/EVs already checked and made
-    // #|###### - EVs[4]+outlier[2] | EVs[6]{6}
-    // #? ##### - IVs[6]            | IVs[5]{6}
+	// IVs/EVs already checked and made
+	// #|###### - EVs[4]+outlier[2] | EVs[6]{6}
+	// #? ##### - IVs[6]            | IVs[5]{6}
 
-    // |NICKNAME (Optional)
-    const nicknameHex = set.nickname ? ('|' + set.nickname) : ""
+	// |NICKNAME (Optional)
+	const nicknameHex = set.nickname ? ('|' + set.nickname) : ""
 
 
-    // Finally, combine and return
-    // ## - species_form[11] + shiny[1]
-    const speciesHex = encodeInteger((speciesID << 1) | isShiny, 2);
+	// Finally, combine and return
+	// ## - species_form[11] + shiny[1]
+	const speciesHex = encodeInteger((speciesID << 1) | isShiny, 2);
 
-    // ####### - moves[10:10:10:10]=[40]
-    //         + gender[2]
-    let movesID = 0;
-    for (let i = 0; i < 4; i++) // Hard-coded
-        movesID = movesID*1024 + moveIDs[i]; // none/unknown move, fail silently...
-    const movesHex = encodeInteger(movesID*4 + genderID, 7); // Hard-coded
+	// ####### - moves[10:10:10:10]=[40]
+	//         + gender[2]
+	let movesID = 0;
+	for (let i = 0; i < 4; i++) // Hard-coded
+		movesID = movesID*1024 + moveIDs[i]; // none/unknown move, fail silently...
+	const movesHex = encodeInteger(movesID*4 + genderID, 7); // Hard-coded
 
-    // #  - nature[5] + hasPokeball[1]
-    const natureHex = encodeInteger((natureID << 1) | (hasPokeball), 1);
+	// #  - nature[5] + hasPokeball[1]
+	const natureHex = encodeInteger((natureID << 1) | (hasPokeball), 1);
 
-    // #? - pokeball[5] // 28  // 1 unused byte
-    const pokeballHex = hasPokeball ? encodeInteger(pokeballID, 1) : "";
+	// #? - pokeball[5] // 28  // 1 unused byte
+	const pokeballHex = hasPokeball ? encodeInteger(pokeballID, 1) : "";
 
-    // Item and Ability
-    let itemAbilityHex = "";
-    if (isNormal)
-        // ##  - item[10] + ability[2]
-        itemAbilityHex = encodeInteger((itemID << 2) | abilityID, 2); // ability already set from above
-    else
-        // ##  - item[10]               // 2 unused bytes
-        // ### - ability[9] + level[7]  // 2 unused bytes
-        itemAbilityHex = encodeInteger(itemID, 2) + encodeInteger(((ABILITIES_LOOKUP[set.ability] || 0) << 7) | (set.level || 100), 3) // If unknown, fail silently...
+	// Item and Ability
+	let itemAbilityHex = "";
+	if (isNormal)
+		// ##  - item[10] + ability[2]
+		itemAbilityHex = encodeInteger((itemID << 2) | abilityID, 2); // ability already set from above
+	else
+		// ##  - item[10]               // 2 unused bytes
+		// ### - ability[9] + level[7]  // 2 unused bytes
+		itemAbilityHex = encodeInteger(itemID, 2) + encodeInteger(((ABILITIES_LOOKUP[set.ability] || 0) << 7) | (set.level || 100), 3) // If unknown, fail silently...
 
-    // Extra Data: Mutually Exclusive (gens 3-7, 8, 9)
-    let extraHex = "";
-    switch (extraDataFlag) {
-        case 1:
-            // #  - HiddenPower[5] + hasHappiness[1]
-            // ## + Happiness[8]    // 4 unused bytes
-            extraHex = encodeInteger(((TYPES_LOOKUP[set.hpType] || 0) << 1) | hasHappiness, 1)
-                    + (hasHappiness ? encodeInteger(set.happiness, 2) : "")
-            break;
+	// Extra Data: Mutually Exclusive (gens 3-7, 8, 9)
+	let extraHex = "";
+	switch (extraDataFlag) {
+		case 1:
+			// #  - HiddenPower[5] + hasHappiness[1]
+			// ## + Happiness[8]    // 4 unused bytes
+			extraHex = encodeInteger(((TYPES_LOOKUP[set.hpType] || 0) << 1) | hasHappiness, 1)
+					+ (hasHappiness ? encodeInteger(set.happiness, 2) : "")
+			break;
 
-        case 2:
-            // # - DynamaxLevel[3]  // 0-10  // 2 unused bytes
-            //   + GigantaMax[1]    // t/f
-            extraHex = encodeInteger(((set.dynamaxLevel || 10) << 1) | (set.gigantamax ? 1 : 0), 1);
-            break;
+		case 2:
+			// # - DynamaxLevel[3]  // 0-10  // 2 unused bytes
+			//   + GigantaMax[1]    // t/f
+			extraHex = encodeInteger(((set.dynamaxLevel || 10) << 1) | (set.gigantamax ? 1 : 0), 1);
+			break;
 
-        case 3:
-            // # - TeraType[5]      // 20    // 1 unused byte
-            extraHex = encodeInteger(TYPES_LOOKUP[set.teraType], 1);
-            break;
-    }
+		case 3:
+			// # - TeraType[5]      // 20    // 1 unused byte
+			extraHex = encodeInteger(TYPES_LOOKUP[set.teraType], 1);
+			break;
+	}
 
-    // Return
-    return speciesHex
-         + setupHex
-         + movesHex
-         + natureHex
-         + pokeballHex
-         + itemAbilityHex
-         + evHex
-         + ivHex
-         + extraHex
-         + nicknameHex
+	// Return
+	return speciesHex
+		 + setupHex
+		 + movesHex
+		 + natureHex
+		 + pokeballHex
+		 + itemAbilityHex
+		 + evHex
+		 + ivHex
+		 + extraHex
+		 + nicknameHex
 }
 function encodePokemons(sets, pkmnSpace = 1, teamSpace = 2) {
-    let output = '';
-    for (const set of sets)
-        if (set.constructor === String) {
-            // "=== [format] Name ===" --> "##|Name" or "[##Name]"
-            let [format, name] = set.trim().slice(5,-3).split(']') // if (set.endsWith(']') && set.includes('['))
-            name = name.trim();
-            let isBox = false;
-            if (format.endsWith("-box")) {
-                isBox = true;
-                format = format.slice(0,-4);
-            }
+	let output = '';
+	for (const set of sets)
+		if (set.constructor === String) {
+			// "=== [format] Name ===" --> "##|Name" or "[##Name]"
+			let [format, name] = set.trim().slice(5,-3).split(']') // if (set.endsWith(']') && set.includes('['))
+			name = name.trim();
+			let isBox = false;
+			if (format.endsWith("-box")) {
+				isBox = true;
+				format = format.slice(0,-4);
+			}
 
-            const formatBytes = FORMATS_LOOKUP[format] || 0;
-            if (formatBytes === 0) // If unknown, write it in literally, i.e. lots of extra space :(
-                name = format + '|' + name;
+			const formatBytes = FORMATS_LOOKUP[format] || 0;
+			if (formatBytes === 0) // If unknown, write it in literally, i.e. lots of extra space :(
+				name = format + '|' + name;
 
-            const formatHex = encodeInteger(((formatBytes) << 1) | isBox, 2)
-            if (teamSpace > 0)
-                output += '\n'.repeat(teamSpace) + formatHex + '|' + name // + (true ? '\n' : '|') // TODO
-            else
-                output += '[' + formatHex + name + ']';
-        } else {
-            if (pkmnSpace) {
-                output += '\n' + encodePokemon(set) // + (pkmnSpace ? '\n'.repeat(pkmnSpace) : (set.nickname ? '|' : ''));
-            }
-        }
-    return output.trim();
+			const formatHex = encodeInteger(((formatBytes) << 1) | isBox, 2)
+			if (teamSpace > 0)
+				output += '\n'.repeat(teamSpace) + formatHex + '|' + name // + (true ? '\n' : '|') // TODO
+			else
+				output += '[' + formatHex + name + ']';
+		} else {
+			if (pkmnSpace) {
+				output += '\n' + encodePokemon(set) // + (pkmnSpace ? '\n'.repeat(pkmnSpace) : (set.nickname ? '|' : ''));
+			}
+		}
+	return output.trim();
 }
 
 function skipWhitespace(buffer, i) {
-    while (i < buffer.length) {
-        const c = buffer[i]
-        if (c && c !== ' ' && c !== '\n' && c !== '\t' && c !== '\r' && c !== '\f' && c !== '\v') // Not whitespace
-            return i // Found
-        i++
-    }
-    return -1 // EOF
+	while (i < buffer.length) {
+		const c = buffer[i]
+		if (c && c !== ' ' && c !== '\n' && c !== '\t' && c !== '\r' && c !== '\f' && c !== '\v') // Not whitespace
+			return i // Found
+		i++
+	}
+	return -1 // EOF
 }
 function parseEncodedName(buffer, i) {
-    const x = buffer.indexOf('|',i)
-    const n = buffer.indexOf('\n',i)
-    if (x === -1)
-        if (n === -1)
-            return buffer.slice(i).trim() // EOF
-        else
-            return buffer.slice(i,n) // '\n'
-    else
-        if (n === -1)
-            return buffer.slice(i,x) // '|'
-        else // Use whichever is earliest
-            if (x < n)
-                return buffer.slice(i,x) // '|'
-            else
-                return buffer.slice(i,n) // '\n'
+	const x = buffer.indexOf('|',i)
+	const n = buffer.indexOf('\n',i)
+	if (x === -1)
+		if (n === -1)
+			return buffer.slice(i).trim() // EOF
+		else
+			return buffer.slice(i,n) // '\n'
+	else
+		if (n === -1)
+			return buffer.slice(i,x) // '|'
+		else // Use whichever is earliest
+			if (x < n)
+				return buffer.slice(i,x) // '|'
+			else
+				return buffer.slice(i,n) // '\n'
 }
 function decodePokemons(buffer) {
-    // Parse as we read the string character by character
-    let sets = []; // Array of dictionaries
-    let i = 0;
-    const I = buffer.length;
-    while (i < I) {
-        let c = buffer[i]
-        if (c === ' ' || c === '\n' || c === '\t' || c === '\r' || c === '\f' || c === '\v') { // Is whitespace
-            i = skipWhitespace(buffer, i)
-            if (i === -1) break // EOF
-            c = buffer[i]
-        }
+	// Parse as we read the string character by character
+	let sets = []; // Array of dictionaries
+	let i = 0;
+	const I = buffer.length;
+	while (i < I) {
+		let c = buffer[i]
+		if (c === ' ' || c === '\n' || c === '\t' || c === '\r' || c === '\f' || c === '\v') { // Is whitespace
+			i = skipWhitespace(buffer, i)
+			if (i === -1) break // EOF
+			c = buffer[i]
+		}
 
-        // Team (Format Label)
-        let format = ''
-        let name = ''
-        if (c === '[') { // [##Team]
-            format = buffer.slice(i+1,i+3)
-            i += 3
-            let n = buffer.indexOf(']',i)
-            if (n === -1) {
-                console.error("Invalid Team Format Label: missing a ']'")
-                break
-            }
-            name = buffer.slice(i,n)
-        } else if (buffer[i+2] === '|') { // ##|Team or  ##|Team| // Assuming that the format label is always 2 characters long and '|' appears earlier than the shortest name
-            format = buffer.slice(i,i+2)
-            i += 3
-            name = parseEncodedName(buffer, i)
-        }
+		// Team (Format Label)
+		let format = ''
+		let name = ''
+		if (c === '[') { // [##Team]
+			format = buffer.slice(i+1,i+3)
+			i += 3
+			let n = buffer.indexOf(']',i)
+			if (n === -1) {
+				console.error("Invalid Team Format Label: missing a ']'")
+				break
+			}
+			name = buffer.slice(i,n)
+		} else if (buffer[i+2] === '|') { // ##|Team or  ##|Team| // Assuming that the format label is always 2 characters long and '|' appears earlier than the shortest name
+			format = buffer.slice(i,i+2)
+			i += 3
+			name = parseEncodedName(buffer, i)
+		}
 
-        // ## - Format[11] + isBox[1]
-        if (format) {
-            let formatID = decodeInteger(format);
-            const isBox = formatID & 0x01;
-            formatID = formatID >> 1;
-            i += name.length
+		// ## - Format[11] + isBox[1]
+		if (format) {
+			let formatID = decodeInteger(format);
+			const isBox = formatID & 0x01;
+			formatID = formatID >> 1;
+			i += name.length
 
-            let formatName = null
-            if (formatID === 0) {
-                // name is actually format name, format name is afterwards
-                // 00|exampleformat|Team Name   instead of   ##|Team Name
-                formatName = name
-                name = parseEncodedName(buffer, ++i)
-                i += name.length
-            } else {
-                formatName = FORMATS[formatID]
-            }
+			let formatName = null
+			if (formatID === 0) {
+				// name is actually format name, format name is afterwards
+				// 00|exampleformat|Team Name   instead of   ##|Team Name
+				formatName = name
+				name = parseEncodedName(buffer, ++i)
+				i += name.length
+			} else {
+				formatName = FORMATS[formatID]
+			}
 
-            const label = `=== [${formatName + (isBox ? "-box" : "")}] ${name} ===`
-            sets.push(label)
-            i++
-            continue
-        }
+			const label = `=== [${formatName + (isBox ? "-box" : "")}] ${name} ===`
+			sets.push(label)
+			i++
+			continue
+		}
 
-        // Else, process data
-        let set = {}
-        sets.push(set)
+		// Else, process data
+		let set = {}
+		sets.push(set)
 
-        // ## - Species-Form[11] + Shiny[1]
-        const sfsID = decodeInteger(buffer.slice(i,i+2))
-        const SPECIES_DATA = SPECIES[sfsID >> 1] || SPECIES[0] // If unknown, default to MissingNo.
-        set.shiny = sfsID & 0x01
-        set.species = SPECIES_DATA[0];
-        i+=2
+		// ## - Species-Form[11] + Shiny[1]
+		const sfsID = decodeInteger(buffer.slice(i,i+2))
+		const SPECIES_DATA = SPECIES[sfsID >> 1] || SPECIES[0] // If unknown, default to MissingNo.
+		set.shiny = sfsID & 0x01
+		set.species = SPECIES_DATA[0];
+		i+=2
 
-        // # - Set up
-        const [isNormal, simpleEVs, ivFlag1, ivFlag2, extraDataFlag1, extraDataFlag2] = decodeBools(buffer[i])
-        const extraDataFlag = (extraDataFlag1 << 1) | extraDataFlag2
-        const ivFlag = (ivFlag1 << 1) | ivFlag2
-        i++
+		// # - Set up
+		const [isNormal, simpleEVs, ivFlag1, ivFlag2, extraDataFlag1, extraDataFlag2] = decodeBools(buffer[i])
+		const extraDataFlag = (extraDataFlag1 << 1) | extraDataFlag2
+		const ivFlag = (ivFlag1 << 1) | ivFlag2
+		i++
 
-        // ####### - Moves[10:10:10:10]=[40] + Gender[2]
-        let movesID = decodeInteger(buffer.slice(i,i+7))
+		// ####### - Moves[10:10:10:10]=[40] + Gender[2]
+		let movesID = decodeInteger(buffer.slice(i,i+7))
 
-        // Gender
-        const genderID = movesID % 4
-        if      (genderID == 1) set.gender = 'M'
-        else if (genderID == 2) set.gender = 'F'
+		// Gender
+		const genderID = movesID % 4
+		if      (genderID == 1) set.gender = 'M'
+		else if (genderID == 2) set.gender = 'F'
 
-        // Moves
-        movesID = (movesID - genderID) / 4
-        let moves = []
-        for (let x = 3; x >= 0; x--) { // Hard-Coded
-            const moveID = movesID % 1024
-            movesID = ((movesID - moveID) / 1024)
-            moves[x] = MOVES[moveID] || MOVES[0] // none/unknown move, fail silently with "None"...
-        }
-        set.moves = moves
-        i+=7
+		// Moves
+		movesID = (movesID - genderID) / 4
+		let moves = []
+		for (let x = 3; x >= 0; x--) { // Hard-Coded
+			const moveID = movesID % 1024
+			movesID = ((movesID - moveID) / 1024)
+			if (moveID != 0) moves[x] = MOVES[moveID] || MOVES[0] // none/unknown move, fail silently with "None"...
+		}
+		set.moves = moves
+		i+=7
 
-        // #  - Nature[5] + hasPokeball[1]  // Future-proof idk
-        let natureID = decodeInteger(buffer[i++])
-        const isPokeball = natureID & 0x01
-        natureID = natureID >> 1
-        if (natureID) set.nature = NATURES[natureID]
+		// #  - Nature[5] + hasPokeball[1]  // Future-proof idk
+		let natureID = decodeInteger(buffer[i++])
+		const isPokeball = natureID & 0x01
+		natureID = natureID >> 1
+		if (natureID) set.nature = NATURES[natureID]
 
-        // #? - pokeball[5] // 28           // 1 unused byte
-        if (isPokeball)
-            set.pokeball = POKEBALLS[decodeInteger(buffer[i++])]
+		// #? - pokeball[5] // 28           // 1 unused byte
+		if (isPokeball)
+			set.pokeball = POKEBALLS[decodeInteger(buffer[i++])]
 
-        // ##|##### - Item + Ability + Level?
-        if (isNormal) {
-            // ## - item[10] + ability[2]
-            let itemID = decodeInteger(buffer.slice(i,i+2))
-            set.ability = ABILITIES[SPECIES_DATA[(itemID & 0x03)+1]]
-            itemID = itemID >> 2
-            if (itemID) set.item = ITEMS[itemID]
-            i+=2
-        } else {
-            // ##     - item[10]                 // 2 unused bytes
-            const itemID = decodeInteger(buffer.slice(i,i+2))
-            if (itemID) set.item = ITEMS[itemID]
+		// ##|##### - Item + Ability + Level?
+		if (isNormal) {
+			// ## - item[10] + ability[2]
+			let itemID = decodeInteger(buffer.slice(i,i+2))
+			set.ability = ABILITIES[SPECIES_DATA[(itemID & 0x03)+1]]
+			itemID = itemID >> 2
+			if (itemID) set.item = ITEMS[itemID]
+			i+=2
+		} else {
+			// ##     - item[10]                 // 2 unused bytes
+			const itemID = decodeInteger(buffer.slice(i,i+2))
+			if (itemID) set.item = ITEMS[itemID]
 
-            // ###    - ability[9] + level[7]    // 2 unused bytes
-            let abilityID = decodeInteger(buffer.slice(i+2,i+5))
-            set.level = abilityID % 128
-            abilityID = abilityID >> 7
-            if (abilityID) set.ability = ABILITIES[abilityID]
-            i+=5
-        }
+			// ###    - ability[9] + level[7]    // 2 unused bytes
+			let abilityID = decodeInteger(buffer.slice(i+2,i+5))
+			set.level = abilityID % 128
+			abilityID = abilityID >> 7
+			if (abilityID) set.ability = ABILITIES[abilityID]
+			i+=5
+		}
 
-        // #|###### - EVs
-        const evHex = simpleEVs ? buffer[i] : buffer.slice(i,i+6)
-        set.evs = decodeEVs(evHex)
-        i += evHex.length
+		// #|###### - EVs
+		const evHex = simpleEVs ? buffer[i] : buffer.slice(i,i+6)
+		set.evs = decodeEVs(evHex)
+		i += evHex.length
 
-        // _|#|###### - IVs
-        switch (ivFlag) {
-            case 0: // Simple[1] (0 or 31 IVs)
-                let ivHex = buffer[i++] // #
-                if (ivHex == BASE64[63]) { // Complex[6]: If all 31 (#), then complex[1+5] (#12345)
-                    ivHex = buffer.slice(i, i+5) // # + #####
-                    i += 5
-                }
-                set.ivs = decodeIVs(ivHex) // # -or- #####
-                break;
+		// _|#|###### - IVs
+		switch (ivFlag) {
+			case 0: // Simple[1] (0 or 31 IVs)
+				let ivHex = buffer[i++] // #
+				if (ivHex == BASE64[63]) { // Complex[6]: If all 31 (#), then complex[1+5] (#12345)
+					ivHex = buffer.slice(i, i+5) // # + #####
+					i += 5
+				}
+				set.ivs = decodeIVs(ivHex) // # -or- #####
+				break;
 
-            case 1: // All 31[0]
-                set.ivs = [31,31,31,31,31,31]
-                break;
-            case 2: // 0 Atk [0]
-                set.ivs = [31,0,31,31,31,31]
-                break;
-            case 3: // 0 Spe [0]
-                set.ivs = [31,31,31,31,31,0]
-                break;
-        }
+			case 1: // All 31[0]
+				set.ivs = [31,31,31,31,31,31]
+				break;
+			case 2: // 0 Atk [0]
+				set.ivs = [31,0,31,31,31,31]
+				break;
+			case 3: // 0 Spe [0]
+				set.ivs = [31,31,31,31,31,0]
+				break;
+		}
 
-        // Extra Data: Mutually Exclusive (gens 3-7, 8, 9)
-        switch (extraDataFlag) {
-            case 0:
-                // Possible hidden happiness
-                for (const move of moves) {
-                    if (move === "Frustration") {
-                        set.happiness = 0
-                        break
-                    }
-                }
-                break
+		// Extra Data: Mutually Exclusive (gens 3-7, 8, 9)
+		switch (extraDataFlag) {
+			case 0:
+				// Possible hidden happiness
+				for (const move of moves) {
+					if (move === "Frustration") {
+						set.happiness = 0
+						break
+					}
+				}
+				break
 
-            case 1:
-                // # - HiddenPower[5] + hasHappiness[1]
-                let hpID = decodeInteger(buffer[i++])
-                const hasHappiness = hpID & 0x01
-                hpID = hpID >> 1
-                if (hpID) set.hpType = TYPES[hpID]
+			case 1:
+				// # - HiddenPower[5] + hasHappiness[1]
+				let hpID = decodeInteger(buffer[i++])
+				const hasHappiness = hpID & 0x01
+				hpID = hpID >> 1
+				if (hpID) set.hpType = TYPES[hpID]
 
-                // ## + Happiness[8]  // 4 unused bytes
-                if (hasHappiness) {
-                    set.happiness = decodeInteger(buffer.slice(i,i+2))
-                    // console.log(sets.length-1, buffer.slice(i,i+2), set.happiness)
-                    i+=2
-                }
-                break;
+				// ## + Happiness[8]  // 4 unused bytes
+				if (hasHappiness) {
+					set.happiness = decodeInteger(buffer.slice(i,i+2))
+					// console.log(sets.length-1, buffer.slice(i,i+2), set.happiness)
+					i+=2
+				}
+				break;
 
-            case 2:
-                // # - DynamaxLevel[3]  // 0-10  // 2 unused bytes
-                //   + GigantaMax[1]    // t/f
-                const dgID = decodeInteger(buffer[i++])
-                if (dgID & 0x01) set.gigantamax = true
-                set.dynamaxLevel = (dgID >> 1)
-                break;
+			case 2:
+				// # - DynamaxLevel[3]  // 0-10  // 2 unused bytes
+				//   + GigantaMax[1]    // t/f
+				const dgID = decodeInteger(buffer[i++])
+				if (dgID & 0x01) set.gigantamax = true
+				set.dynamaxLevel = (dgID >> 1)
+				break;
 
-            case 3:
-                // # - TeraType[5]      // 20    // 1 unused byte
-                const teraType = decodeInteger(buffer[i++])
-                if (teraType) set.teraType = TYPES[teraType]
-                break;
-        }
+			case 3:
+				// # - TeraType[5]      // 20    // 1 unused byte
+				const teraType = decodeInteger(buffer[i++])
+				if (teraType) set.teraType = TYPES[teraType]
+				break;
+		}
 
-        // |Nickname
-        if (buffer[i] == '|') {
-            const nickname = parseEncodedName(buffer, ++i)
-            set.nickname = nickname
-            i += nickname.length
-        }
-    }
+		// |Nickname
+		if (buffer[i] == '|') {
+			const nickname = parseEncodedName(buffer, ++i)
+			set.nickname = nickname
+			i += nickname.length
+		}
+	}
 
-    return sets;
+	return sets;
 }
 
 
@@ -5036,75 +5050,75 @@ inputTextArea.textContent = PLACEHOLDER
 inputTextArea.placeholder = PLACEHOLDER
 outputTextArea.placeholder = PLACEHOLDER_OUT
 function resizeAndOutput(textArea, output, maxResize = 7) { // Max resize of 7 (arbitrary limit)
-    const lineCount = output.split('\n').length; // I'm sure theres a better way to do this
-    textArea.rows = lineCount > maxResize ? maxResize : lineCount;
-    textArea.value = output; // JSON.stringify(output, null, 2);
+	const lineCount = output.split('\n').length; // I'm sure theres a better way to do this
+	textArea.rows = lineCount > maxResize ? maxResize : lineCount;
+	textArea.value = output; // JSON.stringify(output, null, 2);
 }
 function copyToClipboard() { // Planning to add this soon
-    outputTextArea.select();
-    outputTextArea.setSelectionRange(0, 9999999); // For mobile devices
-    if (document.execCommand("Copy"))
-        // alert("Copied the text: " + outputTextArea.value);
-        console.log("Copied the text");
-    else
-        console.log("Could not copy text"); // Or if document.execCommand() is not supported in IE9 and earlier.
+	outputTextArea.select();
+	outputTextArea.setSelectionRange(0, 9999999); // For mobile devices
+	if (document.execCommand("Copy"))
+		// alert("Copied the text: " + outputTextArea.value);
+		console.log("Copied the text");
+	else
+		console.log("Could not copy text"); // Or if document.execCommand() is not supported in IE9 and earlier.
 
-    // navigator.clipboard.writeText(outputTextArea.value) // Needs permission
-    // .then(function() {
-    //     alert("Text copied to clipboard!");
-    // }).catch(function(error) {
-    //     alert("Failed to copy text: " + error);
-    // });
+	// navigator.clipboard.writeText(outputTextArea.value) // Needs permission
+	// .then(function() {
+	//     alert("Text copied to clipboard!");
+	// }).catch(function(error) {
+	//     alert("Failed to copy text: " + error);
+	// });
 
-    window.getSelection().removeAllRanges();
-    outputTextArea.blur(); // lose focus
+	window.getSelection().removeAllRanges();
+	outputTextArea.blur(); // lose focus
 }
 function encodeButton() {
-    const parsed = parsePokemons(inputTextArea.value); // Parse
-    const encoded = encodePokemons(parsed);           // Encode
-    resizeAndOutput(outputTextArea, encoded, 14)      // Output
+	const parsed = parsePokemons(inputTextArea.value); // Parse
+	const encoded = encodePokemons(parsed);           // Encode
+	resizeAndOutput(outputTextArea, encoded, 14)      // Output
 
-    /* Test */
-    const unparsed = decodePokemons(encoded);
-    for (let i = 0; i < parsed.length; i++) {
-        let noMatch = false
-        const before = parsed[i]
-        const after = unparsed[i]
-        for (const key in before) {
-            if (before[key].constructor === Array) {
-                let notEqual = false;
-                const b = before[key];
-                const a = after[key];
-                for (let x = 0; x < a.length; x++) {
-                    if (a[x] !== b[x]) {
-                        if (Math.floor(a[x]/4) !== Math.floor(b[x]/4)) { // check if not false alarm
-                            noMatch = true
-                            notEqual = true
-                            break
-                        }
-                    }
-                }
-                if (notEqual)
-                    console.log(i, key, before[key], after[key])
-            } else if (before[key] != after[key]) {
-                noMatch = true
-                console.log(i, key, before[key], after[key])
-            }
-        }
-        if (noMatch)
-            console.log(i, before, after)
-    }
-    const decoded = unparsePokemons(unparsed);
-    // console.log(decoded.slice(0, 700) + "\n...")
-    //*/
+	/* Test */
+	const unparsed = decodePokemons(encoded);
+	for (let i = 0; i < parsed.length; i++) {
+		let noMatch = false
+		const before = parsed[i]
+		const after = unparsed[i]
+		for (const key in before) {
+			if (before[key].constructor === Array) {
+				let notEqual = false;
+				const b = before[key];
+				const a = after[key];
+				for (let x = 0; x < a.length; x++) {
+					if (a[x] !== b[x]) {
+						if (Math.floor(a[x]/4) !== Math.floor(b[x]/4)) { // check if not false alarm
+							noMatch = true
+							notEqual = true
+							break
+						}
+					}
+				}
+				if (notEqual)
+					console.log(i, key, before[key], after[key])
+			} else if (before[key] != after[key]) {
+				noMatch = true
+				console.log(i, key, before[key], after[key])
+			}
+		}
+		if (noMatch)
+			console.log(i, before, after)
+	}
+	const decoded = unparsePokemons(unparsed);
+	// console.log(decoded.slice(0, 700) + "\n...")
+	//*/
 
-    // copyToClipboard() // (extra)
+	// copyToClipboard() // (extra)
 }
 function decodeButton() {
-    const decoded = decodePokemons(outputTextArea.value); // Decode
-    const unparsed = unparsePokemons(decoded);           // Parse
-    resizeAndOutput(inputTextArea, unparsed, 20)        // Output
-    // copyToClipboard() // (extra)
+	const decoded = decodePokemons(outputTextArea.value); // Decode
+	const unparsed = unparsePokemons(decoded);           // Parse
+	resizeAndOutput(inputTextArea, unparsed, 20)        // Output
+	// copyToClipboard() // (extra)
 }
 
 
